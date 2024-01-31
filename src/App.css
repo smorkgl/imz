@@ -1,0 +1,186 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&family=Open+Sans:wght@400;500;600;700;800&family=Source+Code+Pro&family=Ubuntu:wght@300;400;500;700&family=Unbounded:wght@500;800;900&display=swap');
+
+.yt-lite {
+  background-color: #000;
+  position: relative;
+  display: block;
+  contain: content;
+  background-position: center center;
+  background-size: cover;
+  cursor: pointer;
+}
+
+/* gradient */
+.yt-lite::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAADGCAYAAAAT+OqFAAAAdklEQVQoz42QQQ7AIAgEF/T/D+kbq/RWAlnQyyazA4aoAB4FsBSA/bFjuF1EOL7VbrIrBuusmrt4ZZORfb6ehbWdnRHEIiITaEUKa5EJqUakRSaEYBJSCY2dEstQY7AuxahwXFrvZmWl2rh4JZ07z9dLtesfNj5q0FU3A5ObbwAAAABJRU5ErkJggg==);
+  background-position: top;
+  background-repeat: repeat-x;
+  height: 60px;
+  padding-bottom: 50px;
+  width: 100%;
+  transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* responsive iframe with a 16:9 aspect ratio
+  thanks https://css-tricks.com/responsive-iframes/
+*/
+.yt-lite::after {
+  content: "";
+  display: block;
+  padding-bottom: calc(100% / (16 / 9));
+}
+.yt-lite > iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* play button */
+.yt-lite > .lty-playbtn {
+  width: 70px;
+  height: 46px;
+  background-color: #212121;
+  z-index: 1;
+  opacity: 0.8;
+  border-radius: 14%; /* TODO: Consider replacing this with YT's actual svg. Eh. */
+  transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
+}
+.yt-lite:hover > .lty-playbtn {
+  background-color: #f00;
+  opacity: 1;
+}
+/* play button triangle */
+.yt-lite > .lty-playbtn:before {
+  content: '';
+  border-style: solid;
+  border-width: 11px 0 11px 19px;
+  border-color: transparent transparent transparent #fff;
+}
+
+.yt-lite > .lty-playbtn,
+.yt-lite > .lty-playbtn:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+/* Post-click styles */
+.yt-lite.lyt-activated {
+  cursor: unset;
+}
+.yt-lite.lyt-activated::before,
+.yt-lite.lyt-activated > .lty-playbtn {
+  opacity: 0;
+  pointer-events: none;
+}
+
+ul {
+    list-style: none;
+    padding: unset;
+    margin: unset;
+  }
+  
+  li {
+    padding: 14px;
+    transition: all linear 0.1s;
+  }
+  
+  li:hover {
+    background: #1E40AF;
+    cursor: pointer;
+    color: #fff;
+  }
+  
+  .dropdown-menu {
+    background: #fff;
+    box-shadow: 0px 10px 30px 0px rgba(82, 63, 105, 0.05);
+    transition: all linear 0.3s;
+    top: 48px;
+    left: 0;
+    font-weight: 500;
+  } 
+
+  .button-back {
+    left: 10%;
+    top: 40%;
+    color: white;
+    margin-left: 250px;
+  }
+
+  .button-next {
+    right: 10%;
+    top: 40%;
+    color: white;
+    margin-right: 250px;
+  }
+
+  .arrow {
+    filter: invert(87%) sepia(52%) saturate(0%) hue-rotate(178deg) brightness(105%) contrast(101%);
+  }
+
+  .arrow2 {
+    filter: invert(87%) sepia(52%) saturate(0%) hue-rotate(178deg) brightness(105%) contrast(101%);
+    transform: rotate(180deg);
+  }
+
+  .iframe-video {
+    width: 350px;
+  }
+
+  .footer-info { 
+    width: 100% !important;
+  }
+
+    .svg-address {
+      width: 100px;
+  }
+
+  .language-open {
+    top: 50px;
+    left: 0;
+    position: absolute;
+  }
+
+  .job-container {
+    height: 750px;
+  }
+
+  .work__line {
+    width: 410px;
+    height: 5px;
+    background-color: #1E40AF;
+  }
+
+  .job-container__inside {
+    width: 450px;
+  }
+
+  .dots {
+    filter: invert(99%) sepia(0%) saturate(2%) hue-rotate(119deg) brightness(108%) contrast(100%);
+  }
+
+  .dots__container {
+    left: -120px;
+  }
+
+  .logo2 {
+    height: 100px;
+  }
+
+  .video-box {
+    box-shadow: 0 20px 60px -15px #1E30AF;
+    padding: 15px
+  }
+
+  .production-box {
+    box-shadow: 0 20px 60px -15px #1E30AF;
+    padding: 15px
+  }
