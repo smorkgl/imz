@@ -179,9 +179,15 @@ export default function Main() {
 </div>
 <div className="work__line2 mt-2" />
 <div className='photo-container flex flex-col gap-12 mt-5'>
+  <div className='overflow-hidden video-box'>
   <img src={photo1} className='hover:scale-110 transition duration-500 cursor-pointer object-cover'/>
-  <img src={photo2}/>
-  <img src={photo6}/>
+  </div>
+  <div className='overflow-hidden video-box'>
+  <img src={photo2} className='hover:scale-110 transition duration-500 cursor-pointer object-cover'/>
+  </div>
+  <div className='overflow-hidden video-box'>
+  <img src={photo6} className='hover:scale-110 transition duration-500 cursor-pointer object-cover'/>
+  </div>
 </div>
 </div>
 <div className='mt-16'>
@@ -190,8 +196,8 @@ export default function Main() {
 <p className="text-2xl ">Продукция:</p>
 </div>
             <div className="work__line2 mt-2" />
-            <div className='production-box mt-10 rounded-lg'>
-  <img src={qr} className='hover:scale-105'/>
+            <div className='production-box mt-10 rounded-lg overflow-hidden'>
+  <img src={qr} className='hover:scale-110 transition duration-500 cursor-pointer object-cover'/>
 </div>
 </div>
 </div>
