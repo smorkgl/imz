@@ -11,6 +11,10 @@ import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css'
 import { Outlet, Link, NavLink } from "react-router-dom";
 import {useState} from 'react';
+import camera from '../img/camera.svg';
+import photo1 from '../img/photo1.jpg'
+import photo2 from '../img/photo2.jpg'
+import photo6 from '../img/photo6.jpg'
 
 
 export default function Main() {
@@ -52,6 +56,7 @@ export default function Main() {
             <img src={newsicon} className='w-5'/>
             <p className="text-2xl">Последние новости:</p>
             </div>
+            <div className="work__line2 mt-2" />
             <div className='flex flex-wrap gap-20 mt-5'>
             <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow relative">
     <a href="#">
@@ -148,23 +153,44 @@ export default function Main() {
         <img src={video} className="w-6"/>
 <p className="text-2xl">Видео о ИМЗ:</p>
 </div>
-<div className='video-box iframe-video flex flex-col gap-12 mt-5 rounded-lg '>
+            <div className="work__line2 mt-2" />
+<div className='iframe-video flex flex-col gap-12 mt-5'>
+  <div className='video-box'>
       <LiteYouTubeEmbed 
         id="7YzIpIORxOY"
     />
+    </div>
+    <div className='video-box'>
       <LiteYouTubeEmbed 
         id="8hb_LDeW-_0"
     />
+    </div>
+    <div className='video-box'>
       <LiteYouTubeEmbed 
         id="nGbtapJ6E6A"
     />
+    </div>
   </div>
+</div>
+<div className="mt-16">
+<div className='flex gap-2'>
+        <img src={camera} className="w-6"/>
+<p className="text-2xl ">Фотогалерея:</p>
+</div>
+<div className="work__line2 mt-2" />
+<div className='photo-container flex flex-col gap-12 mt-5'>
+  <img src={photo1} className='hover:scale-110 transition duration-500 cursor-pointer object-cover'/>
+  <img src={photo2}/>
+  <img src={photo6}/>
+</div>
 </div>
 <div className='mt-16'>
   <div className='flex gap-2'>
         <img src={tube} className="w-6"/>
 <p className="text-2xl ">Продукция:</p>
-</div><div className='production-box mt-10 rounded-lg'>
+</div>
+            <div className="work__line2 mt-2" />
+            <div className='production-box mt-10 rounded-lg'>
   <img src={qr} className='hover:scale-105'/>
 </div>
 </div>

@@ -156,7 +156,17 @@ ul {
   .work__line {
     width: 410px;
     height: 5px;
-    background-color: #1E40AF;
+    background-color: #0059ff;
+  }
+
+  .work__line2 {
+    width: 60px;
+    height: 6px;
+    background-color: #0059ff;
+  }
+
+  .photo-container {
+    width: 350px;
   }
 
   .job-container__inside {
@@ -177,10 +187,12 @@ ul {
 
   .video-box {
     box-shadow: 0 20px 60px -15px #1E30AF;
-    padding: 15px
   }
 
   .production-box {
     box-shadow: 0 20px 60px -15px #1E30AF;
-    padding: 15px
+  }
+
+  .box-shadow {
+    box-shadow: 0 20px 60px -15px #1E30AF;
   }
