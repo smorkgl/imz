@@ -3,7 +3,7 @@ import { Fragment, useState, useEffect } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import dots from '../img/dots.svg'
 import close from '../img/close.svg'
-import logo from '../img/logoNEW.svg'
+import logo from '../img/logoNEW2.svg'
 
 export default function Nav() {
   const [isDropdownVisibleAbout, setDropdownVisibleAbout] = useState(false)
@@ -60,9 +60,9 @@ export default function Nav() {
 
     return (
       <nav className={scroll ? 'sticky z-10 top-0 bg-blue-800 py-3' : 'bg-blue-800'}>
+                  {scroll && <img   src={logo} className="absolute h-12 cursor-pointer px-4" alt="логотип" />}
           <div className="max-w-5xl width-full mx-auto container flex justify-between cursor-pointer text-white font-bold relative"> 
           <div className="dots__container absolute h-12 leading-12 flex justify-center items-center cursor-pointer hover:bg-blue-700 hover:rounded px-4" onClick={() => setIsOpen(true)}>
-          {scroll && <img   src={logo} className="w-20" alt="логотип" />}
           <img src={dots} className="dots w-7"  /></div>
           <Transition appear show={isOpen} as={Fragment}>
   <Dialog as="div" open={isOpen} onClose={() => setIsOpen(false)}>
