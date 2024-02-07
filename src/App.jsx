@@ -17,8 +17,8 @@ function App() {
   <Carousel />
   <TopMain />
   <Main />
-  <Wherewe/>
   <Job />
+  <Wherewe/>
   <Footer />
   
     </div>

@@ -52,7 +52,7 @@ export default function Main() {
         <div className="space-x-4 py-3 2xl max-w-7xl width-full mx-auto container mt-5 relative">
             <div className='flex justify-between'>
             <div>
-            <div className='flex gap-2'>
+            <div className='flex gap-2 cursor-pointer w-max'>
             <img src={newsicon} className='w-5'/>
             <p className="text-2xl">Последние новости:</p>
             </div>
@@ -149,7 +149,7 @@ export default function Main() {
 </div>
 <div>
 <div className="">
-    <div className='flex gap-5'>
+    <div className='flex gap-5 cursor-pointer w-max'>
         <img src={video} className="w-6"/>
 <p className="text-2xl">Видео о ИМЗ:</p>
 </div>
@@ -173,7 +173,7 @@ export default function Main() {
   </div>
 </div>
 <div className="mt-16">
-<div className='flex gap-2'>
+<div className='flex gap-2 w-max cursor-pointer'>
         <img src={camera} className="w-6"/>
 <p className="text-2xl ">Фотогалерея:</p>
 </div>
@@ -191,7 +191,7 @@ export default function Main() {
 </div>
 </div>
 <div className='mt-16'>
-  <div className='flex gap-2'>
+  <div className='flex gap-2 w-max cursor-pointer'>
         <img src={tube} className="w-6"/>
 <p className="text-2xl ">Продукция:</p>
 </div>

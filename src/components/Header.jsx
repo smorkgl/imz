@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react'
+import { Fragment, useState, useEffect } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { Outlet, Link, NavLink } from "react-router-dom";
 import logo3 from '../img/logo3.png'
@@ -21,8 +21,9 @@ export default function Header() {
     setDropdownVisibleLang(false);
   }
 
+ 
     return (
-      <header className="">
+      <header>
       <div className="space-x-4 py-3 2xl max-w-7xl width-full mx-auto container">
         <div className="flex justify-between">
           <div className='flex'>
@@ -33,7 +34,7 @@ export default function Header() {
 <div className='flex gap-20 text-sm font-medium'>
   <div className='flex gap-20'>
   <div className='grid place-items-center'>
-    <div className='flex gap-3'><img src={geo} className='w-8' />
+    <div className='flex gap-3 select-none cursor-default'><img src={geo} className='w-8' />
   <p>346312, Ростовская область,<br /> Красносулинский район,
 <br />пст. Молодежный, территория «ДСК»</p></div>
   </div>

@@ -4,7 +4,7 @@ export default function Footer() {
     return (
         <section class="flex flex-col lg:justify-end font-poppins">
 <div class="w-full bg-[url('/src/img/test2.png')] bg-cover bg-no-repeat bg-center pt-11 dark:bg-gray-900 ">
-<div class="justify-center flex-1 max-w-6xl px-4 py-4 mx-auto lg:py-0">
+<div class="justify-center flex-1 max-w-6xl px-4 py-4 mx-auto lg:py-0 space-x-4 py-3 2xl max-w-7xl width-full mx-auto container mt-5 relative">
 <div class="flex flex-wrap items-center justify-between pb-4 border-b border-gray-500 dark:border-gray-700 lg:justify-between">
 <h2 class="mb-4 text-2xl font-semibold tracking-wider text-gray-300 lg:mb-0 dark:text-gray-400">
 Исаевский машиностроительный завод
@@ -104,11 +104,11 @@ export default function Footer() {
 <div class="w-full px-4 mb-2 lg:mb-0 md:w-1/3 lg:w-4/12">
 <h2 class="mb-4 text-lg font-bold text-gray-200 dark:text-gray-400">Связаться с нами</h2>
 <p class="flex items-center mb-4">
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-8 h-8 mr-2 text-gray-300 dark:text-gray-400 bi bi-geo-alt " viewBox="0 0 16 16">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-4 h-4 mr-2 text-gray-300 dark:text-gray-400 bi bi-geo-alt " viewBox="0 0 16 16">
 <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"></path>
 <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
 </svg>
-<span class="text-gray-300 dark:text-gray-400">346312, Ростовская область, Красносулинский район пст. Молодежный, территория «ДСК»</span>
+<span class="text-gray-300 dark:text-gray-400">346312, Ростовская область, <br />Красносулинский район пст. <br/> Молодежный, территория «ДСК»</span>
 </p>
 <p class="flex items-center mb-4 ">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-4 h-4 mr-2 text-gray-300 dark:text-gray-400 bi bi-envelope" viewBox="0 0 16 16">

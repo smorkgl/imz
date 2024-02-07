@@ -1,8 +1,9 @@
 import { Outlet, Link, NavLink } from "react-router-dom";
-import { Fragment, useState } from 'react'
+import { Fragment, useState, useEffect } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import dots from '../img/dots.svg'
 import close from '../img/close.svg'
+import logo from '../img/logoNEW.svg'
 
 export default function Nav() {
   const [isDropdownVisibleAbout, setDropdownVisibleAbout] = useState(false)
@@ -48,10 +49,20 @@ export default function Nav() {
 
   const [isOpen, setIsOpen] = useState(false)
 
+
+  const [scroll, setScroll] = useState(false);
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setScroll(window.scrollY > 124);
+    });
+  }, []);
+
+
     return (
-        <nav className='bg-blue-800'>
+      <nav className={scroll ? 'sticky z-10 top-0 bg-blue-800 py-3' : 'bg-blue-800'}>
           <div className="max-w-5xl width-full mx-auto container flex justify-between cursor-pointer text-white font-bold relative"> 
           <div className="dots__container absolute h-12 leading-12 flex justify-center items-center cursor-pointer hover:bg-blue-700 hover:rounded px-4" onClick={() => setIsOpen(true)}>
+          {scroll && <img   src={logo} className="w-20" alt="логотип" />}
           <img src={dots} className="dots w-7"  /></div>
           <Transition appear show={isOpen} as={Fragment}>
   <Dialog as="div" open={isOpen} onClose={() => setIsOpen(false)}>
