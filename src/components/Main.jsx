@@ -9,7 +9,7 @@ import tube from '../img/tube.svg'
 import next from '../img/next.svg'
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css'
-import { Outlet, Link, NavLink } from "react-router-dom";
+import {Link} from "react-router-dom";
 import {useState} from 'react';
 import camera from '../img/camera.svg';
 import photo1 from '../img/photo1.jpg'
@@ -63,8 +63,8 @@ export default function Main() {
         <div className="relative" onMouseEnter={handleMouseEnterNews1} onMouseLeave={handleMouseLeaveNews1}>
         <img class="rounded-t-lg min-h-72" src={news1} alt="" />
         <div className='absolute top-0 right-0 m-2 bg-white px-4 py-2 rounded-md font-bold text-blue-800'>1 сен</div>
-        {isDropdownVisibleNews1 && <div className='absolute top-0 bg-black/50 h-full w-full flex items-center justify-center rounded-lg'><img src={next} className="img__next w-20"/></div>}</div>
-    </a>
+        {isDropdownVisibleNews1 && <div className='absolute top-0 bg-black/50 h-full w-full flex items-center justify-center rounded-lg'><img src={next} className="img__next w-20 animate-jump-in"/></div>}</div>
+    </a> 
     <div class="p-5">
         <a href="#">
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">ИСАЕВСКИЙ МАШИНОСТРОИТЕЛЬНЫЙ ЗАВОД ПОЗДРАВИЛ ДЕТЕЙ, МЕТАЛЛУРГОВ, БУДУЩИХ ПЕРВОКЛАССНИКОВ, С ДНЕМ ЗНАНИЙ!</h5>
@@ -83,7 +83,7 @@ export default function Main() {
     <div className="relative" onMouseEnter={handleMouseEnterNews2} onMouseLeave={handleMouseLeaveNews2}>
         <img class="rounded-t-lg min-h-72" src={news2} alt="" />
         <div className='absolute top-0 right-0 m-2 bg-white px-4 py-2 rounded-md font-bold text-blue-800'>19 авг</div>
-        {isDropdownVisibleNews2 && <div className='absolute top-0 bg-black/50 h-full w-full flex items-center justify-center rounded-lg'><img src={next} className="img__next w-20"/></div>}</div>
+        {isDropdownVisibleNews2 && <div className='absolute top-0 bg-black/50 h-full w-full flex items-center justify-center rounded-lg'><img src={next} className="img__next w-20 animate-jump-in"/></div>}</div>
     </a>
     <div class="p-5">
         <a href="#">
@@ -103,7 +103,7 @@ export default function Main() {
     <div className="relative" onMouseEnter={handleMouseEnterNews3} onMouseLeave={handleMouseLeaveNews3}>
         <img class="rounded-t-lg min-h-72" src={news3} alt="" />
         <div className='absolute top-0 right-0 m-2 bg-white px-4 py-2 rounded-md font-bold text-blue-800'>14 июл</div>
-        {isDropdownVisibleNews3 && <div className='absolute top-0 bg-black/50 h-full w-full flex items-center justify-center rounded-lg'><img src={next} className="img__next w-20"/></div>}</div>
+        {isDropdownVisibleNews3 && <div className='absolute top-0 bg-black/50 h-full w-full flex items-center justify-center rounded-lg'><img src={next} className="img__next w-20 animate-jump-in"/></div>}</div>
     </a>
     <div class="p-5">
         <a href="#">
@@ -123,7 +123,7 @@ export default function Main() {
     <div className="relative" onMouseEnter={handleMouseEnterNews4} onMouseLeave={handleMouseLeaveNews4}>
         <img class="rounded-t-lg min-h-72"  src={news4} alt="" />
         <div className='absolute top-0 right-0 m-2 bg-white px-4 py-2 rounded-md font-bold text-blue-800'>14 июл</div>
-        {isDropdownVisibleNews4 && <div className='absolute top-0 bg-black/50 h-full w-full flex items-center justify-center rounded-lg'><img src={next} className="img__next w-20"/></div>}</div>
+        {isDropdownVisibleNews4 && <div className='absolute top-0 bg-black/50 h-full w-full flex items-center justify-center rounded-lg'><img src={next} className="img__next w-20 animate-jump-in"/></div>}</div>
     </a>
     <div class="p-5">
         <a href="#">

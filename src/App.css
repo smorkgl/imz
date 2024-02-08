@@ -230,3 +230,9 @@ ul {
   .sticky {
     position: fixed;
   }
+
+  .nav-animation {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  

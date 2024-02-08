@@ -59,14 +59,16 @@ export default function Nav() {
 
 
     return (
-      <nav className={scroll ? 'sticky z-10 top-0 bg-blue-800 py-3' : 'bg-blue-800'}>
-                  {scroll && <img   src={logo} className="absolute h-12 cursor-pointer px-4" alt="логотип" />}
+      
+      <nav className={scroll ? 'sticky z-10 top-0 bg-blue-800 py-3 border-b-2 border-blue-950' : 'bg-blue-800  '}>
+          <div>
+                  {scroll && <img   src={logo} className="absolute h-12 left-28 cursor-pointer animate-flip-down animate-once animate-duration-1000"/>}
           <div className="max-w-5xl width-full mx-auto container flex justify-between cursor-pointer text-white font-bold relative"> 
           <div className="dots__container absolute h-12 leading-12 flex justify-center items-center cursor-pointer hover:bg-blue-700 hover:rounded px-4" onClick={() => setIsOpen(true)}>
           <img src={dots} className="dots w-7"  /></div>
-          <Transition appear show={isOpen} as={Fragment}>
+          <Transition appear show={isOpen} as={Fragment} >
   <Dialog as="div" open={isOpen} onClose={() => setIsOpen(false)}>
-  <Transition.Child
+  <Transition.Child 
             as={Fragment}
             enter="ease-out duration-200"
             enterFrom="opacity-0"
@@ -74,7 +76,7 @@ export default function Nav() {
             leave="ease-in duration-200"
             leaveFrom="opacity-100" 
             leaveTo="opacity-0">
-      <div className='absolute top-0 h-screen w-screen bg-white/100 p-10'>
+      <div className={scroll ? 'absolute top-64 h-screen w-screen bg-white/100 p-10' : 'absolute top-0 h-screen w-screen bg-white/100 p-10'}>
           <Dialog.Panel>
            <div className="flex flex-wrap text-2xl gap-40">
             <div className="font-semibold w-60">
@@ -198,6 +200,7 @@ export default function Nav() {
     </div>}
           </div>
           <span></span>
+          </div>
           </div>
   </nav>
     )
