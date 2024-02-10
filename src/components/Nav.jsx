@@ -62,7 +62,7 @@ export default function Nav() {
       
       <nav className={scroll ? 'sticky z-10 top-0 bg-blue-800 py-3 border-b-2 border-blue-950' : 'bg-blue-800  '}>
           <div>
-                  {scroll && <img   src={logo} className="absolute h-12 left-28 cursor-pointer animate-flip-down animate-once animate-duration-1000"/>}
+                  {scroll && <img   src={logo} className="absolute h-12 left-28 cursor-pointer animate-flip-down animate-once animate-duration-800"/>}
           <div className="max-w-5xl width-full mx-auto container flex justify-between cursor-pointer text-white font-bold relative"> 
           <div className="dots__container absolute h-12 leading-12 flex justify-center items-center cursor-pointer hover:bg-blue-700 hover:rounded px-4" onClick={() => setIsOpen(true)}>
           <img src={dots} className="dots w-7"  /></div>
