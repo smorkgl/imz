@@ -1,12 +1,9 @@
-import '../Preloader.css'
-import logo from '../img/logoNEW2.svg'
-
 export default function Preloader() {
     return (
 
     <div className="loading-page" >
 
-<div className='animate-fade-down animate-duration-[1500ms] grid place-items-center mb-40'>
+<div className='animate-fade-up animate-duration-[1500ms] grid place-items-center mb-40'>
 <svg 
    version="1.1"
    id="svg"

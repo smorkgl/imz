@@ -60,7 +60,7 @@ export default function Nav() {
 
     return (
       
-      <nav className={scroll ? 'sticky z-10 top-0 bg-blue-800 py-3 border-b-2 border-blue-950' : 'bg-blue-800  '}>
+      <nav className={scroll ? 'sticky z-50 top-0 bg-blue-800 py-3 border-b-2 border-blue-950' : 'bg-blue-800  '}>
           <div>
                   {scroll && <img   src={logo} className="absolute h-12 left-28 cursor-pointer animate-flip-down animate-once animate-duration-800"/>}
           <div className="max-w-5xl width-full mx-auto container flex justify-between cursor-pointer text-white font-bold relative"> 

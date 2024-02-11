@@ -79,7 +79,7 @@ export default function Header() {
   </div>
   </div>
 <div className='grid place-items-center hover: shadow-blue-800'>
-  {toggleDark ? (<img src={moon} className='w-8 cursor-pointer' onClick={() => setToogleDark(false)}/>) : (<img src={sun} className='w-8 cursor-pointer' onClick={() => setToogleDark(true)} />)}
+  {toggleDark ? (<img src={moon} className='moonsun-button transition-transform w-8 cursor-pointer' onClick={() => setToogleDark(false)}/>) : (<img src={sun} className='moonsun-button transition-transform w-8 cursor-pointer' onClick={() => setToogleDark(true)} />)}
 </div>
 <div className='flex grid place-items-center text-sm relative' onMouseEnter={handleMouseEnterLang} onMouseLeave={handleMouseLeaveLang}>
 <button type="button" class="inline-flex items-center font-medium justify-center p-0 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer">
