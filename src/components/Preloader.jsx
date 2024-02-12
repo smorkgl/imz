@@ -3,7 +3,7 @@ export default function Preloader() {
 
     <div className="loading-page" >
 
-<div className='animate-fade-up animate-duration-[1500ms] grid place-items-center mb-40'>
+<div className='animate-fade-up animate-duration-[1500ms] grid place-items-center mb-40 select-none'>
 <svg 
    version="1.1"
    id="svg"

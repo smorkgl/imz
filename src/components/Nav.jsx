@@ -64,7 +64,7 @@ export default function Nav() {
           <div>
                   {scroll && <img   src={logo} className="absolute h-12 left-28 cursor-pointer animate-flip-down animate-once animate-duration-800"/>}
           <div className="max-w-5xl width-full mx-auto container flex justify-between cursor-pointer text-white font-bold relative"> 
-          <div className="dots__container absolute h-12 leading-12 flex justify-center items-center cursor-pointer hover:bg-blue-700 hover:rounded px-4" onClick={() => setIsOpen(true)}>
+          <div className="dots__container absolute h-12 leading-12 flex justify-center items-center cursor-pointer hover:bg-blue-700 hover:rounded px-4 transition-all" onClick={() => setIsOpen(true)}>
           <img src={dots} className="dots w-7"  /></div>
           <Transition appear show={isOpen} as={Fragment} >
   <Dialog as="div" open={isOpen} onClose={() => setIsOpen(false)}>
@@ -76,7 +76,7 @@ export default function Nav() {
             leave="ease-in duration-200"
             leaveFrom="opacity-100" 
             leaveTo="opacity-0">
-      <div className={scroll ? 'absolute top-64 h-screen w-screen bg-white/100 p-10' : 'absolute top-0 h-screen w-screen bg-white/100 p-10'}>
+      <div className={scroll ? 'absolute top-64 h-screen w-screen bg-white/100 p-10' : 'absolute top-0 h-screen w-screen bg-white/100 p-10 z-50'}>
           <Dialog.Panel>
            <div className="flex flex-wrap text-2xl gap-40">
             <div className="font-semibold w-60">
@@ -138,64 +138,64 @@ export default function Nav() {
       </Transition.Child>
   </Dialog>
   </Transition>
-          <Link to={`/`}><div className="h-12 leading-12 flex justify-center items-center cursor-pointer hover:bg-blue-700 hover:rounded px-4">
+          <Link to={`/`}><div className="h-12 leading-12 flex justify-center items-center cursor-pointer hover:bg-blue-700 hover:rounded px-4 transition-all">
           <p>ГЛАВНАЯ</p>
           </div></Link>
-          <div className="h-12 leading-12 flex justify-center items-center cursor-pointer relative hover:bg-blue-700 hover:rounded px-4" onMouseEnter={handleMouseEnterAbout} onMouseLeave={handleMouseLeaveAbout}>
+          <div className="h-12 leading-12 flex justify-center items-center cursor-pointer relative hover:bg-blue-700 hover:rounded px-4 transition-all" onMouseEnter={handleMouseEnterAbout} onMouseLeave={handleMouseLeaveAbout}>
           <p>О ИМЗ</p>
-          {isDropdownVisibleAbout &&     <div className="dropdown-menu absolute z-50 text-black">
+          {isDropdownVisibleAbout &&     <div className="dropdown-menu animate-fade-up animate-duration-[300ms] absolute z-50 text-black">
       <ul>
-      <Link to={`/imz/news`}><li>Новости</li></Link>
-        <Link to ={`/imz/about`}><li>О нас</li></Link>
-        <Link to ={`/imz/projects`}><li>Проекты</li></Link>
-        <Link to ={`/imz/hotel`}><li>Гостиница</li></Link>
-        <Link to ={`/imz/parking`}><li>Стоянка</li></Link>
+      <Link to={`/imz/news`}><li className="li-blue__hover">Новости</li></Link>
+        <Link to ={`/imz/about`}><li className="li-blue__hover">О нас</li></Link>
+        <Link to ={`/imz/projects`}><li className="li-blue__hover">Проекты</li></Link>
+        <Link to ={`/imz/hotel`}><li className="li-blue__hover">Гостиница</li></Link>
+        <Link to ={`/imz/parking`}><li className="li-blue__hover">Стоянка</li></Link>
       </ul>
     </div>}
           </div>
-          <div className="h-12 leading-12 flex justify-center items-center cursor-pointer relative hover:bg-blue-700 hover:rounded px-4" onMouseEnter={handleMouseEnterManuf} onMouseLeave={handleMouseLeaveManuf}>
+          <div className="h-12 leading-12 flex justify-center items-center cursor-pointer relative hover:bg-blue-700 hover:rounded px-4 transition-all" onMouseEnter={handleMouseEnterManuf} onMouseLeave={handleMouseLeaveManuf}>
           <p>ПРОИЗВОДСТВО</p>
-          {isDropdownVisibleManuf &&     <div className="dropdown-menu absolute z-50 text-black">
+          {isDropdownVisibleManuf &&     <div className="dropdown-menu animate-fade-up animate-duration-[300ms] absolute z-50 text-black">
       <ul>
-        <li>Производственные мощности</li>
-        <li>Сертификаты</li>
+        <li className="li-blue__hover">Производственные мощности</li>
+        <li className="li-blue__hover">Сертификаты</li>
       </ul>
     </div>}
           </div>
-          <div className="h-12 leading-12 flex justify-center items-center cursor-pointer relative hover:bg-blue-700 hover:rounded px-4" onMouseEnter={handleMouseEnterProd} onMouseLeave={handleMouseLeaveProd}>
+          <div className="h-12 leading-12 flex justify-center items-center cursor-pointer relative hover:bg-blue-700 hover:rounded px-4 transition-all" onMouseEnter={handleMouseEnterProd} onMouseLeave={handleMouseLeaveProd}>
           <p>ПРОДУКЦИЯ</p>
-          {isDropdownVisibleProd &&     <div className="dropdown-menu absolute z-50 text-black">
+          {isDropdownVisibleProd &&     <div className="dropdown-menu animate-fade-up animate-duration-[300ms] absolute z-50 text-black">
       <ul>
-        <li>Труба профильная</li>
-        <li>Балки</li>
-        <li>Металлоконструкции</li>
-        <li>Продукция</li>
-        <li>Заказ продукции</li>
+        <li className="li-blue__hover">Труба профильная</li>
+        <li className="li-blue__hover">Балки</li>
+        <li className="li-blue__hover">Металлоконструкции</li>
+        <li className="li-blue__hover">Продукция</li>
+        <li className="li-blue__hover">Заказ продукции</li>
       </ul>
     </div>}
           </div>
-          <div className="h-12 leading-12 flex justify-center items-center cursor-pointer hover:bg-blue-700 hover:rounded px-4">
+          <div className="h-12 leading-12 flex justify-center items-center cursor-pointer hover:bg-blue-700 hover:rounded px-4 transition-all">
           <p>ПОСТАВЩИКАМ</p>
           </div>
-          <Link to ={`/imz/job`} style={{ textDecoration: 'none' }}><div className="h-12 leading-12 flex justify-center items-center cursor-pointer hover:bg-blue-700 hover:rounded px-4">
+          <Link to ={`/imz/job`} style={{ textDecoration: 'none' }}><div className="h-12 leading-12 flex justify-center items-center cursor-pointer hover:bg-blue-700 hover:rounded px-4 transition-all">
           <p>ВАКАНСИИ</p>
           </div></Link>
-          <div className="h-12 leading-12 flex justify-center items-center cursor-pointer relative hover:bg-blue-700 hover:rounded px-4" onMouseEnter={handleMouseEnterCont} onMouseLeave={handleMouseLeaveCont}>
+          <div className="h-12 leading-12 flex justify-center items-center cursor-pointer relative hover:bg-blue-700 hover:rounded px-4 transition-all" onMouseEnter={handleMouseEnterCont} onMouseLeave={handleMouseLeaveCont}>
           <p>КОНТАКТЫ</p>
-          {isDropdownVisibleCont &&     <div className="dropdown-menu absolute z-50 text-black">
+          {isDropdownVisibleCont &&     <div className="dropdown-menu animate-fade-up animate-duration-[300ms] absolute z-50 text-black">
       <ul>
-        <li>Офис продаж</li>
-        <li>Написать письмо</li>
-        <li>Заказ продукции</li>
+        <li className="li-blue__hover">Офис продаж</li>
+        <li className="li-blue__hover">Написать письмо</li>
+        <li className="li-blue__hover">Заказ продукции</li>
       </ul>
     </div>}
           </div>
-          <div className="h-12 leading-12 flex justify-center items-center cursor-pointer relative hover:bg-blue-700 hover:rounded px-4" onMouseEnter={handleMouseEnterFaq} onMouseLeave={handleMouseLeaveFaq} >
+          <div className="h-12 leading-12 flex justify-center items-center cursor-pointer relative hover:bg-blue-700 hover:rounded px-4 transition-all" onMouseEnter={handleMouseEnterFaq} onMouseLeave={handleMouseLeaveFaq} >
           <p>FAQ</p>
-          {isDropdownVisibleFaq &&  <div className="dropdown-menu absolute z-50 text-black">
+          {isDropdownVisibleFaq &&  <div className="dropdown-menu animate-fade-up animate-duration-[300ms] absolute z-50 text-black">
       <ul>
-        <li>ГОСТ продукции</li>
-        <li>Калькулятор металлопроката</li>
+        <li className="li-blue__hover">ГОСТ продукции</li>
+        <li className="li-blue__hover">Калькулятор металлопроката</li>
       </ul>
     </div>}
           </div>

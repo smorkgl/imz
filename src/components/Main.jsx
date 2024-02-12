@@ -149,7 +149,7 @@ export default function Main() {
 </div>
 <div>
 <div className="">
-    <div className='flex gap-5 cursor-pointer w-max'>
+    <div className='flex gap-2 cursor-pointer w-max'>
         <img src={video} className="w-6"/>
 <p className="text-2xl">Видео о ИМЗ:</p>
 </div>

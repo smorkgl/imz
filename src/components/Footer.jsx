@@ -26,7 +26,7 @@ export default function Footer() {
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right" viewBox="0 0 16 16">
 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
 </svg>
-<a href="#" class="inline-block text-base font-normal text-gray-300 dark:text-gray-400">Труба профильная</a>
+<a href="#" class="inline-block text-base font-normal text-gray-300 dark:text-gray-400 li-blue__hover">Труба профильная</a>
 </li>
 <li class="flex items-center mb-1 p-0">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right" viewBox="0 0 16 16">

@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import News from './pages/News.jsx'
+import Job from './pages/Job.jsx'
 import './index.css'
 import {
   createBrowserRouter,
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: "imz/news",
     element: <News />,
+  },
+  {
+    path: "imz/job",
+    element: <Job />,
   },
 ]);
 

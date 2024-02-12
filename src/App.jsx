@@ -16,12 +16,12 @@ const [isLoading, setIsLoading] = useState(true)
 useEffect(() => {
   setTimeout(() => {
     setIsLoading(false);
-  }, 1);
+  }, 5000);
 })
 
   return ( 
     <div>
-{isLoading ? (<Preloader/>) : (<div className="font-['Ubuntu']">
+{isLoading ? (<Preloader/>) : (<div className="font-['Ubuntu'] animate-fade-up">
   <Header />
   <Nav />
   <Carousel />
