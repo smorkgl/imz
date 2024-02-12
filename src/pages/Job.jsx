@@ -3,7 +3,7 @@ import Nav from '../components/Nav'
 import Carousel from '../components/Carousel'
 import Footer from '../components/Footer'
 import TopMain from '../components/TopMain'
-import BreadCrumbTriangle from '../img/breadcrumbtriangle.svg'
+import Breadcumb from '../components/Breadcrumb'
 
 export default function Contact() {
   return (
@@ -12,15 +12,16 @@ export default function Contact() {
     <Nav />
     <Carousel />
     <TopMain />
-    <div className="space-x-4 py-3 2xl max-w-7xl width-full mx-auto container relative">
-      <nav aria-label="breadcrumb"> 
-        <ol class="flex space-x-2">
-          <li><a href="#" class="after:ml-2 text-gray-600">Главная</a></li>
-          <img src={BreadCrumbTriangle} className='w-5'/>
-          <li><a href="#" class="after:ml-2 text-gray-600">Вакансии</a></li>
-        </ol>
-      </nav>
+    <Breadcumb />
+    <div className="py-3 2xl max-w-6xl width-full mx-auto container relative">
+      <h1>Вакансии</h1>
+      <p className='pt-5'>Актуальные вакансии ООО "ИМЗ"</p>
+      <div className='bg-blue-800'>
+        <div>
+        test
+        </div>
       </div>
+    </div>
     <Footer />
     </div>
   );
