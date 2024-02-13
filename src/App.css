@@ -327,3 +327,19 @@ ul {
     transform: translateX(-3px)
   }
 
+  .job__container_row_vacancy_name:hover { 
+    color: #1E40AF;
+    text-shadow: 1px 0 0 currentColor;
+  }
+
+  .job__container_row_vacancy_name:hover ~ .job__container_row_vacancy_experience_name { 
+    text-shadow: 1px 0 0 currentColor;
+  }
+
+  .job__container_row_vacancy_name:hover ~ .job__container_row_vacancy_salary {
+    text-shadow: 1px 0 0 currentColor;
+  }
+  
+  .test {
+    box-shadow: rgba(68, 68, 221, 0.15) 0px 0px 60px 16px;
+  }

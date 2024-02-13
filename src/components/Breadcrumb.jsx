@@ -6,7 +6,7 @@ export default function Breadcumb() {
     <nav aria-label="breadcrumb"> 
       <ol class="flex">
         <li><a href="#" class="text-gray-600">Главная</a></li>
-        <img src={BreadCrumbTriangle} className='w-3'/>
+        <img src={BreadCrumbTriangle} className='w-5'/>
         <li><a href="#" class="text-gray-600">Вакансии</a></li>
       </ol>
     </nav>
