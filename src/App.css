@@ -360,3 +360,10 @@ ul {
     transform: translateX(-3px);
   }
 
+  .main__hover_container:hover .main__hover_container_img {
+    transform: translateX(-10px);
+  } 
+  
+  .main__hover_container:hover .main__hover_container_title {
+    color: #1E40AF;
+  }

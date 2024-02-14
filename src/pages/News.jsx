@@ -15,7 +15,11 @@ export default function News() {
     <Carousel />
     <TopMain />
     <Breadcrumb/>
-    Try
+    <div className="py-3 2xl max-w-5xl width-full mx-auto container">
+      <h1 className='font-bold'>Новости</h1>
+      </div>
+      <div className='2xl max-w-6xl width-full mx-auto container mb-10'>
+        </div>
     <Footer />
     </div>
   );

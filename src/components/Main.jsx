@@ -15,6 +15,7 @@ import camera from '../img/camera.svg';
 import photo1 from '../img/photo1.jpg'
 import photo2 from '../img/photo2.jpg'
 import photo6 from '../img/photo6.jpg'
+import right_arrow from '../img/right_arrow.svg'
 
 
 export default function Main() {
@@ -52,9 +53,15 @@ export default function Main() {
         <div className="space-x-4 py-3 2xl max-w-7xl width-full mx-auto container mt-5 relative">
             <div className='flex justify-between'>
             <div>
-            <div className='flex gap-2 cursor-pointer w-max'>
+              <div className='flex justify-between'>
+            <div className='flex gap-2 cursor-pointer'>
             <img src={newsicon} className='w-5'/>
             <p className="text-2xl">Последние новости:</p>
+            </div>
+            <div className='main__hover_container flex mr-20 gap-3 place-items-center cursor-pointer'>
+              <p className='main__hover_container_title mr-2 text-xs font-medium tracking-widest transition-all'>СМОТРЕТЬ ВСЕ</p>
+              <img src={right_arrow} className='main__hover_container_img w-4 transition-all'/>
+            </div>
             </div>
             <div className="work__line2 mt-2" />
             <div className='flex flex-wrap gap-20 mt-5'>

@@ -34,7 +34,7 @@ export default function Header() {
 <div className='flex gap-20 text-sm font-medium'>
   <div className='flex gap-20'>
   <div className='grid place-items-center'>
-    <div className='flex gap-3 select-none cursor-default address-hover'><img src={geo} className='w-8 geo-img transition-transform' />
+    <div className='flex gap-3 cursor-default address-hover'><img src={geo} className='w-8 geo-img transition-transform' />
   <p>346312, Ростовская область,<br /> Красносулинский район,
 <br />пст. Молодежный, территория «ДСК»</p></div>
   </div>
@@ -53,7 +53,7 @@ export default function Header() {
             leaveFrom="opacity-100" 
             leaveTo="opacity-0">
       <div className='fixed left-0 right-0 top-0 bottom-0 flex items-center justify-center bg-black/60'>
-          <Dialog.Panel className="bg-white/100 py-10 px-16">
+          <Dialog.Panel className="bg-white/100 py-10 px-16 rounded-xl box-shadow">
            <form class="max-w-sm mx-auto">
   <div class="mb-5">
     <label for="name" class="block mb-2 text-sm font-medium text-gray-900 text-black">Ваше имя *</label>
