@@ -344,10 +344,19 @@ ul {
     box-shadow: rgba(68, 68, 221, 0.15) 0px 0px 60px 16px;
   }
 
-  .footer__block:hover .footer__block_address  {
+  .footer__block_address:hover .footer__block_address_svg  {
     transform: translateX(-3px)
   }
 
   .contact-hover:hover .contact-img {
     transform: translateX(-3px)
   }
+
+  .footer__block_email:hover .footer__block_email_svg {
+    transform: translateX(-3px);
+  }
+
+  .footer__block_tel:hover .footer__block_tel_svg {
+    transform: translateX(-3px);
+  }
+
