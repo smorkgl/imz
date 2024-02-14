@@ -340,6 +340,14 @@ ul {
     text-shadow: 1px 0 0 currentColor;
   }
   
-  .test {
+  .job__container_table {
     box-shadow: rgba(68, 68, 221, 0.15) 0px 0px 60px 16px;
+  }
+
+  .footer__block:hover .footer__block_address  {
+    transform: translateX(-3px)
+  }
+
+  .contact-hover:hover .contact-img {
+    transform: translateX(-3px)
   }

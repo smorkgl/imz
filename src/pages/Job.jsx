@@ -7,10 +7,10 @@ import Footer from '../components/Footer'
 import TopMain from '../components/TopMain'
 import Breadcumb from '../components/Breadcrumb'
 
-export default function Contact() {
+export default function Job() {
   
   const [vacancies, setVacancies] = useState([])
-  const [sort1, setSort1] = useState(false)
+  const [set, setSet] = useState(false);
   
   const filteredData = vacancies.reduce((accumulator, current) => {
     const existingObject = accumulator.find(item => item.name === current.name)
@@ -39,7 +39,6 @@ export default function Contact() {
   a.name > b.name ? 1 : -1,
 );
 
-  
   return (
     <div className="font-['Ubuntu']">
     <Header/>
@@ -47,17 +46,18 @@ export default function Contact() {
     <Carousel />
     <TopMain />
     <Breadcumb />
-    <div className="py-3 2xl max-w-6xl width-full mx-auto container relative mb-5">
+    <div className="py-3 2xl max-w-5xl width-full mx-auto container">
       <h1 className='font-bold'>Вакансии</h1>
       <p className='pt-5'>Актуальные вакансии ООО "ИМЗ"</p>
-        <div className='test mt-5'>
+      </div>
+      <div className='2xl max-w-6xl width-full mx-auto container mb-10'>
+        <div className='job__container_table mt-5'>
         <div class="test relative overflow-x-auto shadow-md sm:rounded-lg">
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-white uppercase bg-blue-800 dark:bg-gray-700 dark:text-gray-400">
             <tr>
                 <th scope="col" class="px-6 py-3">
-                    Вакансия (КЛИКАБЕЛЬНА)
-                    <button onClick={() => setSort1(true)}>test</button>
+                    Вакансия (КЛИКАБЕЛЬНА)  
                 </th>
                 <th scope="col" class="px-6 py-3">
                     Опыт работы
@@ -68,7 +68,7 @@ export default function Contact() {
             </tr>   
         </thead>
         <tbody>
-        {filteredData.map((vacancy, id) => (
+        {strAscending.map((vacancy, id) => (
             <tr key = {id} class="odd:bg-white odd:dark:bg-gray-900 even:bg-blue-50 even:dark:bg-gray-800 dark:border-gray-700">
                 <th scope="row" class="job__container_row_vacancy_name px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white transition-all">
                     <a href={vacancy.alternate_url}>{vacancy.name}</a>  
@@ -94,10 +94,12 @@ export default function Contact() {
         <p> Начальник отдела кадров</p>
         <br />
         <p>Порошина А.Ю. доб. 128</p>
+
+        
         <br />
         <p> Отдел кадров работает с понедельника по пятницу с 8:00 до 17:00.  Перерыв с 12:00 до 13:00.</p>
         </div>
-    </div>
+        </div>
     <Footer />
     </div>
   );

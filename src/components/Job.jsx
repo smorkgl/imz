@@ -3,8 +3,8 @@ import { Outlet, Link, NavLink } from "react-router-dom";
 export default function Job() {
     return (
         <div>
-            <div className="job-container bg-[url('/src/img/job.png')] bg-cover bg-no-repeat bg-center flex place-items-center select-none cursor-default mt-20">
-                <div className="space-x-4 py-3 2xl max-w-7xl width-full mx-auto container mt-5 relative">
+            <div className="job-container bg-[url('/src/img/rabota.jpg')] bg-cover bg-no-repeat bg-center flex place-items-center select-none cursor-default mt-20">
+                <div className="space-x-4 py-3 2xl max-w-7xl width-full mx-auto container mt-5 relative flex justify-end">
                 <div className="job-container__inside text-white box-shadow rounded-3xl">
                     <div className="bg-blue-800/80 rounded-3xl p-5">
                     <h1>РАБОТА НА ИМЗ</h1>

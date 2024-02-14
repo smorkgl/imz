@@ -19,34 +19,34 @@ export default function Footer() {
 производства и контроля
 качества.</p>
 </div>
-<div class="w-full px-4 md:w-1/4 lg:w-2/12 mb-11 lg:mb-0">
+<div class="w-full px-3 md:w-1/4 lg:w-2/12 mb-11 lg:mb-0">
 <h2 class="mb-4 text-xl font-bold text-gray-200 dark:text-gray-400">Наша продукция </h2>
 <ul>
-<li class="flex items-center mb-1 p-0">
+<li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right" viewBox="0 0 16 16">
 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
 </svg>
-<a href="#" class="inline-block text-base font-normal text-gray-300 dark:text-gray-400 li-blue__hover">Труба профильная</a>
+<a href="#" class="inline-block text-base font-normal text-gray-300 dark:text-gray-400">Труба профильная</a>
 </li>
-<li class="flex items-center mb-1 p-0">
+<li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right" viewBox="0 0 16 16">
 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
 </svg>
 <a href="#" class="inline-block text-base font-normal text-gray-300 dark:text-gray-400">Балки</a>
 </li>
-<li class="flex items-center mb-1 p-0">
+<li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right" viewBox="0 0 16 16">
 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
 </svg>
 <a href="#" class="inline-block text-base font-normal text-gray-300 dark:text-gray-400">Металлоконструкции</a>
 </li>
-<li class="flex items-center mb-1 p-0">
+<li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right" viewBox="0 0 16 16">
 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
 </svg>
 <a href="#" class="inline-block text-base font-normal text-gray-300 dark:text-gray-400">Продукция</a>
 </li>
-<li class="flex items-center mb-1 p-0">
+<li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right" viewBox="0 0 16 16">
 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
 </svg>
@@ -57,43 +57,43 @@ export default function Footer() {
 <div class="w-full px-4 md:w-1/4 lg:w-2/12 mb-11 lg:mb-0">
 <h2 class="mb-4 text-xl font-bold text-gray-200 dark:text-gray-400">Быстрые ссылки</h2>
 <ul>
-<li class="flex items-center mb-1 p-0">
+<li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right" viewBox="0 0 16 16">
 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
 </svg>
 <a href="#" class="inline-block text-base font-normal text-gray-300 dark:text-gray-400">Главная</a>
 </li>
-<li class="flex items-center mb-1 p-0">
+<li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right" viewBox="0 0 16 16">
 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
 </svg>
 <a href="#" class="inline-block text-base font-normal text-gray-300 dark:text-gray-400">Производство</a>
 </li>
-<li class="flex items-center mb-1 p-0">
+<li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right" viewBox="0 0 16 16">
 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
 </svg>
 <a href="#" class="inline-block text-base font-normal text-gray-300 dark:text-gray-400">Продукция</a>
 </li>
-<li class="flex items-center mb-1 p-0">
+<li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right" viewBox="0 0 16 16">
 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
 </svg>
 <a href="#" class="inline-block text-base font-normal text-gray-300 dark:text-gray-400">Поставщикам</a>
 </li>
-<li class="flex items-center mb-1 p-0">
+<li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right" viewBox="0 0 16 16">
 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
 </svg>
 <a href="#" class="inline-block text-base font-normal text-gray-300 dark:text-gray-400">Вакансии</a>
 </li>
-<li class="flex items-center mb-1 p-0">
+<li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right" viewBox="0 0 16 16">
 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
 </svg>
 <a href="#" class="inline-block text-base font-normal text-gray-300 dark:text-gray-400">Контакты</a>
 </li>
-<li class="flex items-center mb-1 p-0">
+<li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right" viewBox="0 0 16 16">
 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
 </svg>
@@ -103,8 +103,8 @@ export default function Footer() {
 </div>
 <div class="w-full px-4 mb-2 lg:mb-0 md:w-1/3 lg:w-4/12">
 <h2 class="mb-4 text-lg font-bold text-gray-200 dark:text-gray-400">Связаться с нами</h2>
-<p class="flex items-center mb-4">
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-4 h-4 mr-2 text-gray-300 dark:text-gray-400 bi bi-geo-alt " viewBox="0 0 16 16">
+<p class="flex items-center mb-4 footer__block">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="footer__block_address transition-all w-4 h-4 mr-2 text-gray-300 dark:text-gray-400 bi bi-geo-alt " viewBox="0 0 16 16">
 <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"></path>
 <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
 </svg>

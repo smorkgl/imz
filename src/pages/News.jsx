@@ -1,18 +1,21 @@
+import React, {useEffect, useState} from 'react';
+
 import Header from '../components/Header'
 import Nav from '../components/Nav'
 import Carousel from '../components/Carousel'
 import Footer from '../components/Footer'
 import TopMain from '../components/TopMain'
-import NewsPage from '../components/NewsPage'
+import Breadcrumb from '../components/Breadcrumb'
 
-export default function Contact() {
-  return (
+export default function News() {
+    return (
     <div className="font-['Ubuntu']">
     <Header/>
     <Nav />
     <Carousel />
     <TopMain />
-    <NewsPage/>
+    <Breadcrumb/>
+    Try
     <Footer />
     </div>
   );
