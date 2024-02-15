@@ -196,6 +196,10 @@ export default function Main() {
   <img src={photo6} className='hover:scale-110 transition duration-500 cursor-pointer object-cover'/>
   </div>
 </div>
+<div className='main__hover_container flex gap-3 place-items-center cursor-pointer mt-16 justify-end'>
+              <p className='main__hover_container_title mr-2 text-xs font-medium tracking-widest transition-all'>СМОТРЕТЬ ВСЕ</p>
+              <img src={right_arrow} className='main__hover_container_img w-4 transition-all'/>
+            </div>
 </div>
 <div className='mt-16'>
   <div className='flex gap-2 w-max cursor-pointer'>

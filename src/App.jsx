@@ -15,8 +15,8 @@ function App() {
 const [isLoading, setIsLoading] = useState(true)
 useEffect(() => {
   setTimeout(() => {
-    setIsLoading(false);
-  }, 5000);
+    setIsLoading(false)
+  }, 5);
 })
 
   return ( 
@@ -27,10 +27,10 @@ useEffect(() => {
   <Carousel />
   <TopMain />
   <Main />
-  <Job />
   <Wherewe/>
+  <Job />
   <Footer />
-  
+
     </div>) }
 
 

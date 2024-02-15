@@ -4,7 +4,7 @@ export default function Wherewe() {
   
     return (
 
-      <div className='relative'>
+      <div className='relative mt-20'>
         <div className='wherewe__before absolute bg-blue-800 z-10 h-full'></div>
       <div className="max-w-7xl width-full mx-auto container relative">
         <div className='absolute z-10 h-full h bg-blue-800 text-white w-2/4 grid place-items-center pr-10'>

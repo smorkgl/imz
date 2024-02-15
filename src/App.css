@@ -125,12 +125,8 @@ ul {
     margin-right: 250px;
   }
 
-  .arrow {
-    filter: invert(87%) sepia(52%) saturate(0%) hue-rotate(178deg) brightness(105%) contrast(101%);
-  }
 
   .arrow2 {
-    filter: invert(87%) sepia(52%) saturate(0%) hue-rotate(178deg) brightness(105%) contrast(101%);
     transform: rotate(180deg);
   }
 
@@ -366,4 +362,28 @@ ul {
   
   .main__hover_container:hover .main__hover_container_title {
     color: #1E40AF;
+  }
+
+  .main__hover_container:hover .main__hover_container_img {
+    filter: invert(16%) sepia(68%) saturate(3343%) hue-rotate(223deg) brightness(98%) contrast(94%);
+  }
+
+  .carousel-button1 {
+    right: 0;
+    top: 155px;
+    border-radius: 0;
+  }
+
+  .carousel-button1:hover {
+    background-color:rgba(30, 64, 175, 1);
+  }
+
+  .carousel-button2:hover {
+    background-color:rgba(30, 64, 175, 1);
+  }
+
+  .carousel-button2 {
+    left: 0;
+    top: 155px;
+    border-radius: 0;
   }
