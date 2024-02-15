@@ -10,7 +10,6 @@ import Breadcumb from '../components/Breadcrumb'
 export default function Job() {
   
   const [vacancies, setVacancies] = useState([])
-  const [set, setSet] = useState(false);
   
   const filteredData = vacancies.reduce((accumulator, current) => {
     const existingObject = accumulator.find(item => item.name === current.name)
@@ -79,6 +78,7 @@ export default function Job() {
                 <td class="job__container_row_vacancy_salary px-6 py-4 px-6 py-4">
                 {vacancy.salary ? vacancy.salary.from + ' руб.' : 'Не указана'}
                 </td>
+                {vacancy.snippet.responsibility}
             </tr>
                 ))}
         </tbody>

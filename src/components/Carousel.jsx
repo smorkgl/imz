@@ -13,8 +13,8 @@ export default function Carousel() {
         isPlaying={true}
         className='relative'
       >
-                <ButtonNext className='absolute z-50 carousel-button1 bg-blue-800/70 z-50 transition-all cursor-pointer'><img src={arrow} className='w-10 arrow2'/></ButtonNext>
-          <ButtonBack className='absolute z-50 carousel-button2 bg-blue-800/70 z-50 transition-all cursor-pointer'><img src={arrow} className='w-10 arrow1'/></ButtonBack>
+                <ButtonNext className='absolute z-40 carousel-button1 bg-blue-800/70 transition-all cursor-pointer'><img src={arrow} className='w-10 arrow2'/></ButtonNext>
+          <ButtonBack className='absolute z-40 carousel-button2 bg-blue-800/70 transition-all cursor-pointer'><img src={arrow} className='w-10 arrow1'/></ButtonBack>
                 <Slider className="h-96">
           <Slide index={0}>
     <div className="bg-[url('/src/img/bg1.png')] bg-cover bg-no-repeat bg-center h-96 flex place-items-center">
