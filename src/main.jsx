@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import News from './pages/News.jsx'
 import Job from './pages/Job.jsx'
+import JobVacancy from './pages/JobVacancy.jsx'
 import './index.css'
 import {
   createBrowserRouter,
@@ -18,13 +19,17 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "imz/news",
+    path: "news",
     element: <News />,
   },
   {
-    path: "imz/job",
+    path: "job",
     element: <Job />,
   },
+  {
+    path: "/job/:id",
+    element: <JobVacancy />
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

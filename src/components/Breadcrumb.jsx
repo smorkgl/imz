@@ -8,13 +8,13 @@ export default function Breadcumb() {
 
   useEffect(() => {
     const currentPath = window.location.pathname;
-    if (currentPath === '/imz/news') {
+    if (currentPath === '/news') {
       setPath('Новости')
-      setPathLink('/imz/news')
+      setPathLink('/news')
     }
-    if (currentPath === '/imz/job') {
+    if (currentPath === '/job') {
       setPath('Вакансии')
-      setPathLink('/imz/job')
+      setPathLink('/job')
     }
   }, []);
     return (

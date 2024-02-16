@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import { Outlet, Link, NavLink } from "react-router-dom";
 
 import Header from '../components/Header'
 import Nav from '../components/Nav'
@@ -45,7 +46,7 @@ export default function Job() {
     <Carousel />
     <TopMain />
     <Breadcumb />
-    <div className="py-3 2xl max-w-5xl width-full mx-auto container">
+    <div className="py-3 2xl max-w-6xl width-full mx-auto container">
       <h1 className='font-bold'>Вакансии</h1>
       <p className='pt-5'>Актуальные вакансии ООО "ИМЗ"</p>
       </div>
@@ -53,7 +54,7 @@ export default function Job() {
         <div className='job__container_table mt-5'>
         <div class="test relative overflow-x-auto shadow-md sm:rounded-lg">
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-white uppercase bg-blue-800 dark:bg-gray-700 dark:text-gray-400">
+        <thead class="text-xs text-gray-900 uppercase bg-blue-800 text-white cursor-pointer">
             <tr>
                 <th scope="col" class="px-6 py-3">
                     Вакансия (КЛИКАБЕЛЬНА)  
@@ -77,8 +78,8 @@ export default function Job() {
                 </td>
                 <td class="job__container_row_vacancy_salary px-6 py-4 px-6 py-4">
                 {vacancy.salary ? vacancy.salary.from + ' руб.' : 'Не указана'}
-                </td>
-                {vacancy.snippet.responsibility}
+                </td> 
+                <td><Link to={`/job/${vacancy.id}`}>Link</Link></td>
             </tr>
                 ))}
         </tbody>

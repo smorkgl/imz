@@ -60,9 +60,9 @@ export default function Nav() {
 
     return (
       
-      <nav className={scroll ? 'sticky z-50 top-0 bg-blue-800 py-3 border-b-2 border-blue-950 animate-fade-up animate-duration-300 animate-ease-in-out' : 'bg-blue-800  '}>
+      <nav className={scroll ? 'sticky z-50 top-0 bg-blue-800 py-3 border-b-2 border-blue-950 animate-fade-up animate-duration-300 animate-ease-in-out shadow-2xl' : 'bg-blue-800  '}>
           <div>
-                  {scroll && <img   src={logo} className="absolute h-12 left-28 cursor-pointer animate-flip-down animate-once animate-duration-800"/>}
+                  {scroll && <Link to={"/"}><img   src={logo} className="absolute h-12 left-28 cursor-pointer animate-flip-down animate-once animate-duration-800"/></Link>}
           <div className="max-w-5xl width-full mx-auto container flex justify-between cursor-pointer text-white font-bold relative"> 
           <div className="dots__container absolute h-12 leading-12 flex justify-center items-center cursor-pointer hover:bg-blue-700 hover:rounded px-4 transition-all" onClick={() => setIsOpen(true)}>
           <img src={dots} className="dots w-7"  /></div>
@@ -145,11 +145,11 @@ export default function Nav() {
           <p>О ИМЗ</p>
           {isDropdownVisibleAbout &&     <div className="dropdown-menu animate-fade-up animate-duration-[300ms] absolute z-50 text-black">
       <ul>
-      <Link to={`/imz/news`}><li className="li-blue__hover">Новости</li></Link>
-        <Link to ={`/imz/about`}><li className="li-blue__hover">О нас</li></Link>
-        <Link to ={`/imz/projects`}><li className="li-blue__hover">Проекты</li></Link>
-        <Link to ={`/imz/hotel`}><li className="li-blue__hover">Гостиница</li></Link>
-        <Link to ={`/imz/parking`}><li className="li-blue__hover">Стоянка</li></Link>
+      <Link to={`/news`}><li className="li-blue__hover">Новости</li></Link>
+        <Link to ={`/about`}><li className="li-blue__hover">О нас</li></Link>
+        <Link to ={`projects`}><li className="li-blue__hover">Проекты</li></Link>
+        <Link to ={`/hotel`}><li className="li-blue__hover">Гостиница</li></Link>
+        <Link to ={`/parking`}><li className="li-blue__hover">Стоянка</li></Link>
       </ul>
     </div>}
           </div>
@@ -177,7 +177,7 @@ export default function Nav() {
           <div className="h-12 leading-12 flex justify-center items-center cursor-pointer hover:bg-blue-700 hover:rounded px-4 transition-all">
           <p>ПОСТАВЩИКАМ</p>
           </div>
-          <Link to ={`/imz/job`} style={{ textDecoration: 'none' }}><div className="h-12 leading-12 flex justify-center items-center cursor-pointer hover:bg-blue-700 hover:rounded px-4 transition-all">
+          <Link to ={`/job`} style={{ textDecoration: 'none' }}><div className="h-12 leading-12 flex justify-center items-center cursor-pointer hover:bg-blue-700 hover:rounded px-4 transition-all">
           <p>ВАКАНСИИ</p>
           </div></Link>
           <div className="h-12 leading-12 flex justify-center items-center cursor-pointer relative hover:bg-blue-700 hover:rounded px-4 transition-all" onMouseEnter={handleMouseEnterCont} onMouseLeave={handleMouseLeaveCont}>

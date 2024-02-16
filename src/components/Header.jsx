@@ -28,7 +28,7 @@ export default function Header() {
         <div className="flex justify-between">
           <div className='flex'>
           <div className="cursor-pointer">
-<img src={logo3} className="logo2" />
+          <Link to={"/"}><img src={logo3} className="logo2" /></Link>
 </div>
 </div>
 <div className='flex gap-20 text-sm font-medium'>
@@ -86,7 +86,7 @@ export default function Header() {
        <img src={russia} className='w-5 mr-2'/>
         Russian (RU)
       </button>
-      {isDropdownVisibleLang && <div class="language-open absolute z-50 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700" id="language-dropdown-menu">
+      {isDropdownVisibleLang && <div class="language-open absolute z-50 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 transition animate-fade animate-duration-[200ms]" id="language-dropdown-menu">
         <ul class="py-2 font-medium">
           <li className="p-1">
             <a href="#" class="" role="menuitem">

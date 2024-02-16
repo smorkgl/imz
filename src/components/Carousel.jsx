@@ -35,7 +35,7 @@ export default function Carousel() {
           <Slide index={2}><div className="bg-[url('/src/img/bg3.png')] bg-cover bg-no-repeat bg-center h-96 flex place-items-center">
           {/* <ButtonBack className='button-back'><img src={arrow} className='arrow w-10'/></ButtonBack> */}
           <p className="container max-w-5xl width-full mx-auto text-white text-2xl">
-    Деятельность предприятия будет направлена на производство листовой и рулонной стали. Реализация данного проекта имеет огромное экономическое и социальное знание для региона и в этой связи проект был включен в 100 проектов Губернатора Ростовской области.</p>
+    Деятельность предприятия направлена на производство листовой и рулонной стали. Реализация данного проекта имеет огромное экономическое и социальное знание для региона и в этой связи проект был включен в 100 проектов Губернатора Ростовской области.</p>
     {/* <ButtonNext className='button-next opacity-0'><img src={arrow} className='arrow2 w-10'/></ButtonNext> */}
     </div>
 </Slide>
