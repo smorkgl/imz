@@ -58,7 +58,7 @@ export default function Main() {
             <img src={newsicon} className='w-5'/>
             <p className="text-2xl">Последние новости:</p>
             </div>
-            <Link to={'/imz/news'}>
+            <Link to={'/news'}>
             <div className='main__hover_container flex mr-20 gap-3 place-items-center cursor-pointer'>
               <p className='main__hover_container_title mr-2 text-xs font-medium tracking-widest transition-all'>СМОТРЕТЬ ВСЕ</p>
               <img src={right_arrow} className='main__hover_container_img w-4 transition-all'/>
@@ -147,7 +147,7 @@ export default function Main() {
         </a>
     </div>
 </div>
-<Link to={`/imz/news`}><a href="#" class="inline-flex items-center p-3 text-lg font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 -mt-10">
+<Link to={`/news`}><a href="#" class="inline-flex items-center p-3 text-lg font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 -mt-10">
             Предыдущие записи
              <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
