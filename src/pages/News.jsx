@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import { Outlet, Link, NavLink } from "react-router-dom";
 import news1 from '../img/news1.jpg'
 import news2 from '../img/news2.jpg'
 import news3 from '../img/news3.jpg'
@@ -245,11 +246,11 @@ export default function News() {
       </div>
     </div>
 
-    <div class="mb-12 flex flex-wrap">
+    <div class="mb-12 flex flex-wrap" key={news.id}>
       <div class="mb-6 ml-auto w-full shrink-0 grow-0 basis-auto px-3 md:mb-0 md:w-3/12">
         <div class="relative mb-6 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-lg dark:shadow-black/20"
           data-te-ripple-init data-te-ripple-color="light">
-          <img src={news10} class="w-full" alt="Louvre" />
+          <Link to ={`/news/${news.id}`}><img src={news10} class="w-full" alt="Louvre" /></Link>
           <a href="#!">
             <div
               class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100 bg-[hsla(0,0%,98.4%,.15)]">

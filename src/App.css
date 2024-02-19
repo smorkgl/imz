@@ -387,3 +387,7 @@ ul {
     top: 155px;
     border-radius: 0;
   }
+
+  .job__border_container {
+    border: 1px solid #000;
+  }

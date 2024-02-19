@@ -16,8 +16,8 @@ export default function Job() {
   const [isOpen, setIsOpen] = useState(false)
   // Получение index вакансии по её клику
   const [selectedInfo, setSelectedInfo] = useState()
-  
  // Отфильтрованный массив (убирает дубликаты вакансий)
+ const [isDropdownVisibleJobSort, setIsDropdownVisibleJobSort] = useState(false)
 
   const filteredData = vacancies.reduce((accumulator, current) => {
     const existingObject = accumulator.find(item => item.name === current.name)
@@ -67,9 +67,24 @@ export default function Job() {
       <p className='pt-5'>Актуальные вакансии ООО "ИМЗ"</p>
       </div>
       <div className='2xl max-w-6xl width-full mx-auto container mb-10'>
-    
+      <button className='bg-white text-black text-sm border-black border-2 rounded-lg pr-10 relative' onClick={() => setIsDropdownVisibleJobSort(!isDropdownVisibleJobSort)}>Все сферы деятельности<img src={ArrowDown} className='w-4 absolute right-2 top-2.5 '/></button>
+      {isDropdownVisibleJobSort && <div className='job__border_container w-60 text-sm mt-2 rounded-lg'><ul>
+        <li className='p-0 pl-4 py-1 cursor-pointer border-b hover:bg-blue-800 hover:text-white'>Все сферы деятльности</li>
+        <li className='p-0 pl-4 py-1 cursor-pointer border-b hover:bg-blue-800 hover:text-white'>Производство</li>
+        <li className='p-0 pl-4 py-1 cursor-pointer border-b hover:bg-blue-800 hover:text-white'>Информационные технологии</li>
+        <li className='p-0 pl-4 py-1 cursor-pointer border-b hover:bg-blue-800 hover:text-white'>Производство</li>
+        <li className='p-0 pl-4 py-1 cursor-pointer border-b hover:bg-blue-800 hover:text-white'>Бухгалтерия, учёт, финансы</li>
+        <li className='p-0 pl-4 py-1 cursor-pointer border-b hover:bg-blue-800 hover:text-white'>Безопасность</li>
+        <li className='p-0 pl-4 py-1 cursor-pointer border-b hover:bg-blue-800 hover:text-white'>Продажи</li>
+        <li className='p-0 pl-4 py-1 cursor-pointer border-b hover:bg-blue-800 hover:text-white'>Транспорт, логистика</li>
+        <li className='p-0 pl-4 py-1 cursor-pointer border-b hover:bg-blue-800 hover:text-white'>Медицина</li>
+        <li className='p-0 pl-4 py-1 cursor-pointer border-b hover:bg-blue-800 hover:text-white'>Маркетинг, реклама, PR</li>
+        <li className='p-0 pl-4 py-1 cursor-pointer border-b hover:bg-blue-800 hover:text-white'>Руководство/развитие предприятия</li>
+        <li className='p-0 pl-4 py-1 cursor-pointer border-b hover:bg-blue-800 hover:text-white'>Управление проектом</li>
+        <li className='p-0 pl-4 py-1 cursor-pointer border-b hover:bg-blue-800 hover:text-white'>Управление персоналом</li>
+        </ul></div>}
         {strAscending.map((vacancy, id) => ( 
-            <div className="bg-white text-black px-10 py-3 pr-32 mt-5 border-2 border-black relative" key={id}>
+            <div className="bg-white text-black px-10 py-5 pr-32 mt-5 shadow-xl shadow-blue-800/20 rounded-xl relative" key={id}>
   <div>
   <div className='flex justify-between font-bold'>
     <h3 className=''>{vacancy.name}</h3>
@@ -77,11 +92,11 @@ export default function Job() {
   </div>
   <p className='mt-3'>{vacancy.experience.name}</p>
 </div>
-<img src={ArrowDown} className='w-10 absolute right-5 top-5 cursor-pointer' onClick={() => setInfo(id)}/>
+<img src={ArrowDown} className='w-10 absolute right-5 top-7 cursor-pointer' onClick={() => setInfo(id)}/>
 {isOpen && selectedInfo === id && 
 <div className='mt-5 animate-fade animate-duration-[150ms]'><p className='font-semibold'>Обязанности:</p> <div className=''>{vacancy.snippet.responsibility}</div><br /><p className='font-semibold'>Требования:</p>{vacancy.snippet.requirement}
 <div>
-<button class="bg-blue-800 text-white hover:bg-white hover:text-black font-semibold hover:text-white py-2 px-4 border border-black hover:border-black transition-all rounded mt-5">
+<button class="bg-blue-800 text-white hover:bg-white hover:text-black font-semibold py-2 px-4 border border-black hover:border-black transition-all rounded mt-5">
   <a href={vacancy.alternate_url}>ОТПРАВИТЬ РЕЗЮМЕ</a>
 </button>
 </div>
