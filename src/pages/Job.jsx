@@ -68,7 +68,7 @@ export default function Job() {
       </div>
       <div className='2xl max-w-6xl width-full mx-auto container mb-10'>
       <button className='bg-white text-black text-sm border-black border-2 rounded-lg pr-10 relative' onClick={() => setIsDropdownVisibleJobSort(!isDropdownVisibleJobSort)}>Все сферы деятельности<img src={ArrowDown} className='w-4 absolute right-2 top-2.5 '/></button>
-      {isDropdownVisibleJobSort && <div className='job__border_container w-60 text-sm mt-2 rounded-lg'><ul>
+      {isDropdownVisibleJobSort && <div className='job__border_container w-60 text-sm mt-2 rounded-lg absolute bg-white z-50'><ul>
         <li className='p-0 pl-4 py-1 cursor-pointer border-b hover:bg-blue-800 hover:text-white'>Все сферы деятльности</li>
         <li className='p-0 pl-4 py-1 cursor-pointer border-b hover:bg-blue-800 hover:text-white'>Производство</li>
         <li className='p-0 pl-4 py-1 cursor-pointer border-b hover:bg-blue-800 hover:text-white'>Информационные технологии</li>
