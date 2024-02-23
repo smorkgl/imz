@@ -84,7 +84,7 @@ export default function Job() {
         <li className='p-0 pl-4 py-1 cursor-pointer border-b hover:bg-blue-800 hover:text-white'>Управление персоналом</li>
         </ul></div>}
         {strAscending.map((vacancy, id) => ( 
-            <div className="bg-white text-black px-10 py-5 pr-32 mt-5 shadow-xl shadow-blue-800/20 rounded-xl relative" key={id}>
+            <div className="bg-white text-black px-10 py-5 pr-32 mt-5 shadow-xl shadow-blue-800/10 rounded-xl relative" key={id}>
   <div>
   <div className='flex justify-between font-bold'>
     <h3 className=''>{vacancy.name}</h3>

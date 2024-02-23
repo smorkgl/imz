@@ -7,7 +7,7 @@ export default function ErrorPage() {
   return (
     <div id="error-page">
       <h1>Ууупс!</h1>
-      <p>Извините, произошла неожиданная ошибка!</p>
+      <p>Извините, произошла неожиданная ошибка!!!</p>
       <p>
         <i>{error.statusText || error.message}</i>
       </p>
