@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import News from './pages/News.jsx'
+import NewsElement from './pages/NewsElement.jsx'
 import Job from './pages/Job.jsx'
 import './index.css'
 import {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
     path: "job",
     element: <Job />,
   },
+  {
+    path: "news/:id",
+    element: <NewsElement />
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
