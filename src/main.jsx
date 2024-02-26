@@ -1,15 +1,13 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import News from './pages/News.jsx'
-import NewsElement from './pages/NewsElement.jsx'
-import Job from './pages/Job.jsx'
-import './index.css'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom"
-import ErrorPage from './pages/Error-page.jsx'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
+import News from "./pages/News.jsx";
+import NewsElement from "./pages/NewsElement.jsx";
+import Job from "./pages/Job.jsx";
+import "./index.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import ErrorPage from "./pages/Error-page.jsx";
+import Login from "./pages/Login.jsx";
 
 const router = createBrowserRouter([
   {
@@ -27,12 +25,16 @@ const router = createBrowserRouter([
   },
   {
     path: "news/:id",
-    element: <NewsElement />
-  }
+    element: <NewsElement />,
+  },
+  {
+    path: "login",
+    element: <Login />,
+  },
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
-  </React.StrictMode>,
-)
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);
