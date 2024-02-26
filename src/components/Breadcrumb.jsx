@@ -16,6 +16,11 @@ export default function Breadcumb() {
       setPath('Вакансии')
       setPathLink('/job')
     }
+    // если текущий путь начинается с /news/
+    if (currentPath.startsWith('/news/')) {
+      setPath('Новости')
+      setPathLink('/news')
+    }
   }, []);
     return (
             <div className="space-x-4 py-3 2xl max-w-6xl width-full mx-auto container">

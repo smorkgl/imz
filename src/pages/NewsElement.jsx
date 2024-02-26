@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import TopMain from "../components/TopMain";
 import Breadcrumb from "../components/Breadcrumb";
 import { ReverseNewsList } from "../pages/News";
+import calendar from '../img/calendar.svg';
 
 export default function NewsElement() {
   const { id } = useParams();
@@ -20,14 +21,20 @@ export default function NewsElement() {
       <TopMain />
       <Breadcrumb />
       <div>
+      <div className="py-3 2xl max-w-6xl width-full mx-auto container">
         {selectedNews && (
-          <>
-            <h3>{selectedNews.title}</h3>
-            <p>{selectedNews.description}</p>
-            <p>Дата публикации: {selectedNews.date}</p>
-            <img src={selectedNews.img} alt="News" />
-          </>
+          <div className="mb-10">
+                        <img className="w-1/3" src={selectedNews.img} alt="News" /> 
+            <h1 className="font-bold text-2xl mt-5">{selectedNews.title}</h1>
+            <div className="flex gap-1 mt-3">
+            <img src={calendar} className="w-6"/>
+            <p>{selectedNews.date}</p>
+            </div>
+            <p className="mt-5">{selectedNews.full_description}</p>
+            
+          </div>
         )}
+      </div>
       </div>
       <Footer />
     </div>
