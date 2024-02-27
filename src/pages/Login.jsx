@@ -1,17 +1,18 @@
-import no_image from "../img/no_image.png";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   return (
-    <div className="bg-[url('/src/img/no_image.png')] h-screen bg-no-repeat bg-center bg-cover flex place-items-center">
+         <div className="bg-[url('/src/img/test3.png')] bg-blue-800 h-screen bg-no-repeat bg-center bg-cover flex place-items-center">
+            <Link to={`/`}><button className="absolute top-5 left-5 bg-white text-blue-800 hover:text-blue-700 transition-all">ВЕРНУТЬСЯ НАЗАД</button></Link>
       <div class="w-full max-w-xs mx-auto">
         <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
           <div class="mb-4">
-            <label
+            <labelx
               class="block text-gray-700 text-sm font-bold mb-2"
               for="username"
             >
               Логин
-            </label>
+            </labelx>
             <input
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="username"
@@ -32,7 +33,7 @@ export default function Login() {
               type="password"
               placeholder="******************"
             />
-            <p class="text-red-500 text-xs italic">Please choose a password.</p>
+            <p class="text-red-500 text-xs italic">Пожалуйста введите пароль</p>
           </div>
           <div class="flex items-center justify-between">
             <button

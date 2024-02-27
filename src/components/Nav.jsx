@@ -60,7 +60,7 @@ export default function Nav() {
     <nav
       className={
         scroll
-          ? "sticky z-50 top-0 bg-blue-800 py-3 border-b-2 border-blue-950 shadow-2xl"
+          ? "sticky z-50 top-0 bg-blue-800 py-2 border-b-2 border-blue-950 shadow-2xl"
           : "bg-blue-800  "
       }
     >
@@ -94,12 +94,12 @@ export default function Nav() {
                 <div
                   className={
                     scroll
-                      ? "absolute top-64 h-screen w-screen bg-white/100 p-10"
-                      : "absolute top-0 h-screen w-screen bg-white/100 p-10 z-50"
+                      ? "fixed top-0 h-full w-screen bg-white/100 p-10"
+                      : ""
                   }
                 >
                   <Dialog.Panel>
-                    <div className="flex flex-wrap text-2xl gap-40">
+                    <div className="flex flex-wrap text-2xl gap-32">
                       <div className="font-semibold w-60">
                         <div className="cursor-pointer hover:bg-gray-100 p-3">
                           ГЛАВНАЯ
@@ -191,6 +191,11 @@ export default function Nav() {
                           Калькулятор металлопроката
                         </div>
                       </div>
+                      <div className="flex flex-col gap-3 w-60">
+                        <Link to={`/login`}><div className="font-semibold cursor-pointer hover:bg-gray-100 p-3">
+                          ВХОД
+                        </div></Link>
+                        </div>
                     </div>
                   </Dialog.Panel>
                   <img
