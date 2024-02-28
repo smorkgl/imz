@@ -18,6 +18,9 @@ export default function Job() {
   const [selectedInfo, setSelectedInfo] = useState()
  // Отфильтрованный массив (убирает дубликаты вакансий)
  const [isDropdownVisibleJobSort, setIsDropdownVisibleJobSort] = useState(false)
+ // Загрузка
+ const [isLoading, setIsLoading] = useState(true);
+ // Стрелка напротив вакансии
 
   const filteredData = vacancies.reduce((accumulator, current) => {
     const existingObject = accumulator.find(item => item.name === current.name)
@@ -29,20 +32,16 @@ export default function Job() {
 
 
   useEffect(() => {
-    fetchData()
-  }, [])
-  
-
-  const fetchData = () => {
     fetch("https://api.hh.ru/vacancies?employer_id=1882136&per_page=100")
     .then(response => {
       return response.json()
     })
     .then(data => {
       setVacancies(data.items)
+      setIsLoading(false)
     })
-  }
-
+  }, [])
+  
   // Отфильтрованный массив (А-Я)
 
   const strAscending = [...filteredData].sort((a, b) =>
@@ -53,6 +52,7 @@ export default function Job() {
   const setInfo = (id) => {
     setSelectedInfo(id)
     setIsOpen(!isOpen)
+    
   }
 
   return (
@@ -83,8 +83,11 @@ export default function Job() {
         <li className='p-0 pl-4 py-1 cursor-pointer border-b hover:bg-blue-800 hover:text-white'>Управление проектом</li>
         <li className='p-0 pl-4 py-1 cursor-pointer border-b hover:bg-blue-800 hover:text-white'>Управление персоналом</li>
         </ul></div>}
-        {strAscending.map((vacancy, id) => ( 
-            <div className="bg-white text-black px-10 py-5 pr-32 mt-5 shadow-xl shadow-blue-800/10 rounded-xl relative" key={id}>
+      
+        {isLoading ? (
+        <p className='mt-10 text-lg font-bold'>Вакансии загружаются...</p>
+        ) : (strAscending.map((vacancy, id) => ( 
+            <div className="bg-white text-black px-10 py-5 pr-32 mt-5 shadow-xl shadow-blue-800/10 rounded-xl relative cursor-pointer" key={id} onClick={() => setInfo(id)}>
   <div>
   <div className='flex justify-between font-bold'>
     <h3 className=''>{vacancy.name}</h3>
@@ -92,18 +95,17 @@ export default function Job() {
   </div>
   <p className='mt-3'>{vacancy.experience.name}</p>
 </div>
-<img src={ArrowDown} className='w-10 absolute right-5 top-7 cursor-pointer' onClick={() => setInfo(id)}/>
+<img src={ArrowDown} className='w-10 absolute right-5 top-7'/>
 {isOpen && selectedInfo === id && 
 <div className='mt-5 animate-fade animate-duration-[150ms]'><p className='font-semibold'>Обязанности:</p> <div className=''>{vacancy.snippet.responsibility}</div><br /><p className='font-semibold'>Требования:</p>{vacancy.snippet.requirement}
 <div>
-<button class="bg-blue-800 text-white hover:bg-white hover:text-black font-semibold py-2 px-4 border border-black hover:border-black transition-all rounded mt-5">
+<button className="bg-blue-800 text-white hover:bg-white hover:text-black font-semibold py-2 px-4 border border-black hover:border-black transition-all rounded mt-5">
   <a href={vacancy.alternate_url}>ОТПРАВИТЬ РЕЗЮМЕ</a>
 </button>
 </div>
 </div>}
 </div>
-
-        ))}
+        )))}
 
         <div className='mt-10'>
         <p>По вопросам трудоустройства: </p>

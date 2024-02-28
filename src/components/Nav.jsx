@@ -60,7 +60,7 @@ export default function Nav() {
     <nav
       className={
         scroll
-          ? "sticky z-50 top-0 bg-blue-800 py-2 border-b-2 border-blue-950 shadow-2xl"
+          ? "sticky z-50 top-0 bg-blue-800 py-2 border-b-2 border-blue-950 shadow-2xl transition-all"
           : "bg-blue-800  "
       }
     >
@@ -69,7 +69,7 @@ export default function Nav() {
           <Link to={"/"}>
             <img
               src={logo}
-              className="absolute h-12 left-28 cursor-pointer animate-flip-down animate-once animate-duration-800"
+              className="absolute h-12 left-28 cursor-pointer animate-flip-down animate-duration-800"
             />
           </Link>
         )}
