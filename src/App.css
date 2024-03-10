@@ -388,3 +388,7 @@ li {
 .job__border_container {
   border: 1px solid #000;
 }
+
+.news__img-container {
+  min-height: 225px !important;
+}
