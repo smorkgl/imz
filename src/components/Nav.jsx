@@ -7,17 +7,19 @@ import { logout } from "../redux/slices/auth";
 import dots from "../img/dots.svg";
 import close from "../img/close.svg";
 import logo from "../img/logoNEW2.svg";
+import { useSelector, useDispatch } from "react-redux";
+import { logout, selectIsAuth } from "../redux/slices/auth";
 
 export default function Nav() {
   const dispatch = useDispatch();
   const isAuth = useSelector(selectIsAuth);
 
   const onClickLogout = () => {
-    if (window.confirm('Вы действительно хотите выйти?')) {
-    dispatch(logout())
-    window.localStorage.removeItem('token')
-   }
-  }
+    if (window.confirm("Вы действительно хотите выйти?")) {
+      dispatch(logout());
+      window.localStorage.removeItem("token");
+    }
+  };
 
   const [isDropdownVisibleAbout, setDropdownVisibleAbout] = useState(false);
   const [isDropdownVisibleManuf, setDropdownVisibleManuf] = useState(false);
@@ -68,6 +70,15 @@ export default function Nav() {
       setScroll(window.scrollY > 124);
     });
   }, []);
+
+  const dispatch = useDispatch();
+  const isAuth = useSelector(selectIsAuth);
+
+  const onClickLogout = () => {
+    if (window.confirm("Вы действительно хотите выйти?")) {
+      dispatch(logout());
+    }
+  };
 
   return (
     <nav
@@ -205,9 +216,23 @@ export default function Nav() {
                         </div>
                       </div>
                       <div className="flex flex-col gap-3 w-60">
-                        {isAuth ? (<Link to ={`/`}><div className="font-semibold cursor-pointer hover:bg-gray-100 p-3" onClick={onClickLogout}>ВЫХОД</div></Link>) : (<Link to={`/login`}><div className="font-semibold cursor-pointer hover:bg-gray-100 p-3">ВХОД
-                        </div></Link>)}
-                        </div>
+                        {isAuth ? (
+                          <Link to={`/`}>
+                            <div
+                              className="font-semibold cursor-pointer hover:bg-gray-100 p-3"
+                              onClick={onClickLogout}
+                            >
+                              ВЫХОД
+                            </div>
+                          </Link>
+                        ) : (
+                          <Link to={`/login`}>
+                            <div className="font-semibold cursor-pointer hover:bg-gray-100 p-3">
+                              ВХОД
+                            </div>
+                          </Link>
+                        )}
+                      </div>
                     </div>
                   </Dialog.Panel>
                   <img

@@ -7,7 +7,12 @@ import { Navigate } from "react-router-dom";
 
 export default function Login() {
   const isAuth = useSelector(selectIsAuth);
+<<<<<<< Updated upstream
   const dispatch = useDispatch(); 
+=======
+  console.log(isAuth);
+  const dispatch = useDispatch();
+>>>>>>> Stashed changes
   const {
     register,
     handleSubmit,
