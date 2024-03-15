@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import {useEffect} from 'react'
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAuth, selectIsAuth } from "../redux/slices/auth";
@@ -6,7 +7,7 @@ import { Navigate } from "react-router-dom";
 
 export default function Login() {
   const isAuth = useSelector(selectIsAuth);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(); 
   const {
     register,
     handleSubmit,
@@ -19,12 +20,18 @@ export default function Login() {
     },
   });
 
-  const onSubmit = (values) => {
-    dispatch(fetchAuth(values));
+  const onSubmit = async (values) => {
+    const data = await dispatch(fetchAuth(values));
+    if (!data.payload) {
+      return alert('Не удалось авторизоваться!')
+    }
+    if ('token' in data.payload) {
+      window.localStorage.setItem('token', data.payload.token)
+    }
   };
 
   if (isAuth) {
-    return <Navigate to="/" />;
+    return <Navigate to="/login/edit" />;
   }
 
   return (

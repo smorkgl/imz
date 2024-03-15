@@ -10,6 +10,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./pages/Error-page.jsx";
 import Login from "./pages/Login.jsx";
 import store from "./redux/store.js";
+import Edit from './pages/Edit'
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
   {
     path: "login",
     element: <Login />,
+  },
+  {
+    path: "login/edit",
+    element: <Edit />,
   },
 ]);
 

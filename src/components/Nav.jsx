@@ -1,11 +1,24 @@
 import { Outlet, Link, NavLink } from "react-router-dom";
 import { Fragment, useState, useEffect } from "react";
 import { Dialog, Transition } from "@headlessui/react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchAuth, selectIsAuth } from "../redux/slices/auth";
+import { logout } from "../redux/slices/auth";
 import dots from "../img/dots.svg";
 import close from "../img/close.svg";
 import logo from "../img/logoNEW2.svg";
 
 export default function Nav() {
+  const dispatch = useDispatch();
+  const isAuth = useSelector(selectIsAuth);
+
+  const onClickLogout = () => {
+    if (window.confirm('Вы действительно хотите выйти?')) {
+    dispatch(logout())
+    window.localStorage.removeItem('token')
+   }
+  }
+
   const [isDropdownVisibleAbout, setDropdownVisibleAbout] = useState(false);
   const [isDropdownVisibleManuf, setDropdownVisibleManuf] = useState(false);
   const [isDropdownVisibleProd, setDropdownVisibleProd] = useState(false);
@@ -192,9 +205,8 @@ export default function Nav() {
                         </div>
                       </div>
                       <div className="flex flex-col gap-3 w-60">
-                        <Link to={`/login`}><div className="font-semibold cursor-pointer hover:bg-gray-100 p-3">
-                          ВХОД
-                        </div></Link>
+                        {isAuth ? (<Link to ={`/`}><div className="font-semibold cursor-pointer hover:bg-gray-100 p-3" onClick={onClickLogout}>ВЫХОД</div></Link>) : (<Link to={`/login`}><div className="font-semibold cursor-pointer hover:bg-gray-100 p-3">ВХОД
+                        </div></Link>)}
                         </div>
                     </div>
                   </Dialog.Panel>
