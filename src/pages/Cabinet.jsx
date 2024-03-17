@@ -2,16 +2,31 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchPosts } from "../redux/slices/posts.js";
+import { selectIsAuth } from "../redux/slices/auth.js";
+import { Navigate } from "react-router-dom";
+import { logout } from "../redux/slices/auth.js";
 
-export default function Edit() {
-    const dispatch = useDispatch();
-    const { posts } = useSelector((state) => state.posts);
-    const isPostsLoading = posts.status === "loading";
-    useEffect(() => {
-      dispatch(fetchPosts());
-    }, []);
-  
-    const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+export default function Cabinet() {
+  const isAuth = useSelector(selectIsAuth);
+  const dispatch = useDispatch();
+  const { posts } = useSelector((state) => state.posts);
+  const isPostsLoading = posts.status === "loading";
+  useEffect(() => {
+    dispatch(fetchPosts());
+  }, []);
+
+  if (!window.localStorage.getItem("token") && !isAuth) {
+    return <Navigate to="/" />;
+  }
+
+  const onClickLogout = () => {
+    if (window.confirm("Вы действительно хотите выйти?")) {
+      dispatch(logout());
+      window.localStorage.removeItem("token");
+    }
+  };
+
+  const items = [1, 2];
 
   return (
     <div className="bg-[url('/src/img/test3.png')] bg-blue-800 h-screen bg-no-repeat bg-center bg-cover flex place-items-center h-100">
@@ -19,12 +34,24 @@ export default function Edit() {
         <button className="absolute top-5 left-5 bg-white text-blue-800 hover:text-blue-700 transition-all">
           ВЕРНУТЬСЯ НАЗАД
         </button>
+        <button
+          onClick={onClickLogout}
+          className="absolute top-5 right-5 bg-white text-red-800 hover:text-blue-700 transition-all"
+        >
+          ВЫЙТИ ИЗ АККАУНТА
+        </button>
       </Link>
-      <div class="container my-12 mx-auto md:px-6 bg-white pt-10">
+      <div class="container my-12 mx-auto md:px-6 bg-white pt-10 relative">
+        <button className="button__create-news bg-white text-blue-800 font-bold">
+          <Link to={`/cabinet/create`}>СОЗДАТЬ НОВОСТЬ</Link>
+        </button>
         <section class="mb-32 text-center md:text-left">
           {isPostsLoading
             ? items.map((item, index) => (
-                <div key={index} class="mb-12 flex flex-wrap animate-pulse">
+                <div
+                  key={index}
+                  class="mb-12 flex flex-wrap animate-pulse relative"
+                >
                   <div class="mb-6 ml-auto w-full shrink-0 grow-0 basis-auto px-3 md:mb-0 md:w-3/12 ">
                     <div class="grid bg-gray-300 rounded-lg h-36 w-36 place-items-center news__img-container w-full">
                       <svg
@@ -83,7 +110,13 @@ export default function Edit() {
                 </div>
               ))
             : posts.items.map((news) => (
-                <div key={news.id} class="mb-12 flex flex-wrap">
+                <div key={news.id} class="mb-12 flex flex-wrap relative">
+                  <div className="absolute top-0 z-20 flex flex-col top-20 w-30 text-xs gap-5">
+                    <button className="bg-blue-800 text-white">
+                      РЕДАКТИРОВАТЬ
+                    </button>
+                    <button className="bg-red-800 text-white">УДАЛИТЬ</button>
+                  </div>
                   <div class="mb-6 ml-auto w-full shrink-0 grow-0 basis-auto px-3 md:mb-0 md:w-3/12">
                     <Link to={`/news/${news.id}`}>
                       <div

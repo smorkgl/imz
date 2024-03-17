@@ -10,7 +10,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./pages/Error-page.jsx";
 import Login from "./pages/Login.jsx";
 import store from "./redux/store.js";
-import Edit from './pages/Edit'
+import Cabinet from "./pages/Cabinet";
+import CabinetCreate from "./pages/CabinetCreate.jsx";
 
 const router = createBrowserRouter([
   {
@@ -35,8 +36,12 @@ const router = createBrowserRouter([
     element: <Login />,
   },
   {
-    path: "login/edit",
-    element: <Edit />,
+    path: "cabinet",
+    element: <Cabinet />,
+  },
+  {
+    path: "cabinet/create",
+    element: <CabinetCreate />,
   },
 ]);
 

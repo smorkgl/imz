@@ -9,13 +9,10 @@ export const fetchAuth = createAsyncThunk(
   }
 );
 
-export const fetchAuthMe = createAsyncThunk(
-  "auth/fetchAuthMe",
-  async () => {
-    const { data } = await axios.get("/auth/authme");
-    return data;
-  }
-);
+export const fetchAuthMe = createAsyncThunk("auth/fetchAuthMe", async () => {
+  const { data } = await axios.get("/auth/authme");
+  return data;
+});
 
 const initialState = {
   data: null,
@@ -28,11 +25,7 @@ const authSlice = createSlice({
   reducers: {
     logout: (state) => {
       state.data = null;
-<<<<<<< Updated upstream
-    }
-=======
     },
->>>>>>> Stashed changes
   },
   extraReducers: (builder) => {
     builder.addCase(fetchAuth.pending, (state) => {
@@ -64,7 +57,5 @@ const authSlice = createSlice({
 
 export const selectIsAuth = (state) => Boolean(state.auth.data);
 
-export const {logout} = authSlice.actions;
-export const authReducer = authSlice.reducer;
-
 export const { logout } = authSlice.actions;
+export const authReducer = authSlice.reducer;

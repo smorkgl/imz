@@ -392,3 +392,17 @@ li {
 .news__img-container {
   min-height: 225px !important;
 }
+
+.button__create-news {
+  height: 50px;
+  width: 200px;
+  position: absolute;
+  margin: -50px 0 0 -100px;
+  left: 50%;
+  top: -20px;
+}
+
+.cabinet__create-img {
+  width: 284px;
+  height: 225px;
+}

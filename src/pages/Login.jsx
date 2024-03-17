@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import {useEffect} from 'react'
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAuth, selectIsAuth } from "../redux/slices/auth";
@@ -7,12 +7,7 @@ import { Navigate } from "react-router-dom";
 
 export default function Login() {
   const isAuth = useSelector(selectIsAuth);
-<<<<<<< Updated upstream
-  const dispatch = useDispatch(); 
-=======
-  console.log(isAuth);
   const dispatch = useDispatch();
->>>>>>> Stashed changes
   const {
     register,
     handleSubmit,
@@ -28,15 +23,15 @@ export default function Login() {
   const onSubmit = async (values) => {
     const data = await dispatch(fetchAuth(values));
     if (!data.payload) {
-      return alert('Не удалось авторизоваться!')
+      return alert("Не удалось авторизоваться!");
     }
-    if ('token' in data.payload) {
-      window.localStorage.setItem('token', data.payload.token)
+    if ("token" in data.payload) {
+      window.localStorage.setItem("token", data.payload.token);
     }
   };
 
   if (isAuth) {
-    return <Navigate to="/login/edit" />;
+    return <Navigate to="/cabinet" />;
   }
 
   return (
