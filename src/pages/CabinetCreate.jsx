@@ -3,13 +3,30 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState, useCallback, useRef } from "react";
 import { fetchPosts } from "../redux/slices/posts.js";
 import { selectIsAuth } from "../redux/slices/auth.js";
-import { useNavigate, Navigate } from "react-router-dom";
+import { useNavigate, Navigate, useParams } from "react-router-dom";
 import "easymde/dist/easymde.min.css";
 import SimpleMdeReact from "react-simplemde-editor";
 import axios from "../axios.js";
 import { InputMask } from "primereact/inputmask";
 
 export default function Cabinet() {
+  const { id } = useParams();
+  useEffect(() => {
+    if (id) {
+      axios
+        .get(`/posts/${id}`)
+        .then((data) => {
+          setTitle(data.title);
+          setDescription(data.description);
+          setImageUrl(data.imageUrl);
+          setDate(data.date);
+        })
+        .catch((err) => {
+          console.warn(err);
+        });
+    }
+  });
+
   const isAuth = useSelector(selectIsAuth);
   const inputFileRef = useRef(null);
 

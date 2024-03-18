@@ -32,6 +32,10 @@ const router = createBrowserRouter([
     element: <NewsElement />,
   },
   {
+    path: "cabinet/:id/edit",
+    element: <CabinetCreate />,
+  },
+  {
     path: "login",
     element: <Login />,
   },

@@ -3,11 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchPosts } from "../redux/slices/posts.js";
 import { selectIsAuth } from "../redux/slices/auth.js";
-import { Navigate } from "react-router-dom";
+import { useNavigate, Navigate, useParams } from "react-router-dom";
 import { logout } from "../redux/slices/auth.js";
+import Markdown from "react-markdown";
+import { fetchRemovePost } from "../redux/slices/posts.js";
 
 export default function Cabinet() {
   const isAuth = useSelector(selectIsAuth);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { posts } = useSelector((state) => state.posts);
   const isPostsLoading = posts.status === "loading";
@@ -26,10 +29,14 @@ export default function Cabinet() {
     }
   };
 
-  const onClickDeleteNews = () => {
+  const onClickDeleteNews = (id) => {
     if (window.confirm("Вы действительно хотите удалить эту новость?")) {
-      console.log();
+      dispatch(fetchRemovePost(id));
     }
+  };
+
+  const onClickEditNews = (id) => {
+    navigate(`/cabinet/${id}/edit`);
   };
 
   const newPosts = posts.items.slice().reverse();
@@ -49,7 +56,7 @@ export default function Cabinet() {
           ВЫЙТИ ИЗ АККАУНТА
         </button>
       </Link>
-      <div class="container my-12 mx-auto md:px-6 bg-white pt-10 relative mt-28 h-full">
+      <div class="container my-12 mx-auto md:px-6 bg-white pt-10 relative mt-28 h-screen">
         <button className="button__create-news bg-white text-blue-800 font-bold">
           <Link to={`/cabinet/create`}>СОЗДАТЬ НОВОСТЬ</Link>
         </button>
@@ -120,11 +127,14 @@ export default function Cabinet() {
             : newPosts.map((news) => (
                 <div key={news.id} class="mb-12 flex flex-wrap relative">
                   <div className=" z-20 flex flex-col top-20 w-30 text-xs gap-5 flex place-items-center my-auto mx-auto">
-                    <button className="bg-blue-800 text-white ">
+                    <button
+                      onClick={() => onClickEditNews(news._id)}
+                      className="bg-blue-800 text-white "
+                    >
                       РЕДАКТИРОВАТЬ
                     </button>
                     <button
-                      onClick={onClickDeleteNews}
+                      onClick={() => onClickDeleteNews(news._id)}
                       className="bg-red-800 text-white"
                     >
                       УДАЛИТЬ
@@ -157,7 +167,7 @@ export default function Cabinet() {
                       </small>
                     </p>
                     <p class="text-neutral-500 dark:text-neutral-300">
-                      {news.description}
+                      <Markdown>{news.description}</Markdown>
                     </p>
                   </div>
                 </div>
