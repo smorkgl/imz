@@ -7,7 +7,7 @@ import { useNavigate, Navigate } from "react-router-dom";
 import "easymde/dist/easymde.min.css";
 import SimpleMdeReact from "react-simplemde-editor";
 import axios from "../axios.js";
-import no_image from "../img/no_image.png";
+import { InputMask } from "primereact/inputmask";
 
 export default function Cabinet() {
   const isAuth = useSelector(selectIsAuth);
@@ -17,9 +17,15 @@ export default function Cabinet() {
     return <Navigate to="/" />;
   }
 
+  const defaultImageUrl = "uploads/no_image.png";
+
+  const NowDate = new Date().toLocaleDateString();
+
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [imageUrl, setImageUrl] = useState("");
+  const [imageUrl, setImageUrl] = useState(defaultImageUrl);
+  const [isNewImageUploaded, setIsNewImageUploaded] = useState(false);
+  const [date, setDate] = useState(NowDate);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -34,6 +40,7 @@ export default function Cabinet() {
       formData.append("image", file);
       const { data } = await axios.post("/upload", formData);
       setImageUrl(data.url);
+      setIsNewImageUploaded(true);
     } catch (err) {
       console.warn(err);
       alert("Ошибка при загрузке файла!");
@@ -42,24 +49,28 @@ export default function Cabinet() {
 
   const onClickRemoveImage = () => {
     setImageUrl("");
+    setIsNewImageUploaded(false);
   };
 
   const onClickCreateNews = async () => {
-    if (window.confirm("Вы действительно готовы опубликовать??")) {
-      try {
-        setIsLoading(true);
-        const fields = {
-          title,
-          imageUrl,
-          description,
-        };
-        const { data } = await axios.post("/posts", fields);
-        const id = data._id;
-        console.log(id);
-        navigate(`/posts/${id}`);
-      } catch (err) {
-        console.warn(err);
-        alert("Ошибка при публикации новости!");
+    if (window.confirm("Вы действительно готовы опубликовать?")) {
+      if (description.length >= 10 && title.length >= 10)
+        try {
+          setIsLoading(true);
+          const fields = {
+            title,
+            imageUrl,
+            description,
+            date,
+          };
+          const { data } = await axios.post("/posts", fields);
+          navigate(`/news/${data.id}`);
+        } catch (err) {
+          console.warn(err);
+          alert("Ошибка при публикации новости!");
+        }
+      else {
+        alert("Заголовок или описание новости меньше чем 10 символов");
       }
     }
   };
@@ -73,6 +84,38 @@ export default function Cabinet() {
       </Link>
       <div class="container my-12 mx-auto md:px-6 bg-white pt-10 mt-28 relative">
         <section class="text-center md:text-left">
+          <div class="mb-12 flex flex-wrap relative">
+            <div class="mb-6 w-full shrink-0 grow-0 basis-auto px-3 md:mb-0 md:w-3/12 flex">
+              <img
+                className="grid bg-gray-300 rounded-lg h-36 w-36 place-items-center news__img-container w-full"
+                alt="Louvre"
+                src={
+                  isNewImageUploaded
+                    ? `http://localhost:3131/${imageUrl}`
+                    : `http://localhost:3131/${defaultImageUrl}`
+                }
+              />
+              <div className="ml-5">
+                <p className="text-gray-800 text-sm w-screen">
+                  *Это превью будет
+                  <br />
+                  использовано по умолчанию,
+                  <br />
+                  если вы не укажите своё
+                </p>
+                {isNewImageUploaded && (
+                  <button
+                    class
+                    onClick={onClickRemoveImage}
+                    className="mt-5 bg-red-800 text-white hover:text-gray-300 transition-all mb-5 text-sm"
+                  >
+                    УДАЛИТЬ ПРЕВЬЮ
+                  </button>
+                )}
+              </div>
+            </div>
+          </div>
+
           <button
             onClick={() => inputFileRef.current.click()}
             className="bg-blue-800 text-white hover:text-gray-300 transition-all mb-5 text-sm"
@@ -80,33 +123,6 @@ export default function Cabinet() {
           >
             ЗАГРУЗИТЬ ПРЕВЬЮ
           </button>
-          <div className="flex mb-5">
-            <img
-              class="cabinet__create-img"
-              alt="Louvre"
-              src={
-                imageUrl
-                  ? `http://localhost:3131/${imageUrl}`
-                  : `http://localhost:3131/uploads/no_image.png`
-              }
-            />
-            <div className="mt-5 ml-3">
-              <p className="text-sm text-gray-700">
-                *Это превью идёт по <br />
-                умолчанию, если вы не
-                <br /> указываете своё изображение.
-              </p>
-              {imageUrl && (
-                <button
-                  class
-                  onClick={onClickRemoveImage}
-                  className="mt-5 bg-red-800 text-white hover:text-gray-300 transition-all mb-5 text-sm"
-                >
-                  УДАЛИТЬ ПРЕВЬЮ
-                </button>
-              )}
-            </div>
-          </div>
           <input
             ref={inputFileRef}
             type="file"
@@ -114,16 +130,15 @@ export default function Cabinet() {
             hidden
           />
           <div class="mb-5">
-            <label
-              for="small-input"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >
+            <p className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
               Дата публикации
-            </label>
-            <input
-              type="text"
-              id="default-input"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            </p>
+            <InputMask
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+              mask="99.99.9999"
+              placeholder={NowDate}
+              className="block p-1 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             />
           </div>
           <div class="mb-5">

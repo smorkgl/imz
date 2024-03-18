@@ -26,10 +26,18 @@ export default function Cabinet() {
     }
   };
 
-  const items = [1, 2];
+  const onClickDeleteNews = () => {
+    if (window.confirm("Вы действительно хотите удалить эту новость?")) {
+      console.log();
+    }
+  };
+
+  const newPosts = posts.items.slice().reverse();
+
+  const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   return (
-    <div className="bg-[url('/src/img/test3.png')] bg-blue-800 h-screen bg-no-repeat bg-center bg-cover flex place-items-center h-100">
+    <div className="bg-[url('/src/img/test3.png')] bg-blue-800 h-full bg-no-repeat bg-center bg-cover flex place-items-center h-100">
       <Link to={`/`}>
         <button className="absolute top-5 left-5 bg-white text-blue-800 hover:text-blue-700 transition-all">
           ВЕРНУТЬСЯ НАЗАД
@@ -41,7 +49,7 @@ export default function Cabinet() {
           ВЫЙТИ ИЗ АККАУНТА
         </button>
       </Link>
-      <div class="container my-12 mx-auto md:px-6 bg-white pt-10 relative">
+      <div class="container my-12 mx-auto md:px-6 bg-white pt-10 relative mt-28 h-full">
         <button className="button__create-news bg-white text-blue-800 font-bold">
           <Link to={`/cabinet/create`}>СОЗДАТЬ НОВОСТЬ</Link>
         </button>
@@ -109,13 +117,18 @@ export default function Cabinet() {
                   </div>
                 </div>
               ))
-            : posts.items.map((news) => (
+            : newPosts.map((news) => (
                 <div key={news.id} class="mb-12 flex flex-wrap relative">
-                  <div className="absolute top-0 z-20 flex flex-col top-20 w-30 text-xs gap-5">
-                    <button className="bg-blue-800 text-white">
+                  <div className=" z-20 flex flex-col top-20 w-30 text-xs gap-5 flex place-items-center my-auto mx-auto">
+                    <button className="bg-blue-800 text-white ">
                       РЕДАКТИРОВАТЬ
                     </button>
-                    <button className="bg-red-800 text-white">УДАЛИТЬ</button>
+                    <button
+                      onClick={onClickDeleteNews}
+                      className="bg-red-800 text-white"
+                    >
+                      УДАЛИТЬ
+                    </button>
                   </div>
                   <div class="mb-6 ml-auto w-full shrink-0 grow-0 basis-auto px-3 md:mb-0 md:w-3/12">
                     <Link to={`/news/${news.id}`}>
@@ -125,7 +138,7 @@ export default function Cabinet() {
                         data-te-ripple-color="light"
                       >
                         <img
-                          src={news.img}
+                          src={`http://localhost:3131/${news.imageUrl}`}
                           class="news__img-container w-full"
                           alt="Louvre"
                         />

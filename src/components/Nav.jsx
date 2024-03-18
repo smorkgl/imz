@@ -97,12 +97,12 @@ export default function Nav() {
                 <div
                   className={
                     scroll
-                      ? "fixed top-0 h-full w-screen bg-white/100 p-10"
+                      ? "fixed top-0 h-full w-screen bg-white/100 p-10 z-50"
                       : ""
                   }
                 >
                   <Dialog.Panel>
-                    <div className="flex flex-wrap text-2xl gap-20">
+                    <div className="flex flex-wrap text-2xl gap-16">
                       <div className="font-semibold w-60">
                         <div className="cursor-pointer hover:bg-gray-100 p-3">
                           ГЛАВНАЯ

@@ -20,6 +20,10 @@ export default function Login() {
     },
   });
 
+  if (window.localStorage.getItem("token") && isAuth) {
+    return <Navigate to="/cabinet" />;
+  }
+
   const onSubmit = async (values) => {
     const data = await dispatch(fetchAuth(values));
     if (!data.payload) {

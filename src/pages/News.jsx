@@ -131,6 +131,8 @@ const NewsList = [
   },
 ];
 
+
+
 export const ReverseNewsList = NewsList.slice().reverse();
 
 export default function News() {
