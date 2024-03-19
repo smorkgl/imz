@@ -1,7 +1,3 @@
-import news1 from "../img/news1.jpg";
-import news2 from "../img/news2.jpg";
-import news3 from "../img/news3.jpg";
-import news4 from "../img/news4.jpg";
 import newsicon from "../img/newsicon.svg";
 import video from "../img/video.svg";
 import qr from "../img/qr.gif";
@@ -16,7 +12,6 @@ import photo1 from "../img/photo1.jpg";
 import photo2 from "../img/photo2.jpg";
 import photo6 from "../img/photo6.jpg";
 import right_arrow from "../img/right_arrow.svg";
-import { ReverseNewsList } from "../pages/News";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPosts } from "../redux/slices/posts.js";
 import { useEffect } from "react";
@@ -44,7 +39,7 @@ export default function Main() {
     dispatch(fetchPosts());
   }, []);
 
-  const newsToShow = posts.items.slice(0, 6);
+  const newsToShow = posts.items.slice(0, 4);
   const reverseNewsToShow = newsToShow.slice().reverse();
 
   return (
