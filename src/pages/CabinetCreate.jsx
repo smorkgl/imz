@@ -11,21 +11,24 @@ import { InputMask } from "primereact/inputmask";
 
 export default function Cabinet() {
   const { id } = useParams();
+  const isEditing = Boolean(id);
   useEffect(() => {
     if (id) {
       axios
         .get(`/posts/${id}`)
-        .then((data) => {
-          setTitle(data.title);
-          setDescription(data.description);
-          setImageUrl(data.imageUrl);
-          setDate(data.date);
+        .then((response) => {
+          const postData = response.data;
+          setTitle(postData.title);
+          setDescription(postData.description);
+          setIsNewImageUploaded(true);
+          setImageUrl(postData.imageUrl);
+          setDate(postData.date);
         })
         .catch((err) => {
           console.warn(err);
         });
     }
-  });
+  }, []);
 
   const isAuth = useSelector(selectIsAuth);
   const inputFileRef = useRef(null);
@@ -80,8 +83,13 @@ export default function Cabinet() {
             description,
             date,
           };
-          const { data } = await axios.post("/posts", fields);
-          navigate(`/news/${data.id}`);
+
+          const { data } = isEditing
+            ? await axios.patch(`/posts/${id}`, fields)
+            : await axios.post("/posts", fields);
+          {
+            isEditing ? navigate(`/news/${id}`) : navigate(`/news/${data.id}`);
+          }
         } catch (err) {
           console.warn(err);
           alert("Ошибка при публикации новости!");
@@ -181,7 +189,7 @@ export default function Cabinet() {
             onClick={onClickCreateNews}
             className="bg-blue-800 text-white hover:text-gray-300 transition-all mb-5 text-sm"
           >
-            ОПУБЛИКОВАТЬ
+            {isEditing ? "СОХРАНИТЬ" : "ОПУБЛИКОВАТЬ"}
           </button>
         </section>
       </div>

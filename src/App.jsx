@@ -20,21 +20,21 @@ function App() {
     }, 5);
   });
 
-  // Проверка на авторизацию 
-  const dispatch = useDispatch()
+  // Проверка на авторизацию
+  const dispatch = useDispatch();
 
-  const isAuth = useSelector(selectIsAuth)
-  
+  const isAuth = useSelector(selectIsAuth);
+
   useEffect(() => {
-    dispatch(fetchAuthMe())
-  }, [])
+    dispatch(fetchAuthMe());
+  }, []);
 
   return (
     <div>
       {isLoading ? (
         <Preloader />
       ) : (
-        <div className="font-['Ubuntu'] animate-fade-up">
+        <div className="font-['Ubuntu'] animate-fade-up relative">
           <Header />
           <Nav />
           <Carousel />

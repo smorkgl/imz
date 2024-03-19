@@ -17,6 +17,9 @@ import photo2 from "../img/photo2.jpg";
 import photo6 from "../img/photo6.jpg";
 import right_arrow from "../img/right_arrow.svg";
 import { ReverseNewsList } from "../pages/News";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchPosts } from "../redux/slices/posts.js";
+import { useEffect } from "react";
 
 export default function Main() {
   const [isDropdownVisibleNews, setDropdownVisibleNews] = useState({});
@@ -35,7 +38,14 @@ export default function Main() {
     }));
   };
 
-  const newsToShow = ReverseNewsList.slice(0, 4);
+  const dispatch = useDispatch();
+  const { posts } = useSelector((state) => state.posts);
+  useEffect(() => {
+    dispatch(fetchPosts());
+  }, []);
+
+  const newsToShow = posts.items.slice(0, 6);
+  const reverseNewsToShow = newsToShow.slice().reverse();
 
   return (
     <div className="space-x-4 py-3 2xl max-w-7xl width-full mx-auto container mt-5 relative">
@@ -60,7 +70,7 @@ export default function Main() {
           </div>
           <div className="work__line2 mt-2" />
           <div className="flex flex-wrap gap-20 mt-5">
-            {newsToShow.map((news) => (
+            {reverseNewsToShow.map((news) => (
               <div key={news.id}>
                 <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow relative">
                   <Link to={`/news/${news.id}`}>
@@ -71,7 +81,7 @@ export default function Main() {
                     >
                       <img
                         class="rounded-t-lg min-h-72"
-                        src={news.img}
+                        src={`http://localhost:3131/${news.imageUrl}`}
                         alt={news.title}
                       />
                       <div className="absolute top-0 right-0 m-2 bg-white px-4 py-2 rounded-md font-bold text-blue-800">

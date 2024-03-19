@@ -7,12 +7,19 @@ import TopMain from "../components/TopMain";
 import Breadcrumb from "../components/Breadcrumb";
 import { ReverseNewsList } from "./News";
 import calendar from "../img/calendar.svg";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { fetchPosts } from "../redux/slices/posts.js";
 
 export default function NewsElement() {
   const { id } = useParams();
-
+  const dispatch = useDispatch();
+  const { posts } = useSelector((state) => state.posts);
+  useEffect(() => {
+    dispatch(fetchPosts());
+  }, []);
   // По id найдите соответствующую новость в массиве NewsList
-  const selectedNews = ReverseNewsList.find((news) => news.id === parseInt(id));
+  const selectedNews = posts.items.find((news) => news.id === parseInt(id));
   return (
     <div>
       <Header />
@@ -29,8 +36,12 @@ export default function NewsElement() {
                 <img src={calendar} className="w-6" />
                 <p>{selectedNews.date}</p>
               </div>
-              <img className="w-1/3 mt-5" src={selectedNews.img} alt="News" />
-              <p className="mt-5">{selectedNews.full_description}</p>
+              <img
+                className="w-1/3 mt-5"
+                src={`http://localhost:3131/${selectedNews.imageUrl}`}
+                alt="News"
+              />
+              <p className="mt-5">{selectedNews.description}</p>
             </div>
           )}
         </div>

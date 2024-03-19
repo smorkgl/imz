@@ -31,7 +31,9 @@ export default function Cabinet() {
 
   const onClickDeleteNews = (id) => {
     if (window.confirm("Вы действительно хотите удалить эту новость?")) {
-      dispatch(fetchRemovePost(id));
+      dispatch(fetchRemovePost(id)).then(() => {
+        dispatch(fetchPosts());
+      });
     }
   };
 
@@ -56,8 +58,8 @@ export default function Cabinet() {
           ВЫЙТИ ИЗ АККАУНТА
         </button>
       </Link>
-      <div class="container my-12 mx-auto md:px-6 bg-white pt-10 relative mt-28 h-screen">
-        <button className="button__create-news bg-white text-blue-800 font-bold">
+      <div class="container my-12 mx-auto md:px-6 bg-white pt-10 relative mt-28 min-h-screen">
+        <button className="button__create-news bg-green-500 text-white font-bold">
           <Link to={`/cabinet/create`}>СОЗДАТЬ НОВОСТЬ</Link>
         </button>
         <section class="mb-32 text-center md:text-left">
@@ -128,13 +130,13 @@ export default function Cabinet() {
                 <div key={news.id} class="mb-12 flex flex-wrap relative">
                   <div className=" z-20 flex flex-col top-20 w-30 text-xs gap-5 flex place-items-center my-auto mx-auto">
                     <button
-                      onClick={() => onClickEditNews(news._id)}
+                      onClick={() => onClickEditNews(news.id)}
                       className="bg-blue-800 text-white "
                     >
                       РЕДАКТИРОВАТЬ
                     </button>
                     <button
-                      onClick={() => onClickDeleteNews(news._id)}
+                      onClick={() => onClickDeleteNews(news.id)}
                       className="bg-red-800 text-white"
                     >
                       УДАЛИТЬ

@@ -72,7 +72,7 @@ export default function Nav() {
           <Link to={"/"}>
             <img
               src={logo}
-              className="absolute h-12 left-28 cursor-pointer animate-flip-down animate-duration-800"
+              className="absolute h-12 left-14 cursor-pointer animate-flip-down animate-duration-800"
             />
           </Link>
         )}

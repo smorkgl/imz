@@ -131,13 +131,12 @@ const NewsList = [
   },
 ];
 
-
-
 export const ReverseNewsList = NewsList.slice().reverse();
 
 export default function News() {
   const dispatch = useDispatch();
   const { posts } = useSelector((state) => state.posts);
+
   const isPostsLoading = posts.status === "loading";
   useEffect(() => {
     dispatch(fetchPosts());
@@ -226,7 +225,7 @@ export default function News() {
                         data-te-ripple-color="light"
                       >
                         <img
-                          src={news.img}
+                          src={`http://localhost:3131/${news.imageUrl}`}
                           class="news__img-container w-full"
                           alt="Louvre"
                         />
