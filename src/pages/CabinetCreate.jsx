@@ -8,6 +8,8 @@ import "easymde/dist/easymde.min.css";
 import SimpleMdeReact from "react-simplemde-editor";
 import axios from "../axios.js";
 import { InputMask } from "primereact/inputmask";
+import { CKEditor } from "@ckeditor/ckeditor5-react";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 export default function Cabinet() {
   const { id } = useParams();
@@ -20,6 +22,7 @@ export default function Cabinet() {
           const postData = response.data;
           setTitle(postData.title);
           setDescription(postData.description);
+          setMiniTitle(postData.mini_title);
           setIsNewImageUploaded(true);
           setImageUrl(postData.imageUrl);
           setDate(postData.date);
@@ -42,16 +45,13 @@ export default function Cabinet() {
   const NowDate = new Date().toLocaleDateString();
 
   const [title, setTitle] = useState("");
+  const [mini_title, setMiniTitle] = useState("");
   const [description, setDescription] = useState("");
   const [imageUrl, setImageUrl] = useState(defaultImageUrl);
   const [isNewImageUploaded, setIsNewImageUploaded] = useState(false);
   const [date, setDate] = useState(NowDate);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
-
-  const onChange = useCallback((description) => {
-    setDescription(description);
-  }, []);
 
   const handleChangeFile = async (event) => {
     try {
@@ -82,6 +82,7 @@ export default function Cabinet() {
             imageUrl,
             description,
             date,
+            mini_title,
           };
 
           const { data } = isEditing
@@ -163,7 +164,7 @@ export default function Cabinet() {
               onChange={(e) => setDate(e.target.value)}
               mask="99.99.9999"
               placeholder={NowDate}
-              className="block p-1 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="block pl-2 p-1 text-gray-900 border border-gray-300 rounded-lg bg-white text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             />
           </div>
           <div class="mb-5">
@@ -176,18 +177,48 @@ export default function Cabinet() {
             <input
               type="text"
               id="large-input"
-              class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-white text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
+            />
+          </div>
+          <div class="mb-5">
+            <label
+              for="large-input"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >
+              Мини-заголовок (если вы не указываете, он укажет 50 символов
+              первых описания)
+            </label>
+            <input
+              type="text"
+              id="large-input"
+              class="block w-full p-3 text-gray-900 border border-gray-300 rounded-lg bg-white text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              value={mini_title}
+              onChange={(e) => setMiniTitle(e.target.value)}
             />
           </div>
           <p className="block mb-2 text-sm font-medium text-gray-900 cursor-default dark:text-white">
             Описание
           </p>
-          <SimpleMdeReact value={description} onChange={onChange} />
+          <CKEditor
+            value={description}
+            data={description}
+            editor={ClassicEditor}
+            onChange={(event, editor) => {
+              const data = editor.getData();
+              setDescription(data);
+            }}
+            config={{
+              ckfinder: {
+                uploadUrl: "/uploads",
+              },
+            }}
+          />
+
           <button
             onClick={onClickCreateNews}
-            className="bg-blue-800 text-white hover:text-gray-300 transition-all mb-5 text-sm"
+            className="bg-blue-800 text-white hover:text-gray-300 transition-all mb-5 mt-5 text-sm"
           >
             {isEditing ? "СОХРАНИТЬ" : "ОПУБЛИКОВАТЬ"}
           </button>

@@ -59,9 +59,11 @@ export default function Cabinet() {
         </button>
       </Link>
       <div class="container my-12 mx-auto md:px-6 bg-white pt-10 relative mt-28 min-h-screen">
-        <button className="button__create-news bg-green-500 text-white font-bold">
-          <Link to={`/cabinet/create`}>СОЗДАТЬ НОВОСТЬ</Link>
-        </button>
+        <Link to={`/cabinet/create`}>
+          <button className="button__create-news bg-green-500 text-white font-bold">
+            СОЗДАТЬ НОВОСТЬ
+          </button>
+        </Link>
         <section class="mb-32 text-center md:text-left">
           {isPostsLoading
             ? items.map((item, index) => (
@@ -169,7 +171,7 @@ export default function Cabinet() {
                       </small>
                     </p>
                     <p class="text-neutral-500 dark:text-neutral-300">
-                      <Markdown>{news.description}</Markdown>
+                      <Markdown>{news.mini_title}</Markdown>
                     </p>
                   </div>
                 </div>

@@ -5,10 +5,11 @@ import Carousel from "../components/Carousel";
 import Footer from "../components/Footer";
 import TopMain from "../components/TopMain";
 import Breadcrumb from "../components/Breadcrumb";
-import { ReverseNewsList } from "./News";
 import calendar from "../img/calendar.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+import Markdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 import { fetchPosts } from "../redux/slices/posts.js";
 
 export default function NewsElement() {
@@ -20,6 +21,7 @@ export default function NewsElement() {
   }, []);
   // По id найдите соответствующую новость в массиве NewsList
   const selectedNews = posts.items.find((news) => news.id === parseInt(id));
+  console.log(selectedNews);
   return (
     <div>
       <Header />
@@ -41,7 +43,11 @@ export default function NewsElement() {
                 src={`http://localhost:3131/${selectedNews.imageUrl}`}
                 alt="News"
               />
-              <p className="mt-5">{selectedNews.description}</p>
+              <p className="mt-5">
+                <Markdown rehypePlugins={[rehypeRaw]}>
+                  {selectedNews.description}
+                </Markdown>
+              </p>
             </div>
           )}
         </div>
