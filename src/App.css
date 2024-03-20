@@ -406,3 +406,9 @@ li {
   width: 345px;
   height: 225px;
 }
+
+.svg__in-image {
+  top: 40%;
+  position: absolute;
+  left: 44%;
+}
