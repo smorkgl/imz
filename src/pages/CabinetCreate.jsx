@@ -211,7 +211,11 @@ export default function Cabinet() {
             }}
             config={{
               ckfinder: {
-                uploadUrl: "/uploads",
+                uploadUrl: "http://localhost:3131/uploads/",
+                headers: {
+                  Authorization:
+                    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWY1YTRhYzk3MTc3ZjhjN2FlNTk3MzEiLCJpYXQiOjE3MTA5OTYwMzcsImV4cCI6MTcxMzU4ODAzN30.-b3MiEYk8FxkVqraCS0dH1JBP2W9YIVZqCSjWTL46sk",
+                },
               },
             }}
           />

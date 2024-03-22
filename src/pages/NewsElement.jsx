@@ -21,7 +21,7 @@ export default function NewsElement() {
   }, []);
   // По id найдите соответствующую новость в массиве NewsList
   const selectedNews = posts.items.find((news) => news.id === parseInt(id));
-  console.log(selectedNews);
+
   return (
     <div>
       <Header />
