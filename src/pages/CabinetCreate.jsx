@@ -211,11 +211,10 @@ export default function Cabinet() {
             }}
             config={{
               ckfinder: {
-                uploadUrl: "http://localhost:3131/uploads/",
-                headers: {
-                  Authorization:
-                    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWY1YTRhYzk3MTc3ZjhjN2FlNTk3MzEiLCJpYXQiOjE3MTA5OTYwMzcsImV4cCI6MTcxMzU4ODAzN30.-b3MiEYk8FxkVqraCS0dH1JBP2W9YIVZqCSjWTL46sk",
-                },
+                uploadUrl:
+                  "http://localhost:3131/upload?command=QuickUpload&type=Images&responseType=json",
+                Authorization:
+                  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWY1YTRhYzk3MTc3ZjhjN2FlNTk3MzEiLCJpYXQiOjE3MTA4NzEwMjksImV4cCI6MTcxMzQ2MzAyOX0.QZ7jWI_3NYrQEaGmO5u8vdS-ow5nwClJEiqlOzwQZQU",
               },
             }}
           />
