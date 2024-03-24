@@ -212,9 +212,7 @@ export default function Cabinet() {
             config={{
               ckfinder: {
                 uploadUrl:
-                  "http://localhost:3131/upload?command=QuickUpload&type=Images&responseType=json",
-                Authorization:
-                  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWY1YTRhYzk3MTc3ZjhjN2FlNTk3MzEiLCJpYXQiOjE3MTA4NzEwMjksImV4cCI6MTcxMzQ2MzAyOX0.QZ7jWI_3NYrQEaGmO5u8vdS-ow5nwClJEiqlOzwQZQU",
+                  "http://localhost:3131/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images&responseType=json",
               },
             }}
           />
