@@ -202,18 +202,20 @@ export default function Cabinet() {
             Описание
           </p>
           <CKEditor
-            value={description}
-            data={description}
             editor={ClassicEditor}
-            onChange={(event, editor) => {
-              const data = editor.getData();
-              setDescription(data);
+            data="<p>Hello from CKEditor&nbsp;5!</p>"
+            onReady={(editor) => {
+              // You can store the "editor" and use when it is needed.
+              console.log("Editor is ready to use!", editor);
             }}
-            config={{
-              ckfinder: {
-                uploadUrl:
-                  "http://localhost:3131/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images&responseType=json",
-              },
+            onChange={(event) => {
+              console.log(event);
+            }}
+            onBlur={(event, editor) => {
+              console.log("Blur.", editor);
+            }}
+            onFocus={(event, editor) => {
+              console.log("Focus.", editor);
             }}
           />
 
