@@ -6,6 +6,16 @@ import Footer from "../components/Footer";
 import TopMain from "../components/TopMain";
 import Breadcrumb from "../components/Breadcrumb";
 import hotel1 from "../img/hotel1.jpg";
+import hotel2 from "../img/hotel2.jpg";
+import hotel3 from "../img/hotel3.jpg";
+import hotel4 from "../img/hotel4.jpg";
+import hotel5 from "../img/hotel5.jpg";
+import hotel6 from "../img/hotel6.jpg";
+import hotel7 from "../img/hotel7.jpg";
+import hotel8 from "../img/hotel8.jpg";
+import hotel9 from "../img/hotel9.jpg";
+import hotel10 from "../img/hotel10.jpg";
+import hotel11 from "../img/hotel11.jpg";
 
 const border = "border-2 border-black p-2";
 
@@ -59,7 +69,7 @@ export default function Projects() {
             Поскольку, гостиница небольшая, вы всегда получите у нас не только
             индивидуальный подход, но и привлекательную цену проживания.
           </p>
-          <img src={hotel1} className="my-5" />
+          <img src={hotel1} className="my-10 mx-auto" />
           <p className="indent-10">У нас есть:</p>
           <p className="indent-10">
             1. Стоянка и TIR-паркинг Здесь есть все необходимое, чтобы сделать
@@ -108,6 +118,26 @@ export default function Projects() {
             поездках очень не хватает. Воспользовавшись услугами прачечной, Вы
             за небольшую плату быстро получите чистое белье или одежду.
           </p>
+        </div>
+        <div class="flex mb-8 gap-10">
+          <img src={hotel2} className="w-1/2" />
+          <img src={hotel3} className="w-1/2" />
+        </div>
+        <div class="flex mb-8 gap-10">
+          <img src={hotel4} className="w-1/2" />
+          <img src={hotel5} className=" w-1/2" />
+        </div>
+        <div class="flex mb-8 gap-10">
+          <img src={hotel6} className="w-1/2" />
+          <img src={hotel7} className=" w-1/2" />
+        </div>
+        <div class="flex mb-8 gap-10">
+          <img src={hotel8} className=" w-1/2" />
+          <img src={hotel9} className=" w-1/2" />
+        </div>
+        <div class="flex mb-10 gap-10">
+          <img src={hotel10} className=" w-1/2" />
+          <img src={hotel11} className=" w-1/2" />
         </div>
       </div>
       <Footer />
