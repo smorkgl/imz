@@ -231,7 +231,7 @@ export default function Nav() {
                   <Link to={`/about`}>
                     <li className="li-blue__hover">О нас</li>
                   </Link>
-                  <Link to={`projects`}>
+                  <Link to={`/projects`}>
                     <li className="li-blue__hover">Проекты</li>
                   </Link>
                   <Link to={`/hotel`}>

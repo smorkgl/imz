@@ -12,6 +12,9 @@ import Login from "./pages/Login.jsx";
 import store from "./redux/store.js";
 import Cabinet from "./pages/Cabinet";
 import CabinetCreate from "./pages/CabinetCreate.jsx";
+import About from "./pages/About.jsx";
+import Projects from "./pages/Projects.jsx";
+import Hotel from "./pages/Hotel.jsx";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +49,18 @@ const router = createBrowserRouter([
   {
     path: "cabinet/create",
     element: <CabinetCreate />,
+  },
+  {
+    path: "about",
+    element: <About />,
+  },
+  {
+    path: "projects",
+    element: <Projects />,
+  },
+  {
+    path: "hotel",
+    element: <Hotel />,
   },
 ]);
 
