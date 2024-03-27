@@ -15,6 +15,8 @@ import CabinetCreate from "./pages/CabinetCreate.jsx";
 import About from "./pages/About.jsx";
 import Projects from "./pages/Projects.jsx";
 import Hotel from "./pages/Hotel.jsx";
+import Parking from "./pages/Parking.jsx";
+import Capacity from "./pages/Capacity.jsx";
 
 const router = createBrowserRouter([
   {
@@ -61,6 +63,14 @@ const router = createBrowserRouter([
   {
     path: "hotel",
     element: <Hotel />,
+  },
+  {
+    path: "parking",
+    element: <Parking />,
+  },
+  {
+    path: "capacity",
+    element: <Capacity />,
   },
 ]);
 

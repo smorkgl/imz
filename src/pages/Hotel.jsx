@@ -17,8 +17,6 @@ import hotel9 from "../img/hotel9.jpg";
 import hotel10 from "../img/hotel10.jpg";
 import hotel11 from "../img/hotel11.jpg";
 
-const border = "border-2 border-black p-2";
-
 export default function Projects() {
   return (
     <div className="font-['Ubuntu']">
@@ -69,7 +67,25 @@ export default function Projects() {
             Поскольку, гостиница небольшая, вы всегда получите у нас не только
             индивидуальный подход, но и привлекательную цену проживания.
           </p>
-          <img src={hotel1} className="my-10 mx-auto" />
+          <div className="flex justify-between my-10 text-2xl">
+            <div className="my-auto">
+              <h2 className="font-bold text-2xl">КОНТАКТЫ:</h2>
+              <div className="work__line2 mt-2" />
+              <p className="mt-3">
+                <b>Адрес гостиницы:</b> Ростовская область, <br />
+                Красносулинский район, пос. Молодежный, <br />
+                960 км трассы М4 «Дон»
+              </p>
+              <p className="mt-5">
+                <b>Телефон:</b> +7(961)-429-99-03
+                <br />
+                <b>E-mail:</b> order@hotel-imz.ru
+                <br />
+                <b>Сайт:</b> hotel-imz.ru
+              </p>
+            </div>
+            <img src={hotel1} />
+          </div>
           <p className="indent-10">У нас есть:</p>
           <p className="indent-10">
             1. Стоянка и TIR-паркинг Здесь есть все необходимое, чтобы сделать

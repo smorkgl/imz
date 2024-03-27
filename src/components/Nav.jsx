@@ -253,8 +253,14 @@ export default function Nav() {
             {isDropdownVisibleManuf && (
               <div className="dropdown-menu animate-fade-up animate-duration-[300ms] absolute z-50 text-black">
                 <ul>
-                  <li className="li-blue__hover">Производственные мощности</li>
-                  <li className="li-blue__hover">Сертификаты</li>
+                  <Link to={`/capacity`}>
+                    <li className="li-blue__hover">
+                      Производственные мощности
+                    </li>
+                  </Link>
+                  <Link to={`/certificates`}>
+                    <li className="li-blue__hover">Сертификаты</li>
+                  </Link>
                 </ul>
               </div>
             )}
