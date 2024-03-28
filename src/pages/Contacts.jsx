@@ -16,12 +16,10 @@ export default function Contacts() {
       <TopMain />
       <Breadcrumb />
       <div className="pt-3 2xl max-w-6xl width-full mx-auto container">
-        <h1 className="font-bold ">Контакты</h1>
+        <h1 className="font-bold">Контакты</h1>
 
         <div class="full-width mt-10">
-          <div className="bg-white h-full w-1/2 absolute top-0 z-50 text-black">
-            <div className="my-6"></div>
-          </div>
+          <div className="bg-white h-full w-1/2 absolute top-0 z-30 text-black"></div>
           <YMaps>
             <Map
               width="100vw"
