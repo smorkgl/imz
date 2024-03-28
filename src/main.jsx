@@ -17,6 +17,14 @@ import Projects from "./pages/Projects.jsx";
 import Hotel from "./pages/Hotel.jsx";
 import Parking from "./pages/Parking.jsx";
 import Capacity from "./pages/Capacity.jsx";
+import Certificates from "./pages/Certificates.jsx";
+import ProfilePipe from "./pages/ProfilePipe.jsx";
+import MetalBeams from "./pages/MetalBeams.jsx";
+import MetalStructure from "./pages/MetalStructure.jsx";
+import Products from "./pages/Products.jsx";
+import ProductsOrder from "./pages/ProductsOrder.jsx";
+import Suppliers from "./pages/Suppliers.jsx";
+import Contacts from "./pages/Contacts.jsx";
 
 const router = createBrowserRouter([
   {
@@ -71,6 +79,38 @@ const router = createBrowserRouter([
   {
     path: "capacity",
     element: <Capacity />,
+  },
+  {
+    path: "certificates",
+    element: <Certificates />,
+  },
+  {
+    path: "profile_pipe",
+    element: <ProfilePipe />,
+  },
+  {
+    path: "metal_beams",
+    element: <MetalBeams />,
+  },
+  {
+    path: "metal_structure",
+    element: <MetalStructure />,
+  },
+  {
+    path: "products",
+    element: <Products />,
+  },
+  {
+    path: "products_order",
+    element: <ProductsOrder />,
+  },
+  {
+    path: "suppliers",
+    element: <Suppliers />,
+  },
+  {
+    path: "contacts",
+    element: <Contacts />,
   },
 ]);
 

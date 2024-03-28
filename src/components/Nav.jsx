@@ -274,39 +274,40 @@ export default function Nav() {
             {isDropdownVisibleProd && (
               <div className="dropdown-menu animate-fade-up animate-duration-[300ms] absolute z-50 text-black">
                 <ul>
-                  <li className="li-blue__hover">Труба профильная</li>
-                  <li className="li-blue__hover">Балки</li>
-                  <li className="li-blue__hover">Металлоконструкции</li>
-                  <li className="li-blue__hover">Продукция</li>
-                  <li className="li-blue__hover">Заказ продукции</li>
+                  <Link to={`/profile_pipe`}>
+                    <li className="li-blue__hover">Труба профильная</li>
+                  </Link>
+                  <Link to={`/metal_beams`}>
+                    <li className="li-blue__hover">Балки</li>
+                  </Link>
+                  <Link to={`/metal_structure`}>
+                    <li className="li-blue__hover">Металлоконструкции</li>
+                  </Link>
+                  <Link to={`/products`}>
+                    <li className="li-blue__hover">Продукция</li>
+                  </Link>
+                  <Link to={`/products_order`}>
+                    <li className="li-blue__hover">Заказ продукции</li>
+                  </Link>
                 </ul>
               </div>
             )}
           </div>
           <div className="h-12 leading-12 flex justify-center items-center cursor-pointer hover:bg-blue-700 hover:rounded px-4 transition-all">
-            <p>ПОСТАВЩИКАМ</p>
+            <Link to={`/suppliers`}>
+              <p>ПОСТАВЩИКАМ</p>
+            </Link>
           </div>
           <Link to={`/job`} style={{ textDecoration: "none" }}>
             <div className="h-12 leading-12 flex justify-center items-center cursor-pointer hover:bg-blue-700 hover:rounded px-4 transition-all">
               <p>ВАКАНСИИ</p>
             </div>
           </Link>
-          <div
-            className="h-12 leading-12 flex justify-center items-center cursor-pointer relative hover:bg-blue-700 hover:rounded px-4 transition-all"
-            onMouseEnter={handleMouseEnterCont}
-            onMouseLeave={handleMouseLeaveCont}
-          >
-            <p>КОНТАКТЫ</p>
-            {isDropdownVisibleCont && (
-              <div className="dropdown-menu animate-fade-up animate-duration-[300ms] absolute z-50 text-black">
-                <ul>
-                  <li className="li-blue__hover">Офис продаж</li>
-                  <li className="li-blue__hover">Написать письмо</li>
-                  <li className="li-blue__hover">Заказ продукции</li>
-                </ul>
-              </div>
-            )}
-          </div>
+          <Link to={`/contacts`} style={{ textDecoration: "none" }}>
+            <div className="h-12 leading-12 flex justify-center items-center cursor-pointer relative hover:bg-blue-700 hover:rounded px-4 transition-all">
+              <p>КОНТАКТЫ</p>
+            </div>
+          </Link>
           <div
             className="h-12 leading-12 flex justify-center items-center cursor-pointer relative hover:bg-blue-700 hover:rounded px-4 transition-all"
             onMouseEnter={handleMouseEnterFaq}
