@@ -15,23 +15,65 @@ export default function Contacts() {
       <Carousel />
       <TopMain />
       <Breadcrumb />
-      <div className="pt-3 2xl max-w-6xl width-full mx-auto container">
-        <h1 className="font-bold">Контакты</h1>
-
-        <div class="full-width mt-10">
-          <div className="bg-white h-full w-1/2 absolute top-0 z-30 text-black"></div>
-          <YMaps>
-            <Map
-              width="100vw"
-              height="80vh"
-              defaultState={{
-                center: [48.04806331746245, 40.24870622452088],
-                zoom: 14.5,
-              }}
-            ></Map>
-          </YMaps>
+      <div className="py-3 2xl max-w-6xl width-full mx-auto container">
+        <h1 className="font-bold ">Контакты</h1>
+      </div>
+      <div className="relative">
+        <div className="wherewe__before absolute bg-white z-10 h-full"></div>
+        <div className="max-w-7xl width-full mx-auto container relative">
+          <div className="absolute z-10 h-full h bg-white text-black w-2/4 grid place-items-center pr-10">
+            <div className="">
+              <p>
+                <b>ООО «Исаевский Машиностроительный Завод»</b>
+                <br />
+                <b>
+                  Limited Liability Company «Isaevskiy Machine-Building Plant»
+                </b>
+                <br />
+                <b>Наш адрес:</b> Российская Федерация, 346312, Ростовская
+                область, Красносулинский район, п. Молодежный, территория «ДСК»
+                <br /> <b>ОГРН</b> 1066148014415
+                <br /> <b>ИНН </b>6148557002
+                <br /> <b>КПП</b> 615250001
+              </p>
+              <p className="pt-5">
+                <b>Контактные телефоны:</b> <br />
+                <br />
+                <b>Приёмная: </b>+7 (863) 333-31-34 доб. 101 <br />
+                <b>Бухгалтерия: </b>+7 (863) 333-31-34 доб. 169, 176 <br />
+                <b>Отдел кадров: </b>+7 (863) 333-31-34 доб. 221, 222
+                <br /> <b>Отдел снабжения: </b>+7 (863) 333-31-34 доб. 157
+                <br />
+                <b>Начальник отдела кадров: </b>+7 (863) 333-31-34 доб. 128{" "}
+                <br /> <b>Главный механик: </b>+7 (863) 333-31-34 доб. 115
+                <br /> <b>Отдел закупок: </b>+7 (863) 333-31-34​​​​​​​ доб. 180{" "}
+                <br />
+                <b>Главный энергетик: </b>+7 (863) 333-31-34 доб. 153
+              </p>
+              <p className="pt-5">
+                <b>E-mail:</b> imz@i-m-z.ru
+              </p>
+              <p className="pt-5">
+                <b>График работы:</b> Понедельник-Пятница с 8:00 до 17:00 обед с
+                12:00 до 13:00. Праздничные дни - Выходной.
+              </p>
+            </div>
+          </div>
+          <div class="full-width">
+            <YMaps>
+              <Map
+                width="100vw"
+                height="80vh"
+                defaultState={{
+                  center: [48.04806331746245, 40.24870622452088],
+                  zoom: 14.5,
+                }}
+              ></Map>
+            </YMaps>
+          </div>
         </div>
       </div>
+
       <Footer />
     </div>
   );

@@ -317,8 +317,14 @@ export default function Nav() {
             {isDropdownVisibleFaq && (
               <div className="dropdown-menu animate-fade-up animate-duration-[300ms] absolute z-50 text-black">
                 <ul>
-                  <li className="li-blue__hover">ГОСТ продукции</li>
-                  <li className="li-blue__hover">Калькулятор металлопроката</li>
+                  <Link to={`/gost`} style={{ textDecoration: "none" }}>
+                    <li className="li-blue__hover">ГОСТ продукции</li>
+                  </Link>
+                  <Link to={`/calculator`} style={{ textDecoration: "none" }}>
+                    <li className="li-blue__hover">
+                      Калькулятор металлопроката
+                    </li>
+                  </Link>
                 </ul>
               </div>
             )}

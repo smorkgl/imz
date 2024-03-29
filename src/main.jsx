@@ -25,6 +25,7 @@ import Products from "./pages/Products.jsx";
 import ProductsOrder from "./pages/ProductsOrder.jsx";
 import Suppliers from "./pages/Suppliers.jsx";
 import Contacts from "./pages/Contacts.jsx";
+import GOST from "./pages/GOST.JSX";
 
 const router = createBrowserRouter([
   {
@@ -111,6 +112,10 @@ const router = createBrowserRouter([
   {
     path: "contacts",
     element: <Contacts />,
+  },
+  {
+    path: "gost",
+    element: <GOST />,
   },
 ]);
 
