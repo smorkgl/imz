@@ -412,3 +412,8 @@ li {
   position: absolute;
   left: 44%;
 }
+
+.calculator {
+  width: 750px;
+  height: 550px;
+}
