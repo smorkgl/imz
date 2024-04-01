@@ -96,7 +96,7 @@ export default function Nav() {
               >
                 <div
                   className={
-                    scroll
+                    isOpen
                       ? "fixed top-0 h-full w-screen bg-white/100 p-10 z-50"
                       : ""
                   }

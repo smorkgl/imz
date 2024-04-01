@@ -10,13 +10,11 @@ import Wherewe from "./components/Wherewe";
 import Preloader from "./components/Preloader";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectIsAuth, fetchAuthMe } from "./redux/slices/auth";
+import { fetchAuthMe } from "./redux/slices/auth";
 
 function App() {
   // Проверка на авторизацию
   const dispatch = useDispatch();
-
-  const isAuth = useSelector(selectIsAuth);
 
   useEffect(() => {
     dispatch(fetchAuthMe());
