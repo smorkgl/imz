@@ -268,7 +268,7 @@ li {
   fill-opacity: 1;
   stroke-width: 5px;
   stroke-dasharray: 5000;
-  animation: draw 6s ease;
+  animation: draw 5s ease;
   position: absolute;
 }
 
@@ -416,4 +416,32 @@ li {
 .calculator {
   width: 750px;
   height: 550px;
+}
+
+.preloader {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to right, #1e40af, #1e40af);
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 55;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.preloader .texts-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  width: 280px;
+  font-size: 20px;
+  font-weight: 800;
+  overflow: hidden;
+  color: #fff;
 }

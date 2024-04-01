@@ -26,6 +26,7 @@ import ProductsOrder from "./pages/ProductsOrder.jsx";
 import Suppliers from "./pages/Suppliers.jsx";
 import Contacts from "./pages/Contacts.jsx";
 import GOST from "./pages/GOST.JSX";
+import Calculator from "./pages/Calculator.JSX";
 
 const router = createBrowserRouter([
   {
@@ -116,6 +117,10 @@ const router = createBrowserRouter([
   {
     path: "gost",
     element: <GOST />,
+  },
+  {
+    path: "calculator",
+    element: <Calculator />,
   },
 ]);
 

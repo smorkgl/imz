@@ -13,13 +13,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectIsAuth, fetchAuthMe } from "./redux/slices/auth";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 5);
-  });
-
   // Проверка на авторизацию
   const dispatch = useDispatch();
 
@@ -31,20 +24,17 @@ function App() {
 
   return (
     <div>
-      {isLoading ? (
-        <Preloader />
-      ) : (
-        <div className="font-['Ubuntu'] animate-fade-up relative">
-          <Header />
-          <Nav />
-          <Carousel />
-          <TopMain />
-          <Main />
-          <Wherewe />
-          <Job />
-          <Footer />
-        </div>
-      )}
+      <Preloader />
+      <div className="font-['Ubuntu'] animate-fade-up relative">
+        <Header />
+        <Nav />
+        <Carousel />
+        <TopMain />
+        <Main />
+        <Wherewe />
+        <Job />
+        <Footer />
+      </div>
     </div>
   );
 }
