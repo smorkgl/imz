@@ -31,12 +31,12 @@ export default function News() {
       <div className="xl:px-5 py-3 2xl max-w-6xl width-full mx-auto container">
         <h1 className="font-bold">Новости</h1>
       </div>
-      <div class="container my-12 mx-auto md:px-6">
-        <section class="mb-32 text-center md:text-left">
+      <div class="container my-12 mx-auto">
+        <section class="mb-32 text-center !text-left">
           {isPostsLoading
             ? items.map((item, index) => (
                 <div key={index} class="mb-12 flex flex-wrap animate-pulse">
-                  <div class="mb-6 ml-auto w-full shrink-0 grow-0 basis-auto px-3 md:mb-0 md:w-3/12 ">
+                  <div class="mb-6 ml-auto w-full shrink-0 grow-0 basis-auto px-3 !mb-0 !w-3/12 ">
                     <div class="grid bg-gray-300 rounded-lg h-36 w-36 place-items-center news__img-container w-full">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +54,7 @@ export default function News() {
                       </svg>
                     </div>
                   </div>
-                  <div class="mb-6 mr-auto w-full shrink-0 grow-0 basis-auto px-3 md:mb-0 md:w-9/12 xl:w-7/12">
+                  <div class="mb-6 mr-auto w-full shrink-0 grow-0 basis-auto px-3 !mb-0 !w-9/12 !w-7/12">
                     <div>
                       <div class="block w-56 h-3 mb-4 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit w-full">
                         &nbsp;
@@ -95,10 +95,10 @@ export default function News() {
               ))
             : reverseNewsToShow.map((news) => (
                 <div key={news.id} class="mb-12 flex flex-wrap">
-                  <div class="mb-6 ml-auto w-full shrink-0 grow-0 basis-auto px-3 md:mb-0 md:w-3/12">
+                  <div class="mb-6 ml-auto w-full shrink-0 grow-0 basis-auto px-3 !mb-0 !w-3/12">
                     <Link to={`/news/${news.id}`}>
                       <div
-                        class="relative mb-6 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-lg dark:shadow-black/20"
+                        class="relative mb-6 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-lg"
                         data-te-ripple-init
                         data-te-ripple-color="light"
                       >
@@ -112,18 +112,16 @@ export default function News() {
                     </Link>
                   </div>
 
-                  <div class="mb-6 mr-auto w-full shrink-0 grow-0 basis-auto px-3 md:mb-0 md:w-9/12 xl:w-7/12">
+                  <div class="mb-6 mr-auto w-full shrink-0 grow-0 basis-auto px-3 !mb-0 !w-9/12 !w-7/12">
                     <Link to={`/news/${news.id}`}>
                       <h5 class="mb-3 text-lg font-bold">{news.title}</h5>
                     </Link>
-                    <p class="mb-6 text-neutral-500 dark:text-neutral-300">
+                    <p class="mb-6 text-neutral-500">
                       <small>
                         Опубликовано <u>{news.date}</u>
                       </small>
                     </p>
-                    <p class="text-neutral-500 dark:text-neutral-300">
-                      {news.mini_title}
-                    </p>
+                    <p class="text-neutral-500">{news.mini_title}</p>
                   </div>
                 </div>
               ))}
