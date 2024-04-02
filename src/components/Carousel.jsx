@@ -31,7 +31,7 @@ export default function Carousel() {
           <Slide index={0}>
             <div className="bg-[url('/src/img/bg1.png')] bg-cover bg-no-repeat bg-center h-96 flex place-items-center">
               {/* <ButtonBack className='button-back opacity-0'><img src={arrow} className='arrow w-10'/></ButtonBack> */}
-              <p className="container max-w-5xl width-full mx-auto text-white text-2xl">
+              <p className="lg:px-32 xl:text-xl container max-w-5xl width-full mx-auto text-white text-2xl">
                 Исаевский машиностроительный завод - завод по производству
                 стальных электросварных труб, с высоким уровнем автоматизации
                 технологических процессов, выпускающий высококачественную
@@ -45,7 +45,7 @@ export default function Carousel() {
           <Slide index={1}>
             <div className="bg-[url('/src/img/bg2.png')] bg-cover bg-no-repeat bg-center h-96 flex place-items-center">
               {/* <ButtonBack className='button-back'><img src={arrow} className='arrow w-10'/></ButtonBack> */}
-              <p className="container max-w-5xl width-full mx-auto text-white text-2xl">
+              <p className="lg:px-32  xl:text-xl container max-w-5xl width-full mx-auto text-white text-2xl">
                 В 2014 году была внедрена в производство система менеджмента
                 качества согласно международному стандарту ISO 9001:2008.
                 Внедрение подтверждено сертификационным органом TUV SUD
@@ -60,7 +60,7 @@ export default function Carousel() {
           <Slide index={2}>
             <div className="bg-[url('/src/img/bg3.png')] bg-cover bg-no-repeat bg-center h-96 flex place-items-center">
               {/* <ButtonBack className='button-back'><img src={arrow} className='arrow w-10'/></ButtonBack> */}
-              <p className="container max-w-5xl width-full mx-auto text-white text-2xl">
+              <p className="lg:px-32  xl:text-xl container max-w-5xl width-full mx-auto text-white text-2xl">
                 Деятельность предприятия направлена на производство листовой и
                 рулонной стали. Реализация данного проекта имеет огромное
                 экономическое и социальное знание для региона и в этой связи

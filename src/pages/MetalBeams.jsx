@@ -15,7 +15,7 @@ export default function MetalBeams() {
       <Carousel />
       <TopMain />
       <Breadcrumb />
-      <div className="py-3 2xl max-w-6xl width-full mx-auto container">
+      <div className="xl:px-5 py-3 2xl max-w-6xl width-full mx-auto container">
         <h1 className="font-bold ">Балки</h1>
         <div className="my-6">
           <p className="indent-10">

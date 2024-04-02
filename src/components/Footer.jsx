@@ -2,25 +2,25 @@ import industrial from "../img/industrial.png";
 
 export default function Footer() {
   return (
-    <section class="flex flex-col lg:justify-end font-poppins">
+    <section class="flex flex-col font-poppins">
       <div class="w-full bg-[url('/src/img/test2.png')] bg-cover bg-no-repeat bg-center pt-11 dark:bg-gray-900 ">
-        <div class="justify-center flex-1 max-w-6xl px-4 py-4 mx-auto lg:py-0 space-x-4 py-3 2xl max-w-7xl width-full mx-auto container mt-5 relative">
-          <div class="flex flex-wrap items-center justify-between pb-4 border-b border-gray-500 dark:border-gray-700 lg:justify-between">
-            <h2 class="mb-4 text-2xl font-semibold tracking-wider text-gray-300 lg:mb-0 dark:text-gray-400">
+        <div class="justify-center flex-1 max-w-6xl px-4 py-4 mx-auto  space-x-4 py-3 2xl max-w-7xl width-full mx-auto container mt-5 relative">
+          <div class="flex flex-wrap items-center justify-between pb-4 border-b border-gray-500 dark:border-gray-700 ">
+            <h2 class="mb-4 text-2xl font-semibold tracking-wider text-gray-300  dark:text-gray-400">
               Исаевский машиностроительный завод
             </h2>
           </div>
-          <div class="flex flex-wrap py-10 -mx-3">
-            <div class="w-full px-4 mb-11 md:w-1/2 lg:w-4/12 lg:mb-0">
+          <div class="flex flex-nowrap py-10 -mx-3">
+            <div class="w-full px-4 mb-11  ">
               <img src={industrial} className="w-30" />
-              <p class="footer-info text-base font-normal leading-5 text-gray-300 lg:w-64 dark:text-gray-400 mt-3">
+              <p class="footer-info text-base font-normal leading-5 text-gray-300 dark:text-gray-400 mt-3">
                 Качество выпускаемых труб ООО "Исаевского машиностроительного
                 завода" отвечает всем современным стандартам и требованиям. На
                 производстве задействованы передовые технологии производства и
                 контроля качества.
               </p>
             </div>
-            <div class="w-full px-3 md:w-1/4 lg:w-2/12 mb-11 lg:mb-0">
+            <div class="w-full px-3 ">
               <h2 class="mb-4 text-xl font-bold text-gray-200 dark:text-gray-400">
                 Наша продукция{" "}
               </h2>
@@ -132,7 +132,7 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
-            <div class="w-full px-4 md:w-1/4 lg:w-2/12 mb-11 lg:mb-0">
+            <div class="w-full px-4 mb-11 ">
               <h2 class="mb-4 text-xl font-bold text-gray-200 dark:text-gray-400">
                 Быстрые ссылки
               </h2>
@@ -286,7 +286,7 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
-            <div class="w-full px-4 mb-2 lg:mb-0 md:w-1/3 lg:w-4/12">
+            <div class="w-full px-4 mb-2 ">
               <h2 class="mb-4 text-lg font-bold text-gray-200 dark:text-gray-400">
                 Связаться с нами
               </h2>

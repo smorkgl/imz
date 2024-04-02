@@ -22,8 +22,8 @@ function App() {
 
   return (
     <div>
-      <Preloader />
-      <div className="font-['Ubuntu'] animate-fade-up relative">
+      {/* <Preloader /> */}
+      <div className="font-['Ubuntu'] relative">
         <Header />
         <Nav />
         <Carousel />

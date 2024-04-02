@@ -7,6 +7,8 @@ import dots from "../img/dots.svg";
 import close from "../img/close.svg";
 import logo from "../img/logoNEW2.svg";
 import { logout, selectIsAuth } from "../redux/slices/auth";
+import { useMediaQuery } from "react-responsive";
+import { Sidebar } from "primereact/sidebar";
 
 export default function Nav() {
   const [isDropdownVisibleAbout, setDropdownVisibleAbout] = useState(false);
@@ -50,13 +52,17 @@ export default function Nav() {
     setDropdownVisibleFaq(false);
   };
 
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 767px)" });
   const [isOpen, setIsOpen] = useState(false);
+  const [visible, setVisible] = useState(false);
 
   const [scroll, setScroll] = useState(false);
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      setScroll(window.scrollY > 124);
-    });
+    if (window.screen.width >= 767) {
+      window.addEventListener("scroll", () => {
+        setScroll(window.scrollY > 124);
+      });
+    }
   }, []);
 
   return (
@@ -67,271 +73,295 @@ export default function Nav() {
           : "bg-blue-800  "
       }
     >
-      <div>
-        {scroll && (
-          <Link to={"/"}>
-            <img
-              src={logo}
-              className="absolute h-12 left-14 cursor-pointer animate-flip-down animate-duration-800"
-            />
-          </Link>
-        )}
-        <div className="max-w-5xl width-full mx-auto container flex justify-between cursor-pointer text-white font-bold relative">
-          <div
-            className="dots__container absolute h-12 leading-12 flex justify-center items-center cursor-pointer hover:bg-blue-700 hover:rounded px-4 transition-all"
-            onClick={() => setIsOpen(true)}
-          >
-            <img src={dots} className="dots w-7" />
-          </div>
-          <Transition appear show={isOpen} as={Fragment}>
-            <Dialog as="div" open={isOpen} onClose={() => setIsOpen(false)}>
-              <Transition.Child
-                as={Fragment}
-                enter="ease-out duration-200"
-                enterFrom="opacity-0"
-                enterTo="opacity-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100"
-                leaveTo="opacity-0"
-              >
-                <div
-                  className={
-                    isOpen
-                      ? "fixed top-0 h-full w-screen bg-white/100 p-10 z-50"
-                      : ""
-                  }
-                >
-                  <Dialog.Panel>
-                    <div className="flex flex-wrap text-2xl gap-16">
-                      <div className="font-semibold w-60">
-                        <div className="cursor-pointer hover:bg-gray-100 p-3">
-                          ГЛАВНАЯ
-                        </div>
-                      </div>
-                      <div className="flex flex-col gap-3 w-60">
-                        <div className="font-semibold cursor-pointer hover:bg-gray-100 p-3">
-                          О ИМЗ
-                        </div>
-                        <div className="cursor-pointer hover:bg-gray-100 p-3">
-                          Новости
-                        </div>
-                        <div className="cursor-pointer hover:bg-gray-100 p-3">
-                          О нас
-                        </div>
-                        <div className="cursor-pointer hover:bg-gray-100 p-3">
-                          Проекты
-                        </div>
-                        <div className="cursor-pointer hover:bg-gray-100 p-3">
-                          Гостиница
-                        </div>
-                        <div className="cursor-pointer hover:bg-gray-100 p-3">
-                          Стоянка
-                        </div>
-                      </div>
-                      <div className="flex flex-col gap-3 w-60">
-                        <div className="font-semibold cursor-pointer hover:bg-gray-100 p-3 ">
-                          ПРОИЗВОДСТВО
-                        </div>
-                        <div className="cursor-pointer hover:bg-gray-100 p-3">
-                          Производственные мощности
-                        </div>
-                        <div className="cursor-pointer hover:bg-gray-100 p-3">
-                          Сертификаты
-                        </div>
-                      </div>
-                      <div className="flex flex-col gap-3 w-60">
-                        <div className="font-semibold cursor-pointer hover:bg-gray-100 p-3">
-                          ПРОДУКЦИЯ
-                        </div>
-                        <div className="cursor-pointer hover:bg-gray-100 p-3">
-                          Труба профильная
-                        </div>
-                        <div className="cursor-pointer hover:bg-gray-100 p-3">
-                          Балки
-                        </div>
-                        <div className="cursor-pointer hover:bg-gray-100 p-3">
-                          Металлоконструкции
-                        </div>
-                        <div className="cursor-pointer hover:bg-gray-100 p-3">
-                          Продукция
-                        </div>
-                        <div className="cursor-pointer hover:bg-gray-100 p-3">
-                          Заказ продукции
-                        </div>
-                      </div>
-                      <div className="font-semibold w-60">
-                        <div className="cursor-pointer hover:bg-gray-100 p-3">
-                          ПОСТАВЩИКАМ
-                        </div>
-                      </div>
-                      <div className="font-semibold w-60">
-                        <div className="cursor-pointer hover:bg-gray-100 p-3">
-                          ВАКАНСИИ
-                        </div>
-                      </div>
-                      <div className="flex flex-col gap-3 w-60">
-                        <div className="font-semibold w-60 cursor-pointer hover:bg-gray-100 p-3">
-                          КОНТАКТЫ
-                        </div>
-                        <div className="cursor-pointer hover:bg-gray-100 p-3">
-                          Офис продаж
-                        </div>
-                        <div className="cursor-pointer hover:bg-gray-100 p-3">
-                          Написать письмо
-                        </div>
-                        <div className="cursor-pointer hover:bg-gray-100 p-3">
-                          Заказ продукции
-                        </div>
-                      </div>
-                      <div className="flex flex-col gap-3 w-60">
-                        <div className="font-semibold cursor-pointer hover:bg-gray-100 p-3">
-                          FAQ
-                        </div>
-                        <div className="cursor-pointer hover:bg-gray-100 p-3">
-                          ГОСТ продукции
-                        </div>
-                        <div className="cursor-pointer hover:bg-gray-100 p-3">
-                          Калькулятор металлопроката
-                        </div>
-                      </div>
-                      <div className="flex flex-col gap-3 w-60">
-                        <Link to={`/login`}>
-                          <div className="font-semibold cursor-pointer hover:bg-gray-100 p-3">
-                            ВХОД
-                          </div>
-                        </Link>
-                      </div>
-                    </div>
-                  </Dialog.Panel>
-                  <img
-                    src={close}
-                    className="absolute cursor-pointer top-5 right-5 w-5"
-                  />
-                </div>
-              </Transition.Child>
-            </Dialog>
-          </Transition>
-          <Link to={`/`}>
-            <div className="h-12 leading-12 flex justify-center items-center cursor-pointer hover:bg-blue-700 hover:rounded px-4 transition-all">
-              <p>ГЛАВНАЯ</p>
+      {isTabletOrMobile && (
+        <div className="flex place-items-center justify-between px-5">
+          <img src={logo} className="h-16 p-2" />
+          <img
+            src={dots}
+            className="dots h-10"
+            onClick={() => setVisible(true)}
+          />
+
+          <Sidebar visible={visible} onHide={() => setVisible(false)}>
+            <div className="bg-blue-800 mt-">
+              <h2>Sidebar</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
             </div>
-          </Link>
-          <div
-            className="h-12 leading-12 flex justify-center items-center cursor-pointer relative hover:bg-blue-700 hover:rounded px-4 transition-all"
-            onMouseEnter={handleMouseEnterAbout}
-            onMouseLeave={handleMouseLeaveAbout}
-          >
-            <p>О ИМЗ</p>
-            {isDropdownVisibleAbout && (
-              <div className="dropdown-menu animate-fade-up animate-duration-[300ms] absolute z-50 text-black">
-                <ul>
-                  <Link to={`/news`}>
-                    <li className="li-blue__hover">Новости</li>
-                  </Link>
-                  <Link to={`/about`}>
-                    <li className="li-blue__hover">О нас</li>
-                  </Link>
-                  <Link to={`/projects`}>
-                    <li className="li-blue__hover">Проекты</li>
-                  </Link>
-                  <Link to={`/hotel`}>
-                    <li className="li-blue__hover">Гостиница</li>
-                  </Link>
-                  <Link to={`/parking`}>
-                    <li className="li-blue__hover">Стоянка</li>
-                  </Link>
-                </ul>
-              </div>
-            )}
-          </div>
-          <div
-            className="h-12 leading-12 flex justify-center items-center cursor-pointer relative hover:bg-blue-700 hover:rounded px-4 transition-all"
-            onMouseEnter={handleMouseEnterManuf}
-            onMouseLeave={handleMouseLeaveManuf}
-          >
-            <p>ПРОИЗВОДСТВО</p>
-            {isDropdownVisibleManuf && (
-              <div className="dropdown-menu animate-fade-up animate-duration-[300ms] absolute z-50 text-black">
-                <ul>
-                  <Link to={`/capacity`}>
-                    <li className="li-blue__hover">
-                      Производственные мощности
-                    </li>
-                  </Link>
-                  <Link to={`/certificates`}>
-                    <li className="li-blue__hover">Сертификаты</li>
-                  </Link>
-                </ul>
-              </div>
-            )}
-          </div>
-          <div
-            className="h-12 leading-12 flex justify-center items-center cursor-pointer relative hover:bg-blue-700 hover:rounded px-4 transition-all"
-            onMouseEnter={handleMouseEnterProd}
-            onMouseLeave={handleMouseLeaveProd}
-          >
-            <p>ПРОДУКЦИЯ</p>
-            {isDropdownVisibleProd && (
-              <div className="dropdown-menu animate-fade-up animate-duration-[300ms] absolute z-50 text-black">
-                <ul>
-                  <Link to={`/profile_pipe`}>
-                    <li className="li-blue__hover">Труба профильная</li>
-                  </Link>
-                  <Link to={`/metal_beams`}>
-                    <li className="li-blue__hover">Балки</li>
-                  </Link>
-                  <Link to={`/metal_structure`}>
-                    <li className="li-blue__hover">Металлоконструкции</li>
-                  </Link>
-                  <Link to={`/products`}>
-                    <li className="li-blue__hover">Продукция</li>
-                  </Link>
-                  <Link to={`/products_order`}>
-                    <li className="li-blue__hover">Заказ продукции</li>
-                  </Link>
-                </ul>
-              </div>
-            )}
-          </div>
-          <div className="h-12 leading-12 flex justify-center items-center cursor-pointer hover:bg-blue-700 hover:rounded px-4 transition-all">
-            <Link to={`/suppliers`}>
-              <p>ПОСТАВЩИКАМ</p>
-            </Link>
-          </div>
-          <Link to={`/job`} style={{ textDecoration: "none" }}>
-            <div className="h-12 leading-12 flex justify-center items-center cursor-pointer hover:bg-blue-700 hover:rounded px-4 transition-all">
-              <p>ВАКАНСИИ</p>
-            </div>
-          </Link>
-          <Link to={`/contacts`} style={{ textDecoration: "none" }}>
-            <div className="h-12 leading-12 flex justify-center items-center cursor-pointer relative hover:bg-blue-700 hover:rounded px-4 transition-all">
-              <p>КОНТАКТЫ</p>
-            </div>
-          </Link>
-          <div
-            className="h-12 leading-12 flex justify-center items-center cursor-pointer relative hover:bg-blue-700 hover:rounded px-4 transition-all"
-            onMouseEnter={handleMouseEnterFaq}
-            onMouseLeave={handleMouseLeaveFaq}
-          >
-            <p>FAQ</p>
-            {isDropdownVisibleFaq && (
-              <div className="dropdown-menu animate-fade-up animate-duration-[300ms] absolute z-50 text-black">
-                <ul>
-                  <Link to={`/gost`} style={{ textDecoration: "none" }}>
-                    <li className="li-blue__hover">ГОСТ продукции</li>
-                  </Link>
-                  <Link to={`/calculator`} style={{ textDecoration: "none" }}>
-                    <li className="li-blue__hover">
-                      Калькулятор металлопроката
-                    </li>
-                  </Link>
-                </ul>
-              </div>
-            )}
-          </div>
-          <span></span>
+          </Sidebar>
         </div>
-      </div>
+      )}
+      {!isTabletOrMobile && (
+        <div>
+          {scroll && (
+            <Link to={"/"}>
+              <img
+                src={logo}
+                className="absolute h-12 left-14 cursor-pointer animate-flip-down animate-duration-800"
+              />
+            </Link>
+          )}
+          <div className="lg:mx-20 xl:justify-around xl:text-sm max-w-5xl width-full mx-auto container flex justify-between cursor-pointer text-white font-bold relative">
+            <div
+              className="xl:-left-10 dots__container absolute h-12 leading-12 flex justify-center items-center cursor-pointer hover:bg-blue-700 hover:rounded px-4 transition-all"
+              onClick={() => setIsOpen(true)}
+            >
+              <img src={dots} className="dots w-7" />
+            </div>
+            <Transition appear show={isOpen} as={Fragment}>
+              <Dialog as="div" open={isOpen} onClose={() => setIsOpen(false)}>
+                <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-200"
+                  enterFrom="opacity-0"
+                  enterTo="opacity-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100"
+                  leaveTo="opacity-0"
+                >
+                  <div
+                    className={
+                      isOpen
+                        ? "fixed top-0 h-full w-screen bg-white/100 p-10 z-50"
+                        : ""
+                    }
+                  >
+                    <Dialog.Panel>
+                      <div className="xl:gap-4 text-lg flex flex-wrap text-2xl gap-16">
+                        <div className="font-semibold w-60">
+                          <div className="cursor-pointer hover:bg-gray-100 p-3">
+                            ГЛАВНАЯ
+                          </div>
+                        </div>
+                        <div className="flex flex-col xl:gap-2 gap-3 w-60">
+                          <div className="font-semibold cursor-pointer hover:bg-gray-100 p-3">
+                            О ИМЗ
+                          </div>
+                          <div className="cursor-pointer hover:bg-gray-100 p-3">
+                            Новости
+                          </div>
+                          <div className="cursor-pointer hover:bg-gray-100 p-3">
+                            О нас
+                          </div>
+                          <div className="cursor-pointer hover:bg-gray-100 p-3">
+                            Проекты
+                          </div>
+                          <div className="cursor-pointer hover:bg-gray-100 p-3">
+                            Гостиница
+                          </div>
+                          <div className="cursor-pointer hover:bg-gray-100 p-3">
+                            Стоянка
+                          </div>
+                        </div>
+                        <div className="flex flex-col xl:gap-2 gap-3 w-60">
+                          <div className="font-semibold cursor-pointer hover:bg-gray-100 p-3 ">
+                            ПРОИЗВОДСТВО
+                          </div>
+                          <div className="cursor-pointer hover:bg-gray-100 p-3">
+                            Производственные мощности
+                          </div>
+                          <div className="cursor-pointer hover:bg-gray-100 p-3">
+                            Сертификаты
+                          </div>
+                        </div>
+                        <div className="flex flex-col xl:gap-2 gap-3 w-60">
+                          <div className="font-semibold cursor-pointer hover:bg-gray-100 p-3">
+                            ПРОДУКЦИЯ
+                          </div>
+                          <div className="cursor-pointer hover:bg-gray-100 p-3">
+                            Труба профильная
+                          </div>
+                          <div className="cursor-pointer hover:bg-gray-100 p-3">
+                            Балки
+                          </div>
+                          <div className="cursor-pointer hover:bg-gray-100 p-3">
+                            Металлоконструкции
+                          </div>
+                          <div className="cursor-pointer hover:bg-gray-100 p-3">
+                            Продукция
+                          </div>
+                          <div className="cursor-pointer hover:bg-gray-100 p-3">
+                            Заказ продукции
+                          </div>
+                        </div>
+                        <div className="font-semibold w-60">
+                          <div className="cursor-pointer hover:bg-gray-100 p-3">
+                            ПОСТАВЩИКАМ
+                          </div>
+                        </div>
+                        <div className="font-semibold w-60">
+                          <div className="cursor-pointer hover:bg-gray-100 p-3">
+                            ВАКАНСИИ
+                          </div>
+                        </div>
+                        <div className="flex flex-col xl:gap-2 gap-3 w-60">
+                          <div className="font-semibold w-60 cursor-pointer hover:bg-gray-100 p-3">
+                            КОНТАКТЫ
+                          </div>
+                          <div className="cursor-pointer hover:bg-gray-100 p-3">
+                            Офис продаж
+                          </div>
+                          <div className="cursor-pointer hover:bg-gray-100 p-3">
+                            Написать письмо
+                          </div>
+                          <div className="cursor-pointer hover:bg-gray-100 p-3">
+                            Заказ продукции
+                          </div>
+                        </div>
+                        <div className="flex flex-col xl:gap-2 gap-3 w-60">
+                          <div className="font-semibold cursor-pointer hover:bg-gray-100 p-3">
+                            FAQ
+                          </div>
+                          <div className="cursor-pointer hover:bg-gray-100 p-3">
+                            ГОСТ продукции
+                          </div>
+                          <div className="cursor-pointer hover:bg-gray-100 p-3">
+                            Калькулятор металлопроката
+                          </div>
+                        </div>
+                        <div className="flex flex-col xl:gap-2 gap-3 w-60">
+                          <Link to={`/login`}>
+                            <div className="font-semibold cursor-pointer hover:bg-gray-100 p-3">
+                              ВХОД
+                            </div>
+                          </Link>
+                        </div>
+                      </div>
+                    </Dialog.Panel>
+                    <img
+                      src={close}
+                      className="absolute cursor-pointer top-5 right-5 w-5"
+                    />
+                  </div>
+                </Transition.Child>
+              </Dialog>
+            </Transition>
+            <Link to={`/`}>
+              <div className="h-12 leading-12 flex justify-center items-center cursor-pointer hover:bg-blue-700 hover:rounded px-4 transition-all">
+                <p>ГЛАВНАЯ</p>
+              </div>
+            </Link>
+            <div
+              className="h-12 leading-12 flex justify-center items-center cursor-pointer relative hover:bg-blue-700 hover:rounded px-4 transition-all"
+              onMouseEnter={handleMouseEnterAbout}
+              onMouseLeave={handleMouseLeaveAbout}
+            >
+              <p>О ИМЗ</p>
+              {isDropdownVisibleAbout && (
+                <div className="dropdown-menu animate-fade-up animate-duration-[300ms] absolute z-50 text-black">
+                  <ul>
+                    <Link to={`/news`}>
+                      <li className="li-blue__hover">Новости</li>
+                    </Link>
+                    <Link to={`/about`}>
+                      <li className="li-blue__hover">О нас</li>
+                    </Link>
+                    <Link to={`/projects`}>
+                      <li className="li-blue__hover">Проекты</li>
+                    </Link>
+                    <Link to={`/hotel`}>
+                      <li className="li-blue__hover">Гостиница</li>
+                    </Link>
+                    <Link to={`/parking`}>
+                      <li className="li-blue__hover">Стоянка</li>
+                    </Link>
+                  </ul>
+                </div>
+              )}
+            </div>
+            <div
+              className="h-12 leading-12 flex justify-center items-center cursor-pointer relative hover:bg-blue-700 hover:rounded px-4 transition-all"
+              onMouseEnter={handleMouseEnterManuf}
+              onMouseLeave={handleMouseLeaveManuf}
+            >
+              <p>ПРОИЗВОДСТВО</p>
+              {isDropdownVisibleManuf && (
+                <div className="dropdown-menu animate-fade-up animate-duration-[300ms] absolute z-50 text-black">
+                  <ul>
+                    <Link to={`/capacity`}>
+                      <li className="li-blue__hover">
+                        Производственные мощности
+                      </li>
+                    </Link>
+                    <Link to={`/certificates`}>
+                      <li className="li-blue__hover">Сертификаты</li>
+                    </Link>
+                  </ul>
+                </div>
+              )}
+            </div>
+            <div
+              className="h-12 leading-12 flex justify-center items-center cursor-pointer relative hover:bg-blue-700 hover:rounded px-4 transition-all"
+              onMouseEnter={handleMouseEnterProd}
+              onMouseLeave={handleMouseLeaveProd}
+            >
+              <p>ПРОДУКЦИЯ</p>
+              {isDropdownVisibleProd && (
+                <div className="dropdown-menu animate-fade-up animate-duration-[300ms] absolute z-50 text-black">
+                  <ul>
+                    <Link to={`/profile_pipe`}>
+                      <li className="li-blue__hover">Труба профильная</li>
+                    </Link>
+                    <Link to={`/metal_beams`}>
+                      <li className="li-blue__hover">Балки</li>
+                    </Link>
+                    <Link to={`/metal_structure`}>
+                      <li className="li-blue__hover">Металлоконструкции</li>
+                    </Link>
+                    <Link to={`/products`}>
+                      <li className="li-blue__hover">Продукция</li>
+                    </Link>
+                    <Link to={`/products_order`}>
+                      <li className="li-blue__hover">Заказ продукции</li>
+                    </Link>
+                  </ul>
+                </div>
+              )}
+            </div>
+            <div className="h-12 leading-12 flex justify-center items-center cursor-pointer hover:bg-blue-700 hover:rounded px-4 transition-all">
+              <Link to={`/suppliers`}>
+                <p>ПОСТАВЩИКАМ</p>
+              </Link>
+            </div>
+            <Link to={`/job`} style={{ textDecoration: "none" }}>
+              <div className="h-12 leading-12 flex justify-center items-center cursor-pointer hover:bg-blue-700 hover:rounded px-4 transition-all">
+                <p>ВАКАНСИИ</p>
+              </div>
+            </Link>
+            <Link to={`/contacts`} style={{ textDecoration: "none" }}>
+              <div className="h-12 leading-12 flex justify-center items-center cursor-pointer relative hover:bg-blue-700 hover:rounded px-4 transition-all">
+                <p>КОНТАКТЫ</p>
+              </div>
+            </Link>
+            <div
+              className="h-12 leading-12 flex justify-center items-center cursor-pointer relative hover:bg-blue-700 hover:rounded px-4 transition-all"
+              onMouseEnter={handleMouseEnterFaq}
+              onMouseLeave={handleMouseLeaveFaq}
+            >
+              <p>FAQ</p>
+              {isDropdownVisibleFaq && (
+                <div className="dropdown-menu animate-fade-up animate-duration-[300ms] absolute z-50 text-black">
+                  <ul>
+                    <Link to={`/gost`} style={{ textDecoration: "none" }}>
+                      <li className="li-blue__hover">ГОСТ продукции</li>
+                    </Link>
+                    <Link to={`/calculator`} style={{ textDecoration: "none" }}>
+                      <li className="li-blue__hover">
+                        Калькулятор металлопроката
+                      </li>
+                    </Link>
+                  </ul>
+                </div>
+              )}
+            </div>
+            <span></span>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }

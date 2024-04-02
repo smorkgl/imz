@@ -22,9 +22,9 @@ export default function Header() {
   };
 
   return (
-    <header>
+    <header className="md:hidden">
       <div className="space-x-4 py-3 2xl max-w-7xl width-full mx-auto container">
-        <div className="flex justify-between">
+        <div className="xl:justify-around flex justify-between">
           <div className="flex">
             <div className="cursor-pointer">
               <Link to={"/"}>
@@ -32,8 +32,8 @@ export default function Header() {
               </Link>
             </div>
           </div>
-          <div className="flex gap-20 text-sm font-medium">
-            <div className="flex gap-20">
+          <div className="xl:gap-10 flex gap-20 text-sm font-medium">
+            <div className="xl:gap-10 flex gap-20">
               <div className="grid place-items-center">
                 <div className="flex gap-3 cursor-default address-hover">
                   <img src={geo} className="w-8 geo-img transition-transform" />

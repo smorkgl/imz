@@ -47,8 +47,8 @@ export default function Main() {
   const items = [1, 2, 3, 4];
 
   return (
-    <div className="space-x-4 py-3 2xl max-w-7xl width-full mx-auto container mt-5 relative">
-      <div className="flex justify-between">
+    <div className="lg:pl-5 space-x-4 py-3 2xl max-w-7xl width-full mx-auto container mt-5 relative">
+      <div className="md:block flex justify-between">
         <div>
           <div className="flex justify-between place-items-center">
             <div className="flex gap-2 cursor-pointer">
@@ -68,7 +68,7 @@ export default function Main() {
             </Link>
           </div>
           <div className="work__line2 mt-2" />
-          <div className="flex flex-wrap gap-20 mt-5">
+          <div className="lg:justify-normal xl:gap-5 xl:justify-around flex flex-wrap gap-20 mt-5">
             {isPostsLoading
               ? items.map((item, index) => (
                   <div
@@ -184,7 +184,8 @@ export default function Main() {
                     </div>
                   </div>
                 ))}
-
+          </div>
+          <div className="pt-10">
             <Link
               to={`/news`}
               class="inline-flex items-center p-3 text-lg font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 -mt-10"
@@ -208,8 +209,8 @@ export default function Main() {
             </Link>
           </div>
         </div>
-        <div>
-          <div className="">
+        <div className="xl:pr-5">
+          <div>
             <div className="flex gap-2 cursor-pointer w-max">
               <img src={video} className="w-6" />
               <p className="text-2xl">Видео о ИМЗ:</p>

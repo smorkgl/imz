@@ -15,13 +15,13 @@ export default function Contacts() {
       <Carousel />
       <TopMain />
       <Breadcrumb />
-      <div className="py-3 2xl max-w-6xl width-full mx-auto container">
+      <div className="xl:px-5 py-3 2xl max-w-6xl width-full mx-auto container">
         <h1 className="font-bold ">Контакты</h1>
       </div>
       <div className="relative">
         <div className="wherewe__before absolute bg-white z-10 h-full"></div>
         <div className="max-w-7xl width-full mx-auto container relative">
-          <div className="absolute z-10 h-full h bg-white text-black w-2/4 grid place-items-center pr-10">
+          <div className="xl:pl-5 absolute z-10 h-full h bg-white text-black w-2/4 grid place-items-center pr-10">
             <div className="">
               <p>
                 <b>ООО «Исаевский Машиностроительный Завод»</b>

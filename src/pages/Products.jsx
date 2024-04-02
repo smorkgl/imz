@@ -16,7 +16,7 @@ export default function Products() {
       <Carousel />
       <TopMain />
       <Breadcrumb />
-      <div className="py-3 2xl max-w-6xl width-full mx-auto container">
+      <div className="xl:px-5 py-3 2xl max-w-6xl width-full mx-auto container">
         <h1 className="font-bold ">Продукция</h1>
         <div className="my-6">
           <table border="1px" cellpadding="4" cellspacing="0" width="100%">

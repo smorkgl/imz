@@ -25,7 +25,7 @@ export default function Projects() {
       <Carousel />
       <TopMain />
       <Breadcrumb />
-      <div className="py-3 2xl max-w-6xl width-full mx-auto container">
+      <div className="xl:px-5 py-3  2xl max-w-6xl width-full mx-auto container">
         <h1 className="font-bold ">Гостиница</h1>
         <div className="my-6">
           <p className="indent-10">
@@ -67,7 +67,7 @@ export default function Projects() {
             Поскольку, гостиница небольшая, вы всегда получите у нас не только
             индивидуальный подход, но и привлекательную цену проживания.
           </p>
-          <div className="flex justify-between my-10 text-2xl">
+          <div className="lg:flex-wrap flex justify-between my-10 text-2xl">
             <div className="my-auto">
               <h2 className="font-bold text-2xl">КОНТАКТЫ:</h2>
               <div className="work__line2 mt-2" />
@@ -84,7 +84,7 @@ export default function Projects() {
                 <b>Сайт:</b> hotel-imz.ru
               </p>
             </div>
-            <img src={hotel1} />
+            <img className="xl:pt-5" src={hotel1} />
           </div>
           <p className="indent-10">У нас есть:</p>
           <p className="indent-10">
@@ -135,25 +135,27 @@ export default function Projects() {
             за небольшую плату быстро получите чистое белье или одежду.
           </p>
         </div>
-        <div class="flex mb-8 gap-10">
-          <img src={hotel2} className="w-1/2" />
-          <img src={hotel3} className="w-1/2" />
-        </div>
-        <div class="flex mb-8 gap-10">
-          <img src={hotel4} className="w-1/2" />
-          <img src={hotel5} className=" w-1/2" />
-        </div>
-        <div class="flex mb-8 gap-10">
-          <img src={hotel6} className="w-1/2" />
-          <img src={hotel7} className=" w-1/2" />
-        </div>
-        <div class="flex mb-8 gap-10">
-          <img src={hotel8} className=" w-1/2" />
-          <img src={hotel9} className=" w-1/2" />
-        </div>
-        <div class="flex mb-10 gap-10">
-          <img src={hotel10} className=" w-1/2" />
-          <img src={hotel11} className=" w-1/2" />
+        <div className="mx-auto">
+          <div class="xl:grid xl:place-items-center xl:flex-wrap flex mb-8 gap-10">
+            <img src={hotel2} />
+            <img src={hotel3} />
+          </div>
+          <div class="xl:grid xl:place-items-center xl:flex-wrap flex mb-8 gap-10">
+            <img src={hotel4} />
+            <img src={hotel5} />
+          </div>
+          <div class="xl:grid xl:place-items-center xl:flex-wrap flex mb-8 gap-10">
+            <img src={hotel6} />
+            <img src={hotel7} />
+          </div>
+          <div class="xl:grid xl:place-items-center xl:flex-wrap flex mb-8 gap-10">
+            <img src={hotel8} />
+            <img src={hotel9} />
+          </div>
+          <div class="xl:grid xl:place-items-center xl:flex-wrap flex mb-10 gap-10">
+            <img src={hotel10} />
+            <img src={hotel11} />
+          </div>
         </div>
       </div>
       <Footer />

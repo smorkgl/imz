@@ -15,7 +15,7 @@ export default function ProductsOrder() {
       <Carousel />
       <TopMain />
       <Breadcrumb />
-      <div className="py-3 2xl max-w-6xl width-full mx-auto container">
+      <div className="xl:px-5 py-3 2xl max-w-6xl width-full mx-auto container">
         <h1 className="font-bold ">Заказать продукцию</h1>
         <div className="my-12">
           <div class="bg-white shadow-md rounded rounded-lg p-5  w-3/4">
