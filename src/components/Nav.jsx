@@ -47,7 +47,7 @@ export default function Nav() {
 
   const [scroll, setScroll] = useState(false);
   useEffect(() => {
-    if (window.screen.width >= 767) {
+    if (window.screen.width >= 767 && isTabletOrMobile) {
       window.addEventListener("scroll", () => {
         setScroll(window.scrollY > 124);
       });
@@ -74,66 +74,166 @@ export default function Nav() {
           />
 
           <Sidebar visible={visible} onHide={() => setVisible(false)}>
-            <div className="bg-blue-800 fixed top-0 h-full text-white z-40 font-['Ubuntu'] font-semibold text-sm pt-16">
-              <div className="p-3 flex flex-col gap-3">
-                <Link to={"/"}>
-                  <p>ГЛАВНАЯ</p>
-                </Link>
-                <div className="pl-10 flex flex-col gap-3 font-medium">
-                  <Link to={"/news"}>
-                    <p>НОВОСТИ</p>
-                  </Link>
-                  <Link to={"/about"}>
-                    <p>О НАС</p>
-                  </Link>
-                  <Link to={"/projects"}>
-                    <p>ПРОЕКТЫ</p>
-                  </Link>
-                  <Link to={"/hotel"}>
-                    <p>ГОСТИНИЦА</p>
-                  </Link>
-                  <Link to={"/parking"}>
-                    <p>СТОЯНКА</p>
-                  </Link>
-                  <Link to={"/capacity"}>
-                    <p>ПРОИЗВОДСТВЕННЫЕ МОЩНОСТИ</p>
-                  </Link>
-                  <Link to={"/certificates"}>
-                    <p>СЕРТИФИКАТЫ</p>
-                  </Link>
-                  <Link to={"/profile_pipe"}>
-                    <p>ТРУБА ПРОФИЛЬНАЯ</p>
-                  </Link>
-                  <Link to={"/metal_beams"}>
-                    <p>БАЛКИ</p>
-                  </Link>
-                  <Link to={"/metal_structure"}>
-                    <p>МЕТАЛЛОКОНСТРУКЦИИ</p>
-                  </Link>
-                  <Link to={"/products"}>
-                    <p>ПРОДУКЦИЯ</p>
-                  </Link>
-                  <Link to={"/products_order"}>
-                    <p>ЗАКАЗ ПРОДУКЦИИ</p>
-                  </Link>
-                </div>
-                <Link to={"/suppliers"}>
-                  <p className="">ПОСТАВЩИКАМ</p>
-                </Link>
-                <Link to={"/job"}>
-                  <p className="">ВАКАНСИИ</p>
-                </Link>
-                <Link to={"/contacts"}>
-                  <p className="">КОНТАКТЫ</p>
-                </Link>
-                <div className="pl-10  flex flex-col gap-3 font-medium ">
-                  <Link to={"/gost"}>
-                    <p>ГОСТ ПРОДУКЦИИ</p>
-                  </Link>
-                  <Link to={"/calculator"}>
-                    <p>КАЛЬКУЛЯТОР МЕТАЛЛОПРОКАТА</p>
-                  </Link>
-                </div>
+            <div class="nav active" id="nav">
+              <div class="nav-links">
+                <ul class="row align-items-center g-0 justify-content-between ">
+                  <li
+                    class="nav-item col-12 col-lg-auto nav-item--dropdown first"
+                    data-item_2=""
+                  >
+                    <div class="row align-items-center g-0">
+                      <div class="col-12 col-lg-auto">
+                        <a href="company/" class="nav-item__link">
+                          Предприятие
+                        </a>
+                      </div>
+                      <div class="col-auto d-none d-lg-block">
+                        <div
+                          class="nav-arrow"
+                          data-active="[data-item_2]"
+                        ></div>
+                      </div>
+                    </div>
+                    <ul class="nav-dropbox ">
+                      <li class="nav-drop first">
+                        <a href="company/produkti/" class="nav-drop__link">
+                          Продукция
+                        </a>
+                      </li>
+                      <li class="nav-drop ">
+                        <a
+                          href="company/proizvodstvennye-vozmozhnosti/"
+                          class="nav-drop__link"
+                        >
+                          Производственные мощности
+                        </a>
+                      </li>
+                      <li class="nav-drop ">
+                        <a href="company/documents/" class="nav-drop__link">
+                          Сертификаты и лицензии
+                        </a>
+                      </li>
+                      <li class="nav-drop ">
+                        <a
+                          href="company/uchebnyy-tsentr/"
+                          class="nav-drop__link"
+                        >
+                          Учебный центр
+                        </a>
+                      </li>
+                      <li class="nav-drop ">
+                        <a href="company/partners/" class="nav-drop__link">
+                          Наши заказчики
+                        </a>
+                      </li>
+                      <li class="nav-drop ">
+                        <a href="company/team/" class="nav-drop__link">
+                          Наша команда
+                        </a>
+                      </li>
+                      <li class="nav-drop ">
+                        <a href="company/compliance/" class="nav-drop__link">
+                          Комплаенс
+                        </a>
+                      </li>
+                      <li class="nav-drop ">
+                        <a href="company/smi-o-nas/" class="nav-drop__link">
+                          СМИ о нас
+                        </a>
+                      </li>
+                      <li class="nav-drop ">
+                        <a
+                          href="company/nashi-partneryi/"
+                          class="nav-drop__link"
+                        >
+                          Наши партнеры
+                        </a>
+                      </li>
+                      <li class="nav-drop ">
+                        <a href="company/vakansii/" class="nav-drop__link">
+                          Вакансии
+                        </a>
+                      </li>
+                      <li class="nav-drop ">
+                        <a href="company/otziv/" class="nav-drop__link">
+                          Отзывы
+                        </a>
+                      </li>
+                      <li class="nav-drop ">
+                        <a
+                          href="company/istoriya-kompanii.html"
+                          class="nav-drop__link"
+                        >
+                          История компании
+                        </a>
+                      </li>
+                      <li class="nav-drop last">
+                        <a
+                          href="company/ploshhadki.html"
+                          class="nav-drop__link"
+                        >
+                          Площадки
+                        </a>
+                      </li>
+                    </ul>{" "}
+                  </li>
+                  <li class="nav-item col-12 col-lg-auto ">
+                    <a href="news/" class="nav-item__link">
+                      Новости
+                    </a>
+                  </li>
+                  <li class="nav-item col-12 col-lg-auto ">
+                    <a href="uslugi/" class="nav-item__link">
+                      Услуги
+                    </a>
+                  </li>
+                  <li
+                    class="nav-item col-12 col-lg-auto nav-item--dropdown "
+                    data-item_4310=""
+                  >
+                    <div class="row align-items-center g-0">
+                      <div class="col-12 col-lg-auto">
+                        <a href="zakupki/" class="nav-item__link">
+                          Закупки
+                        </a>
+                      </div>
+                      <div class="col-auto d-none d-lg-block">
+                        <div
+                          class="nav-arrow"
+                          data-active="[data-item_4310]"
+                        ></div>
+                      </div>
+                    </div>
+                    <ul class="nav-dropbox ">
+                      <li class="nav-drop first">
+                        <a
+                          href="zakupki/otkryityie-zakupki.html"
+                          class="nav-drop__link"
+                        >
+                          Открытые закупки
+                        </a>
+                      </li>
+                      <li class="nav-drop last">
+                        <a
+                          href="zakupki/srochnyie-potrebnosti.html"
+                          class="nav-drop__link"
+                        >
+                          Срочные потребности
+                        </a>
+                      </li>
+                    </ul>{" "}
+                  </li>
+                  <li class="nav-item col-12 col-lg-auto ">
+                    <a href="company/vakansii/" class="nav-item__link">
+                      Вакансии
+                    </a>
+                  </li>
+                  <li class="nav-item col-12 col-lg-auto last">
+                    <a href="contacts/" class="nav-item__link">
+                      Контакты
+                    </a>
+                  </li>
+                </ul>{" "}
               </div>
             </div>
           </Sidebar>
