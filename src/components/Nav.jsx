@@ -1,12 +1,9 @@
 import { Outlet, Link, NavLink } from "react-router-dom";
 import { Fragment, useState, useEffect } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchAuth } from "../redux/slices/auth";
 import dots from "../img/dots.svg";
 import close from "../img/close.svg";
 import logo from "../img/logoNEW2.svg";
-import { logout, selectIsAuth } from "../redux/slices/auth";
 import { useMediaQuery } from "react-responsive";
 import { Sidebar } from "primereact/sidebar";
 
@@ -14,7 +11,6 @@ export default function Nav() {
   const [isDropdownVisibleAbout, setDropdownVisibleAbout] = useState(false);
   const [isDropdownVisibleManuf, setDropdownVisibleManuf] = useState(false);
   const [isDropdownVisibleProd, setDropdownVisibleProd] = useState(false);
-  const [isDropdownVisibleCont, setDropdownVisibleCont] = useState(false);
   const [isDropdownVisibleFaq, setDropdownVisibleFaq] = useState(false);
 
   const handleMouseEnterAbout = () => {
@@ -36,13 +32,6 @@ export default function Nav() {
   };
   const handleMouseLeaveProd = () => {
     setDropdownVisibleProd(false);
-  };
-
-  const handleMouseEnterCont = () => {
-    setDropdownVisibleCont(true);
-  };
-  const handleMouseLeaveCont = () => {
-    setDropdownVisibleCont(false);
   };
 
   const handleMouseEnterFaq = () => {
@@ -70,7 +59,9 @@ export default function Nav() {
       className={
         scroll
           ? "sticky z-50 top-0 bg-blue-800 py-2 border-b-2 border-blue-950 shadow-2xl transition-all"
-          : "bg-blue-800  "
+          : isTabletOrMobile
+            ? "header__mobile fixed right-0 top-0 left-0 z-50 bg-blue-800"
+            : "bg-blue-800"
       }
     >
       {isTabletOrMobile && (
@@ -78,19 +69,72 @@ export default function Nav() {
           <img src={logo} className="h-16 p-2" />
           <img
             src={dots}
-            className="dots h-10"
-            onClick={() => setVisible(true)}
+            className="dots h-10 z-50"
+            onClick={() => setVisible(!visible)}
           />
 
           <Sidebar visible={visible} onHide={() => setVisible(false)}>
-            <div className="bg-blue-800 mt-">
-              <h2>Sidebar</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </p>
+            <div className="bg-blue-800 fixed top-0 h-full text-white z-40 font-['Ubuntu'] font-semibold text-sm pt-16">
+              <div className="p-3 flex flex-col gap-3">
+                <Link to={"/"}>
+                  <p>ГЛАВНАЯ</p>
+                </Link>
+                <div className="pl-10 flex flex-col gap-3 font-medium">
+                  <Link to={"/news"}>
+                    <p>НОВОСТИ</p>
+                  </Link>
+                  <Link to={"/about"}>
+                    <p>О НАС</p>
+                  </Link>
+                  <Link to={"/projects"}>
+                    <p>ПРОЕКТЫ</p>
+                  </Link>
+                  <Link to={"/hotel"}>
+                    <p>ГОСТИНИЦА</p>
+                  </Link>
+                  <Link to={"/parking"}>
+                    <p>СТОЯНКА</p>
+                  </Link>
+                  <Link to={"/capacity"}>
+                    <p>ПРОИЗВОДСТВЕННЫЕ МОЩНОСТИ</p>
+                  </Link>
+                  <Link to={"/certificates"}>
+                    <p>СЕРТИФИКАТЫ</p>
+                  </Link>
+                  <Link to={"/profile_pipe"}>
+                    <p>ТРУБА ПРОФИЛЬНАЯ</p>
+                  </Link>
+                  <Link to={"/metal_beams"}>
+                    <p>БАЛКИ</p>
+                  </Link>
+                  <Link to={"/metal_structure"}>
+                    <p>МЕТАЛЛОКОНСТРУКЦИИ</p>
+                  </Link>
+                  <Link to={"/products"}>
+                    <p>ПРОДУКЦИЯ</p>
+                  </Link>
+                  <Link to={"/products_order"}>
+                    <p>ЗАКАЗ ПРОДУКЦИИ</p>
+                  </Link>
+                </div>
+                <Link to={"/suppliers"}>
+                  <p className="">ПОСТАВЩИКАМ</p>
+                </Link>
+                <Link to={"/job"}>
+                  <p className="">ВАКАНСИИ</p>
+                </Link>
+                <Link to={"/contacts"}>
+                  <p className="">КОНТАКТЫ</p>
+                </Link>
+                <div className="pl-10  flex flex-col gap-3 font-medium ">
+                  <Link to={"/gost"}>
+                    <p>ГОСТ ПРОДУКЦИИ</p>
+                  </Link>
+                  <Link to={"/calculator"}>
+                    <p>КАЛЬКУЛЯТОР МЕТАЛЛОПРОКАТА</p>
+                  </Link>
+                </div>
+              </div>
             </div>
           </Sidebar>
         </div>

@@ -148,7 +148,6 @@ li {
 }
 
 .work__line {
-  width: 410px;
   height: 5px;
   background-color: #0059ff;
 }
@@ -444,4 +443,12 @@ li {
   font-weight: 800;
   overflow: hidden;
   color: #fff;
+}
+
+.p-sidebar-icons {
+  display: none;
+}
+
+.header__mobile {
+  z-index: 100000000 !important;
 }

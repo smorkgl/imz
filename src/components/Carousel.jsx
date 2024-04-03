@@ -13,7 +13,7 @@ import arrow from "../img/arrow1.svg";
 
 export default function Carousel() {
   return (
-    <div className="main h-96 select-none cursor-default">
+    <div className="md:mt-16 main h-96 select-none cursor-default">
       <CarouselProvider
         naturalSlideWidth={100}
         naturalSlideHeight={100}
@@ -30,8 +30,7 @@ export default function Carousel() {
         <Slider className="h-96">
           <Slide index={0}>
             <div className="bg-[url('/src/img/bg1.png')] bg-cover bg-no-repeat bg-center h-96 flex place-items-center">
-              {/* <ButtonBack className='button-back opacity-0'><img src={arrow} className='arrow w-10'/></ButtonBack> */}
-              <p className="lg:px-32 xl:text-xl container max-w-5xl width-full mx-auto text-white text-2xl">
+              <p className="lg:px-32  md:px-10 xl:text-xl md:text-base container max-w-5xl width-full mx-auto text-white text-2xl">
                 Исаевский машиностроительный завод - завод по производству
                 стальных электросварных труб, с высоким уровнем автоматизации
                 технологических процессов, выпускающий высококачественную
@@ -39,13 +38,11 @@ export default function Carousel() {
                 Ассортимент выпускаемой трубной продукции - более 90
                 наименований.
               </p>
-              {/* <ButtonNext className='button-next'><img src={arrow} className='arrow2 w-10'/></ButtonNext> */}
             </div>
           </Slide>
           <Slide index={1}>
             <div className="bg-[url('/src/img/bg2.png')] bg-cover bg-no-repeat bg-center h-96 flex place-items-center">
-              {/* <ButtonBack className='button-back'><img src={arrow} className='arrow w-10'/></ButtonBack> */}
-              <p className="lg:px-32  xl:text-xl container max-w-5xl width-full mx-auto text-white text-2xl">
+              <p className="lg:px-32  md:px-10 xl:text-xl md:text-base container max-w-5xl width-full mx-auto text-white text-2xl">
                 В 2014 году была внедрена в производство система менеджмента
                 качества согласно международному стандарту ISO 9001:2008.
                 Внедрение подтверждено сертификационным органом TUV SUD
@@ -56,18 +53,16 @@ export default function Carousel() {
               </p>
             </div>
           </Slide>
-          {/* <ButtonNext className='button-next'><img src={arrow} className='arrow2 w-10'/></ButtonNext></div></Slide> */}
           <Slide index={2}>
             <div className="bg-[url('/src/img/bg3.png')] bg-cover bg-no-repeat bg-center h-96 flex place-items-center">
               {/* <ButtonBack className='button-back'><img src={arrow} className='arrow w-10'/></ButtonBack> */}
-              <p className="lg:px-32  xl:text-xl container max-w-5xl width-full mx-auto text-white text-2xl">
+              <p className="lg:px-32  md:px-10 xl:text-xl md:text-base container max-w-5xl width-full mx-auto text-white text-2xl">
                 Деятельность предприятия направлена на производство листовой и
                 рулонной стали. Реализация данного проекта имеет огромное
                 экономическое и социальное знание для региона и в этой связи
                 проект был включен в 100 проектов Губернатора Ростовской
                 области.
               </p>
-              {/* <ButtonNext className='button-next opacity-0'><img src={arrow} className='arrow2 w-10'/></ButtonNext> */}
             </div>
           </Slide>
         </Slider>

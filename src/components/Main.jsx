@@ -47,7 +47,7 @@ export default function Main() {
   const items = [1, 2, 3, 4];
 
   return (
-    <div className="lg:pl-5 space-x-4 py-3 2xl max-w-7xl width-full mx-auto container mt-5 relative">
+    <div className="md:p-2 lg:pl-5 space-x-4 py-3 2xl max-w-7xl width-full mx-auto container mt-5 relative">
       <div className="md:block flex justify-between">
         <div>
           <div className="flex justify-between place-items-center">
@@ -209,14 +209,14 @@ export default function Main() {
             </Link>
           </div>
         </div>
-        <div className="xl:pr-5">
+        <div className="md:p-0 md:pt-5 xl:pr-5">
           <div>
             <div className="flex gap-2 cursor-pointer w-max">
               <img src={video} className="w-6" />
               <p className="text-2xl">Видео о ИМЗ:</p>
             </div>
             <div className="work__line2 mt-2" />
-            <div className="iframe-video flex flex-col gap-12 mt-5">
+            <div className="md:w-auto iframe-video flex flex-col gap-12 mt-5">
               <div className="video-box">
                 <LiteYouTubeEmbed id="7YzIpIORxOY" />
               </div>
@@ -234,7 +234,7 @@ export default function Main() {
               <p className="text-2xl ">Фотогалерея:</p>
             </div>
             <div className="work__line2 mt-2" />
-            <div className="photo-container flex flex-col gap-12 mt-5">
+            <div className="md:w-auto photo-container flex flex-col gap-12 mt-5">
               <div className="overflow-hidden video-box">
                 <img
                   src={photo1}

@@ -1,6 +1,8 @@
 import industrial from "../img/industrial.png";
+import { useMediaQuery } from "react-responsive";
 
 export default function Footer() {
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 767px)" });
   return (
     <section class="flex flex-col font-poppins">
       <div class="w-full bg-[url('/src/img/test2.png')] bg-cover bg-no-repeat bg-center pt-11 dark:bg-gray-900 ">
@@ -10,7 +12,7 @@ export default function Footer() {
               Исаевский машиностроительный завод
             </h2>
           </div>
-          <div class="flex flex-nowrap py-10 -mx-3">
+          <div class="md:flex-col flex flex-nowrap py-10 -mx-3">
             <div class="w-full px-4 mb-11  ">
               <img src={industrial} className="w-30" />
               <p class="footer-info text-base font-normal leading-5 text-gray-300 dark:text-gray-400 mt-3">
@@ -340,11 +342,14 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="bottom-0 bg-blue-900 py-3 text-white">
-          <div className="container max-w-5xl width-full mx-auto flex justify-between">
-            <p className="text-sm">Создание сайта - ИТ отдел ИМЗ</p>
-            <p className="text-sm">
-              © 2014—2024. ИМЗ. Исаевский машиностроительный завод
+        <div className="md:px-3 bottom-0 bg-blue-900 py-3 text-white">
+          <div className="md:block container max-w-5xl width-full mx-auto flex justify-between">
+            {!isTabletOrMobile && (
+              <p className="text-sm">Создание сайта - ИТ отдел ИМЗ</p>
+            )}
+            <p className="md:text-center  text-sm">
+              © 2014—2024. ИМЗ. <br />
+              Исаевский машиностроительный завод
             </p>
           </div>
         </div>
