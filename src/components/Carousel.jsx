@@ -21,11 +21,11 @@ export default function Carousel() {
         isPlaying={true}
         className="relative"
       >
-        <ButtonNext className="absolute z-40 carousel-button1 bg-blue-800/70 transition-all cursor-pointer">
-          <img src={arrow} className="w-10 arrow2" />
+        <ButtonNext className="md:p-0 absolute z-40 carousel-button1 bg-blue-800/70 transition-all cursor-pointer">
+          <img src={arrow} className="md:w-8 w-10 arrow2" />
         </ButtonNext>
-        <ButtonBack className="absolute z-40 carousel-button2 bg-blue-800/70 transition-all cursor-pointer">
-          <img src={arrow} className="w-10 arrow1" />
+        <ButtonBack className="md:p-0  absolute z-40 carousel-button2 bg-blue-800/70 transition-all cursor-pointer">
+          <img src={arrow} className="md:w-8 w-10 arrow1" />
         </ButtonBack>
         <Slider className="h-96">
           <Slide index={0}>
@@ -55,7 +55,6 @@ export default function Carousel() {
           </Slide>
           <Slide index={2}>
             <div className="bg-[url('/src/img/bg3.png')] bg-cover bg-no-repeat bg-center h-96 flex place-items-center">
-              {/* <ButtonBack className='button-back'><img src={arrow} className='arrow w-10'/></ButtonBack> */}
               <p className="lg:px-32  md:px-10 xl:text-xl md:text-base container max-w-5xl width-full mx-auto text-white text-2xl">
                 Деятельность предприятия направлена на производство листовой и
                 рулонной стали. Реализация данного проекта имеет огромное

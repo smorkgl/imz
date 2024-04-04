@@ -17,7 +17,7 @@ export default function Capacity() {
       <TopMain />
       <Breadcrumb />
       <div className="xl:px-5 py-3 2xl max-w-6xl width-full mx-auto container">
-        <h1 className="font-bold ">Производственные мощности</h1>
+        <h1 className="font-bold text-3xl ">Производственные мощности</h1>
         <div className="my-6">
           <p className="indent-10">
             Производственный комплекс ООО «ИСАЕВСКИЙ МАШИНОСТРОИТЕЛЬНЫЙ ЗАВОД»

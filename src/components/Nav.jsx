@@ -47,7 +47,7 @@ export default function Nav() {
 
   const [scroll, setScroll] = useState(false);
   useEffect(() => {
-    if (window.screen.width >= 767 && isTabletOrMobile) {
+    if (window.screen.width >= 767 && !isTabletOrMobile) {
       window.addEventListener("scroll", () => {
         setScroll(window.scrollY > 124);
       });
@@ -60,13 +60,15 @@ export default function Nav() {
         scroll
           ? "sticky z-50 top-0 bg-blue-800 py-2 border-b-2 border-blue-950 shadow-2xl transition-all"
           : isTabletOrMobile
-            ? "header__mobile fixed right-0 top-0 left-0 z-50 bg-blue-800"
+            ? "header__mobile fixed right-0 top-0 left-0 z-50 bg-blue-800/60"
             : "bg-blue-800"
       }
     >
       {isTabletOrMobile && (
         <div className="flex place-items-center justify-between px-5">
-          <img src={logo} className="h-16 p-2" />
+          <Link to={"/"}>
+            <img src={logo} className="h-16 p-2" />
+          </Link>
           <img
             src={dots}
             className="dots h-10 z-50"
@@ -75,120 +77,66 @@ export default function Nav() {
 
           <Sidebar visible={visible} onHide={() => setVisible(false)}>
             <div class="bg-blue-800 text-white" id="nav">
-              <div class="nav-links">
-                <ul class="pt-20 row align-items-center g-0 justify-content-between ">
+              <div class="nav-links bg-blue-900">
+                <ul class="pt-20 pb-10 flex flex-col gap-8  row align-items-center ">
                   <Link to={"/"}>
-                    <p>ГЛАВНАЯ</p>
+                    <p className="font-bold pl-5">ГЛАВНАЯ</p>
                   </Link>
-
-                  <Link to={"/news"}>
-                    <p>НОВОСТИ</p>
-                  </Link>
-                  <Link to={"/about"}>
-                    <p>О НАС</p>
-                  </Link>
-                  <Link to={"/projects"}>
-                    <p>ПРОЕКТЫ</p>
-                  </Link>
-                  <Link to={"/hotel"}>
-                    <p>ГОСТИНИЦА</p>
-                  </Link>
-                  <Link to={"/parking"}>
-                    <p>СТОЯНКА</p>
-                  </Link>
-                  <Link to={"/capacity"}>
-                    <p>ПРОИЗВОДСТВЕННЫЕ МОЩНОСТИ</p>
-                  </Link>
-                  <Link to={"/certificates"}>
-                    <p>СЕРТИФИКАТЫ</p>
-                  </Link>
-                  <Link to={"/profile_pipe"}>
-                    <p>ТРУБА ПРОФИЛЬНАЯ</p>
-                  </Link>
-                  <Link to={"/metal_beams"}>
-                    <p>БАЛКИ</p>
-                  </Link>
-                  <Link to={"/metal_structure"}>
-                    <p>МЕТАЛЛОКОНСТРУКЦИИ</p>
-                  </Link>
-                  <Link to={"/products"}>
-                    <p>ПРОДУКЦИЯ</p>
-                  </Link>
-                  <Link to={"/products_order"}>
-                    <p>ЗАКАЗ ПРОДУКЦИИ</p>
-                  </Link>
-
+                  <div className="pl-20 gap-5 flex flex-col bg-blue-900">
+                    <Link to={"/news"}>
+                      <p className="">Новости</p>
+                    </Link>
+                    <Link to={"/about"}>
+                      <p>О нас</p>
+                    </Link>
+                    <Link to={"/projects"}>
+                      <p>Проекты</p>
+                    </Link>
+                    <Link to={"/hotel"}>
+                      <p>Гостиница</p>
+                    </Link>
+                    <Link to={"/parking"}>
+                      <p>Стоянка</p>
+                    </Link>
+                    <Link to={"/capacity"}>
+                      <p>Производственные мощности</p>
+                    </Link>
+                    <Link to={"/certificates"}>
+                      <p>Сертификаты</p>
+                    </Link>
+                    <Link to={"/profile_pipe"}>
+                      <p>Труба профильная</p>
+                    </Link>
+                    <Link to={"/metal_beams"}>
+                      <p>Балки</p>
+                    </Link>
+                    <Link to={"/metal_structure"}>
+                      <p>Металлоконструкции</p>
+                    </Link>
+                    <Link to={"/products"}>
+                      <p>Продукция</p>
+                    </Link>
+                    <Link to={"/products_order"}>
+                      <p>Заказ продукции</p>
+                    </Link>
+                  </div>
                   <Link to={"/suppliers"}>
-                    <p className="">ПОСТАВЩИКАМ</p>
+                    <p className="font-bold pl-5">ПОСТАВЩИКАМ</p>
                   </Link>
                   <Link to={"/job"}>
-                    <p className="">ВАКАНСИИ</p>
+                    <p className="font-bold pl-5">ВАКАНСИИ</p>
                   </Link>
                   <Link to={"/contacts"}>
-                    <p className="">КОНТАКТЫ</p>
+                    <p className="font-bold pl-5">КОНТАКТЫ</p>
                   </Link>
-                  <Link to={"/gost"}>
-                    <p>ГОСТ ПРОДУКЦИИ</p>
-                  </Link>
-                  <Link to={"/calculator"}>
-                    <p>КАЛЬКУЛЯТОР МЕТАЛЛОПРОКАТА</p>
-                  </Link>
-                  <Link to={"/"}>
-                    <p>ГЛАВНАЯ</p>
-                  </Link>
-
-                  <Link to={"/news"}>
-                    <p>НОВОСТИ</p>
-                  </Link>
-                  <Link to={"/about"}>
-                    <p>О НАС</p>
-                  </Link>
-                  <Link to={"/projects"}>
-                    <p>ПРОЕКТЫ</p>
-                  </Link>
-                  <Link to={"/hotel"}>
-                    <p>ГОСТИНИЦА</p>
-                  </Link>
-                  <Link to={"/parking"}>
-                    <p>СТОЯНКА</p>
-                  </Link>
-                  <Link to={"/capacity"}>
-                    <p>ПРОИЗВОДСТВЕННЫЕ МОЩНОСТИ</p>
-                  </Link>
-                  <Link to={"/certificates"}>
-                    <p>СЕРТИФИКАТЫ</p>
-                  </Link>
-                  <Link to={"/profile_pipe"}>
-                    <p>ТРУБА ПРОФИЛЬНАЯ</p>
-                  </Link>
-                  <Link to={"/metal_beams"}>
-                    <p>БАЛКИ</p>
-                  </Link>
-                  <Link to={"/metal_structure"}>
-                    <p>МЕТАЛЛОКОНСТРУКЦИИ</p>
-                  </Link>
-                  <Link to={"/products"}>
-                    <p>ПРОДУКЦИЯ</p>
-                  </Link>
-                  <Link to={"/products_order"}>
-                    <p>ЗАКАЗ ПРОДУКЦИИ</p>
-                  </Link>
-
-                  <Link to={"/suppliers"}>
-                    <p className="">ПОСТАВЩИКАМ</p>
-                  </Link>
-                  <Link to={"/job"}>
-                    <p className="">ВАКАНСИИ</p>
-                  </Link>
-                  <Link to={"/contacts"}>
-                    <p className="">КОНТАКТЫ</p>
-                  </Link>
-                  <Link to={"/gost"}>
-                    <p>ГОСТ ПРОДУКЦИИ</p>
-                  </Link>
-                  <Link to={"/calculator"}>
-                    <p>КАЛЬКУЛЯТОР МЕТАЛЛОПРОКАТА</p>
-                  </Link>
+                  <div className="pl-20 flex flex-col gap-5">
+                    <Link to={"/gost"}>
+                      <p>ГОСТ продукции</p>
+                    </Link>
+                    <Link to={"/calculator"}>
+                      <p>Калькулятор металлопроката</p>
+                    </Link>
+                  </div>
                 </ul>{" "}
               </div>
             </div>

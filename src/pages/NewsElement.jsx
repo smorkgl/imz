@@ -30,7 +30,7 @@ export default function NewsElement() {
       <TopMain />
       <Breadcrumb />
       <div>
-        <div className="py-3 2xl max-w-6xl width-full mx-auto container">
+        <div className="xl:px-5 py-3 2xl max-w-6xl width-full mx-auto container">
           {selectedNews && (
             <div className="mb-10">
               <h1 className="font-bold text-2xl mt-5">{selectedNews.title}</h1>
@@ -39,7 +39,7 @@ export default function NewsElement() {
                 <p>{selectedNews.date}</p>
               </div>
               <img
-                className="w-1/3 mt-5"
+                className="md:w-full w-1/3 mt-5"
                 src={`http://localhost:3131/${selectedNews.imageUrl}`}
                 alt="News"
               />

@@ -9,7 +9,7 @@ export default function Wherewe() {
         <div className="wherewe__before absolute bg-blue-800 z-10 h-full"></div>
       )}
       {isTabletOrMobile && (
-        <div className="xl:px-5  ">
+        <div className="xl:px-5 py-10 bg-blue-800 text-white ">
           <p className="font-bold text-2xl ">
             Исаевский машиностроительный завод
           </p>
@@ -55,14 +55,26 @@ export default function Wherewe() {
         )}
         <div class="full-width">
           <YMaps>
-            <Map
-              width="100vw"
-              height="80vh"
-              defaultState={{
-                center: [48.04806331746245, 40.24870622452088],
-                zoom: 14.5,
-              }}
-            ></Map>
+            {isTabletOrMobile && (
+              <Map
+                width="100vw"
+                height="80vh"
+                defaultState={{
+                  center: [48.04806331746245, 40.26570622452088],
+                  zoom: 14.5,
+                }}
+              ></Map>
+            )}
+            {!isTabletOrMobile && (
+              <Map
+                width="100vw"
+                height="80vh"
+                defaultState={{
+                  center: [48.04806331746245, 40.24870622452088],
+                  zoom: 14.5,
+                }}
+              ></Map>
+            )}
           </YMaps>
         </div>
       </div>

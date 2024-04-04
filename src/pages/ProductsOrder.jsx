@@ -18,12 +18,12 @@ export default function ProductsOrder() {
       <div className="xl:px-5 py-3 2xl max-w-6xl width-full mx-auto container">
         <h1 className="font-bold ">Заказать продукцию</h1>
         <div className="my-12">
-          <div class="bg-white shadow-md rounded rounded-lg p-5  w-3/4">
+          <div class="md:w-full bg-white shadow-md rounded rounded-lg p-5 w-2/4">
             <form
               id="contactForm"
               action="#"
               method="POST"
-              class="grid grid-cols-1 sm:grid-cols-2 gap-6"
+              class="md:flex md:flex-col md:gap-5 grid grid-cols-1 sm:grid-cols-2 gap-10"
             >
               <div>
                 <label

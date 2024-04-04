@@ -8,6 +8,7 @@ import Footer from "../components/Footer";
 import TopMain from "../components/TopMain";
 import Breadcumb from "../components/Breadcrumb";
 import ArrowDown from "../img/arrow_down.svg";
+import { useMediaQuery } from "react-responsive";
 
 export default function Job() {
   const [vacancies, setVacancies] = useState([]);
@@ -54,6 +55,8 @@ export default function Job() {
     setSelectedInfo(id);
     setIsOpen(!isOpen);
   };
+
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 767px)" });
 
   return (
     <div className="font-['Ubuntu']">
@@ -126,7 +129,7 @@ export default function Job() {
           ) : (
             strAscending.map((vacancy, id) => (
               <div
-                className="bg-white text-black px-10 py-5 pr-32 mt-5 shadow-xl shadow-blue-800/10 rounded-xl relative cursor-pointer"
+                className="md:p-5 bg-white text-black px-10 py-5 pr-32 mt-5 shadow-xl shadow-blue-800/10 rounded-xl relative cursor-pointer relative"
                 key={id}
                 onClick={() => setInfo(id)}
               >
@@ -140,8 +143,16 @@ export default function Job() {
                     </p>
                   </div>
                   <p className="mt-3">{vacancy.experience.name}</p>
+                  {isTabletOrMobile && (
+                    <img src={ArrowDown} className=" w-8  mx-auto" />
+                  )}
                 </div>
-                <img src={ArrowDown} className="w-10 absolute right-5 top-7" />
+                {!isTabletOrMobile && (
+                  <img
+                    src={ArrowDown}
+                    className=" w-10 absolute right-5 top-7"
+                  />
+                )}
                 {isOpen && selectedInfo === id && (
                   <div className="mt-5 animate-fade animate-duration-[150ms]">
                     <p className="font-semibold">Обязанности:</p>{" "}

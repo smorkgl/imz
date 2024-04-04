@@ -16,7 +16,7 @@ export default function Parking() {
       <TopMain />
       <Breadcrumb />
       <div className="xl:px-5 py-3 2xl max-w-6xl width-full mx-auto container">
-        <h1 className="font-bold ">Стоянка</h1>
+        <h1 className="font-bold w-1/2">Стоянка</h1>
         <div className="my-6">
           <p className="indent-10">
             Рядом с цехами ИМЗ и трассой М4 расположена охраняемая стоянка и

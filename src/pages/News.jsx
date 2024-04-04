@@ -31,12 +31,12 @@ export default function News() {
       <div className="xl:px-5 py-3 2xl max-w-6xl width-full mx-auto container">
         <h1 className="font-bold">Новости</h1>
       </div>
-      <div class="container my-12 mx-auto">
+      <div class="xl:px-5 pt-10 2xl max-w-7xl width-full mx-auto container">
         <section class="mb-32 text-center !text-left">
           {isPostsLoading
             ? items.map((item, index) => (
                 <div key={index} class="mb-12 flex flex-wrap animate-pulse">
-                  <div class="mb-6 ml-auto w-full shrink-0 grow-0 basis-auto px-3 !mb-0 !w-3/12 ">
+                  <div class="!px-0 mb-6 ml-auto w-full shrink-0 grow-0 basis-auto  px-3 !mb-0 !w-3/12">
                     <div class="grid bg-gray-300 rounded-lg h-36 w-36 place-items-center news__img-container w-full">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -94,8 +94,11 @@ export default function News() {
                 </div>
               ))
             : reverseNewsToShow.map((news) => (
-                <div key={news.id} class="mb-12 flex flex-wrap">
-                  <div class="mb-6 ml-auto w-full shrink-0 grow-0 basis-auto px-3 !mb-0 !w-3/12">
+                <div
+                  key={news.id}
+                  class="md:flex md:flex-col mb-12 flex flex-wrap"
+                >
+                  <div class="!px-0 md:w-full mb-6 mx-auto shrink-0 grow-0 basis-auto px-3 !mb-0  w-3/12">
                     <Link to={`/news/${news.id}`}>
                       <div
                         class="relative mb-6 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-lg"
@@ -103,7 +106,7 @@ export default function News() {
                         data-te-ripple-color="light"
                       >
                         <img
-                          src={`http://localhost:3131/${news.imageUrl}`}
+                          src={`http://192.168.1.33:3131/${news.imageUrl}`}
                           class="news__img-container w-full"
                           alt="Louvre"
                         />
@@ -112,7 +115,7 @@ export default function News() {
                     </Link>
                   </div>
 
-                  <div class="mb-6 mr-auto w-full shrink-0 grow-0 basis-auto px-3 !mb-0 !w-9/12 !w-7/12">
+                  <div class=" mb-6 mr-auto w-full shrink-0 grow-0 basis-auto px-10 !mb-0 !w-9/12 !w-7/12">
                     <Link to={`/news/${news.id}`}>
                       <h5 class="mb-3 text-lg font-bold">{news.title}</h5>
                     </Link>

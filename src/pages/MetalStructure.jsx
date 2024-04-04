@@ -16,7 +16,7 @@ export default function MetalStructure() {
       <TopMain />
       <Breadcrumb />
       <div className=" xl:px-5 py-3 2xl max-w-6xl width-full mx-auto container">
-        <h1 className="font-bold ">Металлоконструкции</h1>
+        <h1 className="md:text-3xl font-bold ">Металлоконструкции</h1>
         <div className="my-6">
           <p className="indent-10">
             Под производство сварных металлоконструкций организована
