@@ -191,6 +191,7 @@ export default function Cabinet() {
               первых описания)
             </label>
             <input
+              maxLength={125}
               type="text"
               id="large-input"
               class="block w-full p-3 text-gray-900 border border-gray-300 rounded-lg bg-white text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -207,7 +208,6 @@ export default function Cabinet() {
             onChange={(event, editor) => {
               const data = editor.getData();
               setDescription(data);
-              console.log(data);
             }}
           />
 

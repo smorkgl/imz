@@ -4,12 +4,12 @@ import { useMediaQuery } from "react-responsive";
 export default function Wherewe() {
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 767px)" });
   return (
-    <div className="relative mt-20">
+    <div className="md:mt-0 relative mt-20">
       {!isTabletOrMobile && (
         <div className="wherewe__before absolute bg-blue-800 z-10 h-full"></div>
       )}
       {isTabletOrMobile && (
-        <div className="xl:px-5 py-10 bg-blue-800 text-white ">
+        <div className="xl:px-5 py-10 bg-white text-black">
           <p className="font-bold text-2xl ">
             Исаевский машиностроительный завод
           </p>
@@ -58,7 +58,7 @@ export default function Wherewe() {
             {isTabletOrMobile && (
               <Map
                 width="100vw"
-                height="80vh"
+                height="40vh"
                 defaultState={{
                   center: [48.04806331746245, 40.26570622452088],
                   zoom: 14.5,

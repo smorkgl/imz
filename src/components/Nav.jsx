@@ -44,14 +44,40 @@ export default function Nav() {
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 767px)" });
   const [isOpen, setIsOpen] = useState(false);
   const [visible, setVisible] = useState(false);
-
   const [scroll, setScroll] = useState(false);
+  const [opacity, setOpacity] = useState(true);
+
   useEffect(() => {
-    if (window.screen.width >= 767 && !isTabletOrMobile) {
-      window.addEventListener("scroll", () => {
-        setScroll(window.scrollY > 124);
-      });
-    }
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      if (scrollY >= 124 && !isTabletOrMobile) {
+        setScroll(true);
+      } else {
+        setScroll(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleOpacity = () => {
+      const scrollY = window.scrollY;
+      if (scrollY >= 64) {
+        setOpacity(false);
+      } else {
+        setOpacity(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleOpacity);
+
+    return () => {
+      window.removeEventListener("scroll", handleOpacity);
+    };
   }, []);
 
   return (
@@ -60,7 +86,9 @@ export default function Nav() {
         scroll
           ? "sticky z-50 top-0 bg-blue-800 py-2 border-b-2 border-blue-950 shadow-2xl transition-all"
           : isTabletOrMobile
-            ? "header__mobile fixed right-0 top-0 left-0 z-50 bg-blue-800/60"
+            ? opacity
+              ? "header__mobile fixed right-0 top-0 left-0 z-50 bg-blue-800 transition-all "
+              : "header__mobile fixed right-0 top-0 left-0 z-50 bg-blue-800/50 transition-all "
             : "bg-blue-800"
       }
     >
@@ -69,11 +97,19 @@ export default function Nav() {
           <Link to={"/"}>
             <img src={logo} className="h-16 p-2" />
           </Link>
-          <img
-            src={dots}
-            className="dots h-10 z-50"
-            onClick={() => setVisible(!visible)}
-          />
+          {!visible ? (
+            <img
+              src={dots}
+              className="dots h-8 z-50 transition-all"
+              onClick={() => setVisible(!visible)}
+            />
+          ) : (
+            <img
+              src={close}
+              className="dots pr-1 h-6 z-50 transition-all"
+              onClick={() => setVisible(!visible)}
+            />
+          )}
 
           <Sidebar visible={visible} onHide={() => setVisible(false)}>
             <div class="bg-blue-800 text-white" id="nav">
@@ -82,7 +118,7 @@ export default function Nav() {
                   <Link to={"/"}>
                     <p className="font-bold pl-5">ГЛАВНАЯ</p>
                   </Link>
-                  <div className="pl-20 gap-5 flex flex-col bg-blue-900">
+                  <div className="pl-12 gap-5 flex flex-col bg-blue-900">
                     <Link to={"/news"}>
                       <p className="">Новости</p>
                     </Link>
@@ -129,7 +165,7 @@ export default function Nav() {
                   <Link to={"/contacts"}>
                     <p className="font-bold pl-5">КОНТАКТЫ</p>
                   </Link>
-                  <div className="pl-20 flex flex-col gap-5">
+                  <div className="pl-12 flex flex-col gap-5">
                     <Link to={"/gost"}>
                       <p>ГОСТ продукции</p>
                     </Link>
@@ -149,7 +185,7 @@ export default function Nav() {
             <Link to={"/"}>
               <img
                 src={logo}
-                className="absolute h-12 left-14 cursor-pointer animate-flip-down animate-duration-800"
+                className="absolute h-12 left-14 cursor-pointer"
               />
             </Link>
           )}

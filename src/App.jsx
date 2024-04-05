@@ -11,6 +11,7 @@ import Preloader from "./components/Preloader";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAuthMe } from "./redux/slices/auth";
+import { useMediaQuery } from "react-responsive";
 
 function App() {
   // Проверка на авторизацию
@@ -19,6 +20,8 @@ function App() {
   useEffect(() => {
     dispatch(fetchAuthMe());
   }, []);
+
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 767px)" });
 
   return (
     <div>
@@ -29,8 +32,18 @@ function App() {
         <Carousel />
         <TopMain />
         <Main />
-        <Wherewe />
-        <Job />
+        {isTabletOrMobile ? (
+          <div className="mt-20">
+            <Job />
+            <Wherewe />
+          </div>
+        ) : (
+          <div>
+            <Wherewe />
+            <Job />
+          </div>
+        )}
+
         <Footer />
       </div>
     </div>

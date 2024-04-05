@@ -13,7 +13,7 @@ import arrow from "../img/arrow1.svg";
 
 export default function Carousel() {
   return (
-    <div className="md:mt-16 main h-96 select-none cursor-default">
+    <div className="md:pt-20 main h-96 select-none cursor-default">
       <CarouselProvider
         naturalSlideWidth={100}
         naturalSlideHeight={100}
