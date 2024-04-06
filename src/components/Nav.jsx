@@ -66,7 +66,7 @@ export default function Nav() {
   useEffect(() => {
     const handleOpacity = () => {
       const scrollY = window.scrollY;
-      if (scrollY >= 64) {
+      if (scrollY >= 1) {
         setOpacity(false);
       } else {
         setOpacity(true);
@@ -87,8 +87,8 @@ export default function Nav() {
           ? "sticky z-50 top-0 bg-blue-800 py-2 border-b-2 border-blue-950 shadow-2xl transition-all"
           : isTabletOrMobile
             ? opacity
-              ? "header__mobile fixed right-0 top-0 left-0 z-50 bg-blue-800 transition-all "
-              : "header__mobile fixed right-0 top-0 left-0 z-50 bg-blue-800/50 transition-all "
+              ? "shadow-2xl header__mobile fixed right-0 top-0 left-0 z-50 bg-blue-800 transition-all "
+              : "shadow-2xl header__mobile fixed right-0 top-0 left-0 z-50 bg-blue-800/50 transition-all "
             : "bg-blue-800"
       }
     >
@@ -217,95 +217,121 @@ export default function Nav() {
                     <Dialog.Panel>
                       <div className="xl:gap-4 text-lg flex flex-wrap text-2xl gap-16">
                         <div className="font-semibold w-60">
-                          <div className="cursor-pointer hover:bg-gray-100 p-3">
-                            ГЛАВНАЯ
-                          </div>
+                          <Link to={`/`}>
+                            <div className="cursor-pointer hover:bg-gray-100 p-3">
+                              ГЛАВНАЯ
+                            </div>
+                          </Link>
                         </div>
                         <div className="flex flex-col xl:gap-2 gap-3 w-60">
                           <div className="font-semibold cursor-pointer hover:bg-gray-100 p-3">
                             О ИМЗ
                           </div>
-                          <div className="cursor-pointer hover:bg-gray-100 p-3">
-                            Новости
-                          </div>
-                          <div className="cursor-pointer hover:bg-gray-100 p-3">
-                            О нас
-                          </div>
+                          <Link to={`/news`}>
+                            <div className="cursor-pointer hover:bg-gray-100 p-3">
+                              Новости
+                            </div>
+                          </Link>
+                          <Link to={`/about`}>
+                            <div className="cursor-pointer hover:bg-gray-100 p-3">
+                              О нас
+                            </div>
+                          </Link>
                           <div className="cursor-pointer hover:bg-gray-100 p-3">
                             Проекты
                           </div>
-                          <div className="cursor-pointer hover:bg-gray-100 p-3">
-                            Гостиница
-                          </div>
-                          <div className="cursor-pointer hover:bg-gray-100 p-3">
-                            Стоянка
-                          </div>
+                          <Link to={`/hotel`}>
+                            <div className="cursor-pointer hover:bg-gray-100 p-3">
+                              Гостиница
+                            </div>
+                          </Link>
+                          <Link to={`/parking`}>
+                            <div className="cursor-pointer hover:bg-gray-100 p-3">
+                              Стоянка
+                            </div>
+                          </Link>
                         </div>
                         <div className="flex flex-col xl:gap-2 gap-3 w-60">
                           <div className="font-semibold cursor-pointer hover:bg-gray-100 p-3 ">
                             ПРОИЗВОДСТВО
                           </div>
-                          <div className="cursor-pointer hover:bg-gray-100 p-3">
-                            Производственные мощности
-                          </div>
-                          <div className="cursor-pointer hover:bg-gray-100 p-3">
-                            Сертификаты
-                          </div>
+                          <Link to={`/capacity`}>
+                            <div className="cursor-pointer hover:bg-gray-100 p-3">
+                              Производственные мощности
+                            </div>
+                          </Link>
+                          <Link to={`/cerificates`}>
+                            <div className="cursor-pointer hover:bg-gray-100 p-3">
+                              Сертификаты
+                            </div>
+                          </Link>
                         </div>
                         <div className="flex flex-col xl:gap-2 gap-3 w-60">
                           <div className="font-semibold cursor-pointer hover:bg-gray-100 p-3">
                             ПРОДУКЦИЯ
                           </div>
-                          <div className="cursor-pointer hover:bg-gray-100 p-3">
-                            Труба профильная
-                          </div>
-                          <div className="cursor-pointer hover:bg-gray-100 p-3">
-                            Балки
-                          </div>
-                          <div className="cursor-pointer hover:bg-gray-100 p-3">
-                            Металлоконструкции
-                          </div>
-                          <div className="cursor-pointer hover:bg-gray-100 p-3">
-                            Продукция
-                          </div>
-                          <div className="cursor-pointer hover:bg-gray-100 p-3">
-                            Заказ продукции
-                          </div>
+
+                          <Link to={`/profile_pipe`}>
+                            <div className="cursor-pointer hover:bg-gray-100 p-3">
+                              Труба профильная
+                            </div>
+                          </Link>
+                          <Link to={`/metal_beams`}>
+                            <div className="cursor-pointer hover:bg-gray-100 p-3">
+                              Балки
+                            </div>
+                          </Link>
+                          <Link to={`/metal_structure`}>
+                            <div className="cursor-pointer hover:bg-gray-100 p-3">
+                              Металлоконструкции
+                            </div>
+                          </Link>
+                          <Link to={`/products`}>
+                            <div className="cursor-pointer hover:bg-gray-100 p-3">
+                              Продукция
+                            </div>
+                          </Link>
+                          <Link to={`/products_order`}>
+                            <div className="cursor-pointer hover:bg-gray-100 p-3">
+                              Заказ продукции
+                            </div>
+                          </Link>
                         </div>
                         <div className="font-semibold w-60">
-                          <div className="cursor-pointer hover:bg-gray-100 p-3">
-                            ПОСТАВЩИКАМ
-                          </div>
+                          <Link to={`/suppliers`}>
+                            <div className="cursor-pointer hover:bg-gray-100 p-3">
+                              ПОСТАВЩИКАМ
+                            </div>
+                          </Link>
                         </div>
                         <div className="font-semibold w-60">
-                          <div className="cursor-pointer hover:bg-gray-100 p-3">
-                            ВАКАНСИИ
-                          </div>
+                          <Link to={`/job`}>
+                            <div className="cursor-pointer hover:bg-gray-100 p-3">
+                              ВАКАНСИИ
+                            </div>
+                          </Link>
                         </div>
                         <div className="flex flex-col xl:gap-2 gap-3 w-60">
-                          <div className="font-semibold w-60 cursor-pointer hover:bg-gray-100 p-3">
-                            КОНТАКТЫ
-                          </div>
-                          <div className="cursor-pointer hover:bg-gray-100 p-3">
-                            Офис продаж
-                          </div>
-                          <div className="cursor-pointer hover:bg-gray-100 p-3">
-                            Написать письмо
-                          </div>
-                          <div className="cursor-pointer hover:bg-gray-100 p-3">
-                            Заказ продукции
-                          </div>
+                          <Link to={`/contacts`}>
+                            <div className="font-semibold w-60 cursor-pointer hover:bg-gray-100 p-3">
+                              КОНТАКТЫ
+                            </div>
+                          </Link>
                         </div>
                         <div className="flex flex-col xl:gap-2 gap-3 w-60">
                           <div className="font-semibold cursor-pointer hover:bg-gray-100 p-3">
                             FAQ
                           </div>
-                          <div className="cursor-pointer hover:bg-gray-100 p-3">
-                            ГОСТ продукции
-                          </div>
-                          <div className="cursor-pointer hover:bg-gray-100 p-3">
-                            Калькулятор металлопроката
-                          </div>
+                          <Link to={`/GOST`}>
+                            <div className="cursor-pointer hover:bg-gray-100 p-3">
+                              ГОСТ продукции
+                            </div>
+                          </Link>
+                          <Link to={`/calculator`}>
+                            <div className="cursor-pointer hover:bg-gray-100 p-3">
+                              Калькулятор металлопроката
+                            </div>
+                          </Link>
                         </div>
                         <div className="flex flex-col xl:gap-2 gap-3 w-60">
                           <Link to={`/login`}>

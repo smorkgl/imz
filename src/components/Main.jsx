@@ -145,7 +145,7 @@ export default function Main() {
                           >
                             <img
                               class="rounded-lg"
-                              src={`http://192.168.1.33:3131/${news.imageUrl}`}
+                              src={`http://localhost:3131/${news.imageUrl}`}
                               alt={news.title}
                             />
 
@@ -240,7 +240,7 @@ export default function Main() {
                           >
                             <img
                               class="rounded-t-lg min-h-72"
-                              src={`http://192.168.1.33:3131/${news.imageUrl}`}
+                              src={`http://localhost:3131/${news.imageUrl}`}
                               alt={news.title}
                             />
                             <div className="absolute top-0 right-0 m-2 bg-white px-4 py-2 rounded-md font-bold text-blue-800">

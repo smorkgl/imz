@@ -108,16 +108,30 @@ export default function Contacts() {
             </div>
           )}
           <div class="full-width">
-            <YMaps>
-              <Map
-                width="100vw"
-                height="80vh"
-                defaultState={{
-                  center: [48.04806331746245, 40.24870622452088],
-                  zoom: 14.5,
-                }}
-              ></Map>
-            </YMaps>
+            {isTabletOrMobile && (
+              <YMaps>
+                <Map
+                  width="100vw"
+                  height="40vh"
+                  defaultState={{
+                    center: [48.04806331746245, 40.26570622452088],
+                    zoom: 14.5,
+                  }}
+                ></Map>
+              </YMaps>
+            )}
+            {!isTabletOrMobile && (
+              <YMaps>
+                <Map
+                  width="100vw"
+                  height="80vh"
+                  defaultState={{
+                    center: [48.04806331746245, 40.24870622452088],
+                    zoom: 14.5,
+                  }}
+                ></Map>
+              </YMaps>
+            )}
           </div>
         </div>
       </div>
