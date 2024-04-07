@@ -3,7 +3,7 @@ import { Fragment, useState, useEffect } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import dots from "../img/dots.svg";
 import close from "../img/close.svg";
-import logo from "../img/logoNEW2.svg";
+import logo from "../img/logo.svg";
 import { useMediaQuery } from "react-responsive";
 import { Sidebar } from "primereact/sidebar";
 

@@ -1,5 +1,6 @@
 import industrial from "../img/industrial.png";
 import { useMediaQuery } from "react-responsive";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 767px)" });
@@ -41,12 +42,12 @@ export default function Footer() {
                       d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
                     ></path>
                   </svg>
-                  <a
-                    href="#"
+                  <Link
+                    to={`/profile_pipe`}
                     class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
                   >
                     Труба профильная
-                  </a>
+                  </Link>
                 </li>
                 <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
                   <svg
@@ -62,12 +63,12 @@ export default function Footer() {
                       d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
                     ></path>
                   </svg>
-                  <a
-                    href="#"
+                  <Link
+                    to={`/profile_pipe`}
                     class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
                   >
                     Балки
-                  </a>
+                  </Link>
                 </li>
                 <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
                   <svg
@@ -83,12 +84,12 @@ export default function Footer() {
                       d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
                     ></path>
                   </svg>
-                  <a
-                    href="#"
+                  <Link
+                    to={`metal_stucture`}
                     class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
                   >
                     Металлоконструкции
-                  </a>
+                  </Link>
                 </li>
                 <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
                   <svg
@@ -104,12 +105,12 @@ export default function Footer() {
                       d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
                     ></path>
                   </svg>
-                  <a
-                    href="#"
+                  <Link
+                    to={`/products`}
                     class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
                   >
                     Продукция
-                  </a>
+                  </Link>
                 </li>
                 <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
                   <svg
@@ -125,12 +126,12 @@ export default function Footer() {
                       d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
                     ></path>
                   </svg>
-                  <a
-                    href="#"
+                  <Link
+                    to={`/products_order`}
                     class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
                   >
                     Заказ продукции
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -153,12 +154,12 @@ export default function Footer() {
                       d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
                     ></path>
                   </svg>
-                  <a
-                    href="#"
+                  <Link
+                    to={`/`}
                     class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
                   >
                     Главная
-                  </a>
+                  </Link>
                 </li>
                 <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
                   <svg
@@ -174,12 +175,12 @@ export default function Footer() {
                       d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
                     ></path>
                   </svg>
-                  <a
-                    href="#"
+                  <Link
+                    to={`/news`}
                     class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
                   >
-                    Производство
-                  </a>
+                    Новости
+                  </Link>
                 </li>
                 <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
                   <svg
@@ -195,12 +196,12 @@ export default function Footer() {
                       d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
                     ></path>
                   </svg>
-                  <a
-                    href="#"
+                  <Link
+                    to={`/about`}
                     class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
                   >
-                    Продукция
-                  </a>
+                    О нас
+                  </Link>
                 </li>
                 <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
                   <svg
@@ -216,12 +217,12 @@ export default function Footer() {
                       d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
                     ></path>
                   </svg>
-                  <a
-                    href="#"
+                  <Link
+                    to={`/projects`}
                     class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
                   >
-                    Поставщикам
-                  </a>
+                    Проекты
+                  </Link>
                 </li>
                 <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
                   <svg
@@ -237,12 +238,54 @@ export default function Footer() {
                       d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
                     ></path>
                   </svg>
-                  <a
-                    href="#"
+                  <Link
+                    to={`/hotel`}
+                    class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
+                  >
+                    Гостиница
+                  </Link>
+                </li>
+                <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                    ></path>
+                  </svg>
+                  <Link
+                    to={`/parking`}
+                    class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
+                  >
+                    Стоянка
+                  </Link>
+                </li>
+                <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                    ></path>
+                  </svg>
+                  <Link
+                    to={`/job`}
                     class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
                   >
                     Вакансии
-                  </a>
+                  </Link>
                 </li>
                 <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
                   <svg
@@ -258,12 +301,12 @@ export default function Footer() {
                       d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
                     ></path>
                   </svg>
-                  <a
-                    href="#"
+                  <Link
+                    to={`/contacts`}
                     class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
                   >
                     Контакты
-                  </a>
+                  </Link>
                 </li>
                 <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
                   <svg
@@ -279,12 +322,33 @@ export default function Footer() {
                       d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
                     ></path>
                   </svg>
-                  <a
-                    href="#"
+                  <Link
+                    to={`/gost`}
                     class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
                   >
-                    FAQ
-                  </a>
+                    ГОСТ продукции
+                  </Link>
+                </li>
+                <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                    ></path>
+                  </svg>
+                  <Link
+                    to={`/calculator`}
+                    class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
+                  >
+                    Калькулятор металлопроката
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -348,7 +412,7 @@ export default function Footer() {
               <p className="text-sm">Создание сайта - ИТ отдел ИМЗ</p>
             )}
             <p className="md:text-center  text-sm">
-              © 2014—2024. ИМЗ. <br />
+              © 2014—2024. ИМЗ. {isTabletOrMobile && <br />}
               Исаевский машиностроительный завод
             </p>
           </div>
