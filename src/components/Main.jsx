@@ -10,12 +10,21 @@ import { useState } from "react";
 import camera from "../img/camera.svg";
 import photo1 from "../img/photo1.jpg";
 import photo2 from "../img/photo2.jpg";
+import photo3 from "../img/photo3.jpg";
+import photo4 from "../img/photo4.jpg";
 import photo6 from "../img/photo6.jpg";
+import photo7 from "../img/photo7.jpg";
+import photo8 from "../img/photo8.jpg";
+import photo10 from "../img/photo10.jpg";
+import photo11 from "../img/photo11.jpg";
+import photo12 from "../img/photo12.jpeg";
 import right_arrow from "../img/right_arrow.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPosts } from "../redux/slices/posts.js";
 import { useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
+import { CarouselProvider, Slider, Slide, DotGroup } from "pure-react-carousel";
+import "pure-react-carousel/dist/react-carousel.es.css";
 
 export default function Main() {
   const [isDropdownVisibleNews, setDropdownVisibleNews] = useState({});
@@ -316,63 +325,216 @@ export default function Main() {
             </Link>
           </div>
         </div>
-        <div className="md:flex-col md:items-end md:flex md:gap-5 md:p-0 md:pt-5 xl:pr-5">
-          <div className="md:w-1/2">
-            <div className="flex md:gap-1 gap-2 cursor-pointer w-max">
-              <img src={video} className="md:w-4 w-6" />
-              <p className="md:text-sm md:font-normal text-2xl">Видео:</p>
-            </div>
-            <div className="md:h-1 work__line2 mt-2" />
-            <div className="md:gap-5 md:w-full iframe-video flex flex-col gap-12 mt-5">
-              <div className="video-box">
-                <LiteYouTubeEmbed id="7YzIpIORxOY" />
+        <div className="video__container_mobile md:mt-5  test md:flex-col md:flex md:gap-5 md:p-0 md:pt-5 xl:pr-5">
+          {isTabletOrMobile && (
+            <div>
+              <div className="flex md:gap-1 gap-2 cursor-pointer w-max">
+                <img src={video} className="md:w-4 w-6" />
+                <p className="md:text-sm md:font-normal text-2xl">Видео:</p>
               </div>
-              <div className="video-box">
-                <LiteYouTubeEmbed id="8hb_LDeW-_0" />
+              <div className="md:h-1 work__line2 mt-2" />{" "}
+              <CarouselProvider
+                className="pt-5"
+                naturalSlideWidth={100}
+                naturalSlideHeight={55}
+                totalSlides={3}
+              >
+                <Slider>
+                  <Slide index={0}>
+                    {" "}
+                    <div className="video-box">
+                      <LiteYouTubeEmbed id="7YzIpIORxOY" />
+                    </div>
+                  </Slide>
+                  <Slide index={1}>
+                    {" "}
+                    <div className="video-box">
+                      <LiteYouTubeEmbed id="8hb_LDeW-_0" />
+                    </div>
+                  </Slide>
+                  <Slide index={2}>
+                    {" "}
+                    <div className="video-box">
+                      <LiteYouTubeEmbed id="nGbtapJ6E6A" />
+                    </div>
+                  </Slide>
+                </Slider>
+                <DotGroup className=" text-center mt-2 transition-all" />
+              </CarouselProvider>
+            </div>
+          )}
+          {isTabletOrMobile && (
+            <div>
+              <div className="flex md:gap-1 gap-2 w-max cursor-pointer">
+                <img src={camera} className="md:w-4 w-6" />
+                <p className="md:text-sm md:font-normal text-2xl ">
+                  Фотогалерея:
+                </p>
               </div>
-              <div className="video-box">
-                <LiteYouTubeEmbed id="nGbtapJ6E6A" />
+              <div className="md:h-1 work__line2 mt-2" />{" "}
+              <CarouselProvider
+                className="pt-5"
+                naturalSlideWidth={100}
+                naturalSlideHeight={55}
+                totalSlides={10}
+              >
+                <Slider>
+                  <Slide index={0}>
+                    {" "}
+                    <div className="overflow-hidden video-box">
+                      <img
+                        src={photo1}
+                        className="hover:scale-110 transition duration-500 cursor-pointer object-cover"
+                      />
+                    </div>
+                  </Slide>
+                  <Slide index={1}>
+                    {" "}
+                    <div className="overflow-hidden video-box">
+                      <img
+                        src={photo2}
+                        className="hover:scale-110 transition duration-500 cursor-pointer object-cover"
+                      />
+                    </div>
+                  </Slide>
+                  <Slide index={2}>
+                    {" "}
+                    <div className="overflow-hidden video-box">
+                      <img
+                        src={photo6}
+                        className="hover:scale-110 transition duration-500 cursor-pointer object-cover"
+                      />
+                    </div>
+                  </Slide>
+                  <Slide index={3}>
+                    {" "}
+                    <div className="overflow-hidden video-box">
+                      <img
+                        src={photo3}
+                        className="hover:scale-110 transition duration-500 cursor-pointer object-cover"
+                      />
+                    </div>
+                  </Slide>
+                  <Slide index={4}>
+                    {" "}
+                    <div className="overflow-hidden video-box">
+                      <img
+                        src={photo4}
+                        className="hover:scale-110 transition duration-500 cursor-pointer object-cover"
+                      />
+                    </div>
+                  </Slide>
+                  <Slide index={5}>
+                    {" "}
+                    <div className="overflow-hidden video-box">
+                      <img
+                        src={photo7}
+                        className="hover:scale-110 transition duration-500 cursor-pointer object-cover"
+                      />
+                    </div>
+                  </Slide>
+                  <Slide index={6}>
+                    {" "}
+                    <div className="overflow-hidden video-box">
+                      <img
+                        src={photo8}
+                        className="hover:scale-110 transition duration-500 cursor-pointer object-cover"
+                      />
+                    </div>
+                  </Slide>
+                  <Slide index={7}>
+                    {" "}
+                    <div className="overflow-hidden video-box">
+                      <img
+                        src={photo10}
+                        className="hover:scale-110 transition duration-500 cursor-pointer object-cover"
+                      />
+                    </div>
+                  </Slide>
+                  <Slide index={8}>
+                    {" "}
+                    <div className="overflow-hidden video-box">
+                      <img
+                        src={photo11}
+                        className="hover:scale-110 transition duration-500 cursor-pointer object-cover"
+                      />
+                    </div>
+                  </Slide>
+                  <Slide index={9}>
+                    {" "}
+                    <div className="overflow-hidden video-box">
+                      <img
+                        src={photo12}
+                        className="hover:scale-110 transition duration-500 cursor-pointer object-cover"
+                      />
+                    </div>
+                  </Slide>
+                </Slider>
+                <DotGroup className=" text-center mt-2 transition-all" />
+              </CarouselProvider>
+            </div>
+          )}
+
+          {!isTabletOrMobile && (
+            <div>
+              <div className="flex md:gap-1 gap-2 cursor-pointer w-max">
+                <img src={video} className="md:w-4 w-6" />
+                <p className="md:text-sm md:font-normal text-2xl">Видео:</p>
+              </div>
+              <div className="md:h-1 work__line2 mt-2" />
+              <div className="md:gap-5 iframe-video flex flex-col gap-12 mt-5">
+                <div className="video-box">
+                  <LiteYouTubeEmbed id="7YzIpIORxOY" />
+                </div>
+                <div className="video-box">
+                  <LiteYouTubeEmbed id="8hb_LDeW-_0" />
+                </div>
+                <div className="video-box">
+                  <LiteYouTubeEmbed id="nGbtapJ6E6A" />
+                </div>
               </div>
             </div>
-          </div>
-          <div className="md:w-1/2 md:mt-0 mt-16">
-            <div className="flex md:gap-1 gap-2 w-max cursor-pointer">
-              <img src={camera} className="md:w-4 w-6" />
-              <p className="md:text-sm md:font-normal text-2xl ">
-                Фотогалерея:
-              </p>
-            </div>
-            <div className="md:h-1 work__line2 mt-2" />
-            <div className="md:gap-5 md:w-full photo-container flex flex-col gap-12 mt-5">
-              <div className="overflow-hidden video-box">
+          )}
+          {!isTabletOrMobile && (
+            <div className=" md:mt-0 mt-16">
+              <div className="flex md:gap-1 gap-2 w-max cursor-pointer">
+                <img src={camera} className="md:w-4 w-6" />
+                <p className="md:text-sm md:font-normal text-2xl ">
+                  Фотогалерея:
+                </p>
+              </div>
+              <div className="md:h-1 work__line2 mt-2" />
+              <div className="md:gap-5 md:w-full photo-container flex flex-col gap-12 mt-5">
+                <div className="overflow-hidden video-box">
+                  <img
+                    src={photo1}
+                    className="hover:scale-110 transition duration-500 cursor-pointer object-cover"
+                  />
+                </div>
+                <div className="overflow-hidden video-box">
+                  <img
+                    src={photo2}
+                    className="hover:scale-110 transition duration-500 cursor-pointer object-cover"
+                  />
+                </div>
+                <div className="overflow-hidden video-box">
+                  <img
+                    src={photo6}
+                    className="hover:scale-110 transition duration-500 cursor-pointer object-cover"
+                  />
+                </div>
+              </div>
+              <div className="main__hover_container flex gap-3 place-items-center cursor-pointer mt-16 justify-end">
+                <p className="main__hover_container_title mr-2 text-xs font-medium tracking-widest transition-all">
+                  СМОТРЕТЬ ВСЕ
+                </p>
                 <img
-                  src={photo1}
-                  className="hover:scale-110 transition duration-500 cursor-pointer object-cover"
+                  src={right_arrow}
+                  className="main__hover_container_img w-4 transition-all"
                 />
               </div>
-              <div className="overflow-hidden video-box">
-                <img
-                  src={photo2}
-                  className="hover:scale-110 transition duration-500 cursor-pointer object-cover"
-                />
-              </div>
-              <div className="overflow-hidden video-box">
-                <img
-                  src={photo6}
-                  className="hover:scale-110 transition duration-500 cursor-pointer object-cover"
-                />
-              </div>
             </div>
-            <div className="main__hover_container flex gap-3 place-items-center cursor-pointer mt-16 justify-end">
-              <p className="main__hover_container_title mr-2 text-xs font-medium tracking-widest transition-all">
-                СМОТРЕТЬ ВСЕ
-              </p>
-              <img
-                src={right_arrow}
-                className="main__hover_container_img w-4 transition-all"
-              />
-            </div>
-          </div>
+          )}
           {!isTabletOrMobile && (
             <div className="mt-16">
               <div className="flex gap-2 w-max cursor-pointer">

@@ -33,7 +33,7 @@ function App() {
         <TopMain />
         <Main />
         {isTabletOrMobile ? (
-          <div className="mt-20">
+          <div>
             <Job />
             <Wherewe />
           </div>

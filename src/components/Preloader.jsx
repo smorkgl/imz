@@ -10,6 +10,7 @@ export default function Preloader() {
     <div className="preloader">
       <div className="animate-fade-up animate-duration-[1500ms] grid place-items-center mb-40 select-none">
         <svg
+          className="md:h-28"
           version="1.1"
           id="svg"
           sodipodi:docname="logoNEW2.svg"
@@ -50,6 +51,7 @@ export default function Preloader() {
           />
         </svg>
         <svg
+          className="md:h-28"
           version="1.1"
           id="svg2"
           sodipodi:docname="logoNEW2.svg"
@@ -90,9 +92,11 @@ export default function Preloader() {
           />
         </svg>
 
-        <div className="name-container grid place-items-center text-center">
+        <div className="md:mt-64 name-container grid place-items-center text-center">
           <div className="">
-            <p className="logo-name">Исаевский машиностроительный завод</p>
+            <p className="md:text-base logo-name">
+              Исаевский машиностроительный завод
+            </p>
           </div>
         </div>
       </div>

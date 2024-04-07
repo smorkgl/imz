@@ -294,7 +294,7 @@ li {
 .logo-name {
   color: #fff;
   font-size: 35px;
-  letter-spacing: 8px;
+  letter-spacing: 5px;
   text-transform: uppercase;
   font-weight: bolder;
   text-shadow: 2px 2px 2px #ff0000;
@@ -451,4 +451,30 @@ li {
 
 .header__mobile {
   z-index: 100000000 !important;
+}
+
+.dot___3c3SI.carousel__dot.carousel__dot--0,
+.dot___3c3SI.carousel__dot.carousel__dot--1,
+.dot___3c3SI.carousel__dot.carousel__dot--2,
+.dot___3c3SI.carousel__dot.carousel__dot--3,
+.dot___3c3SI.carousel__dot.carousel__dot--4,
+.dot___3c3SI.carousel__dot.carousel__dot--5,
+.dot___3c3SI.carousel__dot.carousel__dot--6,
+.dot___3c3SI.carousel__dot.carousel__dot--7,
+.dot___3c3SI.carousel__dot.carousel__dot--8,
+.dot___3c3SI.carousel__dot.carousel__dot--9,
+.dot___3c3SI.carousel__dot.carousel__dot--10 {
+  border: 1px solid;
+  padding: 8px;
+  border-radius: 100%;
+  margin-right: 10px;
+}
+
+.carousel__dot--selected {
+  background-color: #1e40afcc !important;
+  border: 0px;
+}
+
+.video__container_mobile {
+  margin: -10px;
 }
