@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAuthMe } from "./redux/slices/auth";
 import { useMediaQuery } from "react-responsive";
+import ContactUsMobile from "./components/ContactUsMobile.jsx";
 
 function App() {
   // Проверка на авторизацию
@@ -32,6 +33,7 @@ function App() {
         <Carousel />
         <TopMain />
         <Main />
+        {isTabletOrMobile && <ContactUsMobile />}
         {isTabletOrMobile ? (
           <div>
             <Job />
