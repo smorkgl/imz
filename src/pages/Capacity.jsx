@@ -16,7 +16,7 @@ export default function Capacity() {
       <Carousel />
       <TopMain />
       <Breadcrumb />
-      <div className="xl:px-5 py-3 2xl max-w-6xl width-full mx-auto container">
+      <div className="xl:px-2 py-3 2xl max-w-6xl width-full mx-auto container">
         <h1 className="font-bold text-3xl ">Производственные мощности</h1>
         <div className="my-6">
           <p className="indent-10">

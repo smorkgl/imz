@@ -102,18 +102,18 @@ export default function Cabinet() {
   };
 
   return (
-    <div className="bg-[url('/src/img/test3.png')] bg-blue-800 h-full bg-no-repeat bg-center bg-cover flex place-items-center h-100">
+    <div className="md:px-5 px-20 bg-[url('/src/img/test3.png')] bg-blue-800 h-full bg-no-repeat bg-center bg-cover flex place-items-center h-100">
       <Link to={`/cabinet`}>
         <button className="absolute top-5 left-5 bg-white text-blue-800 hover:text-blue-700 transition-all">
           ВЕРНУТЬСЯ НАЗАД
         </button>
       </Link>
-      <div class="container my-12 mx-auto md:px-6 bg-white pt-10 mt-28 relative">
+      <div class="container my-12 mx-auto  bg-white pt-10 mt-28 relative">
         <section class="text-center md:text-left">
-          <div class="mb-12 flex flex-wrap relative">
-            <div class="mb-6 w-full shrink-0 grow-0 basis-auto px-3 md:mb-0 md:w-3/12 flex">
+          <div class="flex flex-wrap relative">
+            <div class="md:block mb-6 w-full shrink-0 grow-0 basis-auto px-3 md:mb-0  flex">
               <img
-                className="grid bg-gray-300 rounded-lg h-36 w-36 place-items-center news__img-container w-full"
+                className="md:w-full w-1/3 grid bg-gray-300 rounded-lg place-items-center news__img-container"
                 alt="Louvre"
                 src={
                   isNewImageUploaded
@@ -121,8 +121,8 @@ export default function Cabinet() {
                     : `http://localhost:3131/${defaultImageUrl}`
                 }
               />
-              <div className="ml-5">
-                <p className="text-gray-800 text-sm w-screen">
+              <div className="md:ml-0 ml-5">
+                <p className="text-gray-800 text-sm">
                   *Это превью будет
                   <br />
                   использовано по умолчанию,
@@ -141,82 +141,84 @@ export default function Cabinet() {
               </div>
             </div>
           </div>
+          <div className="md:px-2 px-5 text-left">
+            <button
+              onClick={() => inputFileRef.current.click()}
+              className="bg-blue-800 text-white hover:text-gray-300 transition-all mb-5 text-sm"
+              ref={inputFileRef}
+            >
+              ЗАГРУЗИТЬ ПРЕВЬЮ
+            </button>
+            <input
+              ref={inputFileRef}
+              type="file"
+              onChange={handleChangeFile}
+              hidden
+            />
 
-          <button
-            onClick={() => inputFileRef.current.click()}
-            className="bg-blue-800 text-white hover:text-gray-300 transition-all mb-5 text-sm"
-            ref={inputFileRef}
-          >
-            ЗАГРУЗИТЬ ПРЕВЬЮ
-          </button>
-          <input
-            ref={inputFileRef}
-            type="file"
-            onChange={handleChangeFile}
-            hidden
-          />
-          <div class="mb-5">
-            <p className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-              Дата публикации
+            <div class="mb-5">
+              <p className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Дата публикации
+              </p>
+              <InputMask
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+                mask="99.99.9999"
+                placeholder={NowDate}
+                className="block pl-2 p-1 text-gray-900 border border-gray-300 rounded-lg bg-white text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              />
+            </div>
+            <div class="mb-5">
+              <label
+                for="large-input"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >
+                Заголовок
+              </label>
+              <input
+                type="text"
+                id="large-input"
+                class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-white text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+              />
+            </div>
+            <div class="mb-5">
+              <label
+                for="large-input"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >
+                Мини-заголовок (если вы не указываете, он укажет 50 символов
+                первых описания)
+              </label>
+              <input
+                maxLength={125}
+                type="text"
+                id="large-input"
+                class="block w-full p-3 text-gray-900 border border-gray-300 rounded-lg bg-white text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                value={mini_title}
+                onChange={(e) => setMiniTitle(e.target.value)}
+              />
+            </div>
+            <p className="block mb-2 text-sm font-medium text-gray-900 cursor-default dark:text-white">
+              Описание
             </p>
-            <InputMask
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-              mask="99.99.9999"
-              placeholder={NowDate}
-              className="block pl-2 p-1 text-gray-900 border border-gray-300 rounded-lg bg-white text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            <CKEditor
+              editor={ClassicEditor}
+              data={description}
+              onChange={(event, editor) => {
+                const data = editor.getData();
+                setDescription(data);
+              }}
             />
-          </div>
-          <div class="mb-5">
-            <label
-              for="large-input"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >
-              Заголовок
-            </label>
-            <input
-              type="text"
-              id="large-input"
-              class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-white text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-            />
-          </div>
-          <div class="mb-5">
-            <label
-              for="large-input"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >
-              Мини-заголовок (если вы не указываете, он укажет 50 символов
-              первых описания)
-            </label>
-            <input
-              maxLength={125}
-              type="text"
-              id="large-input"
-              class="block w-full p-3 text-gray-900 border border-gray-300 rounded-lg bg-white text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              value={mini_title}
-              onChange={(e) => setMiniTitle(e.target.value)}
-            />
-          </div>
-          <p className="block mb-2 text-sm font-medium text-gray-900 cursor-default dark:text-white">
-            Описание
-          </p>
-          <CKEditor
-            editor={ClassicEditor}
-            data={description}
-            onChange={(event, editor) => {
-              const data = editor.getData();
-              setDescription(data);
-            }}
-          />
 
-          <button
-            onClick={onClickCreateNews}
-            className="bg-blue-800 text-white hover:text-gray-300 transition-all mb-5 mt-5 text-sm"
-          >
-            {isEditing ? "СОХРАНИТЬ" : "ОПУБЛИКОВАТЬ"}
-          </button>
+            <button
+              onClick={onClickCreateNews}
+              className="bg-blue-800 text-white hover:text-gray-300 transition-all mb-5 mt-5 text-sm"
+            >
+              {isEditing ? "СОХРАНИТЬ" : "ОПУБЛИКОВАТЬ"}
+            </button>
+          </div>
         </section>
       </div>
     </div>

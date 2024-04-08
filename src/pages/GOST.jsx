@@ -15,7 +15,7 @@ export default function GOST() {
       <Carousel />
       <TopMain />
       <Breadcrumb />
-      <div className="xl:px-5 py-3 2xl max-w-6xl width-full mx-auto container">
+      <div className="xl:px-2 py-3 2xl max-w-6xl width-full mx-auto container">
         <h1 className="font-bold text-5xl ">ГОСТ ПРОДУКЦИИ</h1>
         <div className="my-20 flex flex-wrap gap-y-20">
           <div className="flex flex-col md:w-1/2 w-1/3">

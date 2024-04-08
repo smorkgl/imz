@@ -15,8 +15,8 @@ export default function MetalBeams() {
       <Carousel />
       <TopMain />
       <Breadcrumb />
-      <div className="xl:px-5 py-3 2xl max-w-6xl width-full mx-auto container">
-        <h1 className="font-bold ">Балки</h1>
+      <div className="xl:px-2 py-3 2xl max-w-6xl width-full mx-auto container">
+        <h1 className="md:text-3xl font-bold ">Балки</h1>
         <div className="my-6">
           <p className="indent-10">
             На предприятии запущен стан для производства двутавровых балок

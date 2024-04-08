@@ -65,7 +65,7 @@ export default function Job() {
       <Carousel />
       <TopMain />
       <Breadcumb />
-      <div className="xl:px-5 py-3 2xl max-w-6xl width-full mx-auto container">
+      <div className="xl:px-2 py-3 2xl max-w-6xl width-full mx-auto container">
         <h1 className="font-bold">Вакансии</h1>
         <p className="pt-5">Актуальные вакансии ООО "ИМЗ"</p>
         <div className="2xl max-w-6xl width-full mx-auto container mb-10">

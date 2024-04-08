@@ -28,10 +28,10 @@ export default function News() {
       <Carousel />
       <TopMain />
       <Breadcrumb />
-      <div className="xl:px-5 py-3 2xl max-w-6xl width-full mx-auto container">
+      <div className="xl:px-2 py-3 2xl max-w-6xl width-full mx-auto container">
         <h1 className="font-bold">Новости</h1>
       </div>
-      <div class="xl:px-5 pt-10 2xl max-w-7xl width-full mx-auto container">
+      <div class="xl:px-2 pt-10 2xl max-w-7xl width-full mx-auto container">
         <section class="mb-32 text-center !text-left">
           {isPostsLoading
             ? items.map((item, index) => (

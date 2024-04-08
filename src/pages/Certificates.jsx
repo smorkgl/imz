@@ -21,7 +21,7 @@ export default function Certificates() {
       <Carousel />
       <TopMain />
       <Breadcrumb />
-      <div className="xl:px-5 py-3 2xl max-w-6xl width-full mx-auto container">
+      <div className="xl:px-2 py-3 2xl max-w-6xl width-full mx-auto container">
         <h1 className="font-bold ">Сертификаты</h1>
         <div className="my-6">
           <h2 className="indent-10 font-bold text-2xl">ISO:</h2>

@@ -14,11 +14,11 @@ export default function Suppliers() {
       <Carousel />
       <TopMain />
       <Breadcrumb />
-      <div className="xl:px-5 py-3 2xl max-w-6xl width-full mx-auto container">
+      <div className="xl:px-2 py-3 2xl max-w-6xl width-full mx-auto container">
         <h1 className="font-bold ">Поставщикам</h1>
         <div className="md:pl-0 pl-5 my-6">
           <h2 className="font-bold text-2xl">ОТДЕЛ СНАБЖЕНИЯ</h2>
-          <div className="ml-10 work__line2 mt-2" />
+          <div className="work__line2 mt-2" />
           <p className="mt-5 font-bold">Начальник отдела снабжения</p>
           <p className="">
             Подколзин Михаил Михайлович тел: +7(863)-333-31-34 доб. 161
@@ -33,10 +33,13 @@ export default function Suppliers() {
         </div>
 
         <div className=" my-6">
-          <h2 className="md:pl-0 pl-5 font-bold text-2xl">
-            СВЯЗАТЬСЯ С ОТДЕЛОМ СНАБЖЕНИЯ:
-          </h2>
-          <div className="ml-10 work__line2 mt-2" />
+          <div className="md:pl-0 pl-5 my-6">
+            <h2 className="font-bold text-2xl">
+              Связаться с отделом снабжения:
+            </h2>
+            <div className="work__line2 mt-2" />
+          </div>
+
           <div className="md:mt-5 md:m-0 my-6 ml-10">
             <div class="md:w-full bg-white shadow-md rounded rounded-lg p-5  w-3/4">
               <form

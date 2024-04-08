@@ -46,19 +46,21 @@ export default function Cabinet() {
   const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   return (
-    <div className="bg-[url('/src/img/test3.png')] bg-blue-800 h-full bg-no-repeat bg-center bg-cover flex place-items-center h-100">
-      <Link to={`/`}>
-        <button className="absolute top-5 left-5 bg-white text-blue-800 hover:text-blue-700 transition-all">
-          ВЕРНУТЬСЯ НАЗАД
-        </button>
+    <div className="md:px-5 px-20 bg-[url('/src/img/test3.png')] bg-blue-800 h-full bg-no-repeat bg-center bg-cover flex place-items-center h-100">
+      <div>
+        <Link to={`/`}>
+          <button className=" md:text-xs absolute top-5 left-5 bg-white text-blue-800 hover:text-blue-700 transition-all">
+            ВЕРНУТЬСЯ НАЗАД
+          </button>
+        </Link>
         <button
           onClick={onClickLogout}
-          className="absolute top-5 right-5 bg-white text-red-800 hover:text-blue-700 transition-all"
+          className="md:text-xs absolute top-5 right-5 bg-white text-red-800 hover:text-blue-700 transition-all"
         >
           ВЫЙТИ ИЗ АККАУНТА
         </button>
-      </Link>
-      <div class="container my-12 mx-auto md:px-6 bg-white pt-10 relative mt-28 min-h-screen">
+      </div>
+      <div class="md:mt-40 container my-12 mx-auto md:px-6 bg-white pt-10 relative mt-28 min-h-screen">
         <Link to={`/cabinet/create`}>
           <button className="button__create-news bg-green-500 text-white font-bold">
             СОЗДАТЬ НОВОСТЬ
@@ -89,7 +91,7 @@ export default function Cabinet() {
                       </svg>
                     </div>
                   </div>
-                  <div class="mb-6 mr-auto w-full shrink-0 grow-0 basis-auto px-3 md:mb-0 md:w-9/12 xl:w-7/12">
+                  <div class="mb-6 mr-auto w-full shrink-0 grow-0 basis-auto px-3">
                     <div>
                       <div class="block w-56 h-3 mb-4 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit w-full">
                         &nbsp;
@@ -129,8 +131,11 @@ export default function Cabinet() {
                 </div>
               ))
             : newPosts.map((news) => (
-                <div key={news.id} class="mb-12 flex flex-wrap relative">
-                  <div className=" z-20 flex flex-col top-20 w-30 text-xs gap-5 flex place-items-center my-auto mx-auto">
+                <div
+                  key={news.id}
+                  class="md:w-full justify-around mb-20 w-1/2 mx-auto flex flex-wrap relative"
+                >
+                  <div className="md:grid md:place-items-center mb-5 flex gap-5 ">
                     <button
                       onClick={() => onClickEditNews(news.id)}
                       className="bg-blue-800 text-white "
@@ -144,7 +149,7 @@ export default function Cabinet() {
                       УДАЛИТЬ
                     </button>
                   </div>
-                  <div class="mb-6 ml-auto w-full shrink-0 grow-0 basis-auto px-3 md:mb-0 md:w-3/12">
+                  <div class="mb-6 ml-auto w-full shrink-0 grow-0 basis-auto px-3">
                     <Link to={`/news/${news.id}`}>
                       <div
                         class="relative mb-6 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-lg dark:shadow-black/20"
@@ -161,7 +166,7 @@ export default function Cabinet() {
                     </Link>
                   </div>
 
-                  <div class="mb-6 mr-auto w-full shrink-0 grow-0 basis-auto px-3 md:mb-0 md:w-9/12 xl:w-7/12">
+                  <div class="mb-6 mr-auto w-full shrink-0 grow-0 basis-auto px-3 ">
                     <Link to={`/news/${news.id}`}>
                       <h5 class="mb-3 text-lg font-bold">{news.title}</h5>
                     </Link>

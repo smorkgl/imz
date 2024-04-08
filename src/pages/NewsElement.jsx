@@ -30,7 +30,7 @@ export default function NewsElement() {
       <TopMain />
       <Breadcrumb />
       <div>
-        <div className="xl:px-5 py-3 2xl max-w-6xl width-full mx-auto container">
+        <div className="xl:px-2 py-3 2xl max-w-6xl width-full mx-auto container">
           {selectedNews && (
             <div className="mb-10">
               <h1 className="font-bold text-2xl mt-5">{selectedNews.title}</h1>

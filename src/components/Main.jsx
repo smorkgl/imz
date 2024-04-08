@@ -154,7 +154,7 @@ export default function Main() {
                           >
                             <img
                               class="rounded-lg"
-                              src={`http://localhost:3131/${news.imageUrl}`}
+                              src={`http://192.168.1.33:3131/${news.imageUrl}`}
                               alt={news.title}
                             />
 
@@ -249,7 +249,7 @@ export default function Main() {
                           >
                             <img
                               class="rounded-t-lg min-h-72"
-                              src={`http://localhost:3131/${news.imageUrl}`}
+                              src={`http://192.168.1.33:3131/${news.imageUrl}`}
                               alt={news.title}
                             />
                             <div className="absolute top-0 right-0 m-2 bg-white px-4 py-2 rounded-md font-bold text-blue-800">
@@ -328,11 +328,9 @@ export default function Main() {
         <div className="video__container_mobile md:mt-5  test md:flex-col md:flex md:gap-5 md:p-0 md:pt-5 xl:pr-5">
           {isTabletOrMobile && (
             <div>
-              <div className="flex md:gap-1 gap-2 cursor-pointer w-max">
-                <img src={video} className="md:w-4 w-6" />
-                <p className="md:text-sm md:font-normal text-2xl">Видео:</p>
+              <div className="mx-auto flex md:gap-1 gap-2 cursor-pointer w-max">
+                <p className="text-lg font-medium">Видео:</p>
               </div>
-              <div className="md:h-1 work__line2 mt-2" />{" "}
               <CarouselProvider
                 className="pt-5"
                 naturalSlideWidth={100}
@@ -364,14 +362,10 @@ export default function Main() {
             </div>
           )}
           {isTabletOrMobile && (
-            <div>
-              <div className="flex md:gap-1 gap-2 w-max cursor-pointer">
-                <img src={camera} className="md:w-4 w-6" />
-                <p className="md:text-sm md:font-normal text-2xl ">
-                  Фотогалерея:
-                </p>
+            <div className="mt-5">
+              <div className="mx-auto flex md:gap-1 gap-2 cursor-pointer w-max">
+                <p className="text-lg font-medium">Фотогалерея:</p>
               </div>
-              <div className="md:h-1 work__line2 mt-2" />{" "}
               <CarouselProvider
                 className="pt-5"
                 naturalSlideWidth={100}

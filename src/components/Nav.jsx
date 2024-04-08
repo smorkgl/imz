@@ -46,7 +46,6 @@ export default function Nav() {
   const [visible, setVisible] = useState(false);
   const [scroll, setScroll] = useState(false);
   const [opacity, setOpacity] = useState(true);
-
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -64,20 +63,22 @@ export default function Nav() {
   }, []);
 
   useEffect(() => {
-    const handleOpacity = () => {
-      const scrollY = window.scrollY;
-      if (scrollY >= 1) {
-        setOpacity(false);
-      } else {
-        setOpacity(true);
-      }
-    };
+    if (visible) {
+      const handleOpacity = () => {
+        const scrollY = window.scrollY;
+        if (scrollY >= 70) {
+          setOpacity(false);
+        } else {
+          setOpacity(true);
+        }
+      };
 
-    window.addEventListener("scroll", handleOpacity);
+      window.addEventListener("scroll", handleOpacity);
 
-    return () => {
-      window.removeEventListener("scroll", handleOpacity);
-    };
+      return () => {
+        window.removeEventListener("scroll", handleOpacity);
+      };
+    }
   }, []);
 
   return (
@@ -101,24 +102,29 @@ export default function Nav() {
             <img
               src={dots}
               className="dots h-8 z-50 transition-all"
-              onClick={() => setVisible(!visible)}
+              onClick={() => {
+                setVisible(!visible);
+                setOpacity(true);
+              }}
             />
           ) : (
             <img
               src={close}
               className="dots pr-1 h-6 z-50 transition-all"
-              onClick={() => setVisible(!visible)}
+              onClick={() => {
+                setVisible(!visible);
+              }}
             />
           )}
 
           <Sidebar visible={visible} onHide={() => setVisible(false)}>
             <div class="bg-blue-800 text-white" id="nav">
-              <div class="nav-links bg-blue-900">
+              <div class="nav-links bg-blue-800">
                 <ul class="pt-20 pb-10 flex flex-col gap-8  row align-items-center ">
                   <Link to={"/"}>
                     <p className="font-bold pl-5">ГЛАВНАЯ</p>
                   </Link>
-                  <div className="pl-12 gap-5 flex flex-col bg-blue-900">
+                  <div className="pl-12 gap-5 flex flex-col">
                     <Link to={"/news"}>
                       <p className="">Новости</p>
                     </Link>
@@ -173,6 +179,9 @@ export default function Nav() {
                       <p>Калькулятор металлопроката</p>
                     </Link>
                   </div>
+                  <Link to={`/login`}>
+                    <p className="pl-5 font-bold">ВХОД</p>
+                  </Link>
                 </ul>{" "}
               </div>
             </div>

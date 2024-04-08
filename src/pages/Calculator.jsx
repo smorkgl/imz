@@ -6,18 +6,27 @@ import Footer from "../components/Footer";
 import TopMain from "../components/TopMain";
 import Breadcrumb from "../components/Breadcrumb";
 import stoyanka from "../img/stoyanka.png";
+import { useMediaQuery } from "react-responsive";
 
 export default function Calculator() {
-  (function (d, s, id) {
-    var js,
-      fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s);
-    js.id = id;
-    js.src = "//metal-calculator.ru/assets/widget.js";
-    fjs.parentNode.insertBefore(js, fjs);
-  })(document, "script", "metal-calculator-widget-script");
+  const [scriptLoaded, setScriptLoaded] = useState(false);
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 767px)" });
 
+  useEffect(() => {
+    if (!scriptLoaded) {
+      const script = document.createElement("script");
+      script.id = "metal-calculator-widget-script";
+      script.src = "//metal-calculator.ru/assets/widget.js";
+      script.onload = () => {
+        setScriptLoaded(true);
+      };
+      document.body.appendChild(script);
+
+      return () => {
+        document.body.removeChild(script);
+      };
+    }
+  }, [scriptLoaded]);
   return (
     <div className="font-['Ubuntu']">
       <Header />
@@ -25,13 +34,23 @@ export default function Calculator() {
       <Carousel />
       <TopMain />
       <Breadcrumb />
-      <div className="py-3 2xl max-w-6xl width-full mx-auto container">
-        <h1 className="font-bold ">Калькулятор металлопроката</h1>
-        <div
-          name="metal-calculator-widget"
-          data-siteid="G2Z4N4WD3CGPYDNZAAQH"
-          className="!my-10"
-        ></div>
+      <div className="xl:px-2 py-3 2xl max-w-6xl width-full mx-auto container">
+        <h1 className="md:text-4xl font-bold ">Калькулятор металлопроката</h1>
+        {isTabletOrMobile && (
+          <div
+            name="metal-calculator-widget"
+            data-compactwidget
+            data-siteid="G2Z4N4WD3CGPYDNZAAQH"
+            className="!my-5"
+          ></div>
+        )}
+        {!isTabletOrMobile && (
+          <div
+            name="metal-calculator-widget"
+            data-siteid="G2Z4N4WD3CGPYDNZAAQH"
+            className="!my-10"
+          ></div>
+        )}
       </div>
       <Footer />
     </div>

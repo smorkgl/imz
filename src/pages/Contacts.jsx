@@ -18,12 +18,12 @@ export default function Contacts() {
       <Carousel />
       <TopMain />
       <Breadcrumb />
-      <div className="xl:px-5 py-3 2xl max-w-6xl width-full mx-auto container">
+      <div className="xl:px-2 py-3 2xl max-w-6xl width-full mx-auto container">
         <h1 className="font-bold ">Контакты</h1>
       </div>
       <div className="relative">
         {isTabletOrMobile && (
-          <div className="xl:px-5 md:w-full   z-10 h-full h bg-white text-black w-2/4 grid place-items-center pb-5">
+          <div className="xl:px-2 md:w-full   z-10 h-full h bg-white text-black w-2/4 grid place-items-center pb-5">
             <div className="">
               <p>
                 <b>ООО «Исаевский Машиностроительный Завод»</b>
