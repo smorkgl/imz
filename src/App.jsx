@@ -26,7 +26,7 @@ function App() {
 
   return (
     <div>
-      <Preloader />
+      {/* <Preloader /> */}
       <div className="font-['Ubuntu'] relative">
         <Header />
         <Nav />

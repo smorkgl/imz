@@ -106,7 +106,7 @@ export default function News() {
                         data-te-ripple-color="light"
                       >
                         <img
-                          src={`http://192.168.1.33:3131/${news.imageUrl}`}
+                          src={`https://imz-serv.vercel.app/${news.imageUrl}`}
                           class="news__img-container w-full"
                           alt="Louvre"
                         />

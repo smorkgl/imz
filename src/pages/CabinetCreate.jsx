@@ -117,8 +117,8 @@ export default function Cabinet() {
                 alt="Louvre"
                 src={
                   isNewImageUploaded
-                    ? `http://localhost:3131/${imageUrl}`
-                    : `http://localhost:3131/${defaultImageUrl}`
+                    ? `https://imz-serv.vercel.app/${imageUrl}`
+                    : `https://imz-serv.vercel.app/${defaultImageUrl}`
                 }
               />
               <div className="md:ml-0 ml-5">
