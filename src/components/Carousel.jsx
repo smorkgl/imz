@@ -9,6 +9,9 @@ import {
 import "pure-react-carousel/dist/react-carousel.es.css";
 import arrow from "../img/arrow1.svg";
 import { useMediaQuery } from "react-responsive";
+import bg1 from "../img/bg1.png";
+import bg2 from "../img/bg2.png";
+import bg3 from "../img/bg3.png";
 
 export default function Carousel() {
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 767px)" });
@@ -31,16 +34,16 @@ export default function Carousel() {
             </ButtonBack>
             <Slider className="h-60">
               <Slide index={0}>
-                <div className="bg-[url('/src/img/bg1.png')] bg-cover bg-no-repeat bg-center h-60 flex place-items-center">
-                  <p className="!leading-2 !text-sm lg:px-32  md:px-10 xl:text-xl md:text-base container max-w-5xl width-full mx-auto text-white text-2xl">
-                    Исаевский машиностроительный завод - завод по производству
-                    стальных электросварных труб, с высоким уровнем
-                    автоматизации технологических процессов, выпускающий
-                    высококачественную продукцию на базе современных
-                    металлургических технологий. Ассортимент выпускаемой трубной
-                    продукции - более 90 наименований.
-                  </p>
-                </div>
+                <p className="slide-text__mobile">
+                  {" "}
+                  Исаевский машиностроительный завод - завод по производству
+                  стальных электросварных труб, с высоким уровнем автоматизации
+                  технологических процессов, выпускающий высококачественную
+                  продукцию на базе современных металлургических технологий.
+                  Ассортимент выпускаемой трубной продукции - более 90
+                  наименований.
+                </p>
+                <img src={bg1} className="carousel__1_img" />
               </Slide>
               <Slide index={1}>
                 <div className="bg-[url('/src/img/bg2.png')] bg-cover bg-no-repeat bg-center h-60 flex place-items-center">
@@ -85,41 +88,43 @@ export default function Carousel() {
             <img src={arrow} className="md:w-8 w-10 arrow1" />
           </ButtonBack>
           <Slider className="h-96">
-            <Slide index={0}>
-              <div className="bg-[url('/src/img/bg1.png')] bg-cover bg-no-repeat bg-center h-96 flex place-items-center">
-                <p className="lg:px-32  md:px-10 xl:text-xl md:text-base container max-w-5xl width-full mx-auto text-white text-2xl">
-                  Исаевский машиностроительный завод - завод по производству
-                  стальных электросварных труб, с высоким уровнем автоматизации
-                  технологических процессов, выпускающий высококачественную
-                  продукцию на базе современных металлургических технологий.
-                  Ассортимент выпускаемой трубной продукции - более 90
-                  наименований.
-                </p>
-              </div>
+            <Slide index={0} className="relative overflow-hidden">
+              <p className="slide-text">
+                {" "}
+                Исаевский машиностроительный завод - завод по производству
+                стальных электросварных труб, с высоким уровнем автоматизации
+                технологических процессов, выпускающий высококачественную
+                продукцию на базе современных металлургических технологий.
+                Ассортимент выпускаемой трубной продукции - более 90
+                наименований.
+              </p>
+              <img src={bg1} className="carousel__1_img" />
             </Slide>
             <Slide index={1}>
-              <div className="bg-[url('/src/img/bg2.png')] bg-cover bg-no-repeat bg-center h-96 flex place-items-center">
-                <p className="lg:px-32  md:px-10 xl:text-xl md:text-base container max-w-5xl width-full mx-auto text-white text-2xl">
-                  В 2014 году была внедрена в производство система менеджмента
-                  качества согласно международному стандарту ISO 9001:2008.
-                  Внедрение подтверждено сертификационным органом TUV SUD
-                  Management Service GmbH. ООО "Исаевский машиностроительный
-                  завод" стал инициатором и основным инвестором проекта
-                  строительства "Красносулинского металлургического комбината"
-                  на территории Красносулинского района Ростовской области.
-                </p>
-              </div>
+              <p className="slide-text">
+                {" "}
+                В 2014 году была внедрена в производство система менеджмента
+                качества согласно международному стандарту ISO 9001:2008.
+                Внедрение подтверждено сертификационным органом TUV SUD
+                Management Service GmbH. ООО "Исаевский машиностроительный
+                завод" стал инициатором и основным инвестором проекта
+                строительства "Красносулинского металлургического комбината" на
+                территории Красносулинского района Ростовской области.
+              </p>
+
+              <img src={bg2} className="carousel__1_img" />
             </Slide>
             <Slide index={2}>
-              <div className="bg-[url('/src/img/bg3.png')] bg-cover bg-no-repeat bg-center h-96 flex place-items-center">
-                <p className="lg:px-32  md:px-10 xl:text-xl md:text-base container max-w-5xl width-full mx-auto text-white text-2xl">
-                  Деятельность предприятия направлена на производство листовой и
-                  рулонной стали. Реализация данного проекта имеет огромное
-                  экономическое и социальное знание для региона и в этой связи
-                  проект был включен в 100 проектов Губернатора Ростовской
-                  области.
-                </p>
-              </div>
+              <p className="slide-text">
+                {" "}
+                Деятельность предприятия направлена на производство листовой и
+                рулонной стали. Реализация данного проекта имеет огромное
+                экономическое и социальное знание для региона и в этой связи
+                проект был включен в 100 проектов Губернатора Ростовской
+                области.
+              </p>
+
+              <img src={bg3} className="carousel__1_img" />
             </Slide>
           </Slider>
         </CarouselProvider>

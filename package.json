@@ -19,6 +19,7 @@
     "@reduxjs/toolkit": "^2.2.1",
     "@tanstack/react-router": "^1.13.0",
     "axios": "^1.6.7",
+    "bcrypt": "^5.1.1",
     "easymde": "^2.18.0",
     "flowbite": "^2.2.1",
     "framer-motion": "^11.0.24",
