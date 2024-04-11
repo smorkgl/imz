@@ -30,6 +30,7 @@ function App() {
       <div className="font-['Ubuntu'] relative">
         <Header />
         <Nav />
+
         <Carousel />
         <TopMain />
         <Main />

@@ -154,7 +154,7 @@ export default function Main() {
                           >
                             <img
                               class="rounded-lg"
-                              src={`http://192.168.1.33:3131/${news.imageUrl}`}
+                              src={`http://localhost:3131/${news.imageUrl}`}
                               alt={news.title}
                             />
 
@@ -239,7 +239,7 @@ export default function Main() {
                     </div>
                   ))
                 : reverseNewsToShow.map((news) => (
-                    <div key={news.id}>
+                    <div key={news.id} className="news__card-item">
                       <div class="md:flex max-w-sm bg-white border border-gray-200 rounded-lg shadow relative">
                         <Link to={`/news/${news.id}`}>
                           <div
@@ -249,7 +249,7 @@ export default function Main() {
                           >
                             <img
                               class="rounded-t-lg min-h-72"
-                              src={`http://192.168.1.33:3131/${news.imageUrl}`}
+                              src={`http://localhost:3131/${news.imageUrl}`}
                               alt={news.title}
                             />
                             <div className="absolute top-0 right-0 m-2 bg-white px-4 py-2 rounded-md font-bold text-blue-800">

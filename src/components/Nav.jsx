@@ -63,22 +63,20 @@ export default function Nav() {
   }, []);
 
   useEffect(() => {
-    if (visible) {
-      const handleOpacity = () => {
-        const scrollY = window.scrollY;
-        if (scrollY >= 70) {
-          setOpacity(false);
-        } else {
-          setOpacity(true);
-        }
-      };
+    const handleOpacity = () => {
+      const scrollY = window.scrollY;
+      if (scrollY >= 70) {
+        setOpacity(false);
+      } else {
+        setOpacity(true);
+      }
+    };
 
-      window.addEventListener("scroll", handleOpacity);
+    window.addEventListener("scroll", handleOpacity);
 
-      return () => {
-        window.removeEventListener("scroll", handleOpacity);
-      };
-    }
+    return () => {
+      window.removeEventListener("scroll", handleOpacity);
+    };
   }, []);
 
   return (

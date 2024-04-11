@@ -21,6 +21,7 @@ export default function Job() {
     useState(false);
   // Загрузка
   const [isLoading, setIsLoading] = useState(true);
+  const [vacancyId, setVacancyId] = useState(undefined);
   // Стрелка напротив вакансии
 
   const filteredData = vacancies.reduce((accumulator, current) => {

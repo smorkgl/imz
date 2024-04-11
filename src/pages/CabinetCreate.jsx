@@ -117,8 +117,8 @@ export default function Cabinet() {
                 alt="Louvre"
                 src={
                   isNewImageUploaded
-                    ? `http://192.168.1.33:3131/${imageUrl}`
-                    : `http://192.168.1.33:3131/${defaultImageUrl}`
+                    ? `http://localhost:3131/${imageUrl}`
+                    : `http://localhost:3131/${defaultImageUrl}`
                 }
               />
               <div className="md:ml-0 ml-5">
