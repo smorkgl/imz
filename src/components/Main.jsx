@@ -326,7 +326,7 @@ export default function Main() {
           </div>
         </div>
         <div className="video__container_mobile md:mt-5  test md:flex-col md:flex md:gap-5 md:p-0 md:pt-5 xl:pr-5">
-          {isTabletOrMobile && (
+          {!isTabletOrMobile && (
             <div>
               <div className="mx-auto flex md:gap-1 gap-2 cursor-pointer w-max">
                 <p className="text-lg font-medium">Видео:</p>
