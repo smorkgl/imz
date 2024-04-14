@@ -328,7 +328,7 @@ export default function Main() {
           </div>
           {!isTabletOrMobile && (
             <div className="p-2 pt-10">
-              <form class=" shadow-2xl p-5 w-1/2 mt-10 rounded-lg  ">
+              <form class=" shadow-2xl p-10 w-1/2 mt-10 rounded-lg  ">
                 <div className="mb-10">
                   <h1 className="text-lg font-medium">Связаться с нами</h1>
                   <p className="pt-2">Заполните форму, и мы свяжемся с вами!</p>
