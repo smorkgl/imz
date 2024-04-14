@@ -4,22 +4,27 @@ import phone from "../img/phone.svg";
 export default function ContactUsMobile() {
   return (
     <div className="p-2 pt-10">
-      <h1 className="text-lg font-medium">Связаться с нами</h1>
-      <p className="pt-2">Заполните форму, и мы свяжемся с вами!</p>
-      <p>Контакты для связи:</p>
-      <div className="pt-4 flex gap-1 cursor-pointer hover:underline hover:text-blue-800 contact-hover transition-all">
-        <img src={phone} className="contact-img w-5 transition-transform" />
-        <p>+7(863)-333-31-34</p>
-      </div>
-      <div className="pt-1 flex gap-1 cursor-pointer hover:underline hover:text-blue-800 contact2-hover transition-all">
-        <img src={email} className="contact2-img w-5 transition-transform" />
-        <p>imz@i-m-z.ru</p>
-      </div>
-      <form class=" shadow-2xl mt-5 px-20 py-5 pb-6 bg-blue-800 video__container_mobile ">
+      <form>
+        <div className="mb-10">
+          <h1 className="text-lg font-medium">Связаться с нами</h1>
+          <p className="pt-2">Заполните форму, и мы свяжемся с вами!</p>
+          <p>Контакты для связи:</p>
+          <div className="pt-4 flex gap-1 cursor-pointer hover:underline hover:text-blue-800 contact-hover transition-all">
+            <img src={phone} className="contact-img w-5 transition-transform" />
+            <p>+7(863)-333-31-34</p>
+          </div>
+          <div className="pt-1 flex gap-1 cursor-pointer hover:underline hover:text-blue-800 contact2-hover transition-all">
+            <img
+              src={email}
+              className="contact2-img w-5 transition-transform"
+            />
+            <p>imz@i-m-z.ru</p>
+          </div>
+        </div>
         <div class="mb-3">
           <label
             for="name"
-            class="text-white  block mb-2 text-sm font-medium text-gray-900 text-black"
+            class="text-black block mb-2 text-sm font-medium text-gray-900 text-black"
           >
             Ваше имя *
           </label>
@@ -33,7 +38,7 @@ export default function ContactUsMobile() {
         <div class="mb-5">
           <label
             for="email"
-            class="text-white  block mb-2 text-sm font-medium text-gray-900 text-black"
+            class="text-black  block mb-2 text-sm font-medium text-gray-900 text-black"
           >
             Ваш E-mail *
           </label>
@@ -48,7 +53,7 @@ export default function ContactUsMobile() {
         <div class="mb-5">
           <label
             for="phone"
-            class="text-white  block mb-2 text-sm font-medium text-gray-900 text-black"
+            class="text-black block mb-2 text-sm font-medium text-gray-900 text-black"
           >
             Ваш номер телефона *
           </label>
@@ -61,7 +66,7 @@ export default function ContactUsMobile() {
         </div>
         <label
           for="message"
-          class="text-white  block mb-2 text-sm font-medium text-gray-900 text-black"
+          class="text-black block mb-2 text-sm font-medium text-gray-900 text-black"
         >
           Ваше сообщение *
         </label>
