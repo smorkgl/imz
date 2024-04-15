@@ -8,6 +8,7 @@ import phone from "../img/phone.svg";
 import geo from "../img/geo.svg";
 import sun from "../img/sun.svg";
 import moon from "../img/moon.svg";
+import close from "../img/close.svg";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -82,7 +83,12 @@ export default function Header() {
                       leaveTo="opacity-0"
                     >
                       <div className="fixed left-0 right-0 top-0 bottom-0 flex items-center justify-center bg-black/60">
-                        <Dialog.Panel className="bg-white/100 py-10 px-16 rounded-xl box-shadow">
+                        <Dialog.Panel className="bg-white/100 py-10 px-16 rounded-xl box-shadow relative">
+                          <img
+                            src={close}
+                            className="absolute w-5 right-3 top-3 cursor-pointer"
+                            onClick={() => setIsOpen(false)}
+                          />
                           <form class="max-w-sm mx-auto">
                             <div class="mb-5">
                               <label

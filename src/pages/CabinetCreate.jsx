@@ -40,14 +40,16 @@ export default function Cabinet() {
     return <Navigate to="/" />;
   }
 
-  const defaultImageUrl = "uploads/no_image.png";
+  const defaultImageUrl = "no_image.png";
 
   const NowDate = new Date().toLocaleDateString();
 
   const [title, setTitle] = useState("");
   const [mini_title, setMiniTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [imageUrl, setImageUrl] = useState(defaultImageUrl);
+  const [imageUrl, setImageUrl] = useState(
+    "https://storage.yandexcloud.net/imz/files/no_image.png"
+  );
   const [isNewImageUploaded, setIsNewImageUploaded] = useState(false);
   const [date, setDate] = useState(NowDate);
   const [isLoading, setIsLoading] = useState(false);
@@ -117,8 +119,8 @@ export default function Cabinet() {
                 alt="Louvre"
                 src={
                   isNewImageUploaded
-                    ? `http://localhost:3131/${imageUrl}`
-                    : `http://localhost:3131/${defaultImageUrl}`
+                    ? `${imageUrl}`
+                    : `https://storage.yandexcloud.net/imz/files/${defaultImageUrl}`
                 }
               />
               <div className="md:ml-0 ml-5">

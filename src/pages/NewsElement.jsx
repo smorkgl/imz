@@ -40,7 +40,7 @@ export default function NewsElement() {
               </div>
               <img
                 className="md:w-full w-1/3 mt-5"
-                src={`http://localhost:3131/${selectedNews.imageUrl}`}
+                src={`${selectedNews.imageUrl}`}
                 alt="News"
               />
               <p className="mt-5">

@@ -106,7 +106,7 @@ export default function News() {
                         data-te-ripple-color="light"
                       >
                         <img
-                          src={`http://localhost:3131/${news.imageUrl}`}
+                          src={`${news.imageUrl}`}
                           class="news__img-container w-full"
                           alt="Louvre"
                         />

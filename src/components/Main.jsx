@@ -6,7 +6,7 @@ import next from "../img/next.svg";
 import LiteYouTubeEmbed from "react-lite-youtube-embed";
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, Fragment } from "react";
 import camera from "../img/camera.svg";
 import photo1 from "../img/photo1.jpg";
 import photo2 from "../img/photo2.jpg";
@@ -27,9 +27,23 @@ import { CarouselProvider, Slider, Slide, DotGroup } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import email from "../img/email.svg";
 import phone from "../img/phone.svg";
+import { Dialog, Transition } from "@headlessui/react";
+import close from "../img/close.svg";
 
 export default function Main() {
+  useEffect(() => {
+    fetch("https://storage.yandexcloud.net/imz/?prefix=test")
+      .then((res) => res.text())
+      .then((data) => {
+        var xml = new XMLParser().parseFromString(data);
+        console.log(xml);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
   const [isDropdownVisibleNews, setDropdownVisibleNews] = useState({});
+
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleMouseEnterNews = (newsId) => {
     setDropdownVisibleNews((prevState) => ({
@@ -156,7 +170,7 @@ export default function Main() {
                           >
                             <img
                               class="rounded-lg"
-                              src={`http://localhost:3131/${news.imageUrl}`}
+                              src={`${news.imageUrl}`}
                               alt={news.title}
                             />
 
@@ -251,7 +265,7 @@ export default function Main() {
                           >
                             <img
                               class="rounded-t-lg min-h-72"
-                              src={`http://localhost:3131/${news.imageUrl}`}
+                              src={`${news.imageUrl}`}
                               alt={news.title}
                             />
                             <div className="absolute top-0 right-0 m-2 bg-white px-4 py-2 rounded-md font-bold text-blue-800">
@@ -607,7 +621,10 @@ export default function Main() {
                   />
                 </div>
               </div>
-              <div className="main__hover_container flex gap-3 place-items-center cursor-pointer mt-16 justify-end">
+              <div
+                className="main__hover_container flex gap-3 place-items-center cursor-pointer mt-16 justify-end"
+                onClick={() => setIsOpen(true)}
+              >
                 <p className="main__hover_container_title mr-2 text-xs font-medium tracking-widest transition-all">
                   СМОТРЕТЬ ВСЕ
                 </p>
@@ -616,6 +633,103 @@ export default function Main() {
                   className="main__hover_container_img w-4 transition-all"
                 />
               </div>
+              <Transition appear show={isOpen} as={Fragment}>
+                <Dialog as="div" open={isOpen} onClose={() => setIsOpen(false)}>
+                  <Transition.Child
+                    as={Fragment}
+                    enter="ease-out duration-200"
+                    enterFrom="opacity-0"
+                    enterTo="opacity-100"
+                    leave="ease-in duration-200"
+                    leaveFrom="opacity-100"
+                    leaveTo="opacity-0"
+                  >
+                    <div className="fixed left-0 right-0 top-0 bottom-0 flex items-center justify-center bg-black/60 p-10 z-50">
+                      <Dialog.Panel className="bg-white p-8 rounded-lg relative">
+                        <img
+                          src={close}
+                          className="absolute w-8 -right-3 -top-3 cursor-pointer"
+                          onClick={() => setIsOpen(false)}
+                        />
+                        <div class="grid grid-cols-4 md:grid-cols-3 gap-5">
+                          <div>
+                            <img
+                              src={photo1}
+                              className="h-full w-full hover:scale-105 transition duration-500"
+                            />
+                          </div>
+                          <div>
+                            <img
+                              src={photo2}
+                              className="h-full w-full hover:scale-105 transition duration-500"
+                            />
+                          </div>
+                          <div>
+                            <img
+                              src={photo3}
+                              className="h-full w-full hover:scale-105 transition duration-500"
+                            />
+                          </div>
+                          <div>
+                            <img
+                              src={photo4}
+                              className="h-full w-full hover:scale-105 transition duration-500"
+                            />
+                          </div>
+                          <div>
+                            <img
+                              src={photo6}
+                              className="h-full w-full hover:scale-105 transition duration-500"
+                            />
+                          </div>
+                          <div>
+                            <img
+                              src={photo7}
+                              className="h-full w-full hover:scale-105 transition duration-500"
+                            />
+                          </div>
+                          <div>
+                            <img
+                              src={photo8}
+                              className="h-full w-full hover:scale-105 transition duration-500"
+                            />
+                          </div>
+                          <div>
+                            <img
+                              src={photo10}
+                              className="h-full w-full hover:scale-105 transition duration-500"
+                            />
+                          </div>
+                          <div>
+                            <img
+                              src={photo11}
+                              className="h-full w-full hover:scale-105 transition duration-500"
+                            />
+                          </div>
+                          <div>
+                            <img
+                              src={photo12}
+                              className="h-full w-full hover:scale-105 transition duration-500"
+                            />
+                          </div>
+                          <div>
+                            <img
+                              src={photo12}
+                              className="h-full w-full hover:scale-110 transition duration-500 "
+                            />
+                          </div>
+                          <div>
+                            <img
+                              src={photo1}
+                              className="h-full w-full hover:scale-110 transition duration-500 "
+                            />
+                          </div>
+                        </div>
+                      </Dialog.Panel>
+                    </div>
+                  </Transition.Child>
+                </Dialog>
+              </Transition>
             </div>
           )}
           {!isTabletOrMobile && (
