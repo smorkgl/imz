@@ -29,17 +29,36 @@ import email from "../img/email.svg";
 import phone from "../img/phone.svg";
 import { Dialog, Transition } from "@headlessui/react";
 import close from "../img/close.svg";
+import XMLParser from "react-xml-parser";
 
 export default function Main() {
-  useEffect(() => {
-    fetch("https://storage.yandexcloud.net/imz/?prefix=test")
+  const [photoLinks, setPhotoLinks] = useState([]);
+
+  const handleImageGallery = () => {
+    fetch("https://storage.yandexcloud.net/imz/?prefix=files/images")
       .then((res) => res.text())
       .then((data) => {
         var xml = new XMLParser().parseFromString(data);
-        console.log(xml);
+        const photoContents = xml.children.filter((item) => {
+          return (
+            item.name === "Contents" &&
+            item.children.some((child) => {
+              return (
+                child.name === "Key" && child.value.startsWith("files/images/")
+              );
+            })
+          );
+        });
+        const photoLinks = photoContents.map((item) => {
+          const keyElement = item.children.find(
+            (child) => child.name === "Key"
+          );
+          return keyElement.value;
+        });
+        setPhotoLinks(photoLinks);
       })
       .catch((err) => console.log(err));
-  }, []);
+  };
 
   const [isDropdownVisibleNews, setDropdownVisibleNews] = useState({});
 
@@ -623,7 +642,10 @@ export default function Main() {
               </div>
               <div
                 className="main__hover_container flex gap-3 place-items-center cursor-pointer mt-16 justify-end"
-                onClick={() => setIsOpen(true)}
+                onClick={() => {
+                  handleImageGallery();
+                  setIsOpen(true);
+                }}
               >
                 <p className="main__hover_container_title mr-2 text-xs font-medium tracking-widest transition-all">
                   СМОТРЕТЬ ВСЕ
@@ -651,80 +673,18 @@ export default function Main() {
                           className="absolute w-8 -right-3 -top-3 cursor-pointer"
                           onClick={() => setIsOpen(false)}
                         />
-                        <div class="grid grid-cols-4 md:grid-cols-3 gap-5">
-                          <div>
-                            <img
-                              src={photo1}
-                              className="h-full w-full hover:scale-105 transition duration-500"
-                            />
+                        {isOpen && (
+                          <div className="grid grid-cols-4 md:grid-cols-3 gap-5">
+                            {photoLinks.map((link, index) => (
+                              <img
+                                key={index}
+                                src={`https://storage.yandexcloud.net/imz/${link}`}
+                                alt={`Photo ${index + 1}`}
+                                className="h-full w-full hover:scale-110 transition duration-500 "
+                              />
+                            ))}
                           </div>
-                          <div>
-                            <img
-                              src={photo2}
-                              className="h-full w-full hover:scale-105 transition duration-500"
-                            />
-                          </div>
-                          <div>
-                            <img
-                              src={photo3}
-                              className="h-full w-full hover:scale-105 transition duration-500"
-                            />
-                          </div>
-                          <div>
-                            <img
-                              src={photo4}
-                              className="h-full w-full hover:scale-105 transition duration-500"
-                            />
-                          </div>
-                          <div>
-                            <img
-                              src={photo6}
-                              className="h-full w-full hover:scale-105 transition duration-500"
-                            />
-                          </div>
-                          <div>
-                            <img
-                              src={photo7}
-                              className="h-full w-full hover:scale-105 transition duration-500"
-                            />
-                          </div>
-                          <div>
-                            <img
-                              src={photo8}
-                              className="h-full w-full hover:scale-105 transition duration-500"
-                            />
-                          </div>
-                          <div>
-                            <img
-                              src={photo10}
-                              className="h-full w-full hover:scale-105 transition duration-500"
-                            />
-                          </div>
-                          <div>
-                            <img
-                              src={photo11}
-                              className="h-full w-full hover:scale-105 transition duration-500"
-                            />
-                          </div>
-                          <div>
-                            <img
-                              src={photo12}
-                              className="h-full w-full hover:scale-105 transition duration-500"
-                            />
-                          </div>
-                          <div>
-                            <img
-                              src={photo12}
-                              className="h-full w-full hover:scale-110 transition duration-500 "
-                            />
-                          </div>
-                          <div>
-                            <img
-                              src={photo1}
-                              className="h-full w-full hover:scale-110 transition duration-500 "
-                            />
-                          </div>
-                        </div>
+                        )}
                       </Dialog.Panel>
                     </div>
                   </Transition.Child>
