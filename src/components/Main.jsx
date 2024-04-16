@@ -6,7 +6,7 @@ import next from "../img/next.svg";
 import LiteYouTubeEmbed from "react-lite-youtube-embed";
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 import { Link } from "react-router-dom";
-import { useState, Fragment } from "react";
+import { useState, Fragment, useRef } from "react";
 import camera from "../img/camera.svg";
 import photo1 from "../img/photo1.jpg";
 import photo2 from "../img/photo2.jpg";
@@ -30,17 +30,29 @@ import phone from "../img/phone.svg";
 import { Dialog, Transition } from "@headlessui/react";
 import close from "../img/close.svg";
 import XMLParser from "react-xml-parser";
-import { send } from "emailjs-com";
+import emailjs from "@emailjs/browser";
 
 export default function Main() {
   const [photoLinks, setPhotoLinks] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [toSend, setToSend] = useState({
-    from_name: "",
-    to_name: "",
-    message: "",
-    reply_to: "",
-  });
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("service_ivxss37", "template_63iyekb", form.current, {
+        publicKey: "kifTa7VFekqtXUeFz",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
+  };
 
   const handleImageGallery = () => {
     setIsLoading(true);
@@ -100,7 +112,6 @@ export default function Main() {
 
   const newsToShow = posts.items.slice().reverse();
   const reverseNewsToShow = newsToShow.slice(0, 4);
-  console.log(newsToShow);
 
   const isPostsLoading = posts.status === "loading";
 
@@ -374,7 +385,12 @@ export default function Main() {
           </div>
           {!isTabletOrMobile && (
             <div className="p-2 pt-10">
-              <form class=" shadow-2xl p-10 w-1/2 mt-10 rounded-lg  ">
+              <form
+                ref={form}
+                class=" shadow-2xl p-10 w-1/2 mt-10 rounded-lg "
+                onSubmit={sendEmail}
+                id="contact-form"
+              >
                 <div className="mb-10">
                   <h1 className="text-lg font-medium">Связаться с нами</h1>
                   <p className="pt-2">Заполните форму, и мы свяжемся с вами!</p>
@@ -402,12 +418,11 @@ export default function Main() {
                     Ваше имя *
                   </label>
                   <input
-                    type="name"
                     id="name"
                     class="!border-2 border-black shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dbg-gray-700 border-gray-600 placeholder-gray-400 text-black focus:ring-blue-500 focus:border-blue-500 shadow-sm-light"
                     required
-                    value={toSend.from_name}
-                    onChange={handleChange}
+                    type="text"
+                    name="user_name"
                   />
                 </div>
                 <div class="mb-5">
@@ -423,8 +438,7 @@ export default function Main() {
                     class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  border-gray-600 placeholder-gray-400 text-black focus:ring-blue-500 focus:border-blue-500 shadow-sm-light"
                     placeholder="name@i-m-z.ru"
                     required
-                    value={toSend.to_name}
-                    onChange={handleChange}
+                    name="email"
                   />
                 </div>
                 <div class="mb-5">
@@ -436,11 +450,10 @@ export default function Main() {
                   </label>
                   <input
                     type="phone"
+                    name="phone"
                     id="phone"
                     class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 border-gray-600 placeholder-gray-400 text-black focus:ring-blue-500 focus:border-blue-500 shadow-sm-light"
                     required
-                    value={toSend.message}
-                    onChange={handleChange}
                   />
                 </div>
                 <label
@@ -451,12 +464,14 @@ export default function Main() {
                 </label>
                 <textarea
                   id="message"
+                  name="message"
                   rows="4"
                   class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 border-gray-600 placeholder-gray-400 text-black focus:ring-blue-500 :focus:border-blue-500"
                   placeholder="Оставьте сообщение..."
                 ></textarea>
                 <button
                   type="submit"
+                  value="Send"
                   class="mt-5 text-white   bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
                 >
                   Отправить

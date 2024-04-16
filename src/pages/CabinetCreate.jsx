@@ -110,7 +110,7 @@ export default function Cabinet() {
           ВЕРНУТЬСЯ НАЗАД
         </button>
       </Link>
-      <div class="container my-12 mx-auto  bg-white pt-10 mt-28 relative">
+      <div class="md:pt-3 container my-12 mx-auto  bg-white pt-10 mt-28 relative">
         <section class="text-center md:text-left">
           <div class="flex flex-wrap relative">
             <div class="md:block mb-6 w-full shrink-0 grow-0 basis-auto px-3 md:mb-0  flex">
