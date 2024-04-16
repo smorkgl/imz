@@ -526,3 +526,7 @@ li {
   min-width: 384px;
   min-height: 442px;
 }
+
+.scrollbar-width {
+  scrollbar-width: none;
+}

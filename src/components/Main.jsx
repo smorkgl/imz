@@ -33,8 +33,10 @@ import XMLParser from "react-xml-parser";
 
 export default function Main() {
   const [photoLinks, setPhotoLinks] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleImageGallery = () => {
+    setIsLoading(true);
     fetch("https://storage.yandexcloud.net/imz/?prefix=files/images")
       .then((res) => res.text())
       .then((data) => {
@@ -55,9 +57,12 @@ export default function Main() {
           );
           return keyElement.value;
         });
-        setPhotoLinks(photoLinks);
+        const photoLinksNew = photoLinks.slice(1);
+        setPhotoLinks(photoLinksNew);
       })
-      .catch((err) => console.log(err));
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   const [isDropdownVisibleNews, setDropdownVisibleNews] = useState({});
@@ -86,8 +91,9 @@ export default function Main() {
     dispatch(fetchPosts());
   }, []);
 
-  const newsToShow = posts.items.slice(0, 4);
-  const reverseNewsToShow = newsToShow.slice().reverse();
+  const newsToShow = posts.items.slice().reverse();
+  const reverseNewsToShow = newsToShow.slice(0, 4);
+  console.log(newsToShow);
 
   const isPostsLoading = posts.status === "loading";
 
@@ -592,27 +598,7 @@ export default function Main() {
           )}
 
           {!isTabletOrMobile && (
-            <div>
-              <div className="flex md:gap-1 gap-2 cursor-pointer w-max">
-                <img src={video} className="md:w-4 w-6" />
-                <p className="md:text-sm md:font-normal text-2xl">Видео:</p>
-              </div>
-              <div className="md:h-1 work__line2 mt-2" />
-              <div className="md:gap-5 iframe-video flex flex-col gap-12 mt-5">
-                <div className="video-box">
-                  <LiteYouTubeEmbed id="7YzIpIORxOY" />
-                </div>
-                <div className="video-box">
-                  <LiteYouTubeEmbed id="8hb_LDeW-_0" />
-                </div>
-                <div className="video-box">
-                  <LiteYouTubeEmbed id="nGbtapJ6E6A" />
-                </div>
-              </div>
-            </div>
-          )}
-          {!isTabletOrMobile && (
-            <div className=" md:mt-0 mt-16">
+            <div className=" md:mt-0">
               <div className="flex md:gap-1 gap-2 w-max cursor-pointer">
                 <img src={camera} className="md:w-4 w-6" />
                 <p className="md:text-sm md:font-normal text-2xl ">
@@ -641,7 +627,7 @@ export default function Main() {
                 </div>
               </div>
               <div
-                className="main__hover_container flex gap-3 place-items-center cursor-pointer mt-16 justify-end"
+                className="main__hover_container flex gap-3 place-items-center cursor-pointer mt-8 justify-end"
                 onClick={() => {
                   handleImageGallery();
                   setIsOpen(true);
@@ -666,21 +652,25 @@ export default function Main() {
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                   >
-                    <div className="fixed left-0 right-0 top-0 bottom-0 flex items-center justify-center bg-black/60 p-10 z-50">
-                      <Dialog.Panel className="bg-white p-8 rounded-lg relative">
-                        <img
-                          src={close}
-                          className="absolute w-8 -right-3 -top-3 cursor-pointer"
-                          onClick={() => setIsOpen(false)}
-                        />
-                        {isOpen && (
-                          <div className="grid grid-cols-4 md:grid-cols-3 gap-5">
+                    <div className="fixed left-0 right-0 top-0 bottom-0 flex items-center justify-center bg-black/60  z-50">
+                      <img
+                        src={close}
+                        className="absolute w-5 right-7 top-7 z-50 cursor-pointer hover:w-6 hover:right-7 z-50 hover:top-7 transition-all"
+                        onClick={() => setIsOpen(false)}
+                      />
+                      <Dialog.Panel className="bg-white fixed top-0 left-0 right-0 bottom-0 m-5 overflow-y-scroll scrollbar-width rounded-lg">
+                        {isLoading ? (
+                          <div className="m-10">
+                            <h1 className="text-5xl">Загрузка...</h1>
+                          </div>
+                        ) : (
+                          <div className="grid grid-cols-4 md:grid-cols-3 gap-8 p-10">
                             {photoLinks.map((link, index) => (
                               <img
                                 key={index}
                                 src={`https://storage.yandexcloud.net/imz/${link}`}
                                 alt={`Photo ${index + 1}`}
-                                className="h-full w-full hover:scale-110 transition duration-500 "
+                                className="h-full w-full hover:scale-110 transition duration-500 rounded-xl "
                               />
                             ))}
                           </div>
@@ -690,6 +680,26 @@ export default function Main() {
                   </Transition.Child>
                 </Dialog>
               </Transition>
+            </div>
+          )}
+          {!isTabletOrMobile && (
+            <div className="mt-5">
+              <div className="flex md:gap-1 gap-2 cursor-pointer w-max">
+                <img src={video} className="md:w-4 w-6" />
+                <p className="md:text-sm md:font-normal text-2xl">Видео:</p>
+              </div>
+              <div className="md:h-1 work__line2 mt-2" />
+              <div className="md:gap-5 iframe-video flex flex-col gap-12 mt-5">
+                <div className="video-box">
+                  <LiteYouTubeEmbed id="7YzIpIORxOY" />
+                </div>
+                <div className="video-box">
+                  <LiteYouTubeEmbed id="8hb_LDeW-_0" />
+                </div>
+                <div className="video-box">
+                  <LiteYouTubeEmbed id="nGbtapJ6E6A" />
+                </div>
+              </div>
             </div>
           )}
           {!isTabletOrMobile && (
