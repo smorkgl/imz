@@ -30,10 +30,17 @@ import phone from "../img/phone.svg";
 import { Dialog, Transition } from "@headlessui/react";
 import close from "../img/close.svg";
 import XMLParser from "react-xml-parser";
+import { send } from "emailjs-com";
 
 export default function Main() {
   const [photoLinks, setPhotoLinks] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [toSend, setToSend] = useState({
+    from_name: "",
+    to_name: "",
+    message: "",
+    reply_to: "",
+  });
 
   const handleImageGallery = () => {
     setIsLoading(true);
@@ -399,6 +406,8 @@ export default function Main() {
                     id="name"
                     class="!border-2 border-black shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dbg-gray-700 border-gray-600 placeholder-gray-400 text-black focus:ring-blue-500 focus:border-blue-500 shadow-sm-light"
                     required
+                    value={toSend.from_name}
+                    onChange={handleChange}
                   />
                 </div>
                 <div class="mb-5">
@@ -414,6 +423,8 @@ export default function Main() {
                     class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  border-gray-600 placeholder-gray-400 text-black focus:ring-blue-500 focus:border-blue-500 shadow-sm-light"
                     placeholder="name@i-m-z.ru"
                     required
+                    value={toSend.to_name}
+                    onChange={handleChange}
                   />
                 </div>
                 <div class="mb-5">
@@ -428,6 +439,8 @@ export default function Main() {
                     id="phone"
                     class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 border-gray-600 placeholder-gray-400 text-black focus:ring-blue-500 focus:border-blue-500 shadow-sm-light"
                     required
+                    value={toSend.message}
+                    onChange={handleChange}
                   />
                 </div>
                 <label
