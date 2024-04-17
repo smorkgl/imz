@@ -23,8 +23,8 @@ export default function Carousel() {
             naturalSlideWidth={100}
             naturalSlideHeight={100}
             totalSlides={3}
-            isPlaying={true}
             className="relative"
+            infinite="true"
           >
             <ButtonNext className="md:p-0 absolute z-40 carousel-button1-mobile bg-blue-800/70 transition-all cursor-pointer">
               <img src={arrow} className="md:w-8 w-10 arrow2" />

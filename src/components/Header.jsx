@@ -1,4 +1,4 @@
-import { Fragment, useState, useEffect } from "react";
+import { Fragment, useState, useEffect, useRef } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { Outlet, Link, NavLink } from "react-router-dom";
 import logo3 from "../img/logo3.png";
@@ -9,6 +9,7 @@ import geo from "../img/geo.svg";
 import sun from "../img/sun.svg";
 import moon from "../img/moon.svg";
 import close from "../img/close.svg";
+import emailjs from "@emailjs/browser";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,6 +21,25 @@ export default function Header() {
   };
   const handleMouseLeaveLang = () => {
     setDropdownVisibleLang(false);
+  };
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("service_a6z0367", "template_63iyekb", form.current, {
+        publicKey: "kifTa7VFekqtXUeFz",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
   };
 
   return (
@@ -82,14 +102,19 @@ export default function Header() {
                       leaveFrom="opacity-100"
                       leaveTo="opacity-0"
                     >
-                      <div className="fixed left-0 right-0 top-0 bottom-0 flex items-center justify-center bg-black/60">
+                      <div className="fixed left-0 right-0 top-0 bottom-0 z-50 flex items-center justify-center bg-black/60">
                         <Dialog.Panel className="bg-white/100 py-10 px-16 rounded-xl box-shadow relative">
                           <img
                             src={close}
                             className="absolute w-5 right-3 top-3 cursor-pointer"
                             onClick={() => setIsOpen(false)}
                           />
-                          <form class="max-w-sm mx-auto">
+                          <form
+                            class="max-w-sm mx-auto"
+                            onSubmit={sendEmail}
+                            id="contact-form"
+                            ref={form}
+                          >
                             <div class="mb-5">
                               <label
                                 for="name"
@@ -102,6 +127,7 @@ export default function Header() {
                                 id="name"
                                 class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dbg-gray-700 border-gray-600 placeholder-gray-400 text-black focus:ring-blue-500 focus:border-blue-500 shadow-sm-light"
                                 required
+                                name="user_name"
                               />
                             </div>
                             <div class="mb-5">
@@ -113,6 +139,7 @@ export default function Header() {
                               </label>
                               <input
                                 type="email"
+                                name="email"
                                 id="email"
                                 class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  border-gray-600 placeholder-gray-400 text-black focus:ring-blue-500 focus:border-blue-500 shadow-sm-light"
                                 placeholder="name@i-m-z.ru"
@@ -129,6 +156,7 @@ export default function Header() {
                               <input
                                 type="phone"
                                 id="phone"
+                                name="phone"
                                 class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 border-gray-600 placeholder-gray-400 text-black focus:ring-blue-500 focus:border-blue-500 shadow-sm-light"
                                 required
                               />
@@ -141,12 +169,14 @@ export default function Header() {
                             </label>
                             <textarea
                               id="message"
+                              name="message"
                               rows="4"
                               class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 border-gray-600 placeholder-gray-400 text-black focus:ring-blue-500 :focus:border-blue-500"
                               placeholder="Оставьте сообщение..."
                             ></textarea>
                             <button
                               type="submit"
+                              value="Send"
                               class="mt-5 text-white   bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
                             >
                               Отправить

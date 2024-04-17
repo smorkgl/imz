@@ -5,7 +5,6 @@ import { fetchPosts } from "../redux/slices/posts.js";
 import { selectIsAuth } from "../redux/slices/auth.js";
 import { useNavigate, Navigate, useParams } from "react-router-dom";
 import { logout } from "../redux/slices/auth.js";
-import Markdown from "react-markdown";
 import { fetchRemovePost } from "../redux/slices/posts.js";
 
 export default function Cabinet() {

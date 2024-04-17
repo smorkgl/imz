@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Header from "../components/Header";
 import Nav from "../components/Nav";
 import Carousel from "../components/Carousel";
@@ -6,8 +6,27 @@ import Footer from "../components/Footer";
 import TopMain from "../components/TopMain";
 import Breadcrumb from "../components/Breadcrumb";
 import stoyanka from "../img/stoyanka.png";
+import emailjs from "@emailjs/browser";
 
 export default function ProductsOrder() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("service_a6z0367", "template_63iyekb", form.current, {
+        publicKey: "kifTa7VFekqtXUeFz",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
+  };
   return (
     <div className="font-['Ubuntu']">
       <Header />
@@ -20,6 +39,8 @@ export default function ProductsOrder() {
         <div className="my-12">
           <div class="md:w-full bg-white shadow-md rounded rounded-lg p-5 w-2/4">
             <form
+              onSubmit={sendEmail}
+              ref={form}
               id="contactForm"
               action="#"
               method="POST"
@@ -33,9 +54,9 @@ export default function ProductsOrder() {
                   ФИО
                 </label>
                 <input
+                  name="user_name"
                   type="text"
                   id="name"
-                  name="name"
                   placeholder="Введите своё имя"
                   class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                 />
@@ -63,15 +84,15 @@ export default function ProductsOrder() {
               </div>
               <div>
                 <label
-                  for="email"
+                  for="phone"
                   class="block text-gray-700 font-semibold mb-2"
                 >
                   Номер телефона
                 </label>
                 <input
-                  type="email"
-                  id="email"
-                  name="email"
+                  type="phone"
+                  id="phone"
+                  name="phone"
                   placeholder="Введите свой номер телефона"
                   class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                 />
@@ -80,24 +101,6 @@ export default function ProductsOrder() {
                 </div>
               </div>
 
-              <div class="sm:col-span-2">
-                <label
-                  for="subject"
-                  class="block text-gray-700 font-semibold mb-2"
-                >
-                  Тема обращения
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  placeholder="Введите свою тему обращения"
-                  class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                />
-                <div id="subjectValidation" class="hidden text-red-600 text-sm">
-                  Please enter the subject.
-                </div>
-              </div>
               <div class="sm:col-span-2">
                 <label
                   for="message"
@@ -119,6 +122,7 @@ export default function ProductsOrder() {
               <div class="sm:col-span-2">
                 <button
                   type="submit"
+                  value="Send"
                   class="w-full bg-blue-800 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-900 transition duration-300"
                 >
                   Отправить

@@ -27,329 +27,329 @@ export default function Footer() {
               <h2 class="mb-4 text-xl font-bold text-gray-200 dark:text-gray-400">
                 Наша продукция{" "}
               </h2>
-              <ul>
-                <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-                    ></path>
-                  </svg>
-                  <Link
-                    to={`/profile_pipe`}
-                    class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
-                  >
+              <ul className="flex flex-col">
+                <Link
+                  to={`/profile_pipe`}
+                  class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
+                >
+                  <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                      ></path>
+                    </svg>
                     Труба профильная
-                  </Link>
-                </li>
-                <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-                    ></path>
-                  </svg>
-                  <Link
-                    to={`/profile_pipe`}
-                    class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
-                  >
+                  </li>
+                </Link>
+                <Link
+                  to={`/metal_beams`}
+                  class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
+                >
+                  <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                      ></path>
+                    </svg>
                     Балки
-                  </Link>
-                </li>
-                <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-                    ></path>
-                  </svg>
-                  <Link
-                    to={`metal_stucture`}
-                    class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
-                  >
+                  </li>
+                </Link>
+                <Link
+                  to={`/metal_structure`}
+                  class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
+                >
+                  <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                      ></path>
+                    </svg>
                     Металлоконструкции
-                  </Link>
-                </li>
-                <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-                    ></path>
-                  </svg>
-                  <Link
-                    to={`/products`}
-                    class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
-                  >
+                  </li>
+                </Link>
+                <Link
+                  to={`/products`}
+                  class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
+                >
+                  <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                      ></path>
+                    </svg>
                     Продукция
-                  </Link>
-                </li>
-                <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-                    ></path>
-                  </svg>
-                  <Link
-                    to={`/products_order`}
-                    class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
-                  >
+                  </li>
+                </Link>
+                <Link
+                  to={`/products_order`}
+                  class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
+                >
+                  <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                      ></path>
+                    </svg>
                     Заказ продукции
-                  </Link>
-                </li>
+                  </li>
+                </Link>
               </ul>
             </div>
             <div class="w-full px-4 mb-11 ">
               <h2 class="mb-4 text-xl font-bold text-gray-200 dark:text-gray-400">
                 Быстрые ссылки
               </h2>
-              <ul>
-                <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-                    ></path>
-                  </svg>
-                  <Link
-                    to={`/`}
-                    class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
-                  >
+              <ul className="flex flex-col">
+                <Link
+                  to={`/`}
+                  class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
+                >
+                  <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                      ></path>
+                    </svg>
                     Главная
-                  </Link>
-                </li>
-                <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-                    ></path>
-                  </svg>
-                  <Link
-                    to={`/news`}
-                    class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
-                  >
+                  </li>
+                </Link>
+                <Link
+                  to={`/news`}
+                  class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
+                >
+                  <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                      ></path>
+                    </svg>
                     Новости
-                  </Link>
-                </li>
-                <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-                    ></path>
-                  </svg>
-                  <Link
-                    to={`/about`}
-                    class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
-                  >
+                  </li>
+                </Link>
+                <Link
+                  to={`/about`}
+                  class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
+                >
+                  <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                      ></path>
+                    </svg>
                     О нас
-                  </Link>
-                </li>
-                <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-                    ></path>
-                  </svg>
-                  <Link
-                    to={`/projects`}
-                    class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
-                  >
+                  </li>
+                </Link>
+                <Link
+                  to={`/projects`}
+                  class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
+                >
+                  <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                      ></path>
+                    </svg>
                     Проекты
-                  </Link>
-                </li>
-                <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-                    ></path>
-                  </svg>
-                  <Link
-                    to={`/hotel`}
-                    class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
-                  >
+                  </li>
+                </Link>
+                <Link
+                  to={`/hotel`}
+                  class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
+                >
+                  <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                      ></path>
+                    </svg>
                     Гостиница
-                  </Link>
-                </li>
-                <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-                    ></path>
-                  </svg>
-                  <Link
-                    to={`/parking`}
-                    class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
-                  >
+                  </li>
+                </Link>
+                <Link
+                  to={`/parking`}
+                  class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
+                >
+                  <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                      ></path>
+                    </svg>
                     Стоянка
-                  </Link>
-                </li>
-                <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-                    ></path>
-                  </svg>
-                  <Link
-                    to={`/job`}
-                    class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
-                  >
+                  </li>
+                </Link>
+                <Link
+                  to={`/job`}
+                  class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
+                >
+                  <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                      ></path>
+                    </svg>
                     Вакансии
-                  </Link>
-                </li>
-                <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-                    ></path>
-                  </svg>
-                  <Link
-                    to={`/contacts`}
-                    class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
-                  >
+                  </li>
+                </Link>
+                <Link
+                  to={`/contacts`}
+                  class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
+                >
+                  <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                      ></path>
+                    </svg>
                     Контакты
-                  </Link>
-                </li>
-                <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-                    ></path>
-                  </svg>
-                  <Link
-                    to={`/gost`}
-                    class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
-                  >
+                  </li>
+                </Link>
+                <Link
+                  to={`/gost`}
+                  class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
+                >
+                  <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                      ></path>
+                    </svg>
                     ГОСТ продукции
-                  </Link>
-                </li>
-                <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-                    ></path>
-                  </svg>
-                  <Link
-                    to={`/calculator`}
-                    class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
-                  >
+                  </li>
+                </Link>
+                <Link
+                  to={`/calculator`}
+                  class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
+                >
+                  <li class="flex items-center mb-1 p-0 li-blue__hover transition-all">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="w-3 h-3 mr-1 text-white dark:text-gray-400 bi bi-chevron-right"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                      ></path>
+                    </svg>
                     Калькулятор металлопроката
-                  </Link>
-                </li>
+                  </li>
+                </Link>
               </ul>
             </div>
             <div class="w-full px-4 mb-2 ">
