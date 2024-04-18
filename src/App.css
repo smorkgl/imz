@@ -402,15 +402,6 @@ li {
   min-height: 225px !important;
 }
 
-.button__create-news {
-  height: 50px;
-  width: 200px;
-  position: absolute;
-  margin: -50px 0 0 -100px;
-  left: 50%;
-  top: -20px;
-}
-
 .cabinet__create-img {
   width: 345px;
   height: 225px;
@@ -529,4 +520,21 @@ li {
 
 .scrollbar-width {
   scrollbar-width: none;
+}
+
+.pagination {
+  display: flex;
+  gap: 20px;
+}
+
+.pagination li {
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: 700;
+  padding: 15px 25px;
+}
+
+.pagination .active {
+  background-color: #0059ff;
+  color: #fff;
 }

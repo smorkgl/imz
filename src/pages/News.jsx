@@ -9,6 +9,8 @@ import TopMain from "../components/TopMain";
 import Breadcrumb from "../components/Breadcrumb";
 import { fetchPosts } from "../redux/slices/posts.js";
 
+import ReactPaginate from "react-paginate";
+
 export default function News() {
   const dispatch = useDispatch();
   const { posts } = useSelector((state) => state.posts);
@@ -21,6 +23,15 @@ export default function News() {
   const reverseNewsToShow = posts.items.slice().reverse();
 
   const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+  const itemsPerPage = 10;
+  const pageCount = Math.ceil(reverseNewsToShow.length / itemsPerPage);
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const handlePageClick = (data) => {
+    setCurrentPage(data.selected);
+  };
+
   return (
     <div className="font-['Ubuntu']">
       <Header />
@@ -93,41 +104,56 @@ export default function News() {
                   </div>
                 </div>
               ))
-            : reverseNewsToShow.map((news) => (
-                <div
-                  key={news.id}
-                  class="md:flex md:flex-col mb-12 flex flex-wrap"
-                >
-                  <div class="!px-0 md:w-full mb-6 mx-auto shrink-0 grow-0 basis-auto px-3 !mb-0  w-3/12">
-                    <Link to={`/news/${news.id}`}>
-                      <div
-                        class="relative mb-6 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-lg"
-                        data-te-ripple-init
-                        data-te-ripple-color="light"
-                      >
-                        <img
-                          src={`${news.imageUrl}`}
-                          class="news__img-container w-full"
-                          alt="Louvre"
-                        />
-                        <div class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100 bg-[hsla(0,0%,98.4%,.15)]"></div>
-                      </div>
-                    </Link>
-                  </div>
+            : reverseNewsToShow
+                .slice(
+                  currentPage * itemsPerPage,
+                  (currentPage + 1) * itemsPerPage
+                )
+                .map((news) => (
+                  <div
+                    key={news.id}
+                    class="md:flex md:flex-col mb-12 flex flex-wrap"
+                  >
+                    <div class="!px-0 md:w-full mb-6 mx-auto shrink-0 grow-0 basis-auto px-3 !mb-0  w-3/12">
+                      <Link to={`/news/${news.id}`}>
+                        <div
+                          class="relative mb-6 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-lg"
+                          data-te-ripple-init
+                          data-te-ripple-color="light"
+                        >
+                          <img
+                            src={`${news.imageUrl}`}
+                            class="news__img-container w-full"
+                            alt="Louvre"
+                          />
+                          <div class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100 bg-[hsla(0,0%,98.4%,.15)]"></div>
+                        </div>
+                      </Link>
+                    </div>
 
-                  <div class=" mb-6 mr-auto w-full shrink-0 grow-0 basis-auto px-10 !mb-0 !w-9/12 !w-7/12">
-                    <Link to={`/news/${news.id}`}>
-                      <h5 class="mb-3 text-lg font-bold">{news.title}</h5>
-                    </Link>
-                    <p class="mb-6 text-neutral-500">
-                      <small>
-                        Опубликовано <u>{news.date}</u>
-                      </small>
-                    </p>
-                    <p class="text-neutral-500">{news.mini_title}</p>
+                    <div class=" mb-6 mr-auto w-full shrink-0 grow-0 basis-auto px-10 !mb-0 !w-9/12 !w-7/12">
+                      <Link to={`/news/${news.id}`}>
+                        <h5 class="mb-3 text-lg font-bold">{news.title}</h5>
+                      </Link>
+                      <p class="mb-6 text-neutral-500">
+                        <small>
+                          Опубликовано <u>{news.date}</u>
+                        </small>
+                      </p>
+                      <p class="text-neutral-500">{news.mini_title}</p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+          <ReactPaginate
+            pageCount={pageCount}
+            pageRangeDisplayed={5}
+            marginPagesDisplayed={1}
+            onPageChange={handlePageClick}
+            containerClassName={"pagination"}
+            activeClassName={"active"}
+            previousLabel={"Назад"}
+            nextLabel={"Следующий"}
+          />
         </section>
       </div>
       <Footer />

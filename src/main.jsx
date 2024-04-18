@@ -27,6 +27,7 @@ import Suppliers from "./pages/Suppliers.jsx";
 import Contacts from "./pages/Contacts.jsx";
 import GOST from "./pages/GOST.jsx";
 import Calculator from "./pages/Calculator.jsx";
+import CabinetUpload from "./pages/CabinetUpload.jsx";
 
 const router = createBrowserRouter([
   {
@@ -121,6 +122,10 @@ const router = createBrowserRouter([
   {
     path: "calculator",
     element: <Calculator />,
+  },
+  {
+    path: "cabinet/upload",
+    element: <CabinetUpload />,
   },
 ]);
 

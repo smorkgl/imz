@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { fetchPosts } from "../redux/slices/posts.js";
 import { selectIsAuth } from "../redux/slices/auth.js";
 import { useNavigate, Navigate, useParams } from "react-router-dom";
 import { logout } from "../redux/slices/auth.js";
 import { fetchRemovePost } from "../redux/slices/posts.js";
+import ReactPaginate from "react-paginate";
 
 export default function Cabinet() {
   const isAuth = useSelector(selectIsAuth);
@@ -44,27 +45,42 @@ export default function Cabinet() {
 
   const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
+  const itemsPerPage = 10;
+  const pageCount = Math.ceil(newPosts.length / itemsPerPage);
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const handlePageClick = (data) => {
+    setCurrentPage(data.selected);
+  };
+
   return (
-    <div className="md:px-5 px-20 bg-[url('/src/img/test3.png')] bg-blue-800 h-full bg-no-repeat bg-center bg-cover flex place-items-center h-100">
-      <div>
+    <div className="md:px-5 px-20 bg-[url('/src/img/test3.png')] bg-blue-800 h-full bg-no-repeat bg-center bg-cover flex place-items-center h-100 flex-col">
+      <div className="flex justify-between gap-5 top-0">
         <Link to={`/`}>
-          <button className=" md:text-xs absolute top-5 left-5 bg-white text-blue-800 hover:text-blue-700 transition-all">
+          <button className="absolute left-0 m-5 md:text-xs bg-white text-blue-800 hover:text-blue-700 transition-all">
             ВЕРНУТЬСЯ НАЗАД
           </button>
         </Link>
         <button
           onClick={onClickLogout}
-          className="md:text-xs absolute top-5 right-5 bg-white text-red-800 hover:text-blue-700 transition-all"
+          className="absolute right-0 m-5 md:text-xs bg-white text-red-800 hover:text-blue-700 transition-all"
         >
           ВЫЙТИ ИЗ АККАУНТА
         </button>
       </div>
-      <div class="md:mt-40 container my-12 mx-auto md:px-6 bg-white pt-10 relative mt-28 min-h-screen">
+      <div className="md:mt-20 gap-5 pt-5 -mb-20 flex">
         <Link to={`/cabinet/create`}>
-          <button className="button__create-news bg-green-500 text-white font-bold">
+          <button className="bg-green-500 text-white font-bold">
             СОЗДАТЬ НОВОСТЬ
           </button>
         </Link>
+        <Link to={`/cabinet/upload`}>
+          <button className="bg-blue-600 text-white font-bold">
+            ЗАГРУЗИТЬ ФОТО В ФОТОГАЛЕРЕЮ
+          </button>
+        </Link>
+      </div>
+      <div class="md:mt-0 md:mt-32   container my-12 mx-auto md:px-6 bg-white pt-10 relative mt-28 min-h-screen">
         <div class="xl:px-2 pt-10 2xl max-w-7xl width-full mx-auto container">
           <section class="mb-32 text-center !text-left">
             {isPostsLoading
@@ -130,55 +146,70 @@ export default function Cabinet() {
                     </div>
                   </div>
                 ))
-              : newPosts.map((news) => (
-                  <div
-                    key={news.id}
-                    class="md:flex-col md:flex gap-10 mb-12 flex relative"
-                  >
-                    <div className=" md:mx-auto flex flex-col my-auto gap-5">
-                      <button
-                        onClick={() => onClickEditNews(news.id)}
-                        className="bg-blue-800 text-white "
-                      >
-                        РЕДАКТИРОВАТЬ
-                      </button>
-                      <button
-                        onClick={() => onClickDeleteNews(news.id)}
-                        className="bg-red-800 text-white"
-                      >
-                        УДАЛИТЬ
-                      </button>
-                    </div>
-                    <div class="!px-0 md:w-full mb-6 mx-auto shrink-0 grow-0 basis-auto px-3 !mb-0  w-3/12">
-                      <Link to={`/news/${news.id}`}>
-                        <div
-                          class="relative mb-6 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-lg"
-                          data-te-ripple-init
-                          data-te-ripple-color="light"
+              : newPosts
+                  .slice(
+                    currentPage * itemsPerPage,
+                    (currentPage + 1) * itemsPerPage
+                  )
+                  .map((news) => (
+                    <div
+                      key={news.id}
+                      class="md:flex-col md:flex gap-10 mb-12 flex relative"
+                    >
+                      <div className=" md:mx-auto flex flex-col my-auto gap-5">
+                        <button
+                          onClick={() => onClickEditNews(news.id)}
+                          className="bg-blue-800 text-white "
                         >
-                          <img
-                            src={`${news.imageUrl}`}
-                            class="news__img-container w-full"
-                            alt="Louvre"
-                          />
-                          <div class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100 bg-[hsla(0,0%,98.4%,.15)]"></div>
-                        </div>
-                      </Link>
-                    </div>
+                          РЕДАКТИРОВАТЬ
+                        </button>
+                        <button
+                          onClick={() => onClickDeleteNews(news.id)}
+                          className="bg-red-800 text-white"
+                        >
+                          УДАЛИТЬ
+                        </button>
+                      </div>
+                      <div class="!px-0 md:w-full mb-6 mx-auto shrink-0 grow-0 basis-auto px-3 !mb-0  w-3/12">
+                        <Link to={`/news/${news.id}`}>
+                          <div
+                            class="relative mb-6 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-lg"
+                            data-te-ripple-init
+                            data-te-ripple-color="light"
+                          >
+                            <img
+                              src={`${news.imageUrl}`}
+                              class="news__img-container w-full"
+                              alt="Louvre"
+                            />
+                            <div class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100 bg-[hsla(0,0%,98.4%,.15)]"></div>
+                          </div>
+                        </Link>
+                      </div>
 
-                    <div class=" mb-6 mr-auto w-full shrink-0 grow-0 basis-auto pl-5 !mb-0 !w-9/12 !w-7/12">
-                      <Link to={`/news/${news.id}`}>
-                        <h5 class="mb-3 text-lg font-bold">{news.title}</h5>
-                      </Link>
-                      <p class="mb-6 text-neutral-500">
-                        <small>
-                          Опубликовано <u>{news.date}</u>
-                        </small>
-                      </p>
-                      <p class="text-neutral-500">{news.mini_title}</p>
+                      <div class=" mb-6 mr-auto w-full shrink-0 grow-0 basis-auto pl-5 !mb-0 !w-9/12 !w-7/12">
+                        <Link to={`/news/${news.id}`}>
+                          <h5 class="mb-3 text-lg font-bold">{news.title}</h5>
+                        </Link>
+                        <p class="mb-6 text-neutral-500">
+                          <small>
+                            Опубликовано <u>{news.date}</u>
+                          </small>
+                        </p>
+                        <p class="text-neutral-500">{news.mini_title}</p>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+            <ReactPaginate
+              pageCount={pageCount}
+              pageRangeDisplayed={5}
+              marginPagesDisplayed={1}
+              onPageChange={handlePageClick}
+              containerClassName={"pagination"}
+              activeClassName={"active"}
+              previousLabel={"Назад"}
+              nextLabel={"Следующий"}
+            />
           </section>
         </div>
       </div>

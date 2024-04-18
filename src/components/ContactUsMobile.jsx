@@ -1,10 +1,34 @@
 import email from "../img/email.svg";
 import phone from "../img/phone.svg";
+import { useRef } from "react";
 
 export default function ContactUsMobile() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("service_a6z0367", "template_63iyekb", form.current, {
+        publicKey: "kifTa7VFekqtXUeFz",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
+  };
   return (
-    <div className="p-2 pt-10">
-      <form>
+    <div className="p-2 pt-10 ">
+      <form
+        ref={form}
+        class=" shadow-2xl p-10 mt-10 rounded-lg "
+        onSubmit={sendEmail}
+        id="contact-form"
+      >
         <div className="mb-10">
           <h1 className="text-lg font-medium">Связаться с нами</h1>
           <p className="pt-2">Заполните форму, и мы свяжемся с вами!</p>
@@ -29,10 +53,11 @@ export default function ContactUsMobile() {
             Ваше имя *
           </label>
           <input
-            type="name"
             id="name"
             class="!border-2 border-black shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dbg-gray-700 border-gray-600 placeholder-gray-400 text-black focus:ring-blue-500 focus:border-blue-500 shadow-sm-light"
             required
+            type="text"
+            name="user_name"
           />
         </div>
         <div class="mb-5">
@@ -48,6 +73,7 @@ export default function ContactUsMobile() {
             class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  border-gray-600 placeholder-gray-400 text-black focus:ring-blue-500 focus:border-blue-500 shadow-sm-light"
             placeholder="name@i-m-z.ru"
             required
+            name="email"
           />
         </div>
         <div class="mb-5">
@@ -59,6 +85,7 @@ export default function ContactUsMobile() {
           </label>
           <input
             type="phone"
+            name="phone"
             id="phone"
             class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 border-gray-600 placeholder-gray-400 text-black focus:ring-blue-500 focus:border-blue-500 shadow-sm-light"
             required
@@ -72,12 +99,14 @@ export default function ContactUsMobile() {
         </label>
         <textarea
           id="message"
+          name="message"
           rows="4"
           class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 border-gray-600 placeholder-gray-400 text-black focus:ring-blue-500 :focus:border-blue-500"
           placeholder="Оставьте сообщение..."
         ></textarea>
         <button
           type="submit"
+          value="Send"
           class="mt-5 text-white   bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
         >
           Отправить
