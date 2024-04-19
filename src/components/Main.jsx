@@ -698,7 +698,7 @@ export default function Main() {
                                 key={index}
                                 src={`https://storage.yandexcloud.net/imz/${link}`}
                                 alt={`Photo ${index + 1}`}
-                                className="h-full w-full hover:scale-110 transition duration-500 rounded-xl "
+                                className="h-full w-full hover:scale-110 transition duration-500 rounded-xl object-contain "
                               />
                             ))}
                           </div>

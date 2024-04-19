@@ -2,9 +2,11 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectIsAuth } from "../redux/slices/auth.js";
 import { Navigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import "easymde/dist/easymde.min.css";
 import XMLParser from "react-xml-parser";
+import axios from "../axios.js";
+import delete_img from "../img/delete.svg";
 
 export default function CabinetUpload() {
   const isAuth = useSelector(selectIsAuth);
@@ -15,6 +17,46 @@ export default function CabinetUpload() {
 
   const [photoLinks, setPhotoLinks] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+
+  const inputFileRef = useRef(null);
+
+  const handleFileChange = (e) => {
+    const selectedFile = e.target.files[0];
+    const formData = new FormData();
+    formData.append("file", selectedFile);
+    axios
+      .post("/uploadFile", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+      .then((response) => {
+        // Получаем ссылку на загруженное изображение
+        const linkSplit = response.data.url.split("/").pop(); // Получаем конечную часть ссылки
+        const newPhotoLink = `files/images/${linkSplit}`; // Собираем правильную ссылку
+        setPhotoLinks((prevLinks) => [...prevLinks, newPhotoLink]);
+      })
+      .catch((error) => {
+        console.error("Error uploading file:", error);
+      });
+  };
+
+  const handleDeleteImage = async (index) => {
+    try {
+      const updatedPhotoLinks = [...photoLinks]; // Создаем копию массива
+      const deletedKey = updatedPhotoLinks[index];
+
+      updatedPhotoLinks.splice(index, 1);
+      setPhotoLinks(updatedPhotoLinks);
+
+      setPhotoLinks((prevState) => [...prevState]); // Обновляем состояние, чтобы принудительно перерисовать компонент
+
+      await axios.post("/deleteFile", { key: deletedKey });
+      console.log(deletedKey);
+    } catch (error) {
+      console.error("Ошибка при удалении изображения", error);
+    }
+  };
 
   useEffect(() => {
     setIsLoading(true);
@@ -57,13 +99,21 @@ export default function CabinetUpload() {
       </Link>
       <div className="md:mt-20 gap-5 pt-5 -mb-20 flex">
         <Link to={`/cabinet/create`}></Link>
-        <Link to={`/cabinet/upload`}>
-          <button className="bg-blue-600 text-white font-bold">
-            ЗАГРУЗИТЬ ФОТО В ФОТОГАЛЕРЕЮ
-          </button>
-        </Link>
+        <button
+          onClick={() => inputFileRef.current.click()}
+          className="bg-blue-600 text-white font-bold"
+          ref={inputFileRef}
+        >
+          ЗАГРУЗИТЬ ИЗОБРАЖЕНИЕ
+        </button>
+        <input
+          ref={inputFileRef}
+          type="file"
+          onChange={handleFileChange}
+          hidden
+        />
       </div>
-      <div class="md:pt-3 container my-12 mx-auto  bg-white mt-28 relative h-full">
+      <div class="md:pt-3 container my-12 mx-auto  bg-white mt-28 relative h-full min-h-screen">
         <section class="text-center md:text-left h-full">
           {isLoading ? (
             <div className="md:grid-cols-2 grid grid-cols-4 gap-3 p-5">
@@ -71,7 +121,7 @@ export default function CabinetUpload() {
                 <div
                   key={index}
                   role="status"
-                  class="flex items-center justify-center h-56 max-w-sm bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700"
+                  class="flex items-center justify-center h-56 max-w-sm bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700 relative"
                 >
                   <svg
                     class="w-10 h-10 text-gray-200 dark:text-gray-600"
@@ -88,14 +138,21 @@ export default function CabinetUpload() {
               ))}
             </div>
           ) : (
-            <div className="md:grid-cols-2 grid grid-cols-4 md:grid-cols-3 gap-3 p-5">
+            <div className="md:grid-cols-2 grid grid-cols-4 gap-3 p-5">
               {photoLinks.map((link, index) => (
-                <img
-                  key={index}
-                  src={`https://storage.yandexcloud.net/imz/${link}`}
-                  alt={`Photo ${index + 1}`}
-                  className="h-full w-full hover:scale-110 transition duration-500 rounded-xl "
-                />
+                <div className="relative">
+                  <img
+                    src={delete_img}
+                    className="absolute right-0 p-3 cursor-pointer"
+                    onClick={() => handleDeleteImage(index)}
+                  />
+                  <img
+                    key={index}
+                    src={`https://storage.yandexcloud.net/imz/${link}`}
+                    alt={`Photo ${index + 1}`}
+                    className="test h-full w-full transition duration-500 rounded-xl object-contain"
+                  />
+                </div>
               ))}
             </div>
           )}
