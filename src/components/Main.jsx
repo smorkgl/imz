@@ -480,7 +480,6 @@ export default function Main() {
             </div>
           )}
         </div>
-
         <div className="md:-m-2.5 md:mt-5  test md:flex-col md:flex md:gap-5 md:p-0 md:pt-5 xl:pr-5">
           {isTabletOrMobile && (
             <div>
@@ -737,7 +736,10 @@ export default function Main() {
                 <p className="text-2xl ">Продукция:</p>
               </div>
               <div className="work__line2 mt-2" />
-              <div className="production-box mt-10 rounded-lg overflow-hidden">
+              <p className="text-xs w-1/2 mt-2">
+                Отсканируйте QR-код для просмотра каталога продукции
+              </p>
+              <div className="production-box mt-8 rounded-lg overflow-hidden">
                 <img
                   src={qr}
                   className="hover:scale-110 transition duration-500 cursor-pointer object-cover"

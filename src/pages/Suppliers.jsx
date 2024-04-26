@@ -16,7 +16,7 @@ export default function Suppliers() {
       <Breadcrumb />
       <div className="xl:px-2 py-3 2xl max-w-6xl width-full mx-auto container">
         <h1 className="font-bold ">Поставщикам</h1>
-        <div className="md:pl-0 pl-5 my-6">
+        <div className="md:pl-0 pl-5 my-6 text-justify">
           <h2 className="font-bold text-2xl">ОТДЕЛ СНАБЖЕНИЯ</h2>
           <div className="work__line2 mt-2" />
           <p className="mt-5 font-bold">Начальник отдела снабжения</p>

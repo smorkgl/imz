@@ -18,7 +18,7 @@ export default function Projects() {
       <Breadcrumb />
       <div className="xl:px-2 py-3 2xl max-w-6xl width-full mx-auto container">
         <h1 className="font-bold ">Проекты</h1>
-        <div className="my-6">
+        <div className="my-6 text-justify">
           <p className="indent-10">
             Предприятие реализует проект расширения сортамента и значительного
             увеличения объемов выпускаемой продукции за счет освоения

@@ -1,4 +1,4 @@
-import { Fragment, useState, useEffect, useRef } from "react";
+import { Fragment, useState, useEffect, useRef, useContext } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { Outlet, Link, NavLink } from "react-router-dom";
 import logo3 from "../img/logo3.png";
@@ -10,6 +10,7 @@ import sun from "../img/sun.svg";
 import moon from "../img/moon.svg";
 import close from "../img/close.svg";
 import emailjs from "@emailjs/browser";
+import ScrollContext from "../ScrollContext";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,6 +43,8 @@ export default function Header() {
       );
   };
 
+  const scrolltoWherewe = useContext(ScrollContext);
+
   return (
     <header className="md:hidden">
       <div className="space-x-4 py-3 2xl max-w-7xl width-full mx-auto container">
@@ -55,14 +58,16 @@ export default function Header() {
           </div>
           <div className="xl:gap-10 flex gap-20 text-sm font-medium">
             <div className="xl:gap-10 flex gap-20">
-              <div className="grid place-items-center">
+              <div
+                onClick={scrolltoWherewe}
+                className="grid place-items-center"
+              >
                 <div className="flex gap-3 cursor-default address-hover">
                   <img src={geo} className="w-8 geo-img transition-transform" />
                   <p>
-                    346312, Ростовская область,
-                    <br /> Красносулинский район,
-                    <br />
-                    пст. Молодежный, территория «ДСК»
+                    Ростовская Область, <br />
+                    м.р-н Красносулинский, <br />
+                    с.п. Михайловское, <br />п Молодежный, ул. Степная, зд. 3
                   </p>
                 </div>
               </div>

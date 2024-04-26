@@ -369,8 +369,9 @@ export default function Footer() {
                   <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
                 </svg>
                 <span class="text-gray-300 dark:text-gray-400 cursor-default">
-                  346312, Ростовская область, <br />
-                  Красносулинский район пст. <br /> Молодежный, территория «ДСК»
+                  Ростовская Область, <br />
+                  м.р-н Красносулинский, <br />
+                  с.п. Михайловское, <br />п Молодежный, ул. Степная, зд. 3
                 </span>
               </p>
               <p class="flex items-center mb-4  footer__block_email cursor-pointer">

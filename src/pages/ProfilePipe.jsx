@@ -15,9 +15,9 @@ export default function ProfilePipe() {
       <Carousel />
       <TopMain />
       <Breadcrumb />
-      <div className="xl:px-2 py-3 2xl max-w-6xl width-full mx-auto container">
+      <div className="xl:px-2 py-3 2xl max-w-6xl width-full mx-auto container ">
         <h1 className="font-bold ">Труба профильная</h1>
-        <div className="my-6">
+        <div className="my-6 text-justify">
           <p className="indent-10">
             Первую продукцию предприятие выпустило 31.08.2009 года.{" "}
           </p>

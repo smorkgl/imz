@@ -12,6 +12,7 @@ import { useMediaQuery } from "react-responsive";
 import bg1 from "../img/bg1.png";
 import bg2 from "../img/bg2.png";
 import bg3 from "../img/bg3.png";
+import bg4 from "../img/bg4.png";
 
 export default function Carousel() {
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 767px)" });
@@ -22,7 +23,7 @@ export default function Carousel() {
           <CarouselProvider
             naturalSlideWidth={100}
             naturalSlideHeight={100}
-            totalSlides={3}
+            totalSlides={4}
             className="relative"
             infinite="true"
           >
@@ -61,13 +62,13 @@ export default function Carousel() {
               <Slide index={2}>
                 <p className="slide-text__mobile">
                   {" "}
-                  Деятельность предприятия направлена на производство листовой и
-                  рулонной стали. Реализация данного проекта имеет огромное
-                  экономическое и социальное знание для региона и в этой связи
-                  проект был включен в 100 проектов Губернатора Ростовской
-                  области.
+                  На базе ООО "Исаевский машиностроительный завод" был открыт
+                  первый исправительный центр ИК-1.
                 </p>
                 <img src={bg3} className="carousel__1_img__mobile" />
+              </Slide>
+              <Slide index={3} className="relative">
+                <img src={bg4} className="carousel__1_img__mobile" />
               </Slide>
             </Slider>
           </CarouselProvider>
@@ -77,7 +78,7 @@ export default function Carousel() {
         <CarouselProvider
           naturalSlideWidth={100}
           naturalSlideHeight={100}
-          totalSlides={3}
+          totalSlides={4}
           isPlaying={true}
           className="relative"
         >
@@ -95,7 +96,7 @@ export default function Carousel() {
                 стальных электросварных труб, с высоким уровнем автоматизации
                 технологических процессов, выпускающий высококачественную
                 продукцию на базе современных металлургических технологий.
-                Ассортимент выпускаемой трубной продукции - более 90
+                Ассортимент выпускаемой трубной продукции - более 120
                 наименований.
               </p>
               <img src={bg1} className="carousel__1_img" />
@@ -117,14 +118,17 @@ export default function Carousel() {
             <Slide index={2}>
               <p className="slide-text">
                 {" "}
-                Деятельность предприятия направлена на производство листовой и
-                рулонной стали. Реализация данного проекта имеет огромное
-                экономическое и социальное знание для региона и в этой связи
-                проект был включен в 100 проектов Губернатора Ростовской
-                области.
+                На базе ООО "Исаевский машиностроительный завод" в 2022 году был
+                открыт первый исправительный центр ИК-1. В настоящее время было
+                построено 2 модульных здания на территории завода и введены в
+                эксплуатацию. Планируется постройка 3 модульного здания. В
+                данный момент на завод трудоустроены больше 150 заключенных.
               </p>
 
               <img src={bg3} className="carousel__1_img" />
+            </Slide>
+            <Slide index={3}>
+              <img src={bg4} className="carousel__1_img" />
             </Slide>
           </Slider>
         </CarouselProvider>

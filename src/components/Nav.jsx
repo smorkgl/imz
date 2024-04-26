@@ -12,6 +12,7 @@ export default function Nav() {
   const [isDropdownVisibleManuf, setDropdownVisibleManuf] = useState(false);
   const [isDropdownVisibleProd, setDropdownVisibleProd] = useState(false);
   const [isDropdownVisibleFaq, setDropdownVisibleFaq] = useState(false);
+  const [isDropdownVisibleDosug, setDropdownVisibleDosug] = useState(false);
 
   const handleMouseEnterAbout = () => {
     setDropdownVisibleAbout(true);
@@ -39,6 +40,13 @@ export default function Nav() {
   };
   const handleMouseLeaveFaq = () => {
     setDropdownVisibleFaq(false);
+  };
+
+  const handleMouseEnterDosug = () => {
+    setDropdownVisibleDosug(true);
+  };
+  const handleMouseLeaveDosug = () => {
+    setDropdownVisibleDosug(false);
   };
 
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 767px)" });
@@ -380,8 +388,35 @@ export default function Nav() {
                     <Link to={`/projects`}>
                       <li className="li-blue__hover">Проекты</li>
                     </Link>
+
+                    <li
+                      className="li-blue__hover"
+                      onMouseEnter={handleMouseEnterDosug}
+                      onMouseLeave={handleMouseLeaveDosug}
+                    >
+                      Досуг
+                    </li>
+                  </ul>
+                </div>
+              )}
+              {isDropdownVisibleDosug && (
+                <div
+                  onMouseEnter={handleMouseEnterDosug}
+                  onMouseLeave={handleMouseLeaveDosug}
+                  className="dropdown-menu ml-24 animate-fade-up animate-duration-[300ms] absolute z-50 text-black"
+                >
+                  <ul>
                     <Link to={`/hotel`}>
                       <li className="li-blue__hover">Гостиница</li>
+                    </Link>
+                    <Link to={`/cafe`}>
+                      <li className="li-blue__hover">Кафе</li>
+                    </Link>
+                    <Link to={`/shop`}>
+                      <li className="li-blue__hover">Магазин</li>
+                    </Link>
+                    <Link to={`/kitchen`}>
+                      <li className="li-blue__hover">Столовая</li>
                     </Link>
                     <Link to={`/parking`}>
                       <li className="li-blue__hover">Стоянка</li>
@@ -390,12 +425,14 @@ export default function Nav() {
                 </div>
               )}
             </div>
+
             <div
               className="h-12 leading-12 flex justify-center items-center cursor-pointer relative hover:bg-blue-700 hover:rounded px-4 transition-all"
               onMouseEnter={handleMouseEnterManuf}
               onMouseLeave={handleMouseLeaveManuf}
             >
               <p>ПРОИЗВОДСТВО</p>
+
               {isDropdownVisibleManuf && (
                 <div className="dropdown-menu animate-fade-up animate-duration-[300ms] absolute z-50 text-black">
                   <ul>

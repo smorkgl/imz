@@ -80,6 +80,18 @@ export default function Breadcumb() {
       setPath("Калькулятор металлопроката");
       setPathLink("/calculator");
     }
+    if (currentPath === "/cafe") {
+      setPath("Кафе");
+      setPathLink("/cafe");
+    }
+    if (currentPath === "/shop") {
+      setPath("Магазин");
+      setPathLink("/shop");
+    }
+    if (currentPath === "/kitchen") {
+      setPath("Столовая");
+      setPathLink("/kitchen");
+    }
   }, []);
   return (
     <div className="space-x-4 py-3 2xl max-w-6xl width-full mx-auto container">

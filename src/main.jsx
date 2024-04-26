@@ -28,6 +28,9 @@ import Contacts from "./pages/Contacts.jsx";
 import GOST from "./pages/GOST.jsx";
 import Calculator from "./pages/Calculator.jsx";
 import CabinetUpload from "./pages/CabinetUpload.jsx";
+import Shop from "./pages/Shop.jsx";
+import Kitchen from "./pages/Kitchen.jsx";
+import Cafe from "./pages/Cafe.jsx";
 
 const router = createBrowserRouter([
   {
@@ -126,6 +129,18 @@ const router = createBrowserRouter([
   {
     path: "cabinet/upload",
     element: <CabinetUpload />,
+  },
+  {
+    path: "cafe",
+    element: <Cafe />,
+  },
+  {
+    path: "shop",
+    element: <Shop />,
+  },
+  {
+    path: "kitchen",
+    element: <Kitchen />,
   },
 ]);
 

@@ -17,7 +17,7 @@ import hotel9 from "../img/hotel9.jpg";
 import hotel10 from "../img/hotel10.jpg";
 import hotel11 from "../img/hotel11.jpg";
 
-export default function Projects() {
+export default function Kitchen() {
   return (
     <div className="font-['Ubuntu']">
       <Header />

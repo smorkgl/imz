@@ -36,7 +36,7 @@ export default function ProductsOrder() {
       <Breadcrumb />
       <div className="xl:px-2 py-3 2xl max-w-6xl width-full mx-auto container">
         <h1 className="font-bold ">Заказать продукцию</h1>
-        <div className="my-12">
+        <div className="my-12 text-justify">
           <div class="md:w-full bg-white shadow-md rounded rounded-lg p-5 w-2/4">
             <form
               onSubmit={sendEmail}

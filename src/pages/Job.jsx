@@ -172,17 +172,18 @@ export default function Job() {
             ))
           )}
 
-          <div className="mt-10">
-            <p>По вопросам трудоустройства: </p>
-            <br />
-            <p>Отдел кадров: +7(863)333-31-34 доб. 220, 221</p>
-            <br />
-            <p> Начальник отдела кадров</p>
-            <br />
-            <p>Порошина А.Ю. доб. 128</p>
-
-            <br />
-            <p>
+          <div className="mt-10 font-bold">
+            <div className="flex flex-col gap-3">
+              <div className="flex justify-between">
+                <p>По вопросам трудоустройства: </p>
+                <p>Отдел кадров: +7(863)333-31-34 доб. 220, 221</p>
+              </div>
+              <div className="flex justify-between">
+                <p> Директор по кадрам:</p>
+                <p>Порошина А.Ю. доб. 128</p>
+              </div>
+            </div>
+            <p className="mt-5">
               {" "}
               Отдел кадров работает с понедельника по пятницу с 8:00 до 17:00.
               Перерыв с 12:00 до 13:00.

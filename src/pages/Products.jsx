@@ -18,7 +18,8 @@ export default function Products() {
       <Breadcrumb />
       <div className="xl:px-2 py-3 2xl max-w-6xl width-full mx-auto container">
         <h1 className="font-bold ">Продукция</h1>
-        <div className="my-6">
+
+        <div className="my-6 text-justify">
           <table border="1px" cellpadding="4" cellspacing="0" width="100%">
             <tbody>
               <tr valign="top">

@@ -17,7 +17,7 @@ export default function MetalStructure() {
       <Breadcrumb />
       <div className=" xl:px-2 py-3 2xl max-w-6xl width-full mx-auto container">
         <h1 className="md:text-3xl font-bold ">Металлоконструкции</h1>
-        <div className="my-6">
+        <div className="my-6 text-justify">
           <p className="indent-10">
             Под производство сварных металлоконструкций организована
             производственная база, площадь которой составляет 5200 м²,

@@ -23,7 +23,7 @@ export default function Certificates() {
       <Breadcrumb />
       <div className="xl:px-2 py-3 2xl max-w-6xl width-full mx-auto container">
         <h1 className="font-bold ">Сертификаты</h1>
-        <div className="my-6">
+        <div className="my-6 text-justify">
           <h2 className="indent-10 font-bold text-2xl">ISO:</h2>
           <div className="ml-10 work__line2 mt-2" />
           <p className="indent-10 mt-5">
