@@ -26,7 +26,7 @@ export default function Kitchen() {
       <TopMain />
       <Breadcrumb />
       <div className="xl:px-2 py-3  2xl max-w-6xl width-full mx-auto container">
-        <h1 className="font-bold ">Гостиница</h1>
+        <h1 className="font-bold ">Столовая</h1>
         <div className="my-6 text-justify">
           <p className="indent-10">
             Рядом c заводом ИМЗ расположена придорожная гостиница. У нас есть

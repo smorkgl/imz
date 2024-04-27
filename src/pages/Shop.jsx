@@ -5,17 +5,11 @@ import Carousel from "../components/Carousel";
 import Footer from "../components/Footer";
 import TopMain from "../components/TopMain";
 import Breadcrumb from "../components/Breadcrumb";
-import hotel1 from "../img/hotel1.jpg";
-import hotel2 from "../img/hotel2.jpg";
-import hotel3 from "../img/hotel3.jpg";
-import hotel4 from "../img/hotel4.jpg";
-import hotel5 from "../img/hotel5.jpg";
-import hotel6 from "../img/hotel6.jpg";
-import hotel7 from "../img/hotel7.jpg";
-import hotel8 from "../img/hotel8.jpg";
-import hotel9 from "../img/hotel9.jpg";
-import hotel10 from "../img/hotel10.jpg";
-import hotel11 from "../img/hotel11.jpg";
+import shop1 from "../img/shop1.jpg";
+import shop2 from "../img/shop2.jpg";
+import shop3 from "../img/shop3.jpg";
+import shop4 from "../img/shop4.jpg";
+import shop5 from "../img/shop5.jpg";
 
 export default function Shop() {
   return (
@@ -34,27 +28,16 @@ export default function Shop() {
             товары для автопутешественников; хозяйственные товары.
           </p>
 
-          <div className="mx-auto">
+          <div className="mx-auto mt-5">
             <div class="xl:grid xl:place-items-center xl:flex-wrap flex mb-8 gap-10">
-              <img src={hotel2} />
-              <img src={hotel3} />
-            </div>
-            <div class="xl:grid xl:place-items-center xl:flex-wrap flex mb-8 gap-10">
-              <img src={hotel4} />
-              <img src={hotel5} />
+              <img src={shop1} className="w-1/2" />
+              <img src={shop5} className="w-1/2" />
             </div>
             <div class="xl:grid xl:place-items-center xl:flex-wrap flex mb-8 gap-10">
-              <img src={hotel6} />
-              <img src={hotel7} />
+              <img src={shop3} className="w-1/2" />
+              <img src={shop4} className="w-1/2" />
             </div>
-            <div class="xl:grid xl:place-items-center xl:flex-wrap flex mb-8 gap-10">
-              <img src={hotel8} />
-              <img src={hotel9} />
-            </div>
-            <div class="xl:grid xl:place-items-center xl:flex-wrap flex mb-10 gap-10">
-              <img src={hotel10} />
-              <img src={hotel11} />
-            </div>
+            <img src={shop2} />
           </div>
         </div>
       </div>
