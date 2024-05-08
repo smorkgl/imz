@@ -91,12 +91,12 @@ export default function Nav() {
     <nav
       className={
         scroll
-          ? "sticky z-50 top-0 bg-blue-800 py-2 border-b-2 border-blue-950 shadow-2xl transition-all"
+          ? "sticky z-50 top-0 bg-red-700 py-2 border-b-2 border-red-950 shadow-2xl transition-all"
           : isTabletOrMobile
             ? opacity
-              ? "shadow-2xl header__mobile fixed right-0 top-0 left-0 z-50 bg-blue-800 transition-all "
-              : "shadow-2xl header__mobile fixed right-0 top-0 left-0 z-50 bg-blue-800/50 transition-all "
-            : "bg-blue-800"
+              ? "shadow-2xl header__mobile fixed right-0 top-0 left-0 z-50 bg-red-700 transition-all "
+              : "shadow-2xl header__mobile fixed right-0 top-0 left-0 z-50 bg-red-700/50 transition-all "
+            : "bg-red-700"
       }
     >
       {isTabletOrMobile && (
@@ -124,8 +124,8 @@ export default function Nav() {
           )}
 
           <Sidebar visible={visible} onHide={() => setVisible(false)}>
-            <div class="bg-blue-800 text-white" id="nav">
-              <div class="nav-links bg-blue-800">
+            <div class="bg-red-700 text-white" id="nav">
+              <div class="nav-links bg-red-700">
                 <ul class="pt-20 pb-10 flex flex-col gap-8  row align-items-center ">
                   <Link to={"/"}>
                     <p className="font-bold pl-5">ГЛАВНАЯ</p>
@@ -206,7 +206,7 @@ export default function Nav() {
           )}
           <div className="lg:mx-20 xl:justify-around xl:text-sm max-w-5xl width-full mx-auto container flex justify-between cursor-pointer text-white font-bold relative">
             <div
-              className="xl:-left-10 dots__container absolute h-12 leading-12 flex justify-center items-center cursor-pointer hover:bg-blue-700 hover:rounded px-4 transition-all"
+              className="xl:-left-10 dots__container absolute h-12 leading-12 flex justify-center items-center cursor-pointer hover:bg-red-600 hover:rounded px-4 transition-all"
               onClick={() => setIsOpen(true)}
             >
               <img src={dots} className="dots w-7" />
@@ -366,12 +366,12 @@ export default function Nav() {
               </Dialog>
             </Transition>
             <Link to={`/`}>
-              <div className="h-12 leading-12 flex justify-center items-center cursor-pointer hover:bg-blue-700 hover:rounded px-4 transition-all">
+              <div className="h-12 leading-12 flex justify-center items-center cursor-pointer hover:bg-red-600 hover:rounded px-4 transition-all">
                 <p>ГЛАВНАЯ</p>
               </div>
             </Link>
             <div
-              className="h-12 leading-12 flex justify-center items-center cursor-pointer relative hover:bg-blue-700 hover:rounded px-4 transition-all"
+              className="h-12 leading-12 flex justify-center items-center cursor-pointer relative hover:bg-red-600 hover:rounded px-4 transition-all"
               onMouseEnter={handleMouseEnterAbout}
               onMouseLeave={handleMouseLeaveAbout}
             >
@@ -427,7 +427,7 @@ export default function Nav() {
             </div>
 
             <div
-              className="h-12 leading-12 flex justify-center items-center cursor-pointer relative hover:bg-blue-700 hover:rounded px-4 transition-all"
+              className="h-12 leading-12 flex justify-center items-center cursor-pointer relative hover:bg-red-600 hover:rounded px-4 transition-all"
               onMouseEnter={handleMouseEnterManuf}
               onMouseLeave={handleMouseLeaveManuf}
             >
@@ -449,7 +449,7 @@ export default function Nav() {
               )}
             </div>
             <div
-              className="h-12 leading-12 flex justify-center items-center cursor-pointer relative hover:bg-blue-700 hover:rounded px-4 transition-all"
+              className="h-12 leading-12 flex justify-center items-center cursor-pointer relative hover:bg-red-600 hover:rounded px-4 transition-all"
               onMouseEnter={handleMouseEnterProd}
               onMouseLeave={handleMouseLeaveProd}
             >
@@ -476,23 +476,23 @@ export default function Nav() {
                 </div>
               )}
             </div>
-            <div className="h-12 leading-12 flex justify-center items-center cursor-pointer hover:bg-blue-700 hover:rounded px-4 transition-all">
+            <div className="h-12 leading-12 flex justify-center items-center cursor-pointer hover:bg-red-600 hover:rounded px-4 transition-all">
               <Link to={`/suppliers`}>
                 <p>ПОСТАВЩИКАМ</p>
               </Link>
             </div>
             <Link to={`/job`} style={{ textDecoration: "none" }}>
-              <div className="h-12 leading-12 flex justify-center items-center cursor-pointer hover:bg-blue-700 hover:rounded px-4 transition-all">
+              <div className="h-12 leading-12 flex justify-center items-center cursor-pointer hover:bg-red-600 hover:rounded px-4 transition-all">
                 <p>ВАКАНСИИ</p>
               </div>
             </Link>
             <Link to={`/contacts`} style={{ textDecoration: "none" }}>
-              <div className="h-12 leading-12 flex justify-center items-center cursor-pointer relative hover:bg-blue-700 hover:rounded px-4 transition-all">
+              <div className="h-12 leading-12 flex justify-center items-center cursor-pointer relative hover:bg-red-600 hover:rounded px-4 transition-all">
                 <p>КОНТАКТЫ</p>
               </div>
             </Link>
             <div
-              className="h-12 leading-12 flex justify-center items-center cursor-pointer relative hover:bg-blue-700 hover:rounded px-4 transition-all"
+              className="h-12 leading-12 flex justify-center items-center cursor-pointer relative hover:bg-red-600 hover:rounded px-4 transition-all"
               onMouseEnter={handleMouseEnterFaq}
               onMouseLeave={handleMouseLeaveFaq}
             >

@@ -39,9 +39,9 @@ export default function Login() {
   }
 
   return (
-    <div className="bg-[url('/src/img/test3.png')] bg-blue-800 h-screen bg-no-repeat bg-center bg-cover flex place-items-center">
+    <div className="bg-[url('/src/img/test3.png')] bg-red-700 h-screen bg-no-repeat bg-center bg-cover flex place-items-center">
       <Link to={`/`}>
-        <button className="absolute top-5 left-5 bg-white text-blue-800 hover:text-blue-700 transition-all">
+        <button className="absolute top-5 left-5 bg-white text-red-800 hover:text-red-700 transition-all">
           ВЕРНУТЬСЯ НАЗАД
         </button>
       </Link>
@@ -92,7 +92,7 @@ export default function Login() {
           </div>
           <div class="flex items-center justify-between">
             <button
-              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              class="bg-red-700 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="submit"
             >
               Вход

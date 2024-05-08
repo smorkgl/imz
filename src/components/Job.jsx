@@ -6,9 +6,9 @@ export default function Job() {
       <div className="md:bg-left job-container bg-[url('/src/img/rabota.jpg')] bg-cover bg-no-repeat bg-center flex place-items-center select-none cursor-default">
         <div className="md:justify-normal md:text-sm space-x-4 py-3 2xl max-w-7xl width-full mx-auto container mt-5 relative flex justify-end">
           <div className="md:!px-5 md:pr-0 job-container__inside text-white box-shadow rounded-3xl">
-            <div className="bg-blue-800/80 rounded-3xl p-5">
+            <div className="bg-blue-700/80 rounded-3xl p-5">
               <h1 className="xl:text-3xl">РАБОТА НА ИМЗ</h1>
-              <div className="work__line mt-5" />
+              <div className="work__line bg-blue-700 mt-5" />
               <br />
               <p>
                 Мы верим в проявление высочайшего уровня личной честности,

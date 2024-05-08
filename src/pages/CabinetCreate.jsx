@@ -104,9 +104,9 @@ export default function Cabinet() {
   };
 
   return (
-    <div className="md:px-5 px-20 bg-[url('/src/img/test3.png')] bg-blue-800 h-full bg-no-repeat bg-center bg-cover flex place-items-center h-100">
+    <div className="md:px-5 px-20 bg-[url('/src/img/test3.png')] bg-red-700 h-full bg-no-repeat bg-center bg-cover flex place-items-center h-100">
       <Link to={`/cabinet`}>
-        <button className="absolute top-5 left-5 bg-white text-blue-800 hover:text-blue-700 transition-all">
+        <button className="absolute top-5 left-5 bg-white text-red-800 hover:text-red-700 transition-all">
           ВЕРНУТЬСЯ НАЗАД
         </button>
       </Link>
@@ -135,7 +135,7 @@ export default function Cabinet() {
                   <button
                     class
                     onClick={onClickRemoveImage}
-                    className="mt-5 bg-red-800 text-white hover:text-gray-300 transition-all mb-5 text-sm"
+                    className="mt-5 bg-red-700 text-white hover:text-gray-300 transition-all mb-5 text-sm"
                   >
                     УДАЛИТЬ ПРЕВЬЮ
                   </button>
@@ -146,7 +146,7 @@ export default function Cabinet() {
           <div className="md:px-2 px-5 text-left">
             <button
               onClick={() => inputFileRef.current.click()}
-              className="bg-blue-800 text-white hover:text-gray-300 transition-all mb-5 text-sm"
+              className="bg-red-700 text-white hover:text-gray-300 transition-all mb-5 text-sm"
               ref={inputFileRef}
             >
               ЗАГРУЗИТЬ ПРЕВЬЮ
@@ -167,7 +167,7 @@ export default function Cabinet() {
                 onChange={(e) => setDate(e.target.value)}
                 mask="99.99.9999"
                 placeholder={NowDate}
-                className="block pl-2 p-1 text-gray-900 border border-gray-300 rounded-lg bg-white text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block pl-2 p-1 text-gray-900 border border-gray-300 rounded-lg bg-white text-base focus:ring-red-500 focus:border-red-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500"
               />
             </div>
             <div class="mb-5">
@@ -180,7 +180,7 @@ export default function Cabinet() {
               <input
                 type="text"
                 id="large-input"
-                class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-white text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-white text-base focus:ring-red-500 focus:border-red-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
               />
@@ -197,7 +197,7 @@ export default function Cabinet() {
                 maxLength={125}
                 type="text"
                 id="large-input"
-                class="block w-full p-3 text-gray-900 border border-gray-300 rounded-lg bg-white text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                class="block w-full p-3 text-gray-900 border border-gray-300 rounded-lg bg-white text-base focus:ring-red-500 focus:border-red-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500"
                 value={mini_title}
                 onChange={(e) => setMiniTitle(e.target.value)}
               />
@@ -212,11 +212,14 @@ export default function Cabinet() {
                 const data = editor.getData();
                 setDescription(data);
               }}
+              config={{
+                ckfinder: { uploadUrl: "http://localhost:3131/upload" },
+              }}
             />
 
             <button
               onClick={onClickCreateNews}
-              className="bg-blue-800 text-white hover:text-gray-300 transition-all mb-5 mt-5 text-sm"
+              className="bg-red-700 text-white hover:text-gray-300 transition-all mb-5 mt-5 text-sm"
             >
               {isEditing ? "СОХРАНИТЬ" : "ОПУБЛИКОВАТЬ"}
             </button>

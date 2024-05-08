@@ -72,14 +72,14 @@ export default function Header() {
                 </div>
               </div>
               <div className="grid place-items-center justify-items-start">
-                <div className="flex gap-1 cursor-pointer hover:underline hover:text-blue-800 contact-hover transition-all">
+                <div className="flex gap-1 cursor-pointer hover:underline hover:text-red-800 contact-hover transition-all">
                   <img
                     src={phone}
                     className="contact-img w-5 transition-transform"
                   />
                   <p>+7(863)-333-31-34</p>
                 </div>
-                <div className="flex gap-1 cursor-pointer hover:underline hover:text-blue-800 contact2-hover transition-all">
+                <div className="flex gap-1 cursor-pointer hover:underline hover:text-red-800 contact2-hover transition-all">
                   <img
                     src={email}
                     className="contact2-img w-5 transition-transform"
@@ -87,7 +87,7 @@ export default function Header() {
                   <p>imz@i-m-z.ru</p>
                 </div>
                 <p
-                  className="cursor-pointer hover:underline hover:text-blue-800"
+                  className="cursor-pointer hover:underline hover:text-red-800"
                   onClick={() => setIsOpen(true)}
                 >
                   Связаться с нами
@@ -130,7 +130,7 @@ export default function Header() {
                               <input
                                 type="name"
                                 id="name"
-                                class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dbg-gray-700 border-gray-600 placeholder-gray-400 text-black focus:ring-blue-500 focus:border-blue-500 shadow-sm-light"
+                                class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dbg-gray-700 border-gray-600 placeholder-gray-400 text-black focus:ring-red-500 focus:border-red-500 shadow-sm-light"
                                 required
                                 name="user_name"
                               />
@@ -146,7 +146,7 @@ export default function Header() {
                                 type="email"
                                 name="email"
                                 id="email"
-                                class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  border-gray-600 placeholder-gray-400 text-black focus:ring-blue-500 focus:border-blue-500 shadow-sm-light"
+                                class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5  border-gray-600 placeholder-gray-400 text-black focus:ring-red-500 focus:border-red-500 shadow-sm-light"
                                 placeholder="name@i-m-z.ru"
                                 required
                               />
@@ -162,7 +162,7 @@ export default function Header() {
                                 type="phone"
                                 id="phone"
                                 name="phone"
-                                class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 border-gray-600 placeholder-gray-400 text-black focus:ring-blue-500 focus:border-blue-500 shadow-sm-light"
+                                class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 border-gray-600 placeholder-gray-400 text-black focus:ring-red-500 focus:border-red-500 shadow-sm-light"
                                 required
                               />
                             </div>
@@ -176,13 +176,13 @@ export default function Header() {
                               id="message"
                               name="message"
                               rows="4"
-                              class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 border-gray-600 placeholder-gray-400 text-black focus:ring-blue-500 :focus:border-blue-500"
+                              class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-red-500 focus:border-red-500 border-gray-600 placeholder-gray-400 text-black focus:ring-red-500 :focus:border-red-500"
                               placeholder="Оставьте сообщение..."
                             ></textarea>
                             <button
                               type="submit"
                               value="Send"
-                              class="mt-5 text-white   bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
+                              class="mt-5 text-white   bg-red-700 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-red-700 hover:bg-red-700 focus:ring-red-800"
                             >
                               Отправить
                             </button>
@@ -194,7 +194,7 @@ export default function Header() {
                 </Transition>
               </div>
             </div>
-            <div className="grid place-items-center hover: shadow-blue-800">
+            <div className="grid place-items-center hover: shadow-red-800">
               {toggleDark ? (
                 <img
                   src={moon}
@@ -223,7 +223,7 @@ export default function Header() {
               </button>
               {isDropdownVisibleLang && (
                 <div
-                  class="language-open absolute z-50 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 transition animate-fade animate-duration-[200ms] cursor-pointer hover:bg-blue-800 hover:text-white"
+                  class="language-open absolute z-50 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 transition animate-fade animate-duration-[200ms] cursor-pointer hover:bg-red-700 hover:text-white"
                   id="language-dropdown-menu"
                 >
                   <ul class="py-2 font-medium">

@@ -101,7 +101,7 @@ export default function Breadcumb() {
             <Link to={`/`}>
               <a
                 href="#"
-                class="text-gray-600 hover:text-blue-800 transition-all"
+                class="text-gray-600 hover:text-red-800 transition-all"
               >
                 Главная
               </a>
@@ -112,7 +112,7 @@ export default function Breadcumb() {
             <Link to={`${pathLink}`}>
               <a
                 href="#"
-                class="text-gray-600 hover:text-blue-800 transition-all"
+                class="text-gray-600 hover:text-red-800 transition-all"
               >
                 {path}
               </a>

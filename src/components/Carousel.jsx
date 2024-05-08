@@ -27,10 +27,10 @@ export default function Carousel() {
             className="relative"
             infinite="true"
           >
-            <ButtonNext className="md:p-0 absolute z-40 carousel-button1-mobile bg-blue-800/70 transition-all cursor-pointer">
+            <ButtonNext className="md:p-0 absolute z-40 carousel-button1-mobile bg-red-700/70 transition-all cursor-pointer">
               <img src={arrow} className="md:w-8 w-10 arrow2" />
             </ButtonNext>
-            <ButtonBack className="md:p-0  absolute z-40 carousel-button2-mobile bg-blue-800/70 transition-all cursor-pointer">
+            <ButtonBack className="md:p-0  absolute z-40 carousel-button2-mobile bg-red-700/70 transition-all cursor-pointer">
               <img src={arrow} className="md:w-8 w-10 arrow1" />
             </ButtonBack>
             <Slider className="h-60">
@@ -82,10 +82,10 @@ export default function Carousel() {
           isPlaying={true}
           className="relative"
         >
-          <ButtonNext className="md:p-0 absolute z-40 carousel-button1 bg-blue-800/70 transition-all cursor-pointer">
+          <ButtonNext className="md:p-0 absolute z-40 carousel-button1 bg-red-700/70 transition-all cursor-pointer">
             <img src={arrow} className="md:w-8 w-10 arrow2" />
           </ButtonNext>
-          <ButtonBack className="md:p-0  absolute z-40 carousel-button2 bg-blue-800/70 transition-all cursor-pointer">
+          <ButtonBack className="md:p-0  absolute z-40 carousel-button2 bg-red-700/70 transition-all cursor-pointer">
             <img src={arrow} className="md:w-8 w-10 arrow1" />
           </ButtonBack>
           <Slider className="h-96">

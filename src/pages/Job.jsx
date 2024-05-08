@@ -82,43 +82,43 @@ export default function Job() {
           {isDropdownVisibleJobSort && (
             <div className="job__border_container w-60 text-sm mt-2 rounded-lg absolute bg-white z-50">
               <ul>
-                <li className="p-0 pl-4 py-1 cursor-pointer border-b hover:bg-blue-800 hover:text-white">
-                  Все сферы деятльности
+                <li className="p-0 pl-4 py-1 cursor-pointer border-b hover:bg-red-700 hover:text-white">
+                  Все сферы деятельности
                 </li>
-                <li className="p-0 pl-4 py-1 cursor-pointer border-b hover:bg-blue-800 hover:text-white">
+                <li className="p-0 pl-4 py-1 cursor-pointer border-b hover:bg-red-700 hover:text-white">
                   Производство
                 </li>
-                <li className="p-0 pl-4 py-1 cursor-pointer border-b hover:bg-blue-800 hover:text-white">
+                <li className="p-0 pl-4 py-1 cursor-pointer border-b hover:bg-red-700 hover:text-white">
                   Информационные технологии
                 </li>
-                <li className="p-0 pl-4 py-1 cursor-pointer border-b hover:bg-blue-800 hover:text-white">
+                <li className="p-0 pl-4 py-1 cursor-pointer border-b hover:bg-red-700 hover:text-white">
                   Производство
                 </li>
-                <li className="p-0 pl-4 py-1 cursor-pointer border-b hover:bg-blue-800 hover:text-white">
+                <li className="p-0 pl-4 py-1 cursor-pointer border-b hover:bg-red-700 hover:text-white">
                   Бухгалтерия, учёт, финансы
                 </li>
-                <li className="p-0 pl-4 py-1 cursor-pointer border-b hover:bg-blue-800 hover:text-white">
+                <li className="p-0 pl-4 py-1 cursor-pointer border-b hover:bg-red-700 hover:text-white">
                   Безопасность
                 </li>
-                <li className="p-0 pl-4 py-1 cursor-pointer border-b hover:bg-blue-800 hover:text-white">
+                <li className="p-0 pl-4 py-1 cursor-pointer border-b hover:bg-red-700 hover:text-white">
                   Продажи
                 </li>
-                <li className="p-0 pl-4 py-1 cursor-pointer border-b hover:bg-blue-800 hover:text-white">
+                <li className="p-0 pl-4 py-1 cursor-pointer border-b hover:bg-red-700 hover:text-white">
                   Транспорт, логистика
                 </li>
-                <li className="p-0 pl-4 py-1 cursor-pointer border-b hover:bg-blue-800 hover:text-white">
+                <li className="p-0 pl-4 py-1 cursor-pointer border-b hover:bg-red-700 hover:text-white">
                   Медицина
                 </li>
-                <li className="p-0 pl-4 py-1 cursor-pointer border-b hover:bg-blue-800 hover:text-white">
+                <li className="p-0 pl-4 py-1 cursor-pointer border-b hover:bg-red-700 hover:text-white">
                   Маркетинг, реклама, PR
                 </li>
-                <li className="p-0 pl-4 py-1 cursor-pointer border-b hover:bg-blue-800 hover:text-white">
+                <li className="p-0 pl-4 py-1 cursor-pointer border-b hover:bg-red-700 hover:text-white">
                   Руководство/развитие предприятия
                 </li>
-                <li className="p-0 pl-4 py-1 cursor-pointer border-b hover:bg-blue-800 hover:text-white">
+                <li className="p-0 pl-4 py-1 cursor-pointer border-b hover:bg-red-700 hover:text-white">
                   Управление проектом
                 </li>
-                <li className="p-0 pl-4 py-1 cursor-pointer border-b hover:bg-blue-800 hover:text-white">
+                <li className="p-0 pl-4 py-1 cursor-pointer border-b hover:bg-red-700 hover:text-white">
                   Управление персоналом
                 </li>
               </ul>
@@ -130,7 +130,7 @@ export default function Job() {
           ) : (
             strAscending.map((vacancy, id) => (
               <div
-                className="md:p-5 bg-white text-black px-10 py-5 pr-32 mt-5 shadow-xl shadow-blue-800/10 rounded-xl relative cursor-pointer relative"
+                className="md:p-5 bg-white text-black px-10 py-5 pr-32 mt-5 shadow-xl shadow-red-800/10 rounded-xl relative cursor-pointer relative"
                 key={id}
                 onClick={() => setInfo(id)}
               >
@@ -162,7 +162,7 @@ export default function Job() {
                     <p className="font-semibold">Требования:</p>
                     {vacancy.snippet.requirement}
                     <div>
-                      <button className="bg-blue-800 text-white hover:bg-white hover:text-black font-semibold py-2 px-4 border border-black hover:border-black transition-all rounded mt-5">
+                      <button className="bg-red-700 text-white hover:bg-white hover:text-black font-semibold py-2 px-4 border border-black hover:border-black transition-all rounded mt-5">
                         <a href={vacancy.alternate_url}>ОТПРАВИТЬ РЕЗЮМЕ</a>
                       </button>
                     </div>

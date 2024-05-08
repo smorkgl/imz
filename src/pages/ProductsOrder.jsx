@@ -58,7 +58,7 @@ export default function ProductsOrder() {
                   type="text"
                   id="name"
                   placeholder="Введите своё имя"
-                  class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                  class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-red-500 focus:border-red-500"
                 />
                 <div id="nameValidation" class="hidden text-red-600 text-sm">
                   Пожалуйста введите своё ФИО
@@ -76,7 +76,7 @@ export default function ProductsOrder() {
                   id="email"
                   name="email"
                   placeholder="Введите свой E-mail"
-                  class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                  class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-red-500 focus:border-red-500"
                 />
                 <div id="emailValidation" class="hidden text-red-600 text-sm">
                   Пожалуйста введите свой ящик электронной почты.
@@ -94,7 +94,7 @@ export default function ProductsOrder() {
                   id="phone"
                   name="phone"
                   placeholder="Введите свой номер телефона"
-                  class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                  class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-red-500 focus:border-red-500"
                 />
                 <div id="emailValidation" class="hidden text-red-600 text-sm">
                   Пожалуйста введите свой ящик электронной почты.
@@ -113,7 +113,7 @@ export default function ProductsOrder() {
                   name="message"
                   placeholder="Введите своё сообщение"
                   rows="5"
-                  class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                  class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-red-500 focus:border-red-500"
                 ></textarea>
                 <div id="messageValidation" class="hidden text-red-600 text-sm">
                   Пожалуйста введите своё сообщение
@@ -123,7 +123,7 @@ export default function ProductsOrder() {
                 <button
                   type="submit"
                   value="Send"
-                  class="w-full bg-blue-800 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-900 transition duration-300"
+                  class="w-full bg-red-700 text-white font-semibold py-2 px-4 rounded-md hover:bg-red-900 transition duration-300"
                 >
                   Отправить
                 </button>

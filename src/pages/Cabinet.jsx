@@ -54,16 +54,16 @@ export default function Cabinet() {
   };
 
   return (
-    <div className="md:px-5 px-20 bg-[url('/src/img/test3.png')] bg-blue-800 h-full bg-no-repeat bg-center bg-cover flex place-items-center h-100 flex-col">
+    <div className="md:px-5 px-20 bg-[url('/src/img/test3.png')] bg-red-700 h-full bg-no-repeat bg-center bg-cover flex place-items-center h-100 flex-col">
       <div className="flex justify-between gap-5 top-0">
         <Link to={`/`}>
-          <button className="absolute left-0 m-5 md:text-xs bg-white text-blue-800 hover:text-blue-700 transition-all">
+          <button className="absolute left-0 m-5 md:text-xs bg-white text-red-800 hover:text-red-700 transition-all">
             ВЕРНУТЬСЯ НАЗАД
           </button>
         </Link>
         <button
           onClick={onClickLogout}
-          className="absolute right-0 m-5 md:text-xs bg-white text-red-800 hover:text-blue-700 transition-all"
+          className="absolute right-0 m-5 md:text-xs bg-white text-red-800 hover:text-red-700 transition-all"
         >
           ВЫЙТИ ИЗ АККАУНТА
         </button>
@@ -75,14 +75,14 @@ export default function Cabinet() {
           </button>
         </Link>
         <Link to={`/cabinet/upload`}>
-          <button className="bg-blue-600 text-white font-bold">
+          <button className="bg-red-700 text-white font-bold">
             ЗАГРУЗИТЬ ФОТО В ФОТОГАЛЕРЕЮ
           </button>
         </Link>
       </div>
       <div class="md:mt-0 md:mt-32   container my-12 mx-auto md:px-6 bg-white pt-10 relative mt-28 min-h-screen">
         <div class="xl:px-2 pt-10 2xl max-w-7xl width-full mx-auto container">
-          <section class="mb-32 text-center !text-left">
+          <section class="p-2 mb-32 text-center !text-left">
             {isPostsLoading
               ? items.map((item, index) => (
                   <div
@@ -159,13 +159,13 @@ export default function Cabinet() {
                       <div className=" md:mx-auto flex flex-col my-auto gap-5">
                         <button
                           onClick={() => onClickEditNews(news.id)}
-                          className="bg-blue-800 text-white "
+                          className="bg-blue-700 text-white "
                         >
                           РЕДАКТИРОВАТЬ
                         </button>
                         <button
                           onClick={() => onClickDeleteNews(news.id)}
-                          className="bg-red-800 text-white"
+                          className="bg-red-700 text-white"
                         >
                           УДАЛИТЬ
                         </button>
@@ -187,7 +187,7 @@ export default function Cabinet() {
                         </Link>
                       </div>
 
-                      <div class=" mb-6 mr-auto w-full shrink-0 grow-0 basis-auto pl-5 !mb-0 !w-9/12 !w-7/12">
+                      <div class=" mb-6 mr-auto w-full  grow-0 basis-auto pl-5 !mb-0 !w-9/12 !w-7/12">
                         <Link to={`/news/${news.id}`}>
                           <h5 class="mb-3 text-lg font-bold">{news.title}</h5>
                         </Link>

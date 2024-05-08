@@ -33,11 +33,11 @@ export default function ContactUsMobile() {
           <h1 className="text-lg font-medium">Связаться с нами</h1>
           <p className="pt-2">Заполните форму, и мы свяжемся с вами!</p>
           <p>Контакты для связи:</p>
-          <div className="pt-4 flex gap-1 cursor-pointer hover:underline hover:text-blue-800 contact-hover transition-all">
+          <div className="pt-4 flex gap-1 cursor-pointer hover:underline hover:text-red-800 contact-hover transition-all">
             <img src={phone} className="contact-img w-5 transition-transform" />
             <p>+7(863)-333-31-34</p>
           </div>
-          <div className="pt-1 flex gap-1 cursor-pointer hover:underline hover:text-blue-800 contact2-hover transition-all">
+          <div className="pt-1 flex gap-1 cursor-pointer hover:underline hover:text-red-800 contact2-hover transition-all">
             <img
               src={email}
               className="contact2-img w-5 transition-transform"
@@ -54,7 +54,7 @@ export default function ContactUsMobile() {
           </label>
           <input
             id="name"
-            class="!border-2 border-black shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dbg-gray-700 border-gray-600 placeholder-gray-400 text-black focus:ring-blue-500 focus:border-blue-500 shadow-sm-light"
+            class="!border-2 border-black shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dbg-gray-700 border-gray-600 placeholder-gray-400 text-black focus:ring-red-500 focus:border-red-500 shadow-sm-light"
             required
             type="text"
             name="user_name"
@@ -70,7 +70,7 @@ export default function ContactUsMobile() {
           <input
             type="email"
             id="email"
-            class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  border-gray-600 placeholder-gray-400 text-black focus:ring-blue-500 focus:border-blue-500 shadow-sm-light"
+            class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5  border-gray-600 placeholder-gray-400 text-black focus:ring-red-500 focus:border-red-500 shadow-sm-light"
             placeholder="name@i-m-z.ru"
             required
             name="email"
@@ -87,7 +87,7 @@ export default function ContactUsMobile() {
             type="phone"
             name="phone"
             id="phone"
-            class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 border-gray-600 placeholder-gray-400 text-black focus:ring-blue-500 focus:border-blue-500 shadow-sm-light"
+            class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 border-gray-600 placeholder-gray-400 text-black focus:ring-red-500 focus:border-red-500 shadow-sm-light"
             required
           />
         </div>
@@ -101,13 +101,13 @@ export default function ContactUsMobile() {
           id="message"
           name="message"
           rows="4"
-          class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 border-gray-600 placeholder-gray-400 text-black focus:ring-blue-500 :focus:border-blue-500"
+          class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-red-500 focus:border-red-500 border-gray-600 placeholder-gray-400 text-black focus:ring-red-500 :focus:border-red-500"
           placeholder="Оставьте сообщение..."
         ></textarea>
         <button
           type="submit"
           value="Send"
-          class="mt-5 text-white   bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
+          class="mt-5 text-white   bg-red-700 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-red-700 hover:bg-red-700 focus:ring-red-800"
         >
           Отправить
         </button>
