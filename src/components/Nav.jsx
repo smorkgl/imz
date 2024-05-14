@@ -155,12 +155,7 @@ export default function Nav() {
                     <Link to={"/profile_pipe"}>
                       <p>Труба профильная</p>
                     </Link>
-                    <Link to={"/metal_beams"}>
-                      <p>Балки</p>
-                    </Link>
-                    <Link to={"/metal_structure"}>
-                      <p>Металлоконструкции</p>
-                    </Link>
+
                     <Link to={"/products"}>
                       <p>Продукция</p>
                     </Link>
@@ -289,16 +284,6 @@ export default function Nav() {
                           <Link to={`/profile_pipe`}>
                             <div className="cursor-pointer hover:bg-gray-100 p-3">
                               Труба профильная
-                            </div>
-                          </Link>
-                          <Link to={`/metal_beams`}>
-                            <div className="cursor-pointer hover:bg-gray-100 p-3">
-                              Балки
-                            </div>
-                          </Link>
-                          <Link to={`/metal_structure`}>
-                            <div className="cursor-pointer hover:bg-gray-100 p-3">
-                              Металлоконструкции
                             </div>
                           </Link>
                           <Link to={`/products`}>
@@ -460,12 +445,7 @@ export default function Nav() {
                     <Link to={`/profile_pipe`}>
                       <li className="li-blue__hover">Труба профильная</li>
                     </Link>
-                    <Link to={`/metal_beams`}>
-                      <li className="li-blue__hover">Балки</li>
-                    </Link>
-                    <Link to={`/metal_structure`}>
-                      <li className="li-blue__hover">Металлоконструкции</li>
-                    </Link>
+
                     <Link to={`/products`}>
                       <li className="li-blue__hover">Продукция</li>
                     </Link>

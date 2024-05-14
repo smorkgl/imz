@@ -19,8 +19,6 @@ import Parking from "./pages/Parking.jsx";
 import Capacity from "./pages/Capacity.jsx";
 import Certificates from "./pages/Certificates.jsx";
 import ProfilePipe from "./pages/ProfilePipe.jsx";
-import MetalBeams from "./pages/MetalBeams.jsx";
-import MetalStructure from "./pages/MetalStructure.jsx";
 import Products from "./pages/Products.jsx";
 import ProductsOrder from "./pages/ProductsOrder.jsx";
 import Suppliers from "./pages/Suppliers.jsx";
@@ -93,14 +91,6 @@ const router = createBrowserRouter([
   {
     path: "profile_pipe",
     element: <ProfilePipe />,
-  },
-  {
-    path: "metal_beams",
-    element: <MetalBeams />,
-  },
-  {
-    path: "metal_structure",
-    element: <MetalStructure />,
   },
   {
     path: "products",
