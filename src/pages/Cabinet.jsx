@@ -80,8 +80,8 @@ export default function Cabinet() {
           </button>
         </Link>
       </div>
-      <div class="md:mt-0 md:mt-32   container my-12 mx-auto md:px-6 bg-white pt-10 relative mt-28 min-h-screen">
-        <div class="xl:px-2 pt-10 2xl max-w-7xl width-full mx-auto container">
+      <div class="md:mt-0 md:mt-32   container my-12 mx-auto md:px-2 bg-white pt-10 relative mt-28 min-h-screen">
+        <div class="pt-10 2xl max-w-7xl width-full mx-auto container">
           <section class="p-2 mb-32 text-center !text-left">
             {isPostsLoading
               ? items.map((item, index) => (
@@ -89,7 +89,7 @@ export default function Cabinet() {
                     key={index}
                     class="mb-12 flex flex-wrap animate-pulse relative"
                   >
-                    <div class="mb-6 ml-auto w-full shrink-0 grow-0 basis-auto px-3 md:mb-0 md:w-3/12 ">
+                    <div class="md:!w-full mb-6 ml-auto w-full shrink-0 grow-0 basis-auto px-3 md:mb-0 md:w-3/12 ">
                       <div class="grid bg-gray-300 rounded-lg h-36 w-36 place-items-center news__img-container w-full">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -107,7 +107,7 @@ export default function Cabinet() {
                         </svg>
                       </div>
                     </div>
-                    <div class="mb-6 mr-auto w-full shrink-0 grow-0 basis-auto px-3">
+                    <div class="md:mt-3 mb-6 mr-auto w-full shrink-0 grow-0 basis-auto px-3">
                       <div>
                         <div class="block w-56 h-3 mb-4 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit w-full">
                           &nbsp;
@@ -187,7 +187,7 @@ export default function Cabinet() {
                         </Link>
                       </div>
 
-                      <div class=" mb-6 mr-auto w-full  grow-0 basis-auto pl-5 !mb-0 !w-9/12 !w-7/12">
+                      <div class="md:pl-0 md:!w-full mb-6 mr-auto w-full  grow-0 basis-auto pl-5 !mb-0 !w-9/12 !w-7/12">
                         <Link to={`/news/${news.id}`}>
                           <h5 class="mb-3 text-lg font-bold">{news.title}</h5>
                         </Link>

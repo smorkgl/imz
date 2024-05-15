@@ -1,10 +1,12 @@
 import { YMaps, Map } from "@pbe/react-yandex-maps";
 import { useMediaQuery } from "react-responsive";
+import React, { useRef } from "react";
 
 export default function Wherewe() {
+  const whereweRef = useRef(null);
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 767px)" });
   return (
-    <div className="md:mt-0 relative mt-20">
+    <div ref={whereweRef} className="md:mt-0 relative mt-20">
       {!isTabletOrMobile && (
         <div className="wherewe__before absolute bg-blue-800 z-10 h-full"></div>
       )}

@@ -213,7 +213,7 @@ export default function Cabinet() {
                 setDescription(data);
               }}
               config={{
-                ckfinder: { uploadUrl: "http://localhost:3131/upload" },
+                ckfinder: { uploadUrl: "https://imz-server.vercel.app/upload" },
               }}
             />
 

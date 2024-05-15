@@ -365,17 +365,17 @@ export default function Nav() {
                 <div className="dropdown-menu animate-fade-up animate-duration-[300ms] absolute z-50 text-black">
                   <ul>
                     <Link to={`/news`}>
-                      <li className="li-blue__hover">Новости</li>
+                      <li className="li-blue__hover_nav">Новости</li>
                     </Link>
                     <Link to={`/about`}>
-                      <li className="li-blue__hover">О нас</li>
+                      <li className="li-blue__hover_nav">О нас</li>
                     </Link>
                     <Link to={`/projects`}>
-                      <li className="li-blue__hover">Проекты</li>
+                      <li className="li-blue__hover_nav">Проекты</li>
                     </Link>
 
                     <li
-                      className="li-blue__hover"
+                      className="li-blue__hover_nav"
                       onMouseEnter={handleMouseEnterDosug}
                       onMouseLeave={handleMouseLeaveDosug}
                     >
@@ -392,19 +392,19 @@ export default function Nav() {
                 >
                   <ul>
                     <Link to={`/hotel`}>
-                      <li className="li-blue__hover">Гостиница</li>
+                      <li className="li-blue__hover_nav">Гостиница</li>
                     </Link>
                     <Link to={`/cafe`}>
-                      <li className="li-blue__hover">Кафе</li>
+                      <li className="li-blue__hover_nav">Кафе</li>
                     </Link>
                     <Link to={`/shop`}>
-                      <li className="li-blue__hover">Магазин</li>
+                      <li className="li-blue__hover_nav">Магазин</li>
                     </Link>
                     <Link to={`/kitchen`}>
-                      <li className="li-blue__hover">Столовая</li>
+                      <li className="li-blue__hover_nav">Столовая</li>
                     </Link>
                     <Link to={`/parking`}>
-                      <li className="li-blue__hover">Стоянка</li>
+                      <li className="li-blue__hover_nav">Стоянка</li>
                     </Link>
                   </ul>
                 </div>
@@ -422,12 +422,12 @@ export default function Nav() {
                 <div className="dropdown-menu animate-fade-up animate-duration-[300ms] absolute z-50 text-black">
                   <ul>
                     <Link to={`/capacity`}>
-                      <li className="li-blue__hover">
+                      <li className="li-blue__hover_nav">
                         Производственные мощности
                       </li>
                     </Link>
                     <Link to={`/certificates`}>
-                      <li className="li-blue__hover">Сертификаты</li>
+                      <li className="li-blue__hover_nav">Сертификаты</li>
                     </Link>
                   </ul>
                 </div>
@@ -443,14 +443,19 @@ export default function Nav() {
                 <div className="dropdown-menu animate-fade-up animate-duration-[300ms] absolute z-50 text-black">
                   <ul>
                     <Link to={`/profile_pipe`}>
-                      <li className="li-blue__hover">Труба профильная</li>
+                      <li className="li-blue__hover_nav">Труба профильная</li>
+                    </Link>
+                    <Link to={`/metal_equipment`}>
+                      <li className="li-blue__hover_nav">
+                        Металлическое оборудование
+                      </li>
                     </Link>
 
                     <Link to={`/products`}>
-                      <li className="li-blue__hover">Продукция</li>
+                      <li className="li-blue__hover_nav">Продукция</li>
                     </Link>
                     <Link to={`/products_order`}>
-                      <li className="li-blue__hover">Заказ продукции</li>
+                      <li className="li-blue__hover_nav">Заказ продукции</li>
                     </Link>
                   </ul>
                 </div>
@@ -481,10 +486,10 @@ export default function Nav() {
                 <div className="dropdown-menu animate-fade-up animate-duration-[300ms] absolute z-50 text-black">
                   <ul>
                     <Link to={`/gost`} style={{ textDecoration: "none" }}>
-                      <li className="li-blue__hover">ГОСТ продукции</li>
+                      <li className="li-blue__hover_nav">ГОСТ продукции</li>
                     </Link>
                     <Link to={`/calculator`} style={{ textDecoration: "none" }}>
-                      <li className="li-blue__hover">
+                      <li className="li-blue__hover_nav">
                         Калькулятор металлопроката
                       </li>
                     </Link>

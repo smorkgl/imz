@@ -93,6 +93,12 @@ li {
 }
 
 .li-blue__hover:hover {
+  background: #1e40af;
+  cursor: pointer;
+  color: #fff;
+}
+
+.li-blue__hover_nav:hover {
   background: #991b1b;
   cursor: pointer;
   color: #fff;
@@ -525,6 +531,7 @@ li {
 .pagination {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .pagination li {

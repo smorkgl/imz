@@ -131,7 +131,7 @@ export default function News() {
                       </Link>
                     </div>
 
-                    <div class=" mb-6 mr-auto w-full shrink-0 grow-0 basis-auto px-10 !mb-0 !w-9/12 !w-7/12">
+                    <div class="md:w-100 md:px-0 md:mr-0 md:!w-full mb-6 mr-auto w-full shrink-0 grow-0 basis-auto px-10 !mb-0 !w-9/12 !w-7/12">
                       <Link to={`/news/${news.id}`}>
                         <h5 class="mb-3 text-lg font-bold">{news.title}</h5>
                       </Link>

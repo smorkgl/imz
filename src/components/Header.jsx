@@ -10,7 +10,6 @@ import sun from "../img/sun.svg";
 import moon from "../img/moon.svg";
 import close from "../img/close.svg";
 import emailjs from "@emailjs/browser";
-import ScrollContext from "../ScrollContext";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,8 +42,6 @@ export default function Header() {
       );
   };
 
-  const scrolltoWherewe = useContext(ScrollContext);
-
   return (
     <header className="md:hidden">
       <div className="space-x-4 py-3 2xl max-w-7xl width-full mx-auto container">
@@ -58,10 +55,7 @@ export default function Header() {
           </div>
           <div className="xl:gap-10 flex gap-20 text-sm font-medium">
             <div className="xl:gap-10 flex gap-20">
-              <div
-                onClick={scrolltoWherewe}
-                className="grid place-items-center"
-              >
+              <div className="grid place-items-center">
                 <div className="flex gap-3 cursor-default address-hover">
                   <img src={geo} className="w-8 geo-img transition-transform" />
                   <p>

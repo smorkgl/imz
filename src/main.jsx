@@ -29,6 +29,7 @@ import CabinetUpload from "./pages/CabinetUpload.jsx";
 import Shop from "./pages/Shop.jsx";
 import Kitchen from "./pages/Kitchen.jsx";
 import Cafe from "./pages/Cafe.jsx";
+import MetalEquipment from "./pages/MetalEquipment.jsx";
 
 const router = createBrowserRouter([
   {
@@ -131,6 +132,10 @@ const router = createBrowserRouter([
   {
     path: "kitchen",
     element: <Kitchen />,
+  },
+  {
+    path: "metal_equipment",
+    element: <MetalEquipment />,
   },
 ]);
 

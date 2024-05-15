@@ -146,11 +146,11 @@ export default function Main() {
 
           {isTabletOrMobile && (
             <div className="flex-col lg:justify-normal xl:gap-5 xl:justify-around flex flex-wrap gap-20 mt-5">
-              {isPostsLoading
+              {!isPostsLoading
                 ? items.map((item, index) => (
                     <div
                       key={index}
-                      class="max-w-sm bg-white border border-gray-200 rounded-lg shadow animate-pulse"
+                      class="flex max-w-sm bg-white border border-gray-200 rounded-lg shadow animate-pulse"
                     >
                       <div className="relative">
                         <div className="relative">
@@ -517,9 +517,18 @@ export default function Main() {
             </div>
           )}
           {isTabletOrMobile && (
-            <div className="mt-5">
-              <div className="mx-auto flex md:gap-1 gap-2 cursor-pointer w-max">
+            <div className="mt-5 relative">
+              <div className=" mx-auto flex md:gap-1 gap-2 cursor-pointer w-max place-items-center">
                 <p className="text-lg font-medium">Фотогалерея:</p>
+                <p
+                  onClick={() => {
+                    handleImageGallery();
+                    setIsOpen(true);
+                  }}
+                  className="text-xs absolute font-medium right-3 -bottom-12 bg-red-700 text-white rounded-lg p-2"
+                >
+                  просмотреть все:
+                </p>
               </div>
               <CarouselProvider
                 className="pt-5"
@@ -668,30 +677,34 @@ export default function Main() {
                   className="main__hover_container_img w-4 transition-all"
                 />
               </div>
-              <Transition appear show={isOpen} as={Fragment}>
-                <Dialog as="div" open={isOpen} onClose={() => setIsOpen(false)}>
-                  <Transition.Child
-                    as={Fragment}
-                    enter="ease-out duration-200"
-                    enterFrom="opacity-0"
-                    enterTo="opacity-100"
-                    leave="ease-in duration-200"
-                    leaveFrom="opacity-100"
-                    leaveTo="opacity-0"
-                  >
-                    <div className="fixed left-0 right-0 top-0 bottom-0 flex items-center justify-center bg-black/60  z-50">
-                      <img
-                        src={close}
-                        className="absolute w-5 right-7 top-7 z-50 cursor-pointer hover:w-6 hover:right-7 z-50 hover:top-7 transition-all"
-                        onClick={() => setIsOpen(false)}
-                      />
-                      <Dialog.Panel className="bg-white fixed top-0 left-0 right-0 bottom-0 m-5 overflow-y-scroll scrollbar-width rounded-lg">
-                        {isLoading ? (
-                          <div className="m-10">
-                            <h1 className="text-5xl">Загрузка...</h1>
-                          </div>
-                        ) : (
-                          <div className="grid grid-cols-4 md:grid-cols-3 gap-8 p-10">
+            </div>
+          )}
+          <Transition appear show={isOpen} as={Fragment}>
+            <Dialog as="div" open={isOpen} onClose={() => setIsOpen(false)}>
+              <Transition.Child
+                as={Fragment}
+                enter="ease-out duration-200"
+                enterFrom="opacity-0"
+                enterTo="opacity-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100"
+                leaveTo="opacity-0"
+              >
+                <div className=" fixed left-0 right-0 top-0 bottom-0 flex items-center justify-center bg-black/60  z-50">
+                  <Dialog.Panel className="overflow-y-scroll md:m-2 md:mt-20 bg-white fixed top-0 left-0 right-0 bottom-0 m-5  rounded-lg">
+                    <div>
+                      {isLoading ? (
+                        <div className="m-10">
+                          <h1 className="text-5xl">Загрузка...</h1>
+                        </div>
+                      ) : (
+                        <div className="">
+                          <div className="md:pt-10 md:p-2 md:grid-cols-1 md: grid grid-cols-4 gap-8 p-10  ">
+                            <img
+                              src={close}
+                              className="md:top-0 md:m-1 absolute w-5 right-0 top-0 z-50 cursor-pointer m-3 z-50 transition-all"
+                              onClick={() => setIsOpen(false)}
+                            />
                             {photoLinks.map((link, index) => (
                               <img
                                 key={index}
@@ -701,14 +714,14 @@ export default function Main() {
                               />
                             ))}
                           </div>
-                        )}
-                      </Dialog.Panel>
+                        </div>
+                      )}
                     </div>
-                  </Transition.Child>
-                </Dialog>
-              </Transition>
-            </div>
-          )}
+                  </Dialog.Panel>
+                </div>
+              </Transition.Child>
+            </Dialog>
+          </Transition>
           {!isTabletOrMobile && (
             <div className="mt-5">
               <div className="flex md:gap-1 gap-2 cursor-pointer w-max">

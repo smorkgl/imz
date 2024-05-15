@@ -13,15 +13,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchAuthMe } from "./redux/slices/auth";
 import { useMediaQuery } from "react-responsive";
 import ContactUsMobile from "./components/ContactUsMobile.jsx";
-import ScrollContext from "./ScrollContext";
 
 function App() {
-  const myRef = useRef(null);
-
-  const scrolltoWherewe = () => {
-    myRef.current.scrollIntoView({ behavior: "smooth" });
-  };
-
   // Проверка на авторизацию
   const dispatch = useDispatch();
 
@@ -31,34 +24,38 @@ function App() {
 
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 767px)" });
 
+  const whereweRef = useRef(null);
+
+  const handleScrollToWherewe = () => {
+    whereweRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <ScrollContext.Provider value={scrolltoWherewe}>
-      <div>
-        {/* <Preloader /> */}
-        <div className="font-['Ubuntu'] relative">
-          <Header handleScroll={scrolltoWherewe} />
-          <Nav />
+    <div>
+      {/* <Preloader /> */}
+      <div className="font-['Ubuntu'] relative">
+        <Header />
+        <Nav />
+        <div></div>
+        <Carousel />
+        <TopMain />
+        <Main />
+        {isTabletOrMobile && <ContactUsMobile />}
+        {isTabletOrMobile ? (
+          <div>
+            <Job />
+            <Wherewe />
+          </div>
+        ) : (
+          <div ref={whereweRef}>
+            <Wherewe />
+            <Job />
+          </div>
+        )}
 
-          <Carousel />
-          <TopMain />
-          <Main />
-          {isTabletOrMobile && <ContactUsMobile />}
-          {isTabletOrMobile ? (
-            <div>
-              <Job />
-              <Wherewe />
-            </div>
-          ) : (
-            <div>
-              <Wherewe />
-              <Job />
-            </div>
-          )}
-
-          <Footer />
-        </div>
+        <Footer />
       </div>
-    </ScrollContext.Provider>
+    </div>
   );
 }
 

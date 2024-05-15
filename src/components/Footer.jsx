@@ -49,7 +49,6 @@ export default function Footer() {
                     Труба профильная
                   </li>
                 </Link>
-                        fill-rule="evenodd"
                 <Link
                   to={`/products`}
                   class="inline-block text-base font-normal text-gray-300 dark:text-gray-400"
