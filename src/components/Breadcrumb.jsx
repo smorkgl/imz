@@ -92,6 +92,10 @@ export default function Breadcumb() {
       setPath("Столовая");
       setPathLink("/kitchen");
     }
+    if (currentPath === "/management") {
+      setPath("Руководство");
+      setPathLink("/management");
+    }
   }, []);
   return (
     <div className="space-x-4 py-3 2xl max-w-6xl width-full mx-auto container">

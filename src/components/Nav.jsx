@@ -140,6 +140,9 @@ export default function Nav() {
                     <Link to={"/projects"}>
                       <p>Проекты</p>
                     </Link>
+                    <Link to={"/management"}>
+                      <p>Руководство</p>
+                    </Link>
                     <Link to={"/hotel"}>
                       <p>Гостиница</p>
                     </Link>
@@ -247,9 +250,16 @@ export default function Nav() {
                               О нас
                             </div>
                           </Link>
-                          <div className="cursor-pointer hover:bg-gray-100 p-3">
-                            Проекты
-                          </div>
+                          <Link to={`/projects`}>
+                            <div className="cursor-pointer hover:bg-gray-100 p-3">
+                              Проекты
+                            </div>
+                          </Link>
+                          <Link to={`/management`}>
+                            <div className="cursor-pointer hover:bg-gray-100 p-3">
+                              Руководство
+                            </div>
+                          </Link>
                           <Link to={`/hotel`}>
                             <div className="cursor-pointer hover:bg-gray-100 p-3">
                               Гостиница
@@ -372,6 +382,9 @@ export default function Nav() {
                     </Link>
                     <Link to={`/projects`}>
                       <li className="li-blue__hover_nav">Проекты</li>
+                    </Link>
+                    <Link to={`/management`}>
+                      <li className="li-blue__hover_nav">Руководство</li>
                     </Link>
 
                     <li

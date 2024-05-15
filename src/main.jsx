@@ -30,6 +30,7 @@ import Shop from "./pages/Shop.jsx";
 import Kitchen from "./pages/Kitchen.jsx";
 import Cafe from "./pages/Cafe.jsx";
 import MetalEquipment from "./pages/MetalEquipment.jsx";
+import Management from "./pages/Management.jsx";
 
 const router = createBrowserRouter([
   {
@@ -136,6 +137,10 @@ const router = createBrowserRouter([
   {
     path: "metal_equipment",
     element: <MetalEquipment />,
+  },
+  {
+    path: "management",
+    element: <Management />,
   },
 ]);
 

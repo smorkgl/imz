@@ -545,3 +545,8 @@ li {
   background-color: #991b1b;
   color: #fff;
 }
+
+.management__photo {
+  height: 115%;
+  bottom: 0;
+}
