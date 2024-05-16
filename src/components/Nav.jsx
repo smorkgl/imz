@@ -401,7 +401,7 @@ export default function Nav() {
                 <div
                   onMouseEnter={handleMouseEnterDosug}
                   onMouseLeave={handleMouseLeaveDosug}
-                  className="dropdown-menu ml-24 animate-fade-up animate-duration-[300ms] absolute z-50 text-black"
+                  className="dropdown-menu ml-32 animate-fade-up animate-duration-[300ms] absolute z-50 text-black"
                 >
                   <ul>
                     <Link to={`/hotel`}>
