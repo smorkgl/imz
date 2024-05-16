@@ -552,8 +552,18 @@ li {
   bottom: 0;
 }
 
+.management__photo__mobile {
+  height: 105%;
+  bottom: 0;
+}
+
 .management__photo2 {
-  height: 80%;
+  height: 75%;
+  bottom: 0;
+}
+
+.management__photo2__mobile {
+  height: 40%;
   bottom: 0;
 }
 
@@ -580,4 +590,12 @@ li {
 
 .selectedcard {
   height: 750px !important;
+}
+
+.grid-test-col2 {
+  grid-column: span 1;
+}
+
+.card__news_item {
+  min-height: 525px;
 }

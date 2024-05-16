@@ -146,7 +146,7 @@ export default function Main() {
 
           {isTabletOrMobile && (
             <div className="flex-col lg:justify-normal xl:gap-5 xl:justify-around flex flex-wrap gap-20 mt-5">
-              {!isPostsLoading
+              {isPostsLoading
                 ? items.map((item, index) => (
                     <div
                       key={index}
@@ -299,7 +299,7 @@ export default function Main() {
                   ))
                 : reverseNewsToShow.map((news) => (
                     <div key={news.id} className="news__card-item">
-                      <div class="md:flex max-w-sm bg-white border border-gray-200 rounded-lg shadow relative">
+                      <div class="md:flex card__news_item max-w-sm bg-white border border-gray-200 rounded-lg shadow relative">
                         <Link to={`/news/${news.id}`}>
                           <div
                             className="relative"
@@ -480,7 +480,7 @@ export default function Main() {
             </div>
           )}
         </div>
-        <div className="md:-m-2.5 md:mt-5  test md:flex-col md:flex md:gap-5 md:p-0 md:pt-5 xl:pr-5">
+        <div className="md:-m-2.5 md:mt-5  md:flex-col md:flex md:gap-5 md:p-0 md:pt-5 xl:pr-5">
           {isTabletOrMobile && (
             <div>
               <div className="mx-auto flex md:gap-1 gap-2 cursor-pointer w-max">

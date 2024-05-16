@@ -9,6 +9,8 @@ import email from "../img/email.svg";
 import phone from "../img/phone.svg";
 import isaev_ramzan from "../img/isaev_ramzan.png";
 import isaev_ibragim from "../img/isaev_ibragim.png";
+import { useMediaQuery } from "react-responsive";
+import close from "../img/close.svg";
 
 export default function Management() {
   const cards = [
@@ -96,6 +98,8 @@ export default function Management() {
     }
   };
 
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 767px)" });
+
   return (
     <div className="font-['Ubuntu']">
       <Header />
@@ -106,41 +110,65 @@ export default function Management() {
       <div className="xl:px-2 py-3 2xl max-w-6xl width-full mx-auto container ">
         <h1 className="font-bold ">Руководство</h1>
         <div className="my-6 text-justify">
-          <div className="grid-test pt-10 grid grid-cols-2 gap-10 ">
+          <div className="md:gap-1 md:grid-cols-1 grid-test pt-10 grid grid-cols-2 gap-10 relative ">
             {cards.map((card, index) => (
               <div
                 key={index}
                 className={
                   expanded && index === selectedCardIndex
-                    ? "selectedcard grid-test-col mb-10 rounded-2xl flex border-2 border-gray-600 h-96 z-30 relative hover:bg-blue-600/70 hover:rounded-2xl hover:text-white hover:border-0 transition-all"
-                    : "mb-10 rounded-2xl flex border-2 border-gray-600 h-96 z-30 relative hover:bg-blue-600/70 hover:rounded-2xl hover:text-white hover:border-0 transition-all"
+                    ? isTabletOrMobile
+                      ? "selectedcard grid-test-col2 mb-10 rounded-2xl flex border-2 border-gray-600 h-96 z-30 relative hover:bg-blue-600/70 hover:rounded-2xl hover:text-white hover:border-0 transition-all"
+                      : "selectedcard grid-test-col mb-10 rounded-2xl flex border-2 border-gray-600 h-96 z-30 relative hover:bg-blue-600/70 hover:rounded-2xl hover:text-white hover:border-0 transition-all"
+                    : "md:mb-5 md:h-64 mb-10 rounded-2xl flex border-2 border-gray-600 h-96 z-30 relative hover:bg-blue-600/70 hover:rounded-2xl hover:text-white hover:border-0 transition-all"
                 }
                 onClick={() => handleCardClick(index)}
               >
+                {expanded && index === selectedCardIndex && (
+                  <img
+                    src={close}
+                    className="absolute left-0 w-6 cursor-pointer m-5"
+                  />
+                )}
                 <div>
-                  <div className="h-full p-8 flex flex-col justify-between">
-                    <div>
-                      <div className="text-2xl">
+                  <div className="md:p-3 h-full p-8 flex flex-col justify-between">
+                    <div
+                      className={
+                        expanded && index === selectedCardIndex && "text-right"
+                      }
+                    >
+                      <div className="md:text-sm text-2xl">
                         <p className="name-break">{card.name}</p>
                       </div>
-                      <p className=" text-sm pt-3">{card.job}</p>
+                      <p className="md:text-xs text-sm pt-3">{card.job}</p>
                     </div>
                     <div>
-                      <div className="text-sm text-gray-800">
+                      <div className="md:text-xs text-sm text-gray-800">
                         <div className="flex gap-1 cursor-pointer hover:underline hover:text-black contact-hover transition-all">
                           <img
                             src={phone}
-                            className="contact-img w-4 transition-transform"
+                            className="md:w-3 contact-img w-4 transition-transform"
                           />
-                          <div className="flex gap-1 place-items-center">
+                          <div
+                            className={
+                              isTabletOrMobile
+                                ? "flex-col"
+                                : "flex gap-1 place-items-center"
+                            }
+                          >
                             <p>+7(863)-333-31-34</p>
-                            <p className="text-xs font-medium">{card.number}</p>
+                            <p
+                              className={
+                                isTabletOrMobile ? "" : "text-xs font-medium"
+                              }
+                            >
+                              {card.number}
+                            </p>
                           </div>
                         </div>
                         <div className="pt-2 flex gap-1 cursor-pointer hover:underline hover:text-black contact2-hover transition-all">
                           <img
                             src={email}
-                            className="contact2-img w-4 transition-transform"
+                            className="md:w-3 contact2-img w-4 transition-transform"
                           />
                           <p>{card.email}</p>
                         </div>
@@ -151,8 +179,12 @@ export default function Management() {
                     <img
                       className={
                         expanded && index === selectedCardIndex
-                          ? "absolute right-0 management__photo2 pr-5"
-                          : "absolute right-0 management__photo pr-5"
+                          ? isTabletOrMobile
+                            ? "absolute right-0 management__photo2__mobile pr-2"
+                            : "absolute right-0 management__photo2 pr-5"
+                          : isTabletOrMobile
+                            ? "absolute right-0 management__photo__mobile pr-1"
+                            : "absolute right-0 management__photo pr-5"
                       }
                       src={card.photo}
                     />
