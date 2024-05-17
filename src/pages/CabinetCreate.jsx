@@ -110,10 +110,10 @@ export default function Cabinet() {
           ВЕРНУТЬСЯ НАЗАД
         </button>
       </Link>
-      <div class="md:pt-3 container my-12 mx-auto  bg-white pt-10 mt-28 relative">
-        <section class="text-center md:text-left">
-          <div class="flex flex-wrap relative">
-            <div class="md:block mb-6 w-full shrink-0 grow-0 basis-auto px-3 md:mb-0  flex">
+      <div className="md:pt-3 container my-12 mx-auto  bg-white pt-10 mt-28 relative">
+        <section className="text-center md:text-left">
+          <div className="flex flex-wrap relative">
+            <div className="md:block mb-6 w-full shrink-0 grow-0 basis-auto px-3 md:mb-0  flex">
               <img
                 className="md:w-full w-1/3 grid bg-gray-300 rounded-lg place-items-center news__img-container"
                 alt="Louvre"
@@ -158,7 +158,7 @@ export default function Cabinet() {
               hidden
             />
 
-            <div class="mb-5">
+            <div className="mb-5">
               <p className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                 Дата публикации
               </p>
@@ -170,25 +170,25 @@ export default function Cabinet() {
                 className="block pl-2 p-1 text-gray-900 border border-gray-300 rounded-lg bg-white text-base focus:ring-red-500 focus:border-red-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500"
               />
             </div>
-            <div class="mb-5">
+            <div className="mb-5">
               <label
-                for="large-input"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                htmlFor="large-input"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
                 Заголовок
               </label>
               <input
                 type="text"
                 id="large-input"
-                class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-white text-base focus:ring-red-500 focus:border-red-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500"
+                className="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-white text-base focus:ring-red-500 focus:border-red-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
               />
             </div>
-            <div class="mb-5">
+            <div className="mb-5">
               <label
-                for="large-input"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                htmlFor="large-input"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
                 Мини-заголовок (если вы не указываете, он укажет 50 символов
                 первых описания)
@@ -197,7 +197,7 @@ export default function Cabinet() {
                 maxLength={125}
                 type="text"
                 id="large-input"
-                class="block w-full p-3 text-gray-900 border border-gray-300 rounded-lg bg-white text-base focus:ring-red-500 focus:border-red-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500"
+                className="block w-full p-3 text-gray-900 border border-gray-300 rounded-lg bg-white text-base focus:ring-red-500 focus:border-red-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500"
                 value={mini_title}
                 onChange={(e) => setMiniTitle(e.target.value)}
               />

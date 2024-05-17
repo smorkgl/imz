@@ -6,7 +6,7 @@ import News from "./pages/News.jsx";
 import NewsElement from "./pages/NewsElement.jsx";
 import Job from "./pages/Job.jsx";
 import "./index.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { HashRouter, Routes, Route, BrowserRouter } from "react-router-dom";
 import ErrorPage from "./pages/Error-page.jsx";
 import Login from "./pages/Login.jsx";
 import store from "./redux/store.js";
@@ -31,123 +31,45 @@ import Kitchen from "./pages/Kitchen.jsx";
 import Cafe from "./pages/Cafe.jsx";
 import MetalEquipment from "./pages/MetalEquipment.jsx";
 import Management from "./pages/Management.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "news",
-    element: <News />,
-  },
-  {
-    path: "job",
-    element: <Job />,
-  },
-  {
-    path: "news/:id",
-    element: <NewsElement />,
-  },
-  {
-    path: "cabinet/:id/edit",
-    element: <CabinetCreate />,
-  },
-  {
-    path: "login",
-    element: <Login />,
-  },
-  {
-    path: "cabinet",
-    element: <Cabinet />,
-  },
-  {
-    path: "cabinet/create",
-    element: <CabinetCreate />,
-  },
-  {
-    path: "about",
-    element: <About />,
-  },
-  {
-    path: "projects",
-    element: <Projects />,
-  },
-  {
-    path: "hotel",
-    element: <Hotel />,
-  },
-  {
-    path: "parking",
-    element: <Parking />,
-  },
-  {
-    path: "capacity",
-    element: <Capacity />,
-  },
-  {
-    path: "certificates",
-    element: <Certificates />,
-  },
-  {
-    path: "profile_pipe",
-    element: <ProfilePipe />,
-  },
-  {
-    path: "products",
-    element: <Products />,
-  },
-  {
-    path: "products_order",
-    element: <ProductsOrder />,
-  },
-  {
-    path: "suppliers",
-    element: <Suppliers />,
-  },
-  {
-    path: "contacts",
-    element: <Contacts />,
-  },
-  {
-    path: "gost",
-    element: <GOST />,
-  },
-  {
-    path: "calculator",
-    element: <Calculator />,
-  },
-  {
-    path: "cabinet/upload",
-    element: <CabinetUpload />,
-  },
-  {
-    path: "cafe",
-    element: <Cafe />,
-  },
-  {
-    path: "shop",
-    element: <Shop />,
-  },
-  {
-    path: "kitchen",
-    element: <Kitchen />,
-  },
-  {
-    path: "metal_equipment",
-    element: <MetalEquipment />,
-  },
-  {
-    path: "management",
-    element: <Management />,
-  },
-]);
+const router = (
+  <HashRouter>
+    <ScrollToTop />
+    <Routes>
+      <Route path="/" element={<App />} errorElement={<ErrorPage />} />
+      <Route path="/news" element={<News />} />
+      <Route path="/job" element={<Job />} />
+      <Route path="/news/:id" element={<NewsElement />} />
+      <Route path="/cabinet/:id/edit" element={<CabinetCreate />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/cabinet" element={<Cabinet />} />
+      <Route path="/cabinet/create" element={<CabinetCreate />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/projects" element={<Projects />} />
+      <Route path="/hotel" element={<Hotel />} />
+      <Route path="/parking" element={<Parking />} />
+      <Route path="/capacity" element={<Capacity />} />
+      <Route path="/certificates" element={<Certificates />} />
+      <Route path="/profile_pipe" element={<ProfilePipe />} />
+      <Route path="/products" element={<Products />} />
+      <Route path="/products_order" element={<ProductsOrder />} />
+      <Route path="/suppliers" element={<Suppliers />} />
+      <Route path="/gost" element={<GOST />} />
+      <Route path="/calculator" element={<Calculator />} />
+      <Route path="/cabinet/upload" element={<CabinetUpload />} />
+      <Route path="/cafe" element={<Cafe />} />
+      <Route path="/shop" element={<Shop />} />
+      <Route path="/kitchen" element={<Kitchen />} />
+      <Route path="/metal_equipment" element={<MetalEquipment />} />
+      <Route path="/management" element={<Management />} />
+      <Route path="/contacts" element={<Contacts />} />
+    </Routes>
+  </HashRouter>
+);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <>
-    <Provider store={store}>
-      <RouterProvider router={router} />
-    </Provider>
+    <Provider store={store}>{router}</Provider>
   </>
 );

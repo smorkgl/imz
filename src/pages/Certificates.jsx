@@ -45,15 +45,15 @@ export default function Certificates() {
         <div className="my-6">
           <h2 className="indent-10 font-bold text-2xl">ПРОЧИЕ СЕРТИФИКАТЫ:</h2>
           <div className="ml-10 work__line2 mt-2" />
-          <div class="md:gap-2 flex mb-8 gap-10 mt-5">
+          <div className="md:gap-2 flex mb-8 gap-10 mt-5">
             <img src={certificates2} className="w-1/2" />
             <img src={certificates3} className="w-1/2" />
           </div>
-          <div class="md:gap-2 flex mb-8 gap-10 mt-5">
+          <div className="md:gap-2 flex mb-8 gap-10 mt-5">
             <img src={certificates4} className="w-1/2" />
             <img src={certificates5} className="w-1/2" />
           </div>
-          <div class="md:gap-2 flex mb-8 gap-10 mt-5">
+          <div className="md:gap-2 flex mb-8 gap-10 mt-5">
             <img src={certificates6} className="w-1/2" />
             <img src={certificates7} className="w-1/2" />
           </div>

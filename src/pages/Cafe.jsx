@@ -72,11 +72,11 @@ export default function Cafe() {
             приятного вам аппетита! Надеемся, что наше кафе «ИМЗ» станет для вас
             привычным местом отдыха в дороге!
           </p>
-          <div class="mt-5 xl:grid xl:place-items-center xl:flex-wrap xl:w-full flex w-1/2 mb-8 gap-10">
+          <div className="mt-5 xl:grid xl:place-items-center xl:flex-wrap xl:w-full flex w-1/2 mb-8 gap-10">
             <img src={cafe1} />
             <img src={cafe2} />
           </div>
-          <div class="xl:grid xl:place-items-center xl:flex-wrap xl:w-full flex w-1/2 mb-8 gap-10">
+          <div className="xl:grid xl:place-items-center xl:flex-wrap xl:w-full flex w-1/2 mb-8 gap-10">
             <img src={cafe3} />
             <img src={cafe4} />
           </div>

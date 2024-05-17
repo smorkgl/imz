@@ -45,61 +45,61 @@ export default function Login() {
           ВЕРНУТЬСЯ НАЗАД
         </button>
       </Link>
-      <div class="w-full max-w-xs mx-auto">
+      <div className="w-full max-w-xs mx-auto">
         <form
           onSubmit={handleSubmit(onSubmit)}
-          class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+          className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
         >
-          <div class="mb-4">
+          <div className="mb-4">
             <label
-              class="block text-gray-700 text-sm font-bold mb-2"
-              for="username"
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="username"
             >
               Логин
             </label>
             <input
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-3"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-3"
               id="username"
               type="text"
               placeholder="syroezhin_ag"
               {...register("email", { required: "Укажите почту" })}
             />
             {errors.email?.message && (
-              <p class="text-red-500 text-xs italic">
+              <p className="text-red-500 text-xs italic">
                 Пожалуйста укажите почту
               </p>
             )}
           </div>
-          <div class="mb-6">
+          <div className="mb-6">
             <label
-              class="block text-gray-700 text-sm font-bold mb-2"
-              for="password"
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="password"
             >
               Пароль
             </label>
             <input
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
               id="password"
               type="password"
               placeholder="******************"
               {...register("password", { required: "Укажите пароль" })}
             />
             {errors.password?.message && (
-              <p class="text-red-500 text-xs italic">
+              <p className="text-red-500 text-xs italic">
                 Пожалуйста введите пароль
               </p>
             )}
           </div>
-          <div class="flex items-center justify-between">
+          <div className="flex items-center justify-between">
             <button
-              class="bg-red-700 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="bg-red-700 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="submit"
             >
               Вход
             </button>
           </div>
         </form>
-        <p class="text-center text-gray-500 text-xs"></p>
+        <p className="text-center text-gray-500 text-xs"></p>
       </div>
     </div>
   );

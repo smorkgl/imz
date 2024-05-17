@@ -271,7 +271,7 @@ li {
   stroke: rgb(255, 255, 255);
   width: 600px;
   fill-opacity: 1;
-  stroke-width: 5px;
+  strokewidth: 5px;
   stroke-dasharray: 5000;
   animation: draw 5s ease;
   position: absolute;
@@ -416,7 +416,7 @@ li {
 .svg__in-image {
   top: 40%;
   position: absolute;
-  left: 44%;
+  left: 35%;
 }
 
 .calculator {
@@ -508,7 +508,7 @@ li {
 .slide-text__mobile {
   position: absolute;
   color: #fff;
-  padding: 0 20%;
+  padding: 0 15%;
   font-size: 12px;
   line-height: normal;
 }
@@ -544,7 +544,6 @@ li {
 .pagination .active {
   background-color: #1e40af;
   color: #fff;
-  border-radius: 100%;
 }
 
 .management__photo {
@@ -598,4 +597,62 @@ li {
 
 .card__news_item {
   min-height: 525px;
+}
+
+.navigationButtons {
+  width: 80%;
+  height: 40px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding-top: 40px;
+}
+
+.navigationButtons a {
+  padding: 15px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  border: 1px solid #1e40af;
+  color: #1e40af;
+  cursor: pointer;
+}
+
+.navigationButtons a:hover {
+  color: white;
+  background-color: #1e40af;
+}
+
+.navigationActive a {
+  color: white;
+  background-color: #1e40af;
+}
+
+.navigationButtons__mobile {
+  width: 80%;
+  height: 40px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding-top: 40px;
+}
+
+.navigationButtons__mobile a {
+  padding: 10px 10px;
+  margin: 8px;
+  border-radius: 5px;
+  border: 1px solid #1e40af;
+  color: #1e40af;
+  cursor: pointer;
+}
+
+.navigationButtons__mobile a:hover {
+  color: white;
+  background-color: #1e40af;
+}
+
+.navigationActive__mobile a {
+  color: white;
+  background-color: #1e40af;
 }

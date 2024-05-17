@@ -41,17 +41,17 @@ export default function Suppliers() {
           </div>
 
           <div className="md:mt-5 md:m-0 my-6 ml-10">
-            <div class="md:w-full bg-white shadow-md rounded rounded-lg p-5  w-3/4">
+            <div className="md:w-full bg-white shadow-md rounded rounded-lg p-5  w-3/4">
               <form
                 id="contactForm"
                 action="#"
                 method="POST"
-                class="md:flex md:flex-col md:gap-5 grid grid-cols-1 sm:grid-cols-2 gap-6"
+                className="md:flex md:flex-col md:gap-5 grid grid-cols-1 sm:grid-cols-2 gap-6"
               >
                 <div>
                   <label
-                    for="name"
-                    class="block text-gray-700 font-semibold mb-2"
+                    htmlFor="name"
+                    className="block text-gray-700 font-semibold mb-2"
                   >
                     ФИО
                   </label>
@@ -60,16 +60,19 @@ export default function Suppliers() {
                     id="name"
                     name="name"
                     placeholder="Введите своё имя"
-                    class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-red-500 focus:border-red-500"
+                    className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-red-500 focus:border-red-500"
                   />
-                  <div id="nameValidation" class="hidden text-red-600 text-sm">
+                  <div
+                    id="nameValidation"
+                    className="hidden text-red-600 text-sm"
+                  >
                     Пожалуйста введите своё ФИО
                   </div>
                 </div>
                 <div>
                   <label
-                    for="email"
-                    class="block text-gray-700 font-semibold mb-2"
+                    htmlFor="email"
+                    className="block text-gray-700 font-semibold mb-2"
                   >
                     E-mail
                   </label>
@@ -78,16 +81,19 @@ export default function Suppliers() {
                     id="email"
                     name="email"
                     placeholder="Введите свой E-mail"
-                    class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-red-500 focus:border-red-500"
+                    className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-red-500 focus:border-red-500"
                   />
-                  <div id="emailValidation" class="hidden text-red-600 text-sm">
+                  <div
+                    id="emailValidation"
+                    className="hidden text-red-600 text-sm"
+                  >
                     Пожалуйста введите свой ящик электронной почты.
                   </div>
                 </div>
                 <div>
                   <label
-                    for="email"
-                    class="block text-gray-700 font-semibold mb-2"
+                    htmlFor="email"
+                    className="block text-gray-700 font-semibold mb-2"
                   >
                     Номер телефона
                   </label>
@@ -96,17 +102,20 @@ export default function Suppliers() {
                     id="email"
                     name="email"
                     placeholder="Введите свой номер телефона"
-                    class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-red-500 focus:border-red-500"
+                    className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-red-500 focus:border-red-500"
                   />
-                  <div id="emailValidation" class="hidden text-red-600 text-sm">
+                  <div
+                    id="emailValidation"
+                    className="hidden text-red-600 text-sm"
+                  >
                     Пожалуйста введите свой ящик электронной почты.
                   </div>
                 </div>
 
-                <div class="sm:col-span-2">
+                <div className="sm:col-span-2">
                   <label
-                    for="subject"
-                    class="block text-gray-700 font-semibold mb-2"
+                    htmlFor="subject"
+                    className="block text-gray-700 font-semibold mb-2"
                   >
                     Тема обращения
                   </label>
@@ -115,19 +124,19 @@ export default function Suppliers() {
                     id="subject"
                     name="subject"
                     placeholder="Введите свою тему обращения"
-                    class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-red-500 focus:border-red-500"
+                    className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-red-500 focus:border-red-500"
                   />
                   <div
                     id="subjectValidation"
-                    class="hidden text-red-600 text-sm"
+                    className="hidden text-red-600 text-sm"
                   >
                     Please enter the subject.
                   </div>
                 </div>
-                <div class="sm:col-span-2">
+                <div className="sm:col-span-2">
                   <label
-                    for="message"
-                    class="block text-gray-700 font-semibold mb-2"
+                    htmlFor="message"
+                    className="block text-gray-700 font-semibold mb-2"
                   >
                     Сообщение
                   </label>
@@ -136,19 +145,19 @@ export default function Suppliers() {
                     name="message"
                     placeholder="Введите своё сообщение"
                     rows="5"
-                    class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-red-500 focus:border-red-500"
+                    className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-red-500 focus:border-red-500"
                   ></textarea>
                   <div
                     id="messageValidation"
-                    class="hidden text-red-600 text-sm"
+                    className="hidden text-red-600 text-sm"
                   >
                     Пожалуйста введите своё сообщение
                   </div>
                 </div>
-                <div class="sm:col-span-2">
+                <div className="sm:col-span-2">
                   <button
                     type="submit"
-                    class="w-full bg-red-700 text-white font-semibold py-2 px-4 rounded-md hover:bg-red-900 transition duration-300"
+                    className="w-full bg-red-700 text-white font-semibold py-2 px-4 rounded-md hover:bg-red-900 transition duration-300"
                   >
                     Отправить
                   </button>

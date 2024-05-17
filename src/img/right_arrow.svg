@@ -8,7 +8,7 @@
    viewBox="0 0 13.576172 7.9999997"
    id="right-arrow"
    data-name="Flat Line"
-   class="icon flat-line"
+   className="icon flat-line"
    version="1.1"
    sodipodi:docname="right_arrow.svg"
    inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
@@ -42,11 +42,11 @@
      y1="4"
      x2="12.761487"
      y2="4"
-     style="fill:none;stroke:#000000;stroke-width:1.62937;stroke-linecap:round;stroke-linejoin:round" />
+     style="fill:none;stroke:#000000;strokeWidth:1.62937;strokeLinecap:round;strokeLinejoin:round" />
   <polyline
      id="primary-2"
      data-name="primary"
      points="18 15 21 12 18 9"
-     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"
+     style="fill:none;stroke:#000000;strokeWidth:2;strokeLinecap:round;strokeLinejoin:round"
      transform="translate(-8.5882844,-8)" />
 </svg>

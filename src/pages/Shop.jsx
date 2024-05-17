@@ -29,11 +29,11 @@ export default function Shop() {
           </p>
 
           <div className="mx-auto mt-5">
-            <div class="xl:grid xl:place-items-center xl:flex-wrap flex mb-8 gap-10">
+            <div className="xl:grid xl:place-items-center xl:flex-wrap flex mb-8 gap-10">
               <img src={shop1} className="w-1/2" />
               <img src={shop5} className="w-1/2" />
             </div>
-            <div class="xl:grid xl:place-items-center xl:flex-wrap flex mb-8 gap-10">
+            <div className="xl:grid xl:place-items-center xl:flex-wrap flex mb-8 gap-10">
               <img src={shop3} className="w-1/2" />
               <img src={shop4} className="w-1/2" />
             </div>

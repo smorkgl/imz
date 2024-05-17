@@ -6,7 +6,7 @@
    height="800px"
    viewBox="0 0 16 16"
    fill="#000000"
-   class="bi bi-geo-alt"
+   className="bi bi-geo-alt"
    version="1.1"
    id="svg2"
    sodipodi:docname="geo.svg"

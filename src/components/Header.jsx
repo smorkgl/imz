@@ -109,30 +109,30 @@ export default function Header() {
                             onClick={() => setIsOpen(false)}
                           />
                           <form
-                            class="max-w-sm mx-auto"
+                            className="max-w-sm mx-auto"
                             onSubmit={sendEmail}
                             id="contact-form"
                             ref={form}
                           >
-                            <div class="mb-5">
+                            <div className="mb-5">
                               <label
-                                for="name"
-                                class="block mb-2 text-sm font-medium text-gray-900 text-black"
+                                htmlFor="name"
+                                className="block mb-2 text-sm font-medium text-gray-900 text-black"
                               >
                                 Ваше имя *
                               </label>
                               <input
                                 type="name"
                                 id="name"
-                                class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dbg-gray-700 border-gray-600 placeholder-gray-400 text-black focus:ring-red-500 focus:border-red-500 shadow-sm-light"
+                                className="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dbg-gray-700 border-gray-600 placeholder-gray-400 text-black focus:ring-red-500 focus:border-red-500 shadow-sm-light"
                                 required
                                 name="user_name"
                               />
                             </div>
-                            <div class="mb-5">
+                            <div className="mb-5">
                               <label
-                                for="email"
-                                class="block mb-2 text-sm font-medium text-gray-900 text-black"
+                                htmlFor="email"
+                                className="block mb-2 text-sm font-medium text-gray-900 text-black"
                               >
                                 Ваш E-mail *
                               </label>
@@ -140,15 +140,15 @@ export default function Header() {
                                 type="email"
                                 name="email"
                                 id="email"
-                                class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5  border-gray-600 placeholder-gray-400 text-black focus:ring-red-500 focus:border-red-500 shadow-sm-light"
+                                className="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5  border-gray-600 placeholder-gray-400 text-black focus:ring-red-500 focus:border-red-500 shadow-sm-light"
                                 placeholder="name@i-m-z.ru"
                                 required
                               />
                             </div>
-                            <div class="mb-5">
+                            <div className="mb-5">
                               <label
-                                for="phone"
-                                class="block mb-2 text-sm font-medium text-gray-900 text-black"
+                                htmlFor="phone"
+                                className="block mb-2 text-sm font-medium text-gray-900 text-black"
                               >
                                 Ваш номер телефона *
                               </label>
@@ -156,13 +156,13 @@ export default function Header() {
                                 type="phone"
                                 id="phone"
                                 name="phone"
-                                class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 border-gray-600 placeholder-gray-400 text-black focus:ring-red-500 focus:border-red-500 shadow-sm-light"
+                                className="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 border-gray-600 placeholder-gray-400 text-black focus:ring-red-500 focus:border-red-500 shadow-sm-light"
                                 required
                               />
                             </div>
                             <label
-                              for="message"
-                              class="block mb-2 text-sm font-medium text-gray-900 text-black"
+                              htmlFor="message"
+                              className="block mb-2 text-sm font-medium text-gray-900 text-black"
                             >
                               Ваше сообщение *
                             </label>
@@ -170,13 +170,13 @@ export default function Header() {
                               id="message"
                               name="message"
                               rows="4"
-                              class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-red-500 focus:border-red-500 border-gray-600 placeholder-gray-400 text-black focus:ring-red-500 :focus:border-red-500"
+                              className="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-red-500 focus:border-red-500 border-gray-600 placeholder-gray-400 text-black focus:ring-red-500 :focus:border-red-500"
                               placeholder="Оставьте сообщение..."
                             ></textarea>
                             <button
                               type="submit"
                               value="Send"
-                              class="mt-5 text-white   bg-red-700 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-red-700 hover:bg-red-700 focus:ring-red-800"
+                              className="mt-5 text-white   bg-red-700 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-red-700 hover:bg-red-700 focus:ring-red-800"
                             >
                               Отправить
                             </button>
@@ -210,28 +210,28 @@ export default function Header() {
             >
               <button
                 type="button"
-                class="inline-flex items-center font-medium justify-center p-0 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer"
+                className="inline-flex items-center font-medium justify-center p-0 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer"
               >
                 <img src={russia} className="w-5 mr-2" />
                 Russian (RU)
               </button>
               {isDropdownVisibleLang && (
                 <div
-                  class="language-open absolute z-50 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 transition animate-fade animate-duration-[200ms] cursor-pointer hover:bg-red-700 hover:text-white"
+                  className="language-open absolute z-50 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 transition animate-fade animate-duration-[200ms] cursor-pointer hover:bg-red-700 hover:text-white"
                   id="language-dropdown-menu"
                 >
-                  <ul class="py-2 font-medium">
+                  <ul className="py-2 font-medium">
                     <li className="p-1">
-                      <div class="inline-flex items-center">
+                      <div className="inline-flex items-center">
                         <svg
                           aria-hidden="true"
-                          class="h-3.5 w-3.5 rounded-full me-2"
+                          className="h-3.5 w-3.5 rounded-full me-2"
                           xmlns="http://www.w3.org/2000/svg"
                           id="flag-icon-css-us"
                           viewBox="0 0 512 512"
                         >
-                          <g fill-rule="evenodd">
-                            <g stroke-width="1pt">
+                          <g fillRule="evenodd">
+                            <g strokeWidth="1pt">
                               <path
                                 fill="#bd3d44"
                                 d="M0 0h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z"

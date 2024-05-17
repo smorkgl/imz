@@ -100,26 +100,22 @@ export default function Breadcumb() {
   return (
     <div className="space-x-4 py-3 2xl max-w-6xl width-full mx-auto container">
       <nav aria-label="breadcrumb">
-        <ol class="flex">
+        <ol className="flex">
           <li>
-            <Link to={`/`}>
-              <a
-                href="#"
-                class="text-gray-600 hover:text-red-800 transition-all"
-              >
-                Главная
-              </a>
+            <Link
+              className="text-gray-600 hover:text-red-800 transition-all"
+              to={`/`}
+            >
+              Главная
             </Link>
           </li>
           <img src={BreadCrumbTriangle} className="w-5" />
           <li>
-            <Link to={`${pathLink}`}>
-              <a
-                href="#"
-                class="text-gray-600 hover:text-red-800 transition-all"
-              >
-                {path}
-              </a>
+            <Link
+              className="text-gray-600 hover:text-red-800 transition-all"
+              to={`${pathLink}`}
+            >
+              {path}
             </Link>
           </li>
         </ol>

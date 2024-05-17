@@ -15,7 +15,7 @@ export default function Wherewe() {
           <p className="font-bold text-2xl ">
             Исаевский машиностроительный завод
           </p>
-          <p>
+          <div>
             <br />
             <p>
               имеет выгодное логистическое расположение находясь рядом с трассой
@@ -29,7 +29,7 @@ export default function Wherewe() {
             <br />
             Для сотрудников предприятия предусмотрен корпоративный транспорт, а
             также компенсация питания 25%.
-          </p>
+          </div>
         </div>
       )}
       <div className="max-w-7xl width-full mx-auto container relative">
@@ -37,7 +37,7 @@ export default function Wherewe() {
           <div className="lg:text-xs xl:px-5 xl:text-sm absolute z-10 h-full bg-blue-800 text-white w-2/4 grid place-items-center pr-10">
             <div className="mr-10">
               <h1 className="font-bold">Исаевский машиностроительный завод</h1>
-              <p>
+              <div>
                 <br />
                 <p>
                   имеет выгодное логистическое расположение находясь рядом с
@@ -51,11 +51,11 @@ export default function Wherewe() {
                 <br />
                 Для сотрудников предприятия предусмотрен корпоративный
                 транспорт, а также компенсация питания 25%.
-              </p>
+              </div>
             </div>
           </div>
         )}
-        <div class="full-width">
+        <div className="full-width">
           <YMaps>
             {isTabletOrMobile && (
               <Map

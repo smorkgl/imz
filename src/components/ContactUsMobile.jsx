@@ -25,7 +25,7 @@ export default function ContactUsMobile() {
     <div className="p-2 pt-10 ">
       <form
         ref={form}
-        class=" shadow-2xl p-10 mt-10 rounded-lg "
+        className=" shadow-2xl p-10 mt-10 rounded-lg "
         onSubmit={sendEmail}
         id="contact-form"
       >
@@ -45,41 +45,41 @@ export default function ContactUsMobile() {
             <p>imz@i-m-z.ru</p>
           </div>
         </div>
-        <div class="mb-3">
+        <div className="mb-3">
           <label
-            for="name"
-            class="text-black block mb-2 text-sm font-medium text-gray-900 text-black"
+            htmlFor="name"
+            className="text-black block mb-2 text-sm font-medium text-gray-900 text-black"
           >
             Ваше имя *
           </label>
           <input
             id="name"
-            class="!border-2 border-black shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dbg-gray-700 border-gray-600 placeholder-gray-400 text-black focus:ring-red-500 focus:border-red-500 shadow-sm-light"
+            className="!border-2 border-black shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dbg-gray-700 border-gray-600 placeholder-gray-400 text-black focus:ring-red-500 focus:border-red-500 shadow-sm-light"
             required
             type="text"
             name="user_name"
           />
         </div>
-        <div class="mb-5">
+        <div className="mb-5">
           <label
-            for="email"
-            class="text-black  block mb-2 text-sm font-medium text-gray-900 text-black"
+            htmlFor="email"
+            className="text-black  block mb-2 text-sm font-medium text-gray-900 text-black"
           >
             Ваш E-mail *
           </label>
           <input
             type="email"
             id="email"
-            class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5  border-gray-600 placeholder-gray-400 text-black focus:ring-red-500 focus:border-red-500 shadow-sm-light"
+            className="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5  border-gray-600 placeholder-gray-400 text-black focus:ring-red-500 focus:border-red-500 shadow-sm-light"
             placeholder="name@i-m-z.ru"
             required
             name="email"
           />
         </div>
-        <div class="mb-5">
+        <div className="mb-5">
           <label
-            for="phone"
-            class="text-black block mb-2 text-sm font-medium text-gray-900 text-black"
+            htmlFor="phone"
+            className="text-black block mb-2 text-sm font-medium text-gray-900 text-black"
           >
             Ваш номер телефона *
           </label>
@@ -87,13 +87,13 @@ export default function ContactUsMobile() {
             type="phone"
             name="phone"
             id="phone"
-            class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 border-gray-600 placeholder-gray-400 text-black focus:ring-red-500 focus:border-red-500 shadow-sm-light"
+            className="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 border-gray-600 placeholder-gray-400 text-black focus:ring-red-500 focus:border-red-500 shadow-sm-light"
             required
           />
         </div>
         <label
-          for="message"
-          class="text-black block mb-2 text-sm font-medium text-gray-900 text-black"
+          htmlFor="message"
+          className="text-black block mb-2 text-sm font-medium text-gray-900 text-black"
         >
           Ваше сообщение *
         </label>
@@ -101,13 +101,13 @@ export default function ContactUsMobile() {
           id="message"
           name="message"
           rows="4"
-          class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-red-500 focus:border-red-500 border-gray-600 placeholder-gray-400 text-black focus:ring-red-500 :focus:border-red-500"
+          className="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-red-500 focus:border-red-500 border-gray-600 placeholder-gray-400 text-black focus:ring-red-500 :focus:border-red-500"
           placeholder="Оставьте сообщение..."
         ></textarea>
         <button
           type="submit"
           value="Send"
-          class="mt-5 text-white   bg-red-700 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-red-700 hover:bg-red-700 focus:ring-red-800"
+          className="mt-5 text-white   bg-red-700 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-red-700 hover:bg-red-700 focus:ring-red-800"
         >
           Отправить
         </button>

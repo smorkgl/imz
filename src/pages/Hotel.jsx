@@ -136,23 +136,23 @@ export default function Projects() {
           </p>
         </div>
         <div className="mx-auto">
-          <div class="xl:grid xl:place-items-center xl:flex-wrap flex mb-8 gap-10">
+          <div className="xl:grid xl:place-items-center xl:flex-wrap flex mb-8 gap-10">
             <img src={hotel2} />
             <img src={hotel3} />
           </div>
-          <div class="xl:grid xl:place-items-center xl:flex-wrap flex mb-8 gap-10">
+          <div className="xl:grid xl:place-items-center xl:flex-wrap flex mb-8 gap-10">
             <img src={hotel4} />
             <img src={hotel5} />
           </div>
-          <div class="xl:grid xl:place-items-center xl:flex-wrap flex mb-8 gap-10">
+          <div className="xl:grid xl:place-items-center xl:flex-wrap flex mb-8 gap-10">
             <img src={hotel6} />
             <img src={hotel7} />
           </div>
-          <div class="xl:grid xl:place-items-center xl:flex-wrap flex mb-8 gap-10">
+          <div className="xl:grid xl:place-items-center xl:flex-wrap flex mb-8 gap-10">
             <img src={hotel8} />
             <img src={hotel9} />
           </div>
-          <div class="xl:grid xl:place-items-center xl:flex-wrap flex mb-10 gap-10">
+          <div className="xl:grid xl:place-items-center xl:flex-wrap flex mb-10 gap-10">
             <img src={hotel10} />
             <img src={hotel11} />
           </div>

@@ -150,53 +150,50 @@ export default function Main() {
                 ? items.map((item, index) => (
                     <div
                       key={index}
-                      class="flex max-w-sm bg-white border border-gray-200 rounded-lg shadow animate-pulse"
+                      className="flex max-w-sm bg-white border border-gray-200 rounded-lg shadow animate-pulse"
                     >
                       <div className="relative">
                         <div className="relative">
-                          <img class="rounded-t-lg min-h-72 w-screen bg-gray-300" />
+                          <img className="md:min-h-40 rounded-t-lg min-h-72 w-screen bg-gray-300" />
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
-                            stroke-width="2"
+                            strokeWidth="2"
                             stroke="currentColor"
-                            class="w-12 h-12 text-gray-500 svg__in-image "
+                            className="w-12 h-12 text-gray-500 svg__in-image "
                           >
                             <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
                               d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
                             ></path>
                           </svg>
                         </div>
                       </div>
-                      <div class="p-5">
-                        <div class="block w-56 h-3 mb-2 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit w-full">
+                      <div className="md:w-11/12 p-5">
+                        <div className="md:hidden block w-56 h-3 mb-2 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit w-full">
                           &nbsp;
                         </div>
-                        <div class="block w-56 h-3 mb-2 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit w-full">
+                        <div className="md:hidden block w-56 h-3 mb-2 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit w-full">
                           &nbsp;
                         </div>
-                        <div class="block w-56 h-3 mb-4 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit w-full">
+                        <div className="block w-56 h-3 mb-4 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit w-full">
                           &nbsp;
                         </div>
-                        <div class="block w-56 h-2 mb-2 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit w-full">
+                        <div className="block w-56 h-2 mb-2 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit w-full">
                           &nbsp;
                         </div>
-                        <div class="block w-56 h-2 mb-2 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit w-full">
+                        <div className="block w-56 h-2 mb-2 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit w-full">
                           &nbsp;
                         </div>
-                        <div class="block w-56 h-2 mb-2 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit w-full">
+                        <div className="block w-56 h-2 mb-2 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit w-full">
                           &nbsp;
                         </div>
-                        <div class="block w-56 h-2 mb-2 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit w-full">
+                        <div className="block w-56 h-2 mb-2 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit w-full">
                           &nbsp;
                         </div>
-                        <div class="block w-56 h-2 mb-2 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit w-full">
-                          &nbsp;
-                        </div>
-                        <div class="block h-10 mt-4 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-lg text-inherit w-40">
+                        <div className="block w-56 h-2 mb-2 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit w-full">
                           &nbsp;
                         </div>
                       </div>
@@ -204,7 +201,7 @@ export default function Main() {
                   ))
                 : reverseNewsToShow.map((news) => (
                     <div key={news.id}>
-                      <div class="md:flex justify-between gap-5 place-items-center max-w-sm bg-white relative">
+                      <div className="md:flex justify-between gap-5 place-items-center max-w-sm bg-white relative">
                         <Link to={`/news/${news.id}`} className="w-2/3">
                           <div
                             className="relative"
@@ -212,7 +209,7 @@ export default function Main() {
                             onMouseLeave={() => handleMouseLeaveNews(news.id)}
                           >
                             <img
-                              class="rounded-lg"
+                              className="rounded-lg"
                               src={`${news.imageUrl}`}
                               alt={news.title}
                             />
@@ -228,9 +225,9 @@ export default function Main() {
                           </div>
                         </Link>
 
-                        <div class="w-full flex flex-col">
+                        <div className="w-full flex flex-col">
                           <p className="text-xs">{news.date}</p>
-                          <h5 class="text-sm font-medium tracking-tight text-gray-900">
+                          <h5 className="text-sm font-medium tracking-tight text-gray-900">
                             {news.title}
                           </h5>
                         </div>
@@ -245,53 +242,53 @@ export default function Main() {
                 ? items.map((item, index) => (
                     <div
                       key={index}
-                      class="max-w-sm bg-white border border-gray-200 rounded-lg shadow animate-pulse"
+                      className="max-w-sm bg-white border border-gray-200 rounded-lg shadow animate-pulse"
                     >
                       <div className="relative">
                         <div className="relative">
-                          <img class="rounded-t-lg min-h-72 w-screen bg-gray-300" />
+                          <img className="rounded-t-lg min-h-72 w-screen bg-gray-300" />
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
-                            stroke-width="2"
+                            strokeWidth="2"
                             stroke="currentColor"
-                            class="w-12 h-12 text-gray-500 svg__in-image "
+                            className="w-12 h-12 text-gray-500 svg__in-image "
                           >
                             <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
                               d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
                             ></path>
                           </svg>
                         </div>
                       </div>
-                      <div class="p-5">
-                        <div class="block w-56 h-3 mb-2 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit w-full">
+                      <div className="p-5">
+                        <div className="block w-56 h-3 mb-2 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit w-full">
                           &nbsp;
                         </div>
-                        <div class="block w-56 h-3 mb-2 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit w-full">
+                        <div className="block w-56 h-3 mb-2 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit w-full">
                           &nbsp;
                         </div>
-                        <div class="block w-56 h-3 mb-4 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit w-full">
+                        <div className="block w-56 h-3 mb-4 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit w-full">
                           &nbsp;
                         </div>
-                        <div class="block w-56 h-2 mb-2 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit w-full">
+                        <div className="block w-56 h-2 mb-2 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit w-full">
                           &nbsp;
                         </div>
-                        <div class="block w-56 h-2 mb-2 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit w-full">
+                        <div className="block w-56 h-2 mb-2 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit w-full">
                           &nbsp;
                         </div>
-                        <div class="block w-56 h-2 mb-2 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit w-full">
+                        <div className="block w-56 h-2 mb-2 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit w-full">
                           &nbsp;
                         </div>
-                        <div class="block w-56 h-2 mb-2 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit w-full">
+                        <div className="block w-56 h-2 mb-2 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit w-full">
                           &nbsp;
                         </div>
-                        <div class="block w-56 h-2 mb-2 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit w-full">
+                        <div className="block w-56 h-2 mb-2 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-full text-inherit w-full">
                           &nbsp;
                         </div>
-                        <div class="block h-10 mt-4 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-lg text-inherit w-40">
+                        <div className="block h-10 mt-4 font-sans text-5xl antialiased font-semibold leading-tight tracking-normal bg-gray-300 rounded-lg text-inherit w-40">
                           &nbsp;
                         </div>
                       </div>
@@ -299,7 +296,7 @@ export default function Main() {
                   ))
                 : reverseNewsToShow.map((news) => (
                     <div key={news.id} className="news__card-item">
-                      <div class="md:flex card__news_item max-w-sm bg-white border border-gray-200 rounded-lg shadow relative">
+                      <div className="md:flex card__news_item max-w-sm bg-white border border-gray-200 rounded-lg shadow relative">
                         <Link to={`/news/${news.id}`}>
                           <div
                             className="relative"
@@ -307,7 +304,7 @@ export default function Main() {
                             onMouseLeave={() => handleMouseLeaveNews(news.id)}
                           >
                             <img
-                              class="rounded-t-lg min-h-72"
+                              className="rounded-t-lg min-h-72"
                               src={`${news.imageUrl}`}
                               alt={news.title}
                             />
@@ -324,21 +321,21 @@ export default function Main() {
                             )}
                           </div>
                         </Link>
-                        <div class="p-5">
-                          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+                        <div className="p-5">
+                          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
                             {news.title}
                           </h5>
-                          <p class="mb-3 font-normal text-gray-700">
+                          <p className="mb-3 font-normal text-gray-700">
                             {news.mini_title}
                           </p>
                           {!isTabletOrMobile && (
                             <Link
                               to={`/news/${news.id}`}
-                              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300"
+                              className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300"
                             >
                               Продолжение
                               <svg
-                                class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                                className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
                                 aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
@@ -346,9 +343,9 @@ export default function Main() {
                               >
                                 <path
                                   stroke="currentColor"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                  stroke-width="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth="2"
                                   d="M1 5h12m0 0L9 1m4 4L9 9"
                                 />
                               </svg>
@@ -363,11 +360,11 @@ export default function Main() {
           <div className="pt-10">
             <Link
               to={`/news`}
-              class="md:!p-2 md:text-sm inline-flex items-center p-3 text-lg font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 -mt-10"
+              className="md:!p-2 md:text-sm inline-flex items-center p-3 text-lg font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 -mt-10"
             >
               Предыдущие записи
               <svg
-                class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -375,9 +372,9 @@ export default function Main() {
               >
                 <path
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M1 5h12m0 0L9 1m4 4L9 9"
                 />
               </svg>
@@ -387,7 +384,7 @@ export default function Main() {
             <div className="p-2 pt-10">
               <form
                 ref={form}
-                class=" shadow-2xl p-10 w-1/2 mt-10 rounded-lg "
+                className=" shadow-2xl p-10 w-1/2 mt-10 rounded-lg "
                 onSubmit={sendEmail}
                 id="contact-form"
               >
@@ -410,41 +407,41 @@ export default function Main() {
                     <p>imz@i-m-z.ru</p>
                   </div>
                 </div>
-                <div class="mb-3">
+                <div className="mb-3">
                   <label
-                    for="name"
-                    class="text-black block mb-2 text-sm font-medium text-gray-900 text-black"
+                    htmlFor="name"
+                    className="text-black block mb-2 text-sm font-medium text-gray-900 text-black"
                   >
                     Ваше имя *
                   </label>
                   <input
                     id="name"
-                    class="!border-2 border-black shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dbg-gray-700 border-gray-600 placeholder-gray-400 text-black focus:ring-red-500 focus:border-red-500 shadow-sm-light"
+                    className="!border-2 border-black shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dbg-gray-700 border-gray-600 placeholder-gray-400 text-black focus:ring-red-500 focus:border-red-500 shadow-sm-light"
                     required
                     type="text"
                     name="user_name"
                   />
                 </div>
-                <div class="mb-5">
+                <div className="mb-5">
                   <label
-                    for="email"
-                    class="text-black  block mb-2 text-sm font-medium text-gray-900 text-black"
+                    htmlFor="email"
+                    className="text-black  block mb-2 text-sm font-medium text-gray-900 text-black"
                   >
                     Ваш E-mail *
                   </label>
                   <input
                     type="email"
                     id="email"
-                    class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5  border-gray-600 placeholder-gray-400 text-black focus:ring-red-500 focus:border-red-500 shadow-sm-light"
+                    className="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5  border-gray-600 placeholder-gray-400 text-black focus:ring-red-500 focus:border-red-500 shadow-sm-light"
                     placeholder="name@i-m-z.ru"
                     required
                     name="email"
                   />
                 </div>
-                <div class="mb-5">
+                <div className="mb-5">
                   <label
-                    for="phone"
-                    class="text-black block mb-2 text-sm font-medium text-gray-900 text-black"
+                    htmlFor="phone"
+                    className="text-black block mb-2 text-sm font-medium text-gray-900 text-black"
                   >
                     Ваш номер телефона *
                   </label>
@@ -452,13 +449,13 @@ export default function Main() {
                     type="phone"
                     name="phone"
                     id="phone"
-                    class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 border-gray-600 placeholder-gray-400 text-black focus:ring-red-500 focus:border-red-500 shadow-sm-light"
+                    className="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 border-gray-600 placeholder-gray-400 text-black focus:ring-red-500 focus:border-red-500 shadow-sm-light"
                     required
                   />
                 </div>
                 <label
-                  for="message"
-                  class="text-black block mb-2 text-sm font-medium text-gray-900 text-black"
+                  htmlFor="message"
+                  className="text-black block mb-2 text-sm font-medium text-gray-900 text-black"
                 >
                   Ваше сообщение *
                 </label>
@@ -466,13 +463,13 @@ export default function Main() {
                   id="message"
                   name="message"
                   rows="4"
-                  class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-red-500 focus:border-red-500 border-gray-600 placeholder-gray-400 text-black focus:ring-red-500 :focus:border-red-500"
+                  className="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-red-500 focus:border-red-500 border-gray-600 placeholder-gray-400 text-black focus:ring-red-500 :focus:border-red-500"
                   placeholder="Оставьте сообщение..."
                 ></textarea>
                 <button
                   type="submit"
                   value="Send"
-                  class="mt-5 text-white   bg-red-700 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-red-700 hover:bg-red-700 focus:ring-red-800"
+                  className="mt-5 text-white   bg-red-700 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-red-700 hover:bg-red-700 focus:ring-red-800"
                 >
                   Отправить
                 </button>

@@ -124,9 +124,9 @@ export default function Nav() {
           )}
 
           <Sidebar visible={visible} onHide={() => setVisible(false)}>
-            <div class="bg-red-700 text-white" id="nav">
-              <div class="nav-links bg-red-700">
-                <ul class="pt-20 pb-10 flex flex-col gap-8  row align-items-center ">
+            <div className="bg-red-700 text-white" id="nav">
+              <div className="nav-links bg-red-700">
+                <ul className="pt-20 pb-10 flex flex-col gap-8  row align-items-center ">
                   <Link to={"/"}>
                     <p className="font-bold pl-5">ГЛАВНАЯ</p>
                   </Link>
@@ -145,6 +145,15 @@ export default function Nav() {
                     </Link>
                     <Link to={"/hotel"}>
                       <p>Гостиница</p>
+                    </Link>
+                    <Link to={"/cafe"}>
+                      <p>Кафе</p>
+                    </Link>
+                    <Link to={"/shop"}>
+                      <p>Магазин</p>
+                    </Link>
+                    <Link to={"/kitchen"}>
+                      <p>Столовая</p>
                     </Link>
                     <Link to={"/parking"}>
                       <p>Стоянка</p>
@@ -231,121 +240,136 @@ export default function Nav() {
                       <div className="xl:gap-4 text-lg flex flex-wrap text-2xl gap-16">
                         <div className="font-semibold w-60">
                           <Link to={`/`}>
-                            <div className="cursor-pointer hover:bg-gray-100 p-3">
+                            <div className="cursor-pointer hover:bg-gray-100 p-2">
                               ГЛАВНАЯ
                             </div>
                           </Link>
                         </div>
                         <div className="flex flex-col xl:gap-2 gap-3 w-60">
-                          <div className="font-semibold cursor-pointer hover:bg-gray-100 p-3">
+                          <div className="font-semibold cursor-pointer hover:bg-gray-100 p-2">
                             О ИМЗ
                           </div>
                           <Link to={`/news`}>
-                            <div className="cursor-pointer hover:bg-gray-100 p-3">
+                            <div className="cursor-pointer hover:bg-gray-100 p-2">
                               Новости
                             </div>
                           </Link>
                           <Link to={`/about`}>
-                            <div className="cursor-pointer hover:bg-gray-100 p-3">
+                            <div className="cursor-pointer hover:bg-gray-100 p-2">
                               О нас
                             </div>
                           </Link>
                           <Link to={`/projects`}>
-                            <div className="cursor-pointer hover:bg-gray-100 p-3">
+                            <div className="cursor-pointer hover:bg-gray-100 p-2">
                               Проекты
                             </div>
                           </Link>
                           <Link to={`/management`}>
-                            <div className="cursor-pointer hover:bg-gray-100 p-3">
+                            <div className="cursor-pointer hover:bg-gray-100 p-2">
                               Руководство
                             </div>
                           </Link>
                           <Link to={`/hotel`}>
-                            <div className="cursor-pointer hover:bg-gray-100 p-3">
+                            <div className="cursor-pointer hover:bg-gray-100 p-2">
                               Гостиница
                             </div>
                           </Link>
+                          <Link to={`/cafe`}>
+                            <div className="cursor-pointer hover:bg-gray-100 p-2">
+                              Кафе
+                            </div>
+                          </Link>
+                          <Link to={`/shop`}>
+                            <div className="cursor-pointer hover:bg-gray-100 p-2">
+                              Магазин
+                            </div>
+                          </Link>
+                          <Link to={`/kitchen`}>
+                            <div className="cursor-pointer hover:bg-gray-100 p-2">
+                              Столовая
+                            </div>
+                          </Link>
                           <Link to={`/parking`}>
-                            <div className="cursor-pointer hover:bg-gray-100 p-3">
+                            <div className="cursor-pointer hover:bg-gray-100 p-2">
                               Стоянка
                             </div>
                           </Link>
                         </div>
                         <div className="flex flex-col xl:gap-2 gap-3 w-60">
-                          <div className="font-semibold cursor-pointer hover:bg-gray-100 p-3 ">
+                          <div className="font-semibold cursor-pointer hover:bg-gray-100 p-2 ">
                             ПРОИЗВОДСТВО
                           </div>
                           <Link to={`/capacity`}>
-                            <div className="cursor-pointer hover:bg-gray-100 p-3">
+                            <div className="cursor-pointer hover:bg-gray-100 p-2">
                               Производственные мощности
                             </div>
                           </Link>
                           <Link to={`/cerificates`}>
-                            <div className="cursor-pointer hover:bg-gray-100 p-3">
+                            <div className="cursor-pointer hover:bg-gray-100 p-2">
                               Сертификаты
                             </div>
                           </Link>
                         </div>
                         <div className="flex flex-col xl:gap-2 gap-3 w-60">
-                          <div className="font-semibold cursor-pointer hover:bg-gray-100 p-3">
+                          <div className="font-semibold cursor-pointer hover:bg-gray-100 p-2">
                             ПРОДУКЦИЯ
                           </div>
 
                           <Link to={`/profile_pipe`}>
-                            <div className="cursor-pointer hover:bg-gray-100 p-3">
+                            <div className="cursor-pointer hover:bg-gray-100 p-2">
                               Труба профильная
                             </div>
                           </Link>
                           <Link to={`/products`}>
-                            <div className="cursor-pointer hover:bg-gray-100 p-3">
+                            <div className="cursor-pointer hover:bg-gray-100 p-2">
                               Продукция
                             </div>
                           </Link>
                           <Link to={`/products_order`}>
-                            <div className="cursor-pointer hover:bg-gray-100 p-3">
+                            <div className="cursor-pointer hover:bg-gray-100 p-2">
                               Заказ продукции
                             </div>
                           </Link>
                         </div>
                         <div className="font-semibold w-60">
                           <Link to={`/suppliers`}>
-                            <div className="cursor-pointer hover:bg-gray-100 p-3">
+                            <div className="cursor-pointer hover:bg-gray-100 p-2">
                               ПОСТАВЩИКАМ
                             </div>
                           </Link>
                         </div>
                         <div className="font-semibold w-60">
                           <Link to={`/job`}>
-                            <div className="cursor-pointer hover:bg-gray-100 p-3">
+                            <div className="cursor-pointer hover:bg-gray-100 p-2">
                               ВАКАНСИИ
                             </div>
                           </Link>
                         </div>
                         <div className="flex flex-col xl:gap-2 gap-3 w-60">
                           <Link to={`/contacts`}>
-                            <div className="font-semibold w-60 cursor-pointer hover:bg-gray-100 p-3">
+                            <div className="font-semibold w-60 cursor-pointer hover:bg-gray-100 p-2">
                               КОНТАКТЫ
                             </div>
                           </Link>
                         </div>
                         <div className="flex flex-col xl:gap-2 gap-3 w-60">
-                          <div className="font-semibold cursor-pointer hover:bg-gray-100 p-3">
+                          <div className="font-semibold cursor-pointer hover:bg-gray-100 p-2">
                             FAQ
                           </div>
                           <Link to={`/GOST`}>
-                            <div className="cursor-pointer hover:bg-gray-100 p-3">
+                            <div className="cursor-pointer hover:bg-gray-100 p-2">
                               ГОСТ продукции
                             </div>
                           </Link>
                           <Link to={`/calculator`}>
-                            <div className="cursor-pointer hover:bg-gray-100 p-3">
+                            <div className="cursor-pointer hover:bg-gray-100 p-2">
                               Калькулятор металлопроката
                             </div>
                           </Link>
                         </div>
                         <div className="flex flex-col xl:gap-2 gap-3 w-60">
                           <Link to={`/login`}>
-                            <div className="font-semibold cursor-pointer hover:bg-gray-100 p-3">
+                            <div className="font-semibold cursor-pointer hover:bg-gray-100 p-2">
                               ВХОД
                             </div>
                           </Link>

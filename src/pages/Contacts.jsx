@@ -114,7 +114,7 @@ export default function Contacts() {
               </div>
             </div>
           )}
-          <div class="full-width">
+          <div className="full-width">
             {isTabletOrMobile && (
               <YMaps>
                 <Map
