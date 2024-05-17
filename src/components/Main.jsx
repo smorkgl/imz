@@ -304,7 +304,7 @@ export default function Main() {
                             onMouseLeave={() => handleMouseLeaveNews(news.id)}
                           >
                             <img
-                              className="rounded-t-lg min-h-72"
+                              className="object-cover   rounded-t-lg min-h-72"
                               src={`${news.imageUrl}`}
                               alt={news.title}
                             />
