@@ -117,9 +117,9 @@ export default function Management() {
                 className={
                   expanded && index === selectedCardIndex
                     ? isTabletOrMobile
-                      ? "selectedcard grid-test-col2 mb-10 rounded-2xl flex border-2 border-gray-600 h-96 z-30 relative hover:bg-blue-600/70 hover:rounded-2xl hover:text-white hover:border-0 transition-all"
-                      : "selectedcard grid-test-col mb-10 rounded-2xl flex border-2 border-gray-600 h-96 z-30 relative hover:bg-blue-600/70 hover:rounded-2xl hover:text-white hover:border-0 transition-all"
-                    : "md:mb-5 md:h-64 mb-10 rounded-2xl flex border-2 border-gray-600 h-96 z-30 relative hover:bg-blue-600/70 hover:rounded-2xl hover:text-white hover:border-0 transition-all"
+                      ? "selectedcard grid-test-col2 mb-10 rounded-2xl flex border border-gray-500 h-96 z-30 relative hover:bg-blue-600/70 hover:rounded-2xl hover:text-white hover:border-0 transition-all"
+                      : "selectedcard grid-test-col mb-10 rounded-2xl flex border border-gray-500 h-96 z-30 relative hover:bg-blue-600/70 hover:rounded-2xl hover:text-white hover:border-0 transition-all"
+                    : "md:mb-5 md:h-64 mb-10 rounded-2xl flex border border-gray-500 h-96 z-30 relative hover:bg-blue-600/70 hover:rounded-2xl hover:text-white hover:border-0 transition-all"
                 }
                 onClick={() => handleCardClick(index)}
               >

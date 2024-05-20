@@ -1,102 +1,99 @@
 import react, { useState, useEffect } from "react";
 import BreadCrumbTriangle from "../img/breadcrumbtriangle.svg";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 export default function Breadcumb() {
-  const [path, setPath] = useState("");
-  const [pathLink, setPathLink] = useState("");
+  const location = useLocation();
+  const { pathname } = location;
 
-  useEffect(() => {
-    const currentPath = window.location.pathname;
-    if (currentPath === "/news") {
-      setPath("Новости");
-      setPathLink("/news");
-    }
-    if (currentPath === "/job") {
-      setPath("Вакансии");
-      setPathLink("/job");
-    }
-    if (currentPath.startsWith("/news/")) {
-      setPath("Новости");
-      setPathLink("/news");
-    }
-    if (currentPath === "/about") {
-      setPath("О заводе");
-      setPathLink("/about");
-    }
-    if (currentPath === "/projects") {
-      setPath("Проекты");
-      setPathLink("/projects");
-    }
-    if (currentPath === "/hotel") {
-      setPath("Гостиница");
-      setPathLink("/hotel");
-    }
-    if (currentPath === "/parking") {
-      setPath("Стоянка");
-      setPathLink("/parking");
-    }
-    if (currentPath === "/capacity") {
-      setPath("Производственные мощности");
-      setPathLink("/capacity");
-    }
-    if (currentPath === "/certificates") {
-      setPath("Сертификаты");
-      setPathLink("/certificates");
-    }
-    if (currentPath === "/profile_pipe") {
-      setPath("Труба профильная");
-      setPathLink("/profile_pipe");
-    }
-    if (currentPath === "/metal_beams") {
-      setPath("Балки");
-      setPathLink("/metal_beams");
-    }
-    if (currentPath === "/metal_structure") {
-      setPath("Металлоконструкции");
-      setPathLink("/metal_structure");
-    }
-    if (currentPath === "/products") {
-      setPath("Продукция");
-      setPathLink("/products  ");
-    }
-    if (currentPath === "/products_order") {
-      setPath("Заказать продукцию");
-      setPathLink("/products_order");
-    }
-    if (currentPath === "/suppliers") {
-      setPath("Поставщикам");
-      setPathLink("/suppliers");
-    }
-    if (currentPath === "/contacts") {
-      setPath("Контакты");
-      setPathLink("/contacts");
-    }
-    if (currentPath === "/gost") {
-      setPath("ГОСТ ПРОДУКЦИИ");
-      setPathLink("/gost");
-    }
-    if (currentPath === "/calculator") {
-      setPath("Калькулятор металлопроката");
-      setPathLink("/calculator");
-    }
-    if (currentPath === "/cafe") {
-      setPath("Кафе");
-      setPathLink("/cafe");
-    }
-    if (currentPath === "/shop") {
-      setPath("Магазин");
-      setPathLink("/shop");
-    }
-    if (currentPath === "/kitchen") {
-      setPath("Столовая");
-      setPathLink("/kitchen");
-    }
-    if (currentPath === "/management") {
-      setPath("Руководство");
-      setPathLink("/management");
-    }
-  }, []);
+  let path = "";
+  let pathLink = "";
+  switch (true) {
+    case pathname === "/news" || pathname.startsWith("/news/"):
+      path = "Новости";
+      pathLink = "/news";
+      break;
+    case pathname === "/job":
+      path = "Вакансии";
+      pathLink = "/job";
+      break;
+    case pathname === "/about":
+      path = "О нас";
+      pathLink = "/about";
+      break;
+    case pathname === "/projects":
+      path = "Проекты";
+      pathLink = "/projects";
+      break;
+    case pathname === "/management":
+      path = "Руководство";
+      pathLink = "/management";
+      break;
+    case pathname === "/hotel":
+      path = "Гостиница";
+      pathLink = "/hotel";
+      break;
+    case pathname === "/cafe":
+      path = "Кафе";
+      pathLink = "/cafe";
+      break;
+    case pathname === "/shop":
+      path = "Магазин";
+      pathLink = "/shop";
+      break;
+    case pathname === "/kitchen":
+      path = "Столовая";
+      pathLink = "/kitchen";
+      break;
+    case pathname === "/parking":
+      path = "Стоянка";
+      pathLink = "/parking";
+      break;
+    case pathname === "/capacity":
+      path = "Производственные мощности";
+      pathLink = "/capacity";
+      break;
+    case pathname === "/certificates":
+      path = "Сертификаты";
+      pathLink = "/certificates";
+      break;
+    case pathname === "/profile_pipe":
+      path = "Труба профильная";
+      pathLink = "/profile_pipe";
+      break;
+    case pathname === "/metal_equipment":
+      path = "Металлическое оборудование";
+      pathLink = "/metal_equipment";
+      break;
+    case pathname === "/products":
+      path = "Продукция";
+      pathLink = "/products";
+      break;
+    case pathname === "/products_order":
+      path = "Заказ продукции";
+      pathLink = "/products_order";
+      break;
+    case pathname === "/suppliers":
+      path = "Поставщикам";
+      pathLink = "/suppliers";
+      break;
+    case pathname === "/contacts":
+      path = "Контакты";
+      pathLink = "/contacts";
+      break;
+    case pathname === "/gost":
+      path = "ГОСТ продукции";
+      pathLink = "/gost";
+      break;
+    case pathname === "/calculator":
+      path = "Калькулятор металлпроката";
+      pathLink = "/calculator";
+      break;
+    default:
+      break;
+  }
+
   return (
     <div className="space-x-4 py-3 2xl max-w-6xl width-full mx-auto container">
       <nav aria-label="breadcrumb">

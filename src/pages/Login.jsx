@@ -39,7 +39,7 @@ export default function Login() {
   }
 
   return (
-    <div className="bg-[url('/src/img/test3.png')] bg-red-700 h-screen bg-no-repeat bg-center bg-cover flex place-items-center">
+    <div className="bg-blue-900 h-screen bg-no-repeat bg-center bg-cover flex place-items-center">
       <Link to={`/`}>
         <button className="absolute top-5 left-5 bg-white text-red-800 hover:text-red-700 transition-all">
           ВЕРНУТЬСЯ НАЗАД

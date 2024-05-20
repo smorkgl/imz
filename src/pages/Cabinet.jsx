@@ -54,7 +54,7 @@ export default function Cabinet() {
   };
 
   return (
-    <div className="md:px-5 px-20 bg-[url('/src/img/test3.png')] h-full bg-no-repeat bg-center bg-cover flex place-items-center h-100 flex-col">
+    <div className="md:px-5 px-20 bg-blue-900 h-full bg-no-repeat bg-center bg-cover flex place-items-center h-100 flex-col">
       <div className="flex justify-between gap-5 top-0">
         <Link to={`/`}>
           <button className="absolute left-0 m-5 md:text-xs bg-white text-red-800 hover:text-red-700 transition-all">

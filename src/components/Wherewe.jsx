@@ -56,7 +56,7 @@ export default function Wherewe() {
           </div>
         )}
         <div className="full-width">
-          <YMaps>
+          <YMaps query={{ apikey: "0613fc9e-402b-4321-82e2-62f96150cb92" }}>
             {isTabletOrMobile && (
               <Map
                 width="100vw"
