@@ -91,7 +91,7 @@ export default function CabinetUpload() {
   const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
   return (
-    <div className="md:px-5 px-20 bg-[url('/src/img/test3.png')] bg-red-700 h-full bg-no-repeat bg-center bg-cover flex place-items-center h-100 flex-col">
+    <div className="md:px-5 px-20 bg-blue-900 h-full bg-no-repeat bg-center bg-cover flex place-items-center h-100 flex-col">
       <Link to={`/cabinet`}>
         <button className="absolute left-0 m-5 md:text-xs bg-white text-red-800 hover:text-red-700 transition-all">
           ВЕРНУТЬСЯ НАЗАД

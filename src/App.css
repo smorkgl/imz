@@ -271,7 +271,7 @@ li {
   stroke: rgb(255, 255, 255);
   width: 600px;
   fill-opacity: 1;
-  strokewidth: 5px;
+  stroke-width: 5px;
   stroke-dasharray: 5000;
   animation: draw 5s ease;
   position: absolute;

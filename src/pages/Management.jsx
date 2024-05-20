@@ -90,11 +90,20 @@ export default function Management() {
 
   const handleCardClick = (index) => {
     // если уже выбрана увеличенная картинка и нажатие сделано на неё, вернуть к исходному размеру
-    if (index === selectedCardIndex && expanded) {
+    if (index === selectedCardIndex && expanded && !isTabletOrMobile) {
       setExpanded(false);
     } else {
       setSelectedCardIndex(index);
       setExpanded(true);
+    }
+  };
+
+  const handleScroll = () => {
+    if (!expanded) {
+      window.scrollBy({
+        top: 400,
+        behavior: "smooth",
+      });
     }
   };
 
@@ -121,7 +130,10 @@ export default function Management() {
                       : "selectedcard grid-test-col mb-10 rounded-2xl flex border border-gray-500 h-96 z-30 relative hover:bg-blue-600/70 hover:rounded-2xl hover:text-white hover:border-0 transition-all"
                     : "md:mb-5 md:h-64 mb-10 rounded-2xl flex border border-gray-500 h-96 z-30 relative hover:bg-blue-600/70 hover:rounded-2xl hover:text-white hover:border-0 transition-all"
                 }
-                onClick={() => handleCardClick(index)}
+                onClick={() => {
+                  handleCardClick(index);
+                  handleScroll();
+                }}
               >
                 {expanded && index === selectedCardIndex && (
                   <img

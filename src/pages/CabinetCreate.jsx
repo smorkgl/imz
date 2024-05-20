@@ -104,7 +104,7 @@ export default function Cabinet() {
   };
 
   return (
-    <div className="md:px-5 px-20 bg-[url('/src/img/test3.png')] bg-red-700 h-full bg-no-repeat bg-center bg-cover flex place-items-center h-100">
+    <div className="md:px-5 px-20 bg-blue-900 h-full bg-no-repeat bg-center bg-cover flex place-items-center h-100">
       <Link to={`/cabinet`}>
         <button className="absolute top-5 left-5 bg-white text-red-800 hover:text-red-700 transition-all">
           ВЕРНУТЬСЯ НАЗАД
@@ -175,7 +175,7 @@ export default function Cabinet() {
                 htmlFor="large-input"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
-                Заголовок
+                Заголовок (максимум 50 символов)
               </label>
               <input
                 type="text"
@@ -190,8 +190,7 @@ export default function Cabinet() {
                 htmlFor="large-input"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
-                Мини-заголовок (если вы не указываете, он укажет 50 символов
-                первых описания)
+                Мини-заголовок (максимум 50 символов)
               </label>
               <input
                 maxLength={125}
