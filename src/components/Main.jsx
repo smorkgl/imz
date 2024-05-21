@@ -304,7 +304,12 @@ export default function Main() {
                             onMouseLeave={() => handleMouseLeaveNews(news.id)}
                           >
                             <img
-                              className="object-cover   rounded-t-lg min-h-72"
+                              className={
+                                news.imageUrl ===
+                                "https://storage.yandexcloud.net/imz/files/no_image.png"
+                                  ? "object-cover rounded-t-lg min-h-72"
+                                  : "bg-red-700"
+                              }
                               src={`${news.imageUrl}`}
                               alt={news.title}
                             />
@@ -322,7 +327,10 @@ export default function Main() {
                           </div>
                         </Link>
                         <div className="p-5">
-                          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+                          <h5
+                            onClick={() => console.log(news.imageUrl)}
+                            className="mb-2 text-2xl font-bold tracking-tight text-gray-900"
+                          >
                             {news.title}
                           </h5>
                           <p className="mb-3 font-normal text-gray-700">

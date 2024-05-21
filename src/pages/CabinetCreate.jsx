@@ -1,15 +1,13 @@
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState, useCallback, useRef } from "react";
-import { fetchPosts } from "../redux/slices/posts.js";
 import { selectIsAuth } from "../redux/slices/auth.js";
 import { useNavigate, Navigate, useParams } from "react-router-dom";
 import "easymde/dist/easymde.min.css";
-import SimpleMdeReact from "react-simplemde-editor";
 import axios from "../axios.js";
 import { InputMask } from "primereact/inputmask";
+import "../../ckeditor/build/ckeditor";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 export default function Cabinet() {
   const { id } = useParams();
