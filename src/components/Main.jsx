@@ -304,12 +304,7 @@ export default function Main() {
                             onMouseLeave={() => handleMouseLeaveNews(news.id)}
                           >
                             <img
-                              className={
-                                news.imageUrl ===
-                                "https://storage.yandexcloud.net/imz/files/no_image.png"
-                                  ? "object-cover rounded-t-lg min-h-72"
-                                  : "bg-red-700"
-                              }
+                              className={"object-cover rounded-t-lg min-h-72"}
                               src={`${news.imageUrl}`}
                               alt={news.title}
                             />
