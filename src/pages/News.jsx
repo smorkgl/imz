@@ -161,6 +161,9 @@ export default function News() {
               nextLinkClassName={"nextButton_mobile"}
               disabledClassName={"navigationDisabled_mobile"}
               activeClassName={"navigationActive_mobile"}
+              breakLabel={"..."}
+              marginPagesDisplayed={0}
+              pageRangeDisplayed={3}
             />
           )}
 
@@ -176,6 +179,8 @@ export default function News() {
               disabledClassName={"navigationDisabled"}
               activeClassName={"navigationActive"}
               breakLabel={"..."}
+              marginPagesDisplayed={0}
+              pageRangeDisplayed={3}
             />
           )}
         </section>

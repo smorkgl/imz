@@ -110,7 +110,7 @@ export default function Main() {
     dispatch(fetchPosts());
   }, []);
 
-  const newsToShow = posts.items.slice().reverse();
+  const newsToShow = posts.items.slice().reverse().slice(0, 4);
   const reverseNewsToShow = newsToShow.slice(0, 4);
 
   const isPostsLoading = posts.status === "loading";
@@ -150,7 +150,7 @@ export default function Main() {
                 ? items.map((item, index) => (
                     <div
                       key={index}
-                      className="flex max-w-sm bg-white border border-gray-200 rounded-lg shadow animate-pulse"
+                      className="flex bg-white border border-gray-200 rounded-lg shadow animate-pulse"
                     >
                       <div className="relative">
                         <div className="relative">
@@ -161,7 +161,7 @@ export default function Main() {
                             viewBox="0 0 24 24"
                             strokeWidth="2"
                             stroke="currentColor"
-                            className="w-12 h-12 text-gray-500 svg__in-image "
+                            className="w-12 h-12 text-gray-500 svg__in-image1 "
                           >
                             <path
                               strokeLinecap="round"

@@ -416,6 +416,12 @@ li {
 .svg__in-image {
   top: 40%;
   position: absolute;
+  left: 42%;
+}
+
+.svg__in-image1 {
+  top: 35%;
+  position: absolute;
   left: 35%;
 }
 
@@ -544,6 +550,10 @@ li {
 .pagination .active {
   background-color: #1e40af;
   color: #fff;
+}
+
+.navigationButtons__mobile li {
+  padding: 3px;
 }
 
 .management__photo {
