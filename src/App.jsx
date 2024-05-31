@@ -13,8 +13,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchAuthMe } from "./redux/slices/auth";
 import { useMediaQuery } from "react-responsive";
 import ContactUsMobile from "./components/ContactUsMobile.jsx";
+import { useInView } from "react-intersection-observer";
 
 function App() {
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+  });
+
   // Проверка на авторизацию
   const dispatch = useDispatch();
 
@@ -49,7 +54,7 @@ function App() {
         ) : (
           <div ref={whereweRef}>
             <Wherewe />
-            <Job />
+            <Job ref={ref} />
           </div>
         )}
 
