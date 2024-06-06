@@ -24,6 +24,7 @@
     "axios": "^1.6.7",
     "bcrypt": "^5.1.1",
     "ckeditor5-custom-build": "file:ckeditor",
+    "ckeditor5-imz": "^0.0.1",
     "easymde": "^2.18.0",
     "emailjs": "^4.0.3",
     "emailjs-com": "^3.2.0",

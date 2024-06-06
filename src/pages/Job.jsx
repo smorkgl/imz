@@ -162,9 +162,11 @@ export default function Job() {
                     <p className="font-semibold">Требования:</p>
                     {vacancy.snippet.requirement}
                     <div>
-                      <button className="bg-red-700 text-white hover:bg-white hover:text-black font-semibold py-2 px-4 border border-black hover:border-black transition-all rounded mt-5">
-                        <a href={vacancy.alternate_url}>ОТПРАВИТЬ РЕЗЮМЕ</a>
-                      </button>
+                      <a href={vacancy.alternate_url}>
+                        <button className="bg-red-700 text-white hover:bg-white hover:text-black font-semibold py-2 px-4 border border-black hover:border-black transition-all rounded mt-5">
+                          ОТПРАВИТЬ РЕЗЮМЕ
+                        </button>
+                      </a>
                     </div>
                   </div>
                 )}
