@@ -6,6 +6,12 @@ export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
   return data;
 });
 
+export const fetchPosts4 = createAsyncThunk("posts/fetchPosts4", async () => {
+  const { data } = await axios.get("/posts4");
+  console.log(data);
+  return data;
+});
+
 export const fetchRemovePost = createAsyncThunk(
   "posts/fetchRemovePost",
   async (_id) => {
@@ -34,6 +40,18 @@ const postsSlice = createSlice({
       state.posts.status = "loaded";
     });
     builder.addCase(fetchPosts.rejected, (state) => {
+      state.posts.items = [];
+      state.posts.status = "error";
+    });
+    builder.addCase(fetchPosts4.pending, (state) => {
+      state.posts.items = [];
+      state.posts.status = "loading";
+    });
+    builder.addCase(fetchPosts4.fulfilled, (state, action) => {
+      state.posts.items = action.payload;
+      state.posts.status = "loaded";
+    });
+    builder.addCase(fetchPosts4.rejected, (state) => {
       state.posts.items = [];
       state.posts.status = "error";
     });

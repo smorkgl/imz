@@ -33,8 +33,7 @@ export default function NewsElement() {
     <div>
       <Header />
       <Nav />
-      <Carousel />
-      <TopMain />
+
       <Breadcrumb />
       <div>
         <div className="xl:px-2 py-3 2xl max-w-6xl width-full mx-auto container">

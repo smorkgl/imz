@@ -20,7 +20,7 @@ import photo11 from "../img/photo11.jpg";
 import photo12 from "../img/photo12.jpeg";
 import right_arrow from "../img/right_arrow.svg";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchPosts } from "../redux/slices/posts.js";
+import { fetchPosts4 } from "../redux/slices/posts.js";
 import { useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
 import { CarouselProvider, Slider, Slide, DotGroup } from "pure-react-carousel";
@@ -107,7 +107,7 @@ export default function Main() {
   const dispatch = useDispatch();
   const { posts } = useSelector((state) => state.posts);
   useEffect(() => {
-    dispatch(fetchPosts());
+    dispatch(fetchPosts4());
   }, []);
 
   const newsToShow = posts.items.slice().reverse().slice(0, 4);

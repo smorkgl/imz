@@ -7,6 +7,7 @@ import { useNavigate, Navigate, useParams } from "react-router-dom";
 import { logout } from "../redux/slices/auth.js";
 import { fetchRemovePost } from "../redux/slices/posts.js";
 import ReactPaginate from "react-paginate";
+import { useMediaQuery } from "react-responsive";
 
 export default function Cabinet() {
   const isAuth = useSelector(selectIsAuth);
@@ -40,6 +41,8 @@ export default function Cabinet() {
   const onClickEditNews = (id) => {
     navigate(`/cabinet/${id}/edit`);
   };
+
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 767px)" });
 
   const newPosts = posts.items.slice().reverse();
 
@@ -202,16 +205,39 @@ export default function Cabinet() {
                       </div>
                     </div>
                   ))}
-            <ReactPaginate
-              pageCount={pageCount}
-              pageRangeDisplayed={5}
-              marginPagesDisplayed={1}
-              onPageChange={handlePageClick}
-              containerClassName={"pagination"}
-              activeClassName={"active"}
-              previousLabel={"Назад"}
-              nextLabel={"Следующий"}
-            />
+            {isTabletOrMobile && (
+              <ReactPaginate
+                previousLabel={"Назад"}
+                nextLabel={"Вперёд"}
+                pageCount={pageCount}
+                onPageChange={handlePageClick}
+                containerClassName={"navigationButtons__mobile"}
+                previousLinkClassName={"previousButton_mobile"}
+                nextLinkClassName={"nextButton_mobile"}
+                disabledClassName={"navigationDisabled_mobile"}
+                activeClassName={"navigationActive_mobile"}
+                breakLabel={"..."}
+                marginPagesDisplayed={0}
+                pageRangeDisplayed={3}
+              />
+            )}
+
+            {!isTabletOrMobile && (
+              <ReactPaginate
+                previousLabel={"Назад"}
+                nextLabel={"Вперёд"}
+                pageCount={pageCount}
+                onPageChange={handlePageClick}
+                containerClassName={"navigationButtons"}
+                previousLinkClassName={"previousButton"}
+                nextLinkClassName={"nextButton"}
+                disabledClassName={"navigationDisabled"}
+                activeClassName={"navigationActive"}
+                breakLabel={"..."}
+                marginPagesDisplayed={0}
+                pageRangeDisplayed={3}
+              />
+            )}
           </section>
         </div>
       </div>

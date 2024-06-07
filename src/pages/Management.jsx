@@ -113,8 +113,7 @@ export default function Management() {
     <div className="font-['Ubuntu']">
       <Header />
       <Nav />
-      <Carousel />
-      <TopMain />
+
       <Breadcrumb />
       <div className="xl:px-2 py-3 2xl max-w-6xl width-full mx-auto container ">
         <h1 className="font-bold ">Руководство</h1>

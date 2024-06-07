@@ -304,7 +304,7 @@ export default function Nav() {
                               Производственные мощности
                             </div>
                           </Link>
-                          <Link to={`/cerificates`}>
+                          <Link to={`/certificates`}>
                             <div className="cursor-pointer hover:bg-gray-100 p-2">
                               Сертификаты
                             </div>
