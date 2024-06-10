@@ -433,7 +433,7 @@ li {
 .preloader {
   height: 100%;
   width: 100%;
-  background: linear-gradient(to right, #991b1b, #991b1b);
+  background: linear-gradient(to right, #1e40af, #1e40af);
   color: #fff;
   position: fixed;
   bottom: 0;
