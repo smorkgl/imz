@@ -273,7 +273,7 @@ li {
   fill-opacity: 1;
   stroke-width: 5px;
   stroke-dasharray: 5000;
-  animation: draw 5s ease;
+  animation: draw 3s ease;
   position: absolute;
 }
 

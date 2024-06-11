@@ -34,7 +34,7 @@ import Management from "./pages/Management.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 
 const router = (
-  <HashRouter>
+  <BrowserRouter>
     <ScrollToTop />
     <Routes>
       <Route path="/" element={<App />} errorElement={<ErrorPage />} />
@@ -65,7 +65,7 @@ const router = (
       <Route path="/management" element={<Management />} />
       <Route path="/contacts" element={<Contacts />} />
     </Routes>
-  </HashRouter>
+  </BrowserRouter>
 );
 
 ReactDOM.createRoot(document.getElementById("root")).render(

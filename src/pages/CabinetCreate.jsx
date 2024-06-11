@@ -6,7 +6,8 @@ import { useNavigate, Navigate, useParams } from "react-router-dom";
 import "easymde/dist/easymde.min.css";
 import axios from "../axios.js";
 import { InputMask } from "primereact/inputmask";
-import "../../ckeditor/build/ckeditor";
+// import { Editor as ClassicEditor } from "ckeditor5-custom-build/build/ckeditor";
+import "ckeditor5-custom-build/build/ckeditor";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 
 export default function Cabinet() {

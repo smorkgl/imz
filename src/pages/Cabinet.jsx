@@ -80,7 +80,7 @@ export default function Cabinet() {
           </button>
         </Link>
       </div>
-      <div className="md:mt-0 md:mt-32   container my-12 mx-auto md:px-2 bg-white pt-10 relative mt-28 min-h-screen">
+      <div className="md:mt-0 md:mt-32 rounded-3xl container my-12 mx-auto md:px-2 bg-white pt-10 relative mt-28 min-h-screen">
         <div className="pt-10 2xl max-w-7xl width-full mx-auto container">
           <section className="p-2 mb-32 text-center !text-left">
             {isPostsLoading
