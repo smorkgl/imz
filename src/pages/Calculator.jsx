@@ -31,8 +31,7 @@ export default function Calculator() {
     <div className="font-['Ubuntu']">
       <Header />
       <Nav />
-      <Carousel />
-      <TopMain />
+
       <Breadcrumb />
       <div className="xl:px-2 py-3 2xl max-w-6xl width-full mx-auto container">
         <h1 className="md:text-4xl font-bold ">Калькулятор металлопроката</h1>

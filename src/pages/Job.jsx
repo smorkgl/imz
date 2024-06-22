@@ -63,8 +63,8 @@ export default function Job() {
     <div className="font-['Ubuntu']">
       <Header />
       <Nav />
-      <Carousel />
-      <TopMain />
+      
+      
       <Breadcumb />
       <div className="xl:px-2 py-3 2xl max-w-6xl width-full mx-auto container">
         <h1 className="font-bold">Вакансии</h1>

@@ -7,8 +7,9 @@ import "easymde/dist/easymde.min.css";
 import axios from "../axios.js";
 import { InputMask } from "primereact/inputmask";
 // import { Editor as ClassicEditor } from "ckeditor5-custom-build/build/ckeditor";
-import "ckeditor5-custom-build/build/ckeditor";
-import { CKEditor } from "@ckeditor/ckeditor5-react";
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import '@ckeditor/ckeditor5-build-classic/build/translations/ru';
 
 export default function Cabinet() {
   const { id } = useParams();
@@ -212,6 +213,8 @@ export default function Cabinet() {
               }}
               config={{
                 ckfinder: { uploadUrl: "https://imz-server.vercel.app/upload" },
+                language: 'ru',
+
               }}
             />
 

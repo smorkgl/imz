@@ -42,8 +42,8 @@ function App() {
         <Header />
         <Nav />
         <div></div>
-        <Carousel />
-        <TopMain />
+    <Carousel />
+    <TopMain/>
         <Main />
         {isTabletOrMobile && <ContactUsMobile />}
         {isTabletOrMobile ? (

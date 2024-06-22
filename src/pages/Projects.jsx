@@ -13,8 +13,8 @@ export default function Projects() {
     <div className="font-['Ubuntu']">
       <Header />
       <Nav />
-      <Carousel />
-      <TopMain />
+      
+      
       <Breadcrumb />
       <div className="xl:px-2 py-3 2xl max-w-6xl width-full mx-auto container">
         <h1 className="font-bold ">Проекты</h1>
