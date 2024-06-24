@@ -237,7 +237,7 @@ export default function Nav() {
                     }
                   >
                     <Dialog.Panel>
-                      <div className="xl:gap-4 text-lg flex flex-wrap text-2xl gap-16">
+                      <div className="xl:gap-4 text-lg flex flex-wrap text-2xl gap-8">
                         <div className="font-semibold w-60">
                           <Link to={`/`}>
                             <div className="cursor-pointer hover:bg-gray-100 p-2">
